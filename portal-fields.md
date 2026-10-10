@@ -147,6 +147,41 @@ The grant number is read from the manuscript's `\uquGrant` macro, so it cannot d
 26UQU4350624GSSR07 (Umm Al-Qura University, Deanship of Postgraduate Studies and Scientific Research) -- this is the `Grant Disclosures` field
 ```
 
+## Declarations tab — the three Yes/No questions
+
+Each is **No**, checked against the sources rather than assumed:
+
+| Question | Answer | Checked |
+| --- | --- | --- |
+| Do you name, or make use of, any patents in your text? | **No** | zero occurrences of "patent" in `main.tex` and `main_si.tex` |
+| Do you report on any DNA/RNA/peptide etc. sequencing? | **No** | zero for DNA, sequencing, peptide and GenBank; the "RNA" and "sequence" matches are inside *alternative*, *internal* and "temporal sequence" and are not biological |
+| Did you perform any microarray experiments? | **No** | zero occurrences of "microarray" |
+
+Each is a **No**, so its conditional follow-up stays hidden. Answering Yes would open a required field with nothing to put in it.
+
+## Declarations tab — raw data and code (question 90)
+
+Select **"Both upload to PeerJ & Submit repository link(s) to data"**. The Data Availability statement says both, and both are true:
+
+- the census, models, snapshot audit and every analysis script are archived at the DOI, and
+- they are "also provided as Supplemental Information", which the bundle does with `source_main.zip` and `source_si.zip`.
+
+Describe the uploaded files (question 91):
+
+```text
+The manuscript source and its bibliography are in source_main.zip, which also carries the four cited figure PDFs and the PeerJ class file. The supplement source is in source_si.zip. The supplement PDF (2_supplemental_information_S1.pdf) tabulates the robustness forks, sensitivity sweeps and estimator controls that the main text summarises. Both archives typeset on their own.
+```
+
+Describe the repository access (question 92):
+
+```text
+1. Repository: Zenodo
+2. Accession: 10.5281/zenodo.23103868 (concept DOI 10.5281/zenodo.23099939, which always resolves to the current version)
+3. Link: https://doi.org/10.5281/zenodo.23099939
+
+The deposit carries the derived census, the fitted models, the snapshot audit and every analysis script behind the numbers in the paper, under CC BY 4.0.
+```
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:
