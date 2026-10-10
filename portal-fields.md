@@ -107,6 +107,24 @@ As one line, if the portal's field prefers that:
 urban sensor networks; smart-city infrastructure; spatial clustering; spatial asymmetry; point-pattern analysis; longitudinal analysis
 ```
 
+## Generative AI declaration — the answer is YES
+
+The portal asks: *"Did you use an Artificial Intelligence tool (e.g. generative AI, large language model (LLM), etc.) to write or edit text, generate images or figures, or generate data?"* **Answer Yes.** The manuscript already declares it in full, so answering No would contradict the paper itself.
+
+Tick what was done, and only that:
+
+| The form's option | Answer | Why |
+| --- | --- | --- |
+| write or edit text | **Yes** | the disclosure names GitHub Copilot for "drafting and editing LaTeX and typesetting support" |
+| generate images or figures | **No** | every figure is produced by a matplotlib script from a committed results file; the four cited figures are pure vector PDFs with no raster content |
+| generate data | **No** | no tool computed, altered or selected any result; the disclosure says so explicitly |
+
+Description to paste, taken from the manuscript's own disclosure so the form and the paper cannot say different things:
+
+```text
+Drafting and editing LaTeX and typesetting support. The tool was not used to compute, alter or select any result; every number in the manuscript is read from a committed results file produced by the analysis scripts in the deposit. The authors have checked the tool's terms of use and take full responsibility for the integrity of the whole content, including the accuracy of all references.
+```
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:

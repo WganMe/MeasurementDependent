@@ -441,6 +441,33 @@ def main() -> int:
     doc.append("; ".join(kw))
     doc.append("```\n")
 
+    doc.append("## Generative AI declaration — the answer is YES\n")
+    doc.append("The portal asks: *\"Did you use an Artificial Intelligence tool (e.g. generative "
+               "AI, large language model (LLM), etc.) to write or edit text, generate images or "
+               "figures, or generate data?\"* **Answer Yes.** The manuscript already declares it "
+               "in full, so answering No would contradict the paper itself.\n")
+    doc.append("Tick what was done, and only that:\n")
+    doc.append("| The form's option | Answer | Why |")
+    doc.append("| --- | --- | --- |")
+    doc.append("| write or edit text | **Yes** | the disclosure names GitHub Copilot for "
+               "\"drafting and editing LaTeX and typesetting support\" |")
+    doc.append("| generate images or figures | **No** | every figure is produced by a "
+               "matplotlib script from a committed results file; the four cited figures are "
+               "pure vector PDFs with no raster content |")
+    doc.append("| generate data | **No** | no tool computed, altered or selected any result; "
+               "the disclosure says so explicitly |")
+    doc.append("")
+    doc.append("Description to paste, taken from the manuscript's own disclosure so the form "
+               "and the paper cannot say different things:\n")
+    doc.append("```text")
+    doc.append("Drafting and editing LaTeX and typesetting support. The tool was not used to "
+               "compute, alter or select any result; every number in the manuscript is read "
+               "from a committed results file produced by the analysis scripts in the deposit. "
+               "The authors have checked the tool's terms of use and take full responsibility "
+               "for the integrity of the whole content, including the accuracy of all "
+               "references.")
+    doc.append("```\n")
+
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "
                "the character:\n")
