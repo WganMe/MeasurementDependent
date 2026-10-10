@@ -58,6 +58,26 @@ The differences, so the two can be checked by eye:
 - `–` (U+2013) → `-`  ×2
 - `’` (U+2019) → `'`  ×2
 
+## Author information — the portal's next tab
+
+Read out of the manuscript (`peerj-main.tex`), so a name or affiliation that changes in the paper changes here. The ORCIDs are the one value the manuscript does not carry; each was checked by its own mod-11-2 check digit, which is why a mistyped one cannot pass unnoticed.
+
+| # | Author | Affiliation | ORCID |
+| --- | --- | --- | --- |
+| 1 | Wael Alnahari | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | `0000-0001-5247-3713` |
+| 2 | Ammar Arbaaeen | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | `0000-0003-2165-3185` |
+| 3 | Ammar Alsaig | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | `0000-0002-6756-9766` |
+| 4 | Tawfiq Hasanin | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | `0000-0003-1072-278X` |
+| 5 | Wasem Alnahri | Independent Researcher, Mecca 24331, Saudi Arabia | `0009-0004-6963-5773` |
+
+Corresponding author and e-mail, as the manuscript prints them:
+
+```text
+Wael Alnahari — walnahari0004@stu.kau.edu.sa
+```
+
+The manuscript does **not** print ORCIDs in the title block, and the published PeerJ paper beside this one prints none either, so there is nothing to match in the PDF; the portal is where they are entered and where they will be published. Confirm each against the author's own ORCID record before saving: the checksums prove the identifiers are well-formed, not that they belong to the right people.
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:

@@ -97,6 +97,46 @@ SHORT_TITLE_ALTERNATIVES = [
 SHORT_TITLE_ALTERNATIVES = [a for a in SHORT_TITLE_ALTERNATIVES if len(a) <= SHORT_LIMIT]
 
 
+# THE AUTHOR INFORMATION TAB. Read out of `peerj-main.tex` rather than typed here, so a name
+# or affiliation that changes in the manuscript changes here too. The ORCIDs are the one
+# thing the manuscript does not carry, so they are held with the manuscript's own comment
+# naming them as the authors' own, and each is CHECKED BY CHECKSUM below: an ORCID's last
+# character is a mod-11-2 check digit, so a mistyped one fails arithmetic rather than needing
+# to be noticed by eye. The portal publishes these, so a wrong one is a wrong identifier
+# attached to a real person.
+ORCIDS = {
+    "Wael Alnahari": "0000-0001-5247-3713",
+    "Ammar Arbaaeen": "0000-0003-2165-3185",
+    "Ammar Alsaig": "0000-0002-6756-9766",
+    "Tawfiq Hasanin": "0000-0003-1072-278X",
+    "Wasem Alnahri": "0009-0004-6963-5773",
+}
+
+
+def orcid_ok(orcid: str) -> bool:
+    """The ORCID mod-11-2 check digit. False for anything mistyped or invented."""
+    digits = orcid.replace("-", "")
+    if not re.fullmatch(r"\d{15}[\dX]", digits) or len(orcid) != 19:
+        return False
+    total = 0
+    for d in digits[:15]:
+        total = (total + int(d)) * 2
+    result = (12 - total % 11) % 11
+    return ("X" if result == 10 else str(result)) == digits[15]
+
+
+def authors_from_tex(pdf: pathlib.Path) -> list[tuple[str, str]]:
+    """(author, affiliation) pairs, in the order the manuscript lists them."""
+    tex = (OUT / "peerj-main.tex").read_text(encoding="utf-8")
+    affils = dict(re.findall(r"\\affil\[(\d+)\]\{([^}]*)\}", tex))
+    out = []
+    for n, name in re.findall(r"\\author\[(\d+)\]\{([^}]*)\}", tex):
+        out.append((name.strip(), affils.get(n, "").strip()))
+    if not out:
+        raise SystemExit("REFUSING: no \\author[]{}{} entries in peerj-main.tex")
+    return out
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -227,6 +267,14 @@ def main() -> int:
                         % (len(abstract), ABSTRACT_MIN))
     if "\n" in abstract:
         problems.append("abstract contains a linebreak")
+
+    authors = authors_from_tex(pdf)
+    for name, _affil in authors:
+        o = ORCIDS.get(name)
+        if o is None:
+            problems.append("no ORCID recorded for %s" % name)
+        elif not orcid_ok(o):
+            problems.append("ORCID for %s (%s) fails its checksum" % (name, o))
     if problems:
         raise SystemExit("REFUSING: " + "; ".join(problems))
 
@@ -311,6 +359,27 @@ def main() -> int:
         for ch, n in sorted(ascii_changed.items(), key=lambda kv: -kv[1]):
             doc.append("- `%s` (U+%04X) → `%s`  ×%d" % (ch, ord(ch), ASCII_FOLD.get(ch, "?"), n))
         doc.append("")
+
+    doc.append("## Author information — the portal's next tab\n")
+    doc.append("Read out of the manuscript (`peerj-main.tex`), so a name or affiliation that "
+               "changes in the paper changes here. The ORCIDs are the one value the "
+               "manuscript does not carry; each was checked by its own mod-11-2 check digit, "
+               "which is why a mistyped one cannot pass unnoticed.\n")
+    doc.append("| # | Author | Affiliation | ORCID |")
+    doc.append("| --- | --- | --- | --- |")
+    for i, (name, affil) in enumerate(authors, 1):
+        doc.append("| %d | %s | %s | `%s` |" % (i, name, affil, ORCIDS[name]))
+    doc.append("")
+    doc.append("Corresponding author and e-mail, as the manuscript prints them:\n")
+    doc.append("```text")
+    doc.append("Wael Alnahari — walnahari0004@stu.kau.edu.sa")
+    doc.append("```\n")
+    doc.append("The manuscript does **not** print ORCIDs in the title block, and the published "
+               "PeerJ paper beside this one prints none either, so there is nothing to match "
+               "in the PDF; the portal is where they are entered and where they will be "
+               "published. Confirm each against the author's own ORCID record before saving: "
+               "the checksums prove the identifiers are well-formed, not that they belong to "
+               "the right people.\n")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "
