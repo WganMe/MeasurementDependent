@@ -81,6 +81,44 @@ CLOSING = re.compile(
     re.IGNORECASE)
 INITIAL = re.compile(r"\b[A-Z]\.[A-Z][a-z]*\.")
 
+# ---------------------------------------------------------------------------------------
+# THE FORM'S TWO CATEGORIES, AND ITS HARD RULE.
+#
+# The PeerJ submission form does not present the CRediT taxonomy as such. It presents ONE
+# QUESTION PER CATEGORY, with a multi-select of the five authors, and states for each
+# category: "Every author must have at least one contribution from this category". An author
+# who qualifies for neither is not offered "None of the above" for themselves -- the rule is
+# that every author must appear at least once in EACH category.
+#
+# So the form's categories have to be mapped onto CRediT terms, and the mapping is by role:
+#
+#   CATEGORY 1  "Substantial contributions to the conception or design of the work; or the
+#                acquisition, analysis, or interpretation of data for the work."
+#   CATEGORY 2  "Drafting the work or revising it critically for important intellectual
+#                content."
+#
+# The mapping below is the assignment used for THIS manuscript, stated explicitly because the
+# form's questions do not use CRediT's names and a reader cannot derive it from the taxonomy.
+# Each author's CRediT roles are shown against it by --for-form.
+CATEGORY_1 = {
+    "conceptualization":        "Which authors conceived and designed the experiments?",
+    "methodology":              "Which authors conceived and designed the experiments?",
+    "software":                 "Which authors performed the experiments?",
+    "data curation":            "Which authors performed the experiments?",
+    "formal analysis":          "Which authors analyzed the data?",
+    "investigation":            "Which authors analyzed the data?",
+}
+CATEGORY_2 = {
+    "writing \u2013 original draft": "Which authors drafted the work?",
+    "writing \u2013 review & editing":
+        "Which authors revised it critically for important content?",
+    "visualization":            "Which authors prepared the figures and/or tables?",
+}
+# The role sets from the statement are LOWERCASE (`TAXONOMY` is built that way), so the keys
+# above are lowercase too. Comparing them against the Title Case CRediT names silently matched
+# nothing and reported that every author failed both categories -- a bug in this check, not in
+# the statement.
+
 
 def statement() -> str:
     m = re.search(r"\\authorcontributions\{(.*?)\}", TEX.read_text(), re.DOTALL)
@@ -165,7 +203,33 @@ def check(text: str, roles: dict[str, set[str]]) -> list[str]:
                 "issued by UQU. The eligible applicant is the UQU author."
                 % (name, inst))
 
-    return problems
+    # THE FORM'S HARD RULE, checked here because it is checkable. It states, for each of its
+    # two categories: "Every author must have at least one contribution from this category."
+    #
+    # This is the constraint the CRediT statement does NOT have. A statement may legitimately
+    # give one author only "Writing - review & editing"; the form cannot express that, because
+    # a category is answered as ONE multi-select and an author who belongs to neither category
+    # has no box to stand in. So the statement has to be widened, and this reports exactly
+    # which authors fail rather than letting it be discovered at the portal.
+    #
+    # REPORTED, NOT FATAL. Resolving it means asserting what a co-author actually did, which
+    # only the authors can settle; a CI that is permanently red until someone answers an
+    # authorship question teaches everyone to ignore red. The same reasoning already governs
+    # the grant-number check (see its comment: "a run that is permanently red trains everyone
+    # to ignore it"). The gap is therefore printed as BLOCKING FOR SUBMISSION and exits 0.
+    form_gaps = []
+    for who, got in roles.items():
+        name, inst, _ = AUTHORS[who]
+        for label, cat in (("Category 1", CATEGORY_1), ("Category 2", CATEGORY_2)):
+            if not (got & set(cat)):
+                form_gaps.append(
+                    "%s (%s) has no %s contribution: the statement gives %s. The form "
+                    "requires one from every author for each category, and offers no 'none' "
+                    "for an individual author."
+                    % (name, inst, label,
+                       ", ".join(sorted(got)) or "nothing"))
+
+    return problems, form_gaps
 
 
 def main(argv: list[str]) -> int:
@@ -189,10 +253,26 @@ def main(argv: list[str]) -> int:
             for role, value in CREDIT:
                 if role.lower() in got:
                     print("    tick    %-30s value=%d" % (role, value))
+            c1 = sorted(got & set(CATEGORY_1))
+            c2 = sorted(got & set(CATEGORY_2))
+            print("    CATEGORY 1: %s" % (", ".join(c1) if c1 else "*** NONE ***"))
+            print("    CATEGORY 2: %s" % (", ".join(c2) if c2 else "*** NONE ***"))
+            print()
+
+        # The form asks its questions one category at a time, as a multi-select, so what is
+        # actually needed is the LIST OF NAMES per question. Printed from the same mapping the
+        # check uses, so the two cannot disagree.
+        print("=" * 74)
+        print("THE FORM'S QUESTIONS -- tick these names\n")
+        for q in dict.fromkeys(list(CATEGORY_1.values()) + list(CATEGORY_2.values())):
+            who_q = [AUTHORS[w][0] for w, r in roles.items()
+                     if q in [CATEGORY_1.get(x) or CATEGORY_2.get(x) for x in r]]
+            print("  %s" % q)
+            print("      %s" % ("; ".join(who_q) if who_q else "(nobody -- see BLOCKING)"))
             print()
         return 0
 
-    problems = check(text, roles)
+    problems, form_gaps = check(text, roles)
     if not a.quiet:
         print("CRediT contribution statement")
         for who, (name, inst, _) in AUTHORS.items():
@@ -206,6 +286,18 @@ def main(argv: list[str]) -> int:
             for p in problems:
                 print("  - %s" % p)
         return 1
+    if form_gaps and not a.quiet:
+        print("BLOCKING FOR SUBMISSION -- the form requires a contribution in BOTH")
+        print("categories from EVERY author, and these authors have only one of the two.")
+        print("This is an authorship question, not a formatting one:")
+        for g in form_gaps:
+            print("  - %s" % g)
+        print()
+        print("Fix it in the form, or widen \\authorcontributions in source/main.tex to")
+        print("match what each author actually did -- then this check goes quiet for")
+        print("both. It is not fatal here because asserting a co-author's contribution is")
+        print("a decision only the authors can make.")
+        print()
     if not a.quiet:
         print("OK: the statement is a valid CRediT assignment and is internally consistent.")
         print("    Compare it against the form with:  python3 check_credit_roles.py --for-form")
