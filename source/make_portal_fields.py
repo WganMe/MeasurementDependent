@@ -125,6 +125,21 @@ def orcid_ok(orcid: str) -> bool:
     return ("X" if result == 10 else str(result)) == digits[15]
 
 
+def keywords_from_tex() -> list[str]:
+    """The manuscript's \\keyword{} as a list, in its own order.
+
+    Read rather than retyped so a keyword added to the paper appears here, and one removed
+    from the paper stops being offered at the portal. The peerJ class disables the keywords
+    block, so this list exists ONLY in the source and in the portal -- there is no printed
+    list in the manuscript for a reader to compare against.
+    """
+    tex = (OUT / "source" / "main.tex").read_text(encoding="utf-8")
+    m = re.search(r"\\keyword\{([^{}]*)\}", tex, re.S)
+    if not m:
+        raise SystemExit("REFUSING: no \\keyword{} in source/main.tex")
+    return [k.strip() for k in re.sub(r"\s+", " ", m.group(1)).split(";") if k.strip()]
+
+
 def authors_from_tex(pdf: pathlib.Path) -> list[tuple[str, str]]:
     """(author, affiliation) pairs, in the order the manuscript lists them."""
     tex = (OUT / "peerj-main.tex").read_text(encoding="utf-8")
@@ -269,12 +284,24 @@ def main() -> int:
         problems.append("abstract contains a linebreak")
 
     authors = authors_from_tex(pdf)
+    kw = keywords_from_tex()
     for name, _affil in authors:
         o = ORCIDS.get(name)
         if o is None:
             problems.append("no ORCID recorded for %s" % name)
         elif not orcid_ok(o):
             problems.append("ORCID for %s (%s) fails its checksum" % (name, o))
+    # The keywords checklist item is NEGATIVE: they must NOT be listed in the manuscript. That
+    # is checkable. A printed list puts two keywords adjacent, so the test looks for adjacent
+    # PAIRS; a single keyword appearing as ordinary prose ("An urban sensor network is usually
+    # presented as a fixed capability") is not a list and must not trip this.
+    pdf_words = re.sub(r"\s+", " ", pdf_text(pdf)).lower()
+    adjacent = sum(1 for a, b in zip(kw, kw[1:])
+                   if (a.lower() + "; " + b.lower())[:40] in pdf_words)
+    if adjacent:
+        problems.append("the manuscript appears to PRINT the keyword list (%d adjacent pair(s) "
+                        "found); PeerJ asks that keywords not be listed in the manuscript"
+                        % adjacent)
     if problems:
         raise SystemExit("REFUSING: " + "; ".join(problems))
 
@@ -396,12 +423,22 @@ def main() -> int:
                "paper's own subject line reads *Spatial and Geographic Information Science*, so "
                "take whichever the portal's list actually offers.\n")
 
-    doc.append("## Keywords\n")
-    doc.append("From `\\keyword{}` in the manuscript. PeerJ's class disables the keywords "
-               "block, so this is the only place they appear:\n")
+    # KEYWORDS: read from the manuscript, not retyped. The portal takes UP TO 10 and asks for
+    # "the core concepts of your manuscript"; the manuscript's \keyword{} carries six. Its
+    # checklist also states the keywords must NOT appear listed in the manuscript itself --
+    # true here, because wlpeerj.cls disables the keywords block, so the portal is the only
+    # place they are listed. Checked against the built PDF rather than assumed.
+    doc.append("## Keywords — %d, the portal takes up to 10\n" % len(kw))
+    doc.append("From `\\keyword{}` in the manuscript, one per line for the portal's Add box. "
+               "PeerJ's class disables the keywords block, so the portal is the **only** place "
+               "they are listed -- which is what the checklist's *\"keywords are not listed in "
+               "your manuscript\"* item asks for.\n")
+    for k in kw:
+        doc.append("- `%s`" % k)
+    doc.append("")
+    doc.append("As one line, if the portal's field prefers that:\n")
     doc.append("```text")
-    doc.append("urban sensor networks; smart-city infrastructure; spatial clustering; "
-               "spatial asymmetry; point-pattern analysis; longitudinal analysis")
+    doc.append("; ".join(kw))
     doc.append("```\n")
 
     doc.append("## Character handling\n")

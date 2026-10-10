@@ -90,9 +90,18 @@ PeerJ's subjects are a fixed taxonomy: the portal presents them and you tick the
 
 PeerJ names this subject **Systems**, not *Science*; the published example paper's own subject line reads *Spatial and Geographic Information Science*, so take whichever the portal's list actually offers.
 
-## Keywords
+## Keywords — 6, the portal takes up to 10
 
-From `\keyword{}` in the manuscript. PeerJ's class disables the keywords block, so this is the only place they appear:
+From `\keyword{}` in the manuscript, one per line for the portal's Add box. PeerJ's class disables the keywords block, so the portal is the **only** place they are listed -- which is what the checklist's *"keywords are not listed in your manuscript"* item asks for.
+
+- `urban sensor networks`
+- `smart-city infrastructure`
+- `spatial clustering`
+- `spatial asymmetry`
+- `point-pattern analysis`
+- `longitudinal analysis`
+
+As one line, if the portal's field prefers that:
 
 ```text
 urban sensor networks; smart-city infrastructure; spatial clustering; spatial asymmetry; point-pattern analysis; longitudinal analysis
