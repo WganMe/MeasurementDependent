@@ -22,6 +22,9 @@ cd "$(dirname "$0")"
 # 1. regenerate the PeerJ documents from the neutral source
 (cd source && python3 convert_to_peerj.py)
 
+# 1b. the portal's plain-text Title / Short Title / Abstract fields, extracted from the PDF
+python3 source/make_portal_fields.py
+
 # 2. typeset: first pass, BibTeX, then enough passes to resolve everything
 #
 # BibTeX is run only when the document actually cites something. The supplement is

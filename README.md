@@ -180,6 +180,9 @@ sequence matches `peerj-20977.pdf` exactly; `Fig.`/`Figure` split follows the do
 | Figures uploaded as separate files, one per figure (300 dpi on resubmission) | Figures are separate PDFs in `figures/` — upload individually |
 | Figure/table citation style (`Fig.`, `Table 1`) | **Met** — counted in the built PDF: 5 mid-sentence `Fig.` (`Fig. 1`, `Fig. 2`, `Fig. 4`), the 4 captions read `Figure N.`, and all 7 tables are cited as `Table N` |
 | Manuscript and Source files: *"Complete PDF manuscript, TEX, BIB, hi-res figures and tables"* | **Met** — the loose `.tex` and `.bib` are both named accepted types; only `wlpeerj.cls` is not, and `latex_source.zip` covers it |
+| Portal **Title** ≤ 250 characters | Met — 80. Extracted to `portal-fields.md` |
+| Portal **Short Title** ≤ 50 characters | Met — 45. The portal is the only thing that asks for one, so it is a recommendation, not read from the paper |
+| Portal **Abstract** ≤ **2000 characters** (not words), no linebreaks, special characters correct | Met — **1287** characters, 199 words, one line. Extracted from the built PDF, with U+2212 MINUS SIGN normalised to an ASCII hyphen |
 
 ## Fixed 2026-10-09 — two publishable defects
 

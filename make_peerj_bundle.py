@@ -95,10 +95,17 @@ Do not upload `peerj-main.tex` on its own in any case: it will not compile witho
 
 ## Portal values
 
-`portal-values.md` carries the title, abstract, subjects, keywords, authors, affiliations,
-ORCIDs and the data DOI, copied from the manuscript rather than retyped. Nothing in this
-bundle needs a decision at upload time except the subjects, which the portal asks you to
-choose from its own list.
+Two files cover the portal:
+
+- `portal-fields.md` — the **Title**, **Short Title** and **Abstract** as paste-ready text.
+  The portal's Title/Abstract tab is not the manuscript: they are plain-text fields, the
+  abstract limit is **2000 characters rather than 2000 words**, and the checklist warns about
+  linebreaks and special characters. All three values are extracted from the built PDF, so
+  paste them rather than copying out of the PDF by hand.
+- `portal-values.md` — the title, abstract, subjects, keywords, authors, affiliations, ORCIDs
+  and the data DOI, copied from the manuscript rather than retyped. Nothing in this bundle
+  needs a decision at upload time except the subjects, which the portal asks you to choose
+  from its own list.
 
 ## Check before you upload
 
@@ -278,6 +285,16 @@ def main():
             z.write(os.path.join(PJ, f), f)
     shutil.copy2(os.path.join(PJ, "portal-values.md"),
                  os.path.join(OUT, "portal-values.md"))
+    # The portal's Title / Short Title / Abstract are plain-text fields with their own
+    # character limits (250 / 50 / 2000 CHARACTERS), and the checklist warns about linebreaks
+    # and special characters in them. They are extracted from the built PDF by
+    # source/make_portal_fields.py so they cannot drift from the manuscript.
+    for extra in ("portal-fields.md",):
+        p = os.path.join(PJ, extra)
+        if os.path.exists(p):
+            shutil.copy2(p, os.path.join(OUT, extra))
+        else:
+            raise SystemExit("REFUSING: %s missing. Run source/make_portal_fields.py." % extra)
 
     open(os.path.join(OUT, "START_HERE.md"), "w", encoding="utf-8").write(START.format(day=DAY))
     open(os.path.join(OUT, "build-report.txt"), "w", encoding="utf-8").write("\n".join(report) + "\n")
