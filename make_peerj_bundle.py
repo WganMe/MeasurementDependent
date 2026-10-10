@@ -25,8 +25,44 @@ UPLOADS = {
     "peerj-si.pdf": "2_supplemental_information_S1.pdf",
     "peerj-cover.pdf": "3_author_cover_page.pdf",
 }
+
+# The four figure PDFs the manuscript cites, under their source names, relative to `figures/`.
+# `peerj-main.tex` includes them with a `figures/` graphics path, so the manuscript's source
+# archive needs both the files and that directory layout to typeset.
+FIGURES = ["figC0_study_area.pdf", "figC1_population.pdf", "figC2_clustering.pdf",
+           "figC8_tolerance.pdf"]
+
+# Copied loose into `latex_source/` for READING only -- the uploadable form is the two
+# archives below, not this folder. Figures are deliberately absent: they are already in
+# `figures/` at the bundle root, and repeating them here would duplicate 78 KB for nothing.
 SOURCES = ["peerj-main.tex", "peerj-si.tex", "peerj-cover.tex", "references.bib",
            "wlpeerj.cls"]
+
+# TWO ARCHIVES, matching the portal's TWO source slots, each holding only what its own
+# document needs. Both were proved to compile from their own set with nothing missing:
+#
+#   main  tex + bib + class + the four cited figures   -> 22 pp, 0 errors
+#   si    tex + class                                  -> 17 pp, 0 errors
+#
+# The supplement cites nothing, so it carries no `.bib`, and it includes no graphics.
+# `wlpeerj.cls` is the one file type PeerJ names in neither list, and its rule for that is
+# "For other file types, please upload a zip file"; so the class goes inside both archives,
+# which is what lets either one be typeset from its archive alone.
+#
+# THE COVER IS NOT HERE. It is uploaded on its own as `3_author_cover_page.pdf`, so
+# `peerj-cover.tex` belongs to neither archive; it is kept loose in `latex_source/` so the
+# cover page can still be regenerated or read.
+# The manuscript's figures live under `figures/`, and `peerj-main.tex` reaches them through
+# \graphicspath{{figures/}}, so the archive keeps that layout: the figures are stored as
+# `figures/<name>` inside `source_main.zip`, and the archive typesets as it stands.
+ARCHIVES = (
+    ("source_main.zip", [("figures/" + f, "figures/" + f) for f in FIGURES]
+     + [("peerj-main.tex", "peerj-main.tex"),
+        ("references.bib", "references.bib"),
+        ("wlpeerj.cls", "wlpeerj.cls")]),
+    ("source_si.zip", [("peerj-si.tex", "peerj-si.tex"), ("wlpeerj.cls", "wlpeerj.cls")]),
+)
+# Each entry is (path on disk relative to the submission root, name inside the zip).
 
 START = """# PeerJ submission bundle ({day})
 
@@ -55,17 +91,31 @@ a zip file containing the file you want to upload."*
 | `3_author_cover_page.pdf` | Manuscript | PDF — accepted |
 | `figures/Figure 1.pdf` … `Figure 4.pdf` | Manuscript (figures) | PDF — accepted |
 | `2_supplemental_information_S1.pdf` | Supplemental Files | PDF — accepted |
-| `latex_source/*.tex` | Manuscript and Source files | TEX — accepted (the portal says so by name) |
-| `latex_source/references.bib` | Manuscript and Source files | BIB — accepted (the portal says so by name) |
-| `latex_source/wlpeerj.cls` | — | **CLS is the one type PeerJ does not name.** Send it inside `latex_source.zip` |
-| `latex_source.zip` | Supplemental Files (Datasets) | ZIP — accepted; holds all five sources |
+| `source_main.zip` | Manuscript and Source files | ZIP — accepted; the **manuscript's** own sources |
+| `source_si.zip` | Supplemental Files (Datasets) | ZIP — accepted; the **supplement's** own sources |
+| (loose) `peerj-main.tex`, `references.bib` | Manuscript and Source files | TEX and BIB — both accepted (the portal names them) |
+| (loose) `wlpeerj.cls` | — | **CLS is the one type PeerJ does not name**, hence the zips |
 
-Every file in this bundle is an accepted type except `wlpeerj.cls`, and that one is covered
-by `latex_source.zip`, which PeerJ accepts under Datasets.
+Every file in this bundle is an accepted type except `wlpeerj.cls`, which is inside both
+archives; PeerJ accepts ZIP under Datasets.
 
-`latex_source/` is kept loose here for reading. The `.tex` and `.bib` in it are uploadable
-as they are; only the `.cls` needs the zip around it, so **upload `latex_source.zip`** and the
-typing is right either way.
+## TWO source archives, one per document
+
+The portal has two source slots — *Manuscript and Source files* and *Supplemental Files* — so
+there is one archive for each document, holding only what that document needs. Both were
+proved to typeset **alone**, from an empty directory:
+
+| Archive | Contents | Typesets alone as |
+| --- | --- | --- |
+| `source_main.zip` | `peerj-main.tex`, `references.bib`, `wlpeerj.cls`, `figures/` | 22 pp, 0 errors |
+| `source_si.zip` | `peerj-si.tex`, `wlpeerj.cls` | 17 pp, 0 errors |
+
+The supplement cites nothing, so it carries no `.bib`; it includes no graphics either. The
+class is in both, which is what lets either archive be built on its own.
+
+**`peerj-cover.tex` is in neither archive.** The cover page is uploaded as its own file
+(`3_author_cover_page.pdf`), not as a source; its `.tex` is kept loose in `latex_source/` so
+the page can be regenerated or read.
 
 ## Upload the four figures individually
 
@@ -77,18 +127,18 @@ names (`figC0_study_area.pdf`, ...) are kept beside them.
 The two are different here: `Figure 1.pdf` is the merge-tolerance figure (cited first) and
 `Figure 4.pdf` is the study area (cited last). Keep the pairs together when uploading.
 
-## Source files: send the zip, or the .tex and .bib direct
+## Source files: the two archives, or the .tex and .bib direct
 
 PeerJ's *Manuscript and Source files* section asks for "Complete PDF manuscript, TEX, BIB, 
 hi-res figures and tables", so `.tex` and `.bib` are named accepted types and can be uploaded
-as they are. `.cls` is the single file in this bundle that PeerJ does not name; its rule for
-that case is *"For other file types, please upload a zip file containing the file you want to
-upload."* So:
+as they are. `.cls` is the single file in the bundle that PeerJ does **not** name; its rule
+for that case is *"For other file types, please upload a zip file containing the file you want
+to upload."* So:
 
-- `latex_source.zip` — **upload this** if PeerJ asks for the sources. One upload, all five
-  files, and every type in it is acceptable inside the zip.
-- `latex_source/` — the same five files loose, kept for reading here. Fine to upload as-is
-  except for `wlpeerj.cls`.
+- `source_main.zip` and `source_si.zip` — **upload these** if PeerJ asks for the sources. One
+  archive per document, matching the portal's own two slots, and each typesets on its own.
+- `latex_source/` — the loose set, kept for reading. The `.tex` and `.bib` in it are
+  uploadable as they are; only `wlpeerj.cls` needs a zip around it.
 
 Do not upload `peerj-main.tex` on its own in any case: it will not compile without
 `wlpeerj.cls` and `references.bib`.
@@ -275,14 +325,10 @@ def main():
 
     for f in SOURCES:
         shutil.copy2(os.path.join(PJ, f), os.path.join(OUT, "latex_source", f))
-    # `wlpeerj.cls` is the one file in this bundle whose type PeerJ does not name in either
-    # list. PeerJ's rule for an unnamed type: "For other file types, please upload a zip file
-    # containing the file you want to upload." Wrapping all five sources in one archive is
-    # the form that is correct regardless, and it keeps the source set together.
-    tex_zip = os.path.join(OUT, "latex_source.zip")
-    with zipfile.ZipFile(tex_zip, "w", zipfile.ZIP_DEFLATED) as z:
-        for f in SOURCES:
-            z.write(os.path.join(PJ, f), f)
+    for zip_name, members in ARCHIVES:
+        with zipfile.ZipFile(os.path.join(OUT, zip_name), "w", zipfile.ZIP_DEFLATED) as z:
+            for on_disk, in_zip in members:
+                z.write(os.path.join(PJ, on_disk), in_zip)
     shutil.copy2(os.path.join(PJ, "portal-values.md"),
                  os.path.join(OUT, "portal-values.md"))
     # The portal's Title / Short Title / Abstract are plain-text fields with their own

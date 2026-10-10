@@ -179,7 +179,8 @@ sequence matches `peerj-20977.pdf` exactly; `Fig.`/`Figure` split follows the do
 | **Reviews are published** alongside the article | Noted — author's choice |
 | Figures uploaded as separate files, one per figure (300 dpi on resubmission) | Figures are separate PDFs in `figures/` — upload individually |
 | Figure/table citation style (`Fig.`, `Table 1`) | **Met** — counted in the built PDF: 5 mid-sentence `Fig.` (`Fig. 1`, `Fig. 2`, `Fig. 4`), the 4 captions read `Figure N.`, and all 7 tables are cited as `Table N` |
-| Manuscript and Source files: *"Complete PDF manuscript, TEX, BIB, hi-res figures and tables"* | **Met** — the loose `.tex` and `.bib` are both named accepted types; only `wlpeerj.cls` is not, and `latex_source.zip` covers it |
+| Manuscript and Source files: *"Complete PDF manuscript, TEX, BIB, hi-res figures and tables"* | **Met** — the loose `.tex` and `.bib` are both named accepted types; only `wlpeerj.cls` is not, and it is inside **`source_main.zip`** and **`source_si.zip`** |
+| One source archive per document (the portal has two source slots) | **Met** — `source_main.zip` (tex + bib + class + `figures/`) typesets to 22 pp alone; `source_si.zip` (tex + class) typesets to 17 pp alone. Both proved from an empty directory. `peerj-cover.tex` is in neither: the cover is uploaded on its own |
 | Portal **Title** ≤ 250 characters | Met — 80. Extracted to `portal-fields.md` |
 | Portal **Short Title** ≤ 50 characters | Met — 45. The portal is the only thing that asks for one, so it is a recommendation, not read from the paper |
 | Portal **Abstract** ≤ **2000 characters** (not words), no linebreaks, special characters correct | Met — **1287** characters, 199 words, one line. Extracted from the built PDF, with U+2212 MINUS SIGN normalised to an ASCII hyphen |
