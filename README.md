@@ -6,23 +6,35 @@ overlay ("geocomputation and applied spatial statistics"). PeerJ evaluates on **
 soundness, not novelty** — which removes the paper's one real weakness. See
 `source/admin/editorial/PEERJ_ASSESSMENT.md`.
 
-This directory is **generated**, not hand-edited. The generators live in `source/` and write
-their output one level up, into this folder:
+This directory is **generated**, not hand-edited. One command rebuilds everything:
 
 ```sh
-cd source
-python3 convert_to_peerj.py            # writes ../peerj-main.tex, ../peerj-si.tex, ../figures/
-python3 make_peerj_cover.py            # writes ../peerj-cover.tex
-cd ..
-export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
-for d in peerj-main peerj-si peerj-cover; do for i in 1 2; do pdflatex -interaction=nonstopmode $d.tex; done; done
-bibtex peerj-main && bibtex peerj-si
-for d in peerj-main peerj-si peerj-cover; do for i in 1 2; do pdflatex -interaction=nonstopmode $d.tex; done; done
-python3 make_peerj_bundle.py           # writes dist/PeerJ_submission_<date>/ + .zip
+./build.sh
 ```
 
-Three `pdflatex` passes are needed, not two: `peerj-main.tex` uses 39 cross-reference labels
-(figures, equations, tables), and two passes leave some unresolved.
+It regenerates the three documents from `source/`, typesets them, checks the result and
+builds the upload bundle. **It exits non-zero rather than shipping a half-built document.**
+
+Doing it by hand, in this order:
+
+```sh
+cd source && python3 convert_to_peerj.py && cd ..   # ../peerj-main.tex, ../peerj-si.tex, ../figures/
+source/make_peerj_cover.py                          # ../peerj-cover.tex (also run by convert)
+export PATH=/usr/local/texlive/2026/bin/x86_64-linux:$PATH
+pdflatex -interaction=nonstopmode peerj-main.tex    # 1st pass writes the .aux
+bibtex peerj-main                                   # reads the .aux, writes the .bbl
+for i in 1 2 3; do pdflatex -interaction=nonstopmode peerj-main.tex; done
+python3 make_peerj_bundle.py                        # dist/PeerJ_submission_<date>/ + .zip
+```
+
+**The order matters, and two passes are not enough.** BibTeX must run after a pass that has
+written the `.aux`, and LaTeX only reads the `.bbl` on a pass after BibTeX. Running
+`pdflatex` twice produced *"No file peerj-main.bbl"* on the first pass and left **72
+citations undefined and the paper at 19 pages instead of 22**. Three passes resolve the 39
+cross-reference labels.
+
+`bibtex peerj-si` is skipped by `build.sh`: the supplement is tables-only, has no
+`\citation` commands, and BibTeX treats that as an error and exits 2.
 
 ## Layout
 
@@ -108,8 +120,15 @@ without it.
   noun phrase. This matches PeerJ's published style: the template writes `\section*{Introduction}`
   and a published PeerJ paper (20977) carries `INTRODUCTION`/`RESULTS`/`CONCLUSION` with **zero**
   numeric `Section N` references. (Numbering is *permitted* by the class but is not PeerJ's style.)
-- Citations: the same Harvard conversion as the IJGIS build (30 `\citep`, 12 `\citet`,
-  6 `\citeyearpar`), rendering as `(Author et al., 2024)` — confirmed identical to PeerJ's.
+- Citations: the same Harvard conversion as the IJGIS build (29 `\citep`, 12 `\citet`,
+  6 `\citeyearpar`), rendering as `(Author et al., 2024)`.
+
+  > **This line claimed the rendering was "confirmed identical to PeerJ's" and it was not.**
+  > For the whole life of this build the citations rendered *without* the comma —
+  > `(Osamy et al. 2022)` — because `main.tex` carries `\bibpunct[, ]{(}{)}{;}{a}{}{,}`,
+  > which overrides the class and removes it. Nobody compared the two. See
+  > [Fixed 2026-10-11](#fixed-2026-10-11--citations-rendered-without-peerjs-comma) below; the
+  > claim is now enforced by a check on the built PDF, not by this sentence.
 - Back matter as unnumbered sections in PeerJ's order: Funding, Author Contributions, Competing
   Interests, Data Availability, Supplemental Information, contributor notes, AI declaration, then
   Acknowledgments + AI Use Disclosure, then References.
@@ -233,6 +252,36 @@ for i in 1 2; do pdflatex -interaction=nonstopmode peerj-main.tex; done
 ```
 
 Verified: 22 pp main + 17 pp supplement, **0 errors, 0 undefined citations, 0 overfull**.
+
+## Fixed 2026-10-11 — citations rendered without PeerJ's comma
+
+PeerJ writes `(Osamy et al., 2024)`. This manuscript printed `(Osamy et al. 2022)` — no
+comma — for the entire life of the build, while the README above asserted the rendering was
+"identical to PeerJ's". The claim was never tested.
+
+**Cause.** `main.tex` carries its own punctuation directive:
+
+```latex
+\bibpunct[, ]{(}{)}{;}{a}{}{,}
+```
+
+`wlpeerj.cls` loads `natbib` and sets `\bibliographystyle{apalike}`, which already produces
+the comma form. The source's `\bibpunct` **overrides** it and drops the comma.
+
+**Measured, not inferred.** A minimal document using the class alone renders
+`(Clark and Evans, 1954)`; adding that one `\bibpunct` line renders `(Clark and Evans 1954)`.
+So the correct action for `wlpeerj` is to *delete* the source's punctuation line and let the
+class supply its own. `convert_to_peerj.py` now does exactly that.
+
+**Guarded.** `make_peerj_bundle.py` counts both forms in the built PDF and refuses to build
+if the comma-less form dominates, because the style is decided by `natbib` at typesetting
+time — a source file that looks correct can still print the wrong form.
+
+```text
+citations: 14 with a comma, 0 without (PeerJ writes "(Author, 2024)")
+```
+
+Verified by re-injecting `\bibpunct` into the generated `.tex`: the build exits non-zero.
 
 ## Fixed 2026-10-11 — the bundle shipped Figure 1 and Figure 4 swapped
 
