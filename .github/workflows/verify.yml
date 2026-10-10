@@ -333,7 +333,14 @@ jobs:
             # builds, intolerant of a real numeric, structural or textual
             # change. See the module docstring for why, and for the
             # measured size of the drift this absorbs.
-            if python3 ci_report_drift.py $(cat /tmp/changed.txt); then
+            #
+            # The classifier lives in source/, NOT at the root, and this step
+            # deliberately runs from the root so the check covers both halves of
+            # the tree. The path must therefore be spelled out: running the bare
+            # name made the classifier unfindable, so its verdict was never
+            # reached and the build's legitimate float drift was reported as a
+            # failure.
+            if python3 source/ci_report_drift.py $(cat /tmp/changed.txt); then
               echo "All regenerated files agree with the committed copies."
               echo "The bytes differ only in the last bits of floating-point"
               echo "values, which is a library-build difference and not a"
