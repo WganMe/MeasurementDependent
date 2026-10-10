@@ -249,7 +249,7 @@ jobs:
       # applies to `run:` steps. So this path is written relative to the REPOSITORY ROOT,
       # which is why it says "source/" while the build steps above do not.
       - name: Upload the PDFs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: manuscript-pdfs
           path: |
@@ -276,7 +276,7 @@ jobs:
         run: python3 make_peerj_bundle.py
 
       - name: Upload the upload bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: peerj-submission-bundle
           path: |
