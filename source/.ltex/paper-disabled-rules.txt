@@ -1,0 +1,5 @@
+# Rules disabled because the source is LaTeX, not prose: the checker sees markup.
+WHITESPACE_RULE
+EN_UNPAIRED_QUOTES
+UPPERCASE_SENTENCE_START
+MORFOLOGIK_RULE_EN_US

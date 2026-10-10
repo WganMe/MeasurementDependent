@@ -1,0 +1,309 @@
+{
+ "sensors_rows": 1411,
+ "census_ids": 1906,
+ "readings_rows": 87962,
+ "readings_distinct_identifiers": 24,
+ "readings_variables": [
+  [
+   "NO2",
+   23059
+  ],
+  [
+   "Temperature",
+   14235
+  ],
+  [
+   "O3",
+   12853
+  ],
+  [
+   "PM10",
+   12621
+  ],
+  [
+   "PM2.5",
+   12621
+  ],
+  [
+   "CO",
+   12573
+  ]
+ ],
+ "reading_bearing": {
+  "n": 24,
+  "matched_via_sensor_name": 24,
+  "matched_via_raw_id_wrong_join": 0,
+  "in_census": 24,
+  "snapshot_only": 0,
+  "broker_mix": [
+   [
+    "aq_mesh_api",
+    16
+   ],
+   [
+    "LORA",
+    8
+   ]
+  ]
+ },
+ "matched": 1232,
+ "snapshot_only": 179,
+ "broker_mix_matched": [
+  [
+   "People Counting API",
+   407
+  ],
+  [
+   "NE Travel Data API",
+   310
+  ],
+  [
+   "Emote Air Quality Sensor",
+   134
+  ],
+  [
+   "Newcastle Council RSS feed",
+   88
+  ],
+  [
+   "aq_mesh_api",
+   64
+  ],
+  [
+   "Wunderground API",
+   51
+  ],
+  [
+   "Building External Sensor",
+   39
+  ],
+  [
+   "Car Park",
+   24
+  ],
+  [
+   "LORA",
+   23
+  ],
+  [
+   "Citizen Science Kits",
+   18
+  ],
+  [
+   "Bee Hives",
+   14
+  ],
+  [
+   "Water SONS",
+   10
+  ],
+  [
+   "Environment Agency Data API",
+   8
+  ],
+  [
+   "AURN Sensor",
+   6
+  ],
+  [
+   "Carbon Capture",
+   6
+  ],
+  [
+   "EML_RAIN",
+   6
+  ],
+  [
+   "School Weather station",
+   4
+  ],
+  [
+   "EML 3d wind sensor",
+   3
+  ],
+  [
+   "Foobot API",
+   3
+  ],
+  [
+   "Internal Building Sensors",
+   3
+  ],
+  [
+   "Key Building Strain Guages",
+   3
+  ],
+  [
+   "elm_sensors",
+   3
+  ],
+  [
+   "BGS API",
+   1
+  ],
+  [
+   "Hawkeye",
+   1
+  ],
+  [
+   "Nortech Power Sensor",
+   1
+  ],
+  [
+   "Weather Station",
+   1
+  ],
+  [
+   "Weather XML",
+   1
+  ]
+ ],
+ "broker_mix_snapshot_only": [
+  [
+   "People Counting API",
+   78
+  ],
+  [
+   "Internal Building Sensors",
+   47
+  ],
+  [
+   "Building External Sensor",
+   26
+  ],
+  [
+   "Wunderground API",
+   9
+  ],
+  [
+   "Newcastle Council RSS feed",
+   7
+  ],
+  [
+   "Car Park",
+   3
+  ],
+  [
+   "Emote Air Quality Sensor",
+   3
+  ],
+  [
+   "NE Travel Data API",
+   3
+  ],
+  [
+   "Water SONS",
+   2
+  ],
+  [
+   "EML_RAIN",
+   1
+  ]
+ ],
+ "largest_snapshot_only_feed": "People Counting API",
+ "building_feeds": {
+  "snapshot_only": 73,
+  "matched": 42,
+  "internal_only_matched": 3,
+  "external_only_matched": 39
+ },
+ "representativeness": {
+  "n_brokers_in_snapshot": 27,
+  "top_brokers": [
+   [
+    "People Counting API",
+    485
+   ],
+   [
+    "NE Travel Data API",
+    313
+   ],
+   [
+    "Emote Air Quality Sensor",
+    137
+   ],
+   [
+    "Newcastle Council RSS feed",
+    95
+   ],
+   [
+    "Building External Sensor",
+    65
+   ],
+   [
+    "aq_mesh_api",
+    64
+   ],
+   [
+    "Wunderground API",
+    60
+   ],
+   [
+    "Internal Building Sensors",
+    50
+   ]
+  ],
+  "reading_bearing_brokers": 2,
+  "reading_bearing_share_of_top8": 16
+ },
+ "snapshot_only_first_year": [
+  [
+   "absent from the archive",
+   179
+  ]
+ ],
+ "snapshot_only_brokers_absent_from_archive": [
+  [
+   "People Counting API",
+   78
+  ],
+  [
+   "Internal Building Sensors",
+   47
+  ],
+  [
+   "Building External Sensor",
+   26
+  ],
+  [
+   "Wunderground API",
+   9
+  ],
+  [
+   "Newcastle Council RSS feed",
+   7
+  ],
+  [
+   "Car Park",
+   3
+  ],
+  [
+   "Emote Air Quality Sensor",
+   3
+  ],
+  [
+   "NE Travel Data API",
+   3
+  ],
+  [
+   "Water SONS",
+   2
+  ],
+  [
+   "EML_RAIN",
+   1
+  ]
+ ],
+ "brokers_contributing_snapshot_only": [
+  "Building External Sensor",
+  "Car Park",
+  "EML_RAIN",
+  "Emote Air Quality Sensor",
+  "Internal Building Sensors",
+  "NE Travel Data API",
+  "Newcastle Council RSS feed",
+  "People Counting API",
+  "Water SONS",
+  "Wunderground API"
+ ]
+}

@@ -1,0 +1,295 @@
+name: verify
+
+# WHAT THIS PROVES
+#   Every push builds both PDFs and runs the repository's own checks. If it is
+#   green, then on a clean machine the supplement regenerates from the committed
+#   result files, every macro in the manuscript still matches the JSON it is
+#   read from, and both PDFs parse. That is the reproducibility claim the paper
+#   makes, checked mechanically rather than asserted.
+
+# WHAT IT DOES NOT PROVE -- stated here so the badge is not over-read
+#   It does NOT rebuild uo_archive_index.json, the per-year census index. That
+#   needs the 73.8 GB Newcastle archive. The gaps are specific, not just a size
+#   problem:
+#
+#   1. THE ARCHIVE IS NOT HERE. uo_archive_index.json -- the 2013-2026 instrument
+#      census that the analysis_* scripts count against -- is derived from the
+#      collection itself: set UO_ARCHIVE to its root and run build_archive_index.py.
+#      That step is NOT run in this workflow.
+#
+#   2. THE PUBLISHER APPENDS ROWS. Files in the archive grow after they are first
+#      downloaded, so the census depends on which snapshot was read. Nothing in
+#      uo_archive_index.json records that. UO_ARCHIVE_MANIFEST.json pins the
+#      snapshot by SHA-256 so a reader can tell whether their download is the one
+#      used, but it cannot make the derivation reproducible by itself.
+#
+#   3. THE CENSUS INDEX IS NOT REBUILT FROM ROWS. uo_archive_index.json was built
+#      from uo_sensor_cache.json, itself derived from an archive breadth-map, not
+#      by re-reading the archive row by row. A row-based rebuild gives a different
+#      2026 count (754 against the index's 706, the difference concentrated in
+#      Vehicles/Journey Time). This is a real discrepancy in the inputs, recorded
+#      rather than papered over, and it is why this workflow does not regenerate
+#      that file.
+#
+#   Note the two DIFFERENT census objects, which are easy to confuse:
+#   uo_archive_index.json (archive-derived, not rebuilt here) and
+#   uo_census_results.json (regenerated here from uo_sensor_cache.json, and the
+#   manuscript's declared source of every number).
+#
+#   A green badge therefore means: the CENSUS AND SNAPSHOT reproduce the COMMITTED
+#   RESULTS, and the COMMITTED RESULTS reproduce the MANUSCRIPT. It does not mean
+#   the archive index was re-derived from the raw feed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v5
+
+      # The documents pull packages that do not all come from the texlive-*
+      # packages that look sufficient. Each entry below was resolved against the
+      # Ubuntu noble file list rather than guessed, because a missing file kills
+      # the build with a fatal error and one round trip to CI is one too many:
+      #   texlive-plain-generic     <- soul.sty, ulem.sty
+      #   texlive-pictures          <- tikz.sty (some figures)
+      #   texlive-fonts-extra       <- bbm.sty
+      #   texlive-humanities        <- verse.sty
+      #
+      # The last two are TYPE 1 FONT OUTLINES, and they are the subtle ones.
+      # texlive-fonts-recommended ships the .tfm/.vf metrics for the URW and
+      # Computer Modern fonts but NOT the .pfb outlines; those arrive only as
+      # Recommends, which --no-install-recommends drops. Without them pdftex
+      # substitutes bitmap fonts and microtype then aborts the build with
+      #   ! pdfTeX error (font expansion): auto expansion is only possible
+      #     with scalable fonts.
+      #   fonts-urw-base35          <- P052 (URW Palatino) outlines, for mathpazo
+      #   cm-super                  <- sfrm/sftt/sfss outlines, for the T1 CM fonts
+      - name: Install toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-publishers texlive-science \
+            texlive-plain-generic texlive-pictures \
+            texlive-fonts-recommended texlive-fonts-extra \
+            texlive-humanities \
+            fonts-urw-base35 cm-super \
+            poppler-utils python3 python3-numpy python3-scipy \
+            python3-matplotlib
+
+      # Record the versions that produced this run. Without this the badge says
+      # "it worked" with no evidence of WHAT worked, and a later failure cannot
+      # be attributed to a tool change.
+      - name: Record toolchain versions
+        run: |
+          echo "### toolchain" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          {
+            pdflatex --version | head -1
+            bibtex --version | head -2 | tail -1
+            python3 --version
+            python3 -c 'import numpy, scipy; print("numpy", numpy.__version__, "| scipy", scipy.__version__)'
+            kpsewhich natbib.sty booktabs.sty siunitx.sty float.sty
+          } 2>&1 | tee -a "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      # The supplement is generated. Regenerating it first means the build tests
+      # the generator as well as the document, and the drift check at the end
+      # then covers make_supplement.py.
+      - name: Regenerate the supplement
+        run: python3 make_supplement.py
+
+      # The census and the model are the manuscript's DECLARED source of every
+      # number (main.tex line 8), so they are regenerated here from the
+      # committed cache and census -- no archive, no /tmp state, no network.
+      # The tree check at the end of the job fails if either moves.
+      - name: Regenerate the census and the model
+        run: |
+          python3 longitudinal_census.py
+          python3 census_model.py
+
+      # The UQU publication-support grant number appears in the funding
+      # statement and the acknowledgements, and UQU requires the same number
+      # in both. Both variable fields are issued only on award, so while the
+      # manuscript is under review the identifier is 26UQUXXXXXXGSSRXX.
+      #
+      # NOT --strict: a manuscript under review legitimately has no grant
+      # number yet, and a run that is permanently red trains everyone to
+      # ignore it. Malformed numbers and carriers that disagree still fail
+      # here, in either mode. The placeholder is reported, and becomes fatal
+      # in a release run, where it is invoked with --strict.
+      - name: Check the UQU grant number
+        run: python3 check_grant_number.py
+
+      # The PeerJ cover page is generated from the manuscript by make_peerj_cover.py
+      # and checked against it, so its title, authors and affiliations cannot drift
+      # from peerj-main.tex. It is built and verified by the PeerJ bundle script
+      # (../make_peerj_bundle.py), not here.
+
+      # The submission form's Contributor Roles must say what the manuscript's
+      # CRediT statement says. The form had all 14 roles ticked for the first
+      # author, including Supervision, which a referee had already required
+      # removed, and Funding acquisition, which the statement did not carry at
+      # all. Run with --for-form to print what to tick per author.
+      - name: Check the CRediT contribution statement
+        run: python3 check_credit_roles.py
+
+      # The supplement is a separate document with its own \Title, and nothing
+      # in the build compared the two. Its source header kept a working title
+      # the manuscript had already dropped, and that string shipped inside the
+      # submission bundle, so a reader could not tell which document was
+      # current. Also checks the S numbering and the citation rule.
+      - name: Check the supplement is consistent with the manuscript
+        run: python3 check_supplement.py
+
+      # Every macro in main.tex must equal the JSON value it is read from. This
+      # is the paper's central claim about its own numbers, so it is a gate.
+      - name: Check every macro against its result file
+        run: python3 verify_paper_numbers.py
+
+      # The benchmark snapshot is committed, so these five can be re-run from
+      # the checkout alone. They must reproduce their committed results exactly;
+      # the tree check at the end of this job then fails if they did not.
+      # UO_DB is deliberately NOT set, so the default in-repo path is exercised.
+      - name: Re-run the analyses that read the benchmark snapshot
+        run: |
+          for s in analysis_snapshot.py analysis_snapdupes.py \
+                   analysis_feeds.py analysis_exclusions.py analysis_rarefy.py; do
+            echo "--- $s"
+            python3 "$s"
+          done
+
+      - name: Estimator known-answer controls
+        run: python3 verify_estimators.py
+
+      # Matplotlib embeds Type 3 bitmap fonts by default (pdf.fonttype=3).
+      # pdftex microtype cannot expand a bitmap font and ABORTS the build, so
+      # the symptom is a LaTeX fatal error with no obvious connection to the
+      # figures. Journal production rejects Type 3 fonts as well. Every figure
+      # generator sets pdf.fonttype=42; this checks the committed PDFs, so a
+      # figure regenerated without that setting fails here rather than as a
+      # cryptic build error later.
+      - name: Check no figure uses Type 3 bitmap fonts
+        run: |
+          bad=0
+          for f in figures/*.pdf; do
+            if pdffonts "$f" | grep -q "Type 3"; then
+              echo "$f embeds Type 3 fonts:"
+              pdffonts "$f" | grep "Type 3" | sed 's/^/  /'
+              bad=1
+            fi
+          done
+          if [ "$bad" -ne 0 ]; then
+            echo "Type 3 fonts are rejected by journal production and make"
+            echo "pdftex microtype abort. Set pdf.fonttype=42 and regenerate."
+            exit 1
+          fi
+          echo "no Type 3 fonts in $(ls figures/*.pdf | wc -l) figures"
+
+      - name: Build the manuscript
+        run: ./build.sh
+
+      - name: Build the supplement
+        run: |
+          pdflatex -interaction=nonstopmode main_si.tex >/dev/null
+          bibtex main_si >/dev/null || true
+          pdflatex -interaction=nonstopmode main_si.tex >/dev/null
+          pdflatex -interaction=nonstopmode main_si.tex >/dev/null
+
+      # A build that "succeeds" while producing a truncated PDF is worse than a
+      # failure, because the artefact ships. Check both outputs are real, and
+      # that neither has picked up an undefined reference.
+      - name: Check both PDFs are well formed
+        run: |
+          for pdf in main.pdf main_si.pdf; do
+            test -s "$pdf" || { echo "$pdf is empty or missing"; exit 1; }
+            pages=$(pdfinfo "$pdf" | awk '/^Pages:/{print $2}')
+            echo "$pdf: $pages pages"
+            case "$pdf" in
+              main.pdf)    min=20 ;;
+              main_si.pdf) min=10 ;;
+            esac
+            if [ "$pages" -lt "$min" ]; then
+              echo "only $pages pages -- expected at least $min; the build is truncated"
+              exit 1
+            fi
+          done
+          # Undefined references are not fatal to pdflatex, so they are checked
+          # explicitly: a missing citation prints "?" and would ship silently.
+          for log in main.log main_si.log; do
+            undef=$(grep -cE 'Reference .* undefined|Citation .* undefined' "$log" || true)
+            echo "$log: undefined=$undef"
+            if [ "$undef" -ne 0 ]; then
+              echo "undefined references in $log"
+              grep -E 'Reference .* undefined|Citation .* undefined' "$log" | head -10
+              exit 1
+            fi
+          done
+
+      - name: Upload the PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-pdfs
+          path: |
+            main.pdf
+            main_si.pdf
+          if-no-files-found: error
+
+      # The result files are committed, and CI regenerates the supplement from
+      # them. If anything differs, the repository and the paper have drifted
+      # apart -- which is exactly the defect the paper's reproducibility claim
+      # forbids, and how a deposit was once published carrying a stale title.
+      - name: Check the tree is unchanged after a build
+        run: |
+          files=$(git status --porcelain -- . \
+                    ':!*.pdf' ':!*.aux' ':!*.log' ':!*.bbl' ':!*.blg' ':!*.out' \
+                    ':!*.fls' ':!*.fdb_latexmk' ':!*.synctex.gz' ':!*.toc')
+          if [ -n "$files" ]; then
+            echo "files changed during the build:"
+            # Print the FILTERED list: a bare `git status --porcelain` here
+            # reports the ignored artefacts too, so the log blames a file that
+            # is excluded on purpose and hides the real one.
+            echo "$files"
+            # A bare list says WHICH file moved but not WHY, and one round
+            # trip to CI is the most expensive way to find out. Dump the
+            # diff of each changed file, then hand the decision to
+            # ci_report_drift.py. The classifier is a script and not a
+            # heredoc because an inline heredoc has to start at column 0,
+            # which terminates the YAML block scalar -- that mistake made
+            # the whole workflow unparseable in 0s.
+            echo
+            echo "===== what actually changed ====="
+            echo "$files" | awk '{print $NF}' > /tmp/changed.txt
+            while read -r f; do
+              [ -f "$f" ] || continue
+              echo "----- $f"
+              git --no-pager diff --stat -- "$f" || true
+              git --no-pager diff -- "$f" | head -40 || true
+            done < /tmp/changed.txt
+            echo
+            echo "===== does the committed copy still agree? ====="
+            # Tolerant of last-bit floating-point drift between library
+            # builds, intolerant of a real numeric, structural or textual
+            # change. See the module docstring for why, and for the
+            # measured size of the drift this absorbs.
+            if python3 ci_report_drift.py $(cat /tmp/changed.txt); then
+              echo "All regenerated files agree with the committed copies."
+              echo "The bytes differ only in the last bits of floating-point"
+              echo "values, which is a library-build difference and not a"
+              echo "change in the analysis."
+              exit 0
+            fi
+            echo "A committed file was regenerated differently. Either commit the"
+            echo "regenerated file or explain the difference."
+            exit 1
+          fi
+          echo "tree unchanged: committed results match a fresh build"

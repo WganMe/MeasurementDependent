@@ -1,0 +1,17 @@
+{
+ "n_snapshot_only": 179,
+ "within_1m": 41,
+ "within_5m": 83,
+ "within_10m": 114,
+ "within_25m": 141,
+ "within_50m": 152,
+ "median_dist_m": 6.38277313895865,
+ "beyond_50m": 27,
+ "distinct_locations": 84,
+ "reading_ids": {
+  "n": 0,
+  "in_census": 0,
+  "within_10m": 0,
+  "median_dist_m": NaN
+ }
+}

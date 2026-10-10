@@ -1,0 +1,289 @@
+{
+ "trend_R_over_time": {
+  "ols_slope_per_year": -0.03086,
+  "ols_slope_boot_ci95": [
+   -0.04152,
+   -0.01902
+  ],
+  "ols_intercept": 62.6968,
+  "ols_r2": 0.773,
+  "theil_sen_slope": -0.02803,
+  "mann_kendall_tau": -0.7363,
+  "mann_kendall_p": 0.00030248470859550736,
+  "years": 14
+ },
+ "R_versus_size_loglog": {
+  "slope": -0.3692,
+  "slope_boot_ci95": [
+   -0.5339,
+   -0.3112
+  ],
+  "intercept": 1.1626,
+  "r2": 0.849,
+  "reading": "clustering behaves as a power law in network size: a slope of -0.37 means a 1% increase in instruments accompanies a 0.37% decrease in R"
+ },
+ "trend_gini_over_time": {
+  "ols_slope_per_year": 0.01406,
+  "ols_r2": 0.3176,
+  "mann_kendall_tau": 0.3846,
+  "mann_kendall_p": 0.06269811626098276
+ },
+ "geometry_by_year": [
+  {
+   "year": 2013,
+   "n": 41,
+   "area_core_km2": 335.02,
+   "density_core": 0.122,
+   "themes": {
+    "People": 15,
+    "Vehicles": 24,
+    "Weather": 2
+   }
+  },
+  {
+   "year": 2014,
+   "n": 97,
+   "area_core_km2": 422.54,
+   "density_core": 0.23,
+   "themes": {
+    "Air Quality": 10,
+    "People": 19,
+    "Vehicles": 60,
+    "Weather": 8
+   }
+  },
+  {
+   "year": 2015,
+   "n": 228,
+   "area_core_km2": 498.03,
+   "density_core": 0.458,
+   "themes": {
+    "Air Quality": 10,
+    "Electrical": 1,
+    "People": 16,
+    "Vehicles": 160,
+    "Water Level": 21,
+    "Weather": 20
+   }
+  },
+  {
+   "year": 2016,
+   "n": 199,
+   "area_core_km2": 397.26,
+   "density_core": 0.501,
+   "themes": {
+    "Air Quality": 16,
+    "Electrical": 1,
+    "Environment": 8,
+    "People": 13,
+    "Vehicles": 111,
+    "Water Level": 13,
+    "Weather": 39
+   }
+  },
+  {
+   "year": 2017,
+   "n": 605,
+   "area_core_km2": 470.05,
+   "density_core": 1.287,
+   "themes": {
+    "Air Quality": 31,
+    "Bee Hive": 12,
+    "Building": 3,
+    "Electrical": 1,
+    "Environment": 8,
+    "Noise": 4,
+    "People": 12,
+    "Sewage": 1,
+    "Vehicles": 363,
+    "Water Level": 23,
+    "Weather": 149
+   }
+  },
+  {
+   "year": 2018,
+   "n": 367,
+   "area_core_km2": 541.61,
+   "density_core": 0.678,
+   "themes": {
+    "Air Quality": 41,
+    "Bee Hive": 14,
+    "Building": 3,
+    "Electrical": 1,
+    "Environment": 7,
+    "Noise": 37,
+    "People": 15,
+    "Sewage": 1,
+    "Vehicles": 62,
+    "Water Level": 11,
+    "Water Quality": 8,
+    "Weather": 169
+   }
+  },
+  {
+   "year": 2019,
+   "n": 474,
+   "area_core_km2": 554.55,
+   "density_core": 0.855,
+   "themes": {
+    "Air Quality": 21,
+    "Bee Hive": 7,
+    "Electrical": 1,
+    "Environment": 3,
+    "Noise": 41,
+    "People": 30,
+    "Seismic": 1,
+    "Sewage": 1,
+    "Vehicles": 268,
+    "Water Level": 13,
+    "Water Quality": 8,
+    "Weather": 80
+   }
+  },
+  {
+   "year": 2020,
+   "n": 749,
+   "area_core_km2": 299.99,
+   "density_core": 2.497,
+   "themes": {
+    "Air Quality": 85,
+    "Bee Hive": 6,
+    "Electrical": 1,
+    "Noise": 42,
+    "People": 26,
+    "Seismic": 1,
+    "Sensor Metrics": 1,
+    "Sewage": 1,
+    "Vehicles": 521,
+    "Water Quality": 7,
+    "Weather": 63
+   }
+  },
+  {
+   "year": 2021,
+   "n": 800,
+   "area_core_km2": 562.76,
+   "density_core": 1.422,
+   "themes": {
+    "Air Quality": 85,
+    "Electrical": 1,
+    "Environment": 2,
+    "Noise": 38,
+    "People": 20,
+    "Sensor Metrics": 5,
+    "Sewage": 1,
+    "Vehicles": 566,
+    "Water Level": 30,
+    "Water Quality": 7,
+    "Weather": 50
+   }
+  },
+  {
+   "year": 2022,
+   "n": 566,
+   "area_core_km2": 562.01,
+   "density_core": 1.007,
+   "themes": {
+    "Air Quality": 43,
+    "Electrical": 1,
+    "Environment": 5,
+    "Noise": 16,
+    "People": 79,
+    "Sensor Metrics": 7,
+    "Sewage": 1,
+    "Vehicles": 330,
+    "Water Level": 31,
+    "Water Quality": 7,
+    "Weather": 46
+   }
+  },
+  {
+   "year": 2023,
+   "n": 466,
+   "area_core_km2": 547.11,
+   "density_core": 0.852,
+   "themes": {
+    "Air Quality": 50,
+    "Building": 3,
+    "Noise": 6,
+    "People": 12,
+    "Sensor Metrics": 2,
+    "Sewage": 1,
+    "Vehicles": 340,
+    "Water Level": 16,
+    "Water Quality": 6,
+    "Weather": 30
+   }
+  },
+  {
+   "year": 2024,
+   "n": 549,
+   "area_core_km2": 519.58,
+   "density_core": 1.057,
+   "themes": {
+    "Air Quality": 42,
+    "Building": 9,
+    "People": 76,
+    "Sensor Metrics": 6,
+    "Sewage": 1,
+    "Vehicles": 361,
+    "Water Level": 31,
+    "Water Quality": 5,
+    "Weather": 18
+   }
+  },
+  {
+   "year": 2025,
+   "n": 707,
+   "area_core_km2": 520.33,
+   "density_core": 1.359,
+   "themes": {
+    "Air Quality": 21,
+    "Building": 9,
+    "People": 176,
+    "Sensor Metrics": 4,
+    "Vehicles": 448,
+    "Water Level": 30,
+    "Water Quality": 1,
+    "Weather": 18
+   }
+  },
+  {
+   "year": 2026,
+   "n": 706,
+   "area_core_km2": 527.71,
+   "density_core": 1.338,
+   "themes": {
+    "Air Quality": 28,
+    "Building": 8,
+    "People": 199,
+    "Sensor Metrics": 1,
+    "Vehicles": 420,
+    "Water Level": 31,
+    "Weather": 19
+   }
+  }
+ ],
+ "mechanisms_2013_to_2026": {
+  "n_change": [
+   41,
+   706
+  ],
+  "area_change": [
+   335.02,
+   527.71
+  ],
+  "density_change": [
+   0.122,
+   1.338
+  ],
+  "reading": "instruments x17.2 while the 5-95% core area went from 335.02 to 527.71 km2 (x1.58), so density rose from 0.122 to 1.338 per km2 (x11.0); clustering is therefore driven mainly by densification inside a stable footprint"
+ },
+ "headline": {
+  "R_first": 0.7298,
+  "R_last": 0.2382,
+  "percent_change": 67.4,
+  "size_growth": 17.2,
+  "statement": "Clark-Evans R fell from 0.730 (2013) to 0.238 (2026), a 67% reduction, while the instrument population grew 17.2x"
+ }
+}

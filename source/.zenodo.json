@@ -1,0 +1,51 @@
+{
+  "title": "Measurement-Dependent Clustering in the Growing Urban Observatory Sensor Network",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "version": "v1.0.6",
+  "publication_date": "2026-10-02",
+  "creators": [
+    {
+      "name": "Alnahari, Wael",
+      "orcid": "0000-0001-5247-3713",
+      "affiliation": "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
+    },
+    {
+      "name": "Arbaaeen, Ammar",
+      "orcid": "0000-0003-2165-3185",
+      "affiliation": "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+    },
+    {
+      "name": "Alsaig, Ammar",
+      "orcid": "0000-0002-6756-9766",
+      "affiliation": "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+    },
+    {
+      "name": "Hasanin, Tawfiq",
+      "orcid": "0000-0003-1072-278X",
+      "affiliation": "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
+    },
+    {
+      "name": "Alnahri, Wasem",
+      "orcid": "0009-0004-6963-5773",
+      "affiliation": "Independent Researcher, Mecca 24331, Saudi Arabia"
+    }
+  ],
+  "description": "<p>Companion repository for the manuscript <em>Measurement-Dependent Clustering in the Growing Urban Observatory Sensor Network</em>, submitted to PeerJ.</p><p><strong>What this is.</strong> The analysis code, the derived result files, the manuscript sources and the generated Supplementary Material for that manuscript, together with the figures and the script that produces each one. Every table and macro value in the manuscript is read from a JSON result file written by an analysis script in this repository; no value is typed by hand, so prose and results share one source and cannot drift apart.</p><p><strong>Contents.</strong> <code>main.tex</code> and the generated <code>main_si.tex</code> with its generator; the analysis scripts; the fitted results behind every macro and table; the figure sources; the bibliography; and an independent re-implementation of the point-pattern estimators used as a cross-check.</p><p><strong>How to reproduce.</strong> The build requires TeX Live and Python 3 with <code>numpy</code>, <code>scipy</code> and <code>matplotlib</code>. <code>README.md</code> gives the order of the scripts and the build commands. Every random draw uses a single fixed seed, stated in the manuscript.</p><p><strong>Data.</strong> The observatory's measurements are <em>not</em> redistributed here; they are published independently by Newcastle University under CC&nbsp;BY&nbsp;4.0. What is deposited is our own derived census, our own fitted results, and the one-week instrument catalogue (<code>urban_observatory.db</code>) that the snapshot audit is computed from, so that audit can be re-run from this deposit alone. The catalogue records instrument identity, position, broker and variable names and carries <em>no measured quantity</em>: every reading value has been removed, none is read by any analysis, and removing them changes no result.</p><p><strong>Licence.</strong> CC&nbsp;BY&nbsp;4.0 for everything this work produced. The PeerJ class file remains under its own terms; see <code>NOTICE.md</code>.</p>",
+  "keywords": [
+    "urban sensor networks",
+    "smart-city infrastructure",
+    "spatial clustering",
+    "longitudinal analysis",
+    "descriptive census",
+    "data provenance",
+    "Clark-Evans index",
+    "Ripley's L",
+    "reference-frame sensitivity",
+    "reproducible analysis"
+  ],
+  "notes": "Archived at Zenodo with DOI 10.5281/zenodo.23102755 (concept DOI 10.5281/zenodo.23099939). Code repository: https://github.com/WganMe/MeasurementDependent, private while the manuscript is under review. The derived Newcastle Urban Observatory census and fitted results are deposited here; the observatory readings themselves are not redistributed and remain at https://doi.org/10.25405/data.ncl.c.5059913 under CC BY 4.0. A related-identifier DOI for the article will be added on acceptance.",
+  "communities": []
+}

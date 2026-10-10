@@ -1,0 +1,4580 @@
+{
+ "built": "2026-10-02T10:06:03Z",
+ "snapshot_date": "2026-10-02",
+ "source": {
+  "title": "Urban Observatory Data Newcastle",
+  "publisher": "Newcastle University",
+  "doi": "10.25405/data.ncl.c.5059913",
+  "licence": "CC BY 4.0",
+  "note": "Deposited copy of the Newcastle Urban Observatory CSV archive as held locally on the snapshot date. The data are Newcastle University's, published under CC BY 4.0; this deposit is a redistribution with attribution, not a new dataset."
+ },
+ "totals": {
+  "years": 14,
+  "files": 884,
+  "bytes": 73798335547,
+  "bundles": 14,
+  "bundle_bytes": 73798481381
+ },
+ "years": [
+  {
+   "year": 2013,
+   "files": 11,
+   "bytes": 23248268,
+   "bundle": "UO-archive-2013.zip",
+   "bundle_bytes": 23249906,
+   "bundle_sha256": "9c21c361c17b9514feb4f086e70e03eba2332655e8272d99594d04bcca1a76fb",
+   "entries": [
+    {
+     "path": "2013/People/2013-Walking.csv.zip",
+     "bytes": 3149488,
+     "sha256": "1fa57a6134296aa9ccea3b29de10528853528062c3e7a17f3f47cd01e201ded6"
+    },
+    {
+     "path": "2013/Vehicles/2013-Cars.csv.zip",
+     "bytes": 5299,
+     "sha256": "a94922ea541cb64dc288cbbe74db0b02c1a5dbc47d42ef265471b5ceed4066a8"
+    },
+    {
+     "path": "2013/Vehicles/2013-Parking Spaces.csv.zip",
+     "bytes": 5414,
+     "sha256": "821297aee06c6b5f225253b9c87080f59a7a22c568a9cf259380a4427411ce02"
+    },
+    {
+     "path": "2013/Weather/2013-Humidity.csv.zip",
+     "bytes": 3531883,
+     "sha256": "87e8d902053879586c87a721899ca826314d127c553fed2f32001ee11df95fc7"
+    },
+    {
+     "path": "2013/Weather/2013-Pressure.csv.zip",
+     "bytes": 3402742,
+     "sha256": "e8d1e19f9927453038429cae005080a65274175e99101067be155c791ae46dc9"
+    },
+    {
+     "path": "2013/Weather/2013-Rainfall.csv.zip",
+     "bytes": 12577,
+     "sha256": "ea6049f071f6fe7c0f2e8d96ec5906f93c983febc8cd9c6fd55333eb526de4d6"
+    },
+    {
+     "path": "2013/Weather/2013-Temperature.csv.zip",
+     "bytes": 2874181,
+     "sha256": "b22f55878f224656878d2ac25892ebfb47ab18ea129dc4e536c68f57936f943b"
+    },
+    {
+     "path": "2013/Weather/2013-Visibility.csv.zip",
+     "bytes": 12452,
+     "sha256": "7d5e988c9c437d5038d8ee489b3915e5a678df71d1ba369d71dc9ff0eea18313"
+    },
+    {
+     "path": "2013/Weather/2013-Wind Direction.csv.zip",
+     "bytes": 3876587,
+     "sha256": "1207732ebf332bb6d5a29b43c440f183bb7134c21846b35b6b1b0c0537910f2b"
+    },
+    {
+     "path": "2013/Weather/2013-Wind Gust.csv.zip",
+     "bytes": 3548116,
+     "sha256": "179ecba1035c6dc3c0ea4025cc90844c36cb5909e4990e49e330db357a8d845e"
+    },
+    {
+     "path": "2013/Weather/2013-Wind Speed.csv.zip",
+     "bytes": 2829529,
+     "sha256": "ef228389309daaea4f0c1c67b46796357886e288a129e8e175d88be43338c866"
+    }
+   ]
+  },
+  {
+   "year": 2014,
+   "files": 19,
+   "bytes": 51388781,
+   "bundle": "UO-archive-2014.zip",
+   "bundle_bytes": 51391583,
+   "bundle_sha256": "55102f3e5568509c8c23475b08287233038e8134a5d1a693ec0884f6d50f0f6f",
+   "entries": [
+    {
+     "path": "2014/Air Quality/2014-CO.csv.zip",
+     "bytes": 575,
+     "sha256": "f1642b9efec5dddf9bc73d7424afd27edb33153ea3152ec519f292841f22006b"
+    },
+    {
+     "path": "2014/Air Quality/2014-Dust.csv.zip",
+     "bytes": 3703,
+     "sha256": "a593265b0276db368faaa7b0921eb911cd9aeea79831a8b099d75fd86e8ba123"
+    },
+    {
+     "path": "2014/Air Quality/2014-NO.csv.zip",
+     "bytes": 12677,
+     "sha256": "fe1a10423ff5f1b0ae8a402b9fc665b758cfaf285fc43c1102b66c1ede0e023f"
+    },
+    {
+     "path": "2014/Air Quality/2014-NO2.csv.zip",
+     "bytes": 4737,
+     "sha256": "9ad7f38cee7492a11d172793e2ec0804db40c8285cbf31cff189e3f82798689a"
+    },
+    {
+     "path": "2014/Air Quality/2014-O3.csv.zip",
+     "bytes": 3430,
+     "sha256": "a10c4d076a40f1dee20c16ba043b14b0d7c340bbdc7fefb66bafeaa3393322fb"
+    },
+    {
+     "path": "2014/Air Quality/2014-VOC.csv.zip",
+     "bytes": 4746,
+     "sha256": "61b9ac8a23cd6a8a83dcd0b2ed632541fff2a536bc94889d87990183cffc5306"
+    },
+    {
+     "path": "2014/Noise/2014-Sound.csv.zip",
+     "bytes": 4445,
+     "sha256": "4ce2424143cf482250f41037c693ecbd41459712a8225788171b64cb3fd74164"
+    },
+    {
+     "path": "2014/People/2014-Walking.csv.zip",
+     "bytes": 513632,
+     "sha256": "be13c9b91d1e9bc44bdf049bca445184ee3c332003649d7e07e8a43bbc9355a6"
+    },
+    {
+     "path": "2014/Vehicles/2014-Cars.csv.zip",
+     "bytes": 4542066,
+     "sha256": "c2675955392a27650685565110f39c5906af6194792f59336ed0295696bf45d0"
+    },
+    {
+     "path": "2014/Vehicles/2014-Parking Spaces.csv.zip",
+     "bytes": 4619486,
+     "sha256": "788693439ae255e7939e3104067fe202020c72ba93ff235cfd762d9cb7b977c5"
+    },
+    {
+     "path": "2014/Weather/2014-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 43125,
+     "sha256": "e1bfd7fd8c008556ae6b87f6d77b994907d6b9e2e68c333d313e548f55a08629"
+    },
+    {
+     "path": "2014/Weather/2014-Humidity.csv.zip",
+     "bytes": 7163249,
+     "sha256": "c27a4f8cd4c0a22760ab84d79350004c5e3d83157efa7ecc99aa2eeefd16ee11"
+    },
+    {
+     "path": "2014/Weather/2014-Pressure.csv.zip",
+     "bytes": 7175541,
+     "sha256": "0841c577b9e00a83f766d5dceedad20567f2e4bffa07f504a952e044654b1a86"
+    },
+    {
+     "path": "2014/Weather/2014-Rainfall.csv.zip",
+     "bytes": 358686,
+     "sha256": "d4822643719c55413a1224e4358abfbb0629b3a6b26534e70193546b7388eb14"
+    },
+    {
+     "path": "2014/Weather/2014-Temperature.csv.zip",
+     "bytes": 6254344,
+     "sha256": "265123218926d79139ea995708e6088f3249157fef44fcff2a21f7ba5dd35a30"
+    },
+    {
+     "path": "2014/Weather/2014-Visibility.csv.zip",
+     "bytes": 371582,
+     "sha256": "ca266798f2be4ea33d39461d343214078e0732b6de2da38a8eca02a104c50ffa"
+    },
+    {
+     "path": "2014/Weather/2014-Wind Direction.csv.zip",
+     "bytes": 7812155,
+     "sha256": "fcd3f9a2858d9e3702be49791676a469d902bceecee2b485ccc12f4a5f28064d"
+    },
+    {
+     "path": "2014/Weather/2014-Wind Gust.csv.zip",
+     "bytes": 6952315,
+     "sha256": "0f96a3014330a46533b5e3abb436ce13f146c2f41ae0177e4b10e3633effa799"
+    },
+    {
+     "path": "2014/Weather/2014-Wind Speed.csv.zip",
+     "bytes": 5548287,
+     "sha256": "38901dd762cdd1e2013c8a4001b12f42f01942f31282df6e4ef60fea11eb1934"
+    }
+   ]
+  },
+  {
+   "year": 2015,
+   "files": 27,
+   "bytes": 204468685,
+   "bundle": "UO-archive-2015.zip",
+   "bundle_bytes": 204472823,
+   "bundle_sha256": "f6e02854f16a802d8eba70ea83229ae4497467c6fecee56a7a15361d75561137",
+   "entries": [
+    {
+     "path": "2015/Air Quality/2015-CO.csv.zip",
+     "bytes": 2260099,
+     "sha256": "1c1fcc5ccdecb9f0ae5584e06b74b1a47456d07f4220d5338b0cc4812ba92366"
+    },
+    {
+     "path": "2015/Air Quality/2015-NO.csv.zip",
+     "bytes": 1994200,
+     "sha256": "01e269eb56318ce6998560c4490215bc75c7b399ec5b7bda6b3e806b2f7f28eb"
+    },
+    {
+     "path": "2015/Air Quality/2015-NO2 Concentration.csv.zip",
+     "bytes": 744,
+     "sha256": "3e63c8dc5030d025520978131ef2af86793e3f7e97cb6ea8ee4ca7981acbb3be"
+    },
+    {
+     "path": "2015/Air Quality/2015-NO2.csv.zip",
+     "bytes": 1792171,
+     "sha256": "5bf235f090e128724c5c563f6881477aaf9497159016e2be19cadfb48b910695"
+    },
+    {
+     "path": "2015/Electrical/2015-Real Power.csv.zip",
+     "bytes": 1062752,
+     "sha256": "c3bb12c09123e3cb434d3dd35bdc8129c00a500fa81c8e13b96d6fa96dec4130"
+    },
+    {
+     "path": "2015/Environment/2015-Luminosity.csv.zip",
+     "bytes": 393,
+     "sha256": "3b57e829abe8e09e3871251ab74a96893653e6d1391dcf0aafdcd0760dac543a"
+    },
+    {
+     "path": "2015/Noise/2015-Sound.csv.zip",
+     "bytes": 1370919,
+     "sha256": "dc349580d66a1e1df26608dc9bf3ed9c934669582dba2306d8b858994700985d"
+    },
+    {
+     "path": "2015/People/2015-Walking.csv.zip",
+     "bytes": 744,
+     "sha256": "d1ecd65018ea11bcbea79dfe7579d81945c75dcb09ed239000cdf59aa417690a"
+    },
+    {
+     "path": "2015/Vehicles/2015-Average Speed.csv.zip",
+     "bytes": 9913377,
+     "sha256": "b63ba2a23bf648d7f9c2aeca71f2ef9ab2af221a8a496ae2107dff038a6c2a6f"
+    },
+    {
+     "path": "2015/Vehicles/2015-Cars.csv.zip",
+     "bytes": 1936213,
+     "sha256": "61cb6f4cc38eca1e1b045e3e83f5b336cb97b7677060be366297a9a07ebd2426"
+    },
+    {
+     "path": "2015/Vehicles/2015-Congestion.csv.zip",
+     "bytes": 8687126,
+     "sha256": "6c4495f37eb79497136fd5107e71db7b3bf1c0b06b91b79e4a648bc30b08aadb"
+    },
+    {
+     "path": "2015/Vehicles/2015-Journey Time.csv.zip",
+     "bytes": 46322609,
+     "sha256": "a1e83410e6f53d89294387a1690db2daab5b3f69a456aa2ec8f083d084b48794"
+    },
+    {
+     "path": "2015/Vehicles/2015-Parking Spaces.csv.zip",
+     "bytes": 2489283,
+     "sha256": "c7b56adb8ddb9034a218a0229034bc7aeb1b5e33f6dc57f641cbf6f5cc189cc6"
+    },
+    {
+     "path": "2015/Vehicles/2015-Traffic Flow.csv.zip",
+     "bytes": 10610260,
+     "sha256": "7254ad5cabfb92dae1355ab481a4880b73e36edc085bad1f30abd7ab13054b86"
+    },
+    {
+     "path": "2015/Water Level/2015-Relative River Level.csv.zip",
+     "bytes": 195702,
+     "sha256": "19d634943294684f4e772ea656aa27a18a31e51559df9aab0ed1f7fdf7032a80"
+    },
+    {
+     "path": "2015/Water Level/2015-Relative Tidal Level.csv.zip",
+     "bytes": 264889,
+     "sha256": "105cbe01daa59bd841bb4f68beb019853f8e6a74c49326870d8e37040867e94d"
+    },
+    {
+     "path": "2015/Water Level/2015-River Level.csv.zip",
+     "bytes": 1977822,
+     "sha256": "205ae6a55e5d3e1aa61a803f9568f750c749431c7b67dc0e8bc34d48e4b1abcd"
+    },
+    {
+     "path": "2015/Weather/2015-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 663317,
+     "sha256": "5a368085d0f3f592c082c0723332d027ec2b12c66b63f3068331960954003bcb"
+    },
+    {
+     "path": "2015/Weather/2015-Humidity.csv.zip",
+     "bytes": 33231436,
+     "sha256": "b1ff9e8004509a932dab0052da80c214ebc9047f04a67531c37edd80300a6d69"
+    },
+    {
+     "path": "2015/Weather/2015-Pressure.csv.zip",
+     "bytes": 23032020,
+     "sha256": "07f78eb3acb88d6f6525b20ffc53ed856a2bef168ff8f86d813396464cd17afe"
+    },
+    {
+     "path": "2015/Weather/2015-Rainfall.csv.zip",
+     "bytes": 1703257,
+     "sha256": "4d844948ec2c9e57103ff56922cfe71f67892c6b0ff1da39d54007e8f418b365"
+    },
+    {
+     "path": "2015/Weather/2015-Solar Radiation.csv.zip",
+     "bytes": 868984,
+     "sha256": "10c061891690c0ba7f505be8bc59967d891c73876b232b0a527d475465bc58a1"
+    },
+    {
+     "path": "2015/Weather/2015-Temperature.csv.zip",
+     "bytes": 24388021,
+     "sha256": "9b5cb5f6b7dde92a433c40eb0f0d67529956217efd407de71da6476fc39f36d3"
+    },
+    {
+     "path": "2015/Weather/2015-Visibility.csv.zip",
+     "bytes": 841014,
+     "sha256": "1941170065bd54fcaf3ec8d5b8f45aa4e528851fe69bc428c2cf50414232bb49"
+    },
+    {
+     "path": "2015/Weather/2015-Wind Direction.csv.zip",
+     "bytes": 11366289,
+     "sha256": "82d6f388979a022da13bd1682ba4cf48c553e28ea2b7d439dbbc4ab2d918ff12"
+    },
+    {
+     "path": "2015/Weather/2015-Wind Gust.csv.zip",
+     "bytes": 9478876,
+     "sha256": "af712bdbeda20774907957c3336976fbad1341e9d19f406cbe56e08e821bb4e1"
+    },
+    {
+     "path": "2015/Weather/2015-Wind Speed.csv.zip",
+     "bytes": 8016168,
+     "sha256": "4045a4d165bfe21bfb82c197ba1504251d081fbfd4c1f4130b6b7b16b929abc8"
+    }
+   ]
+  },
+  {
+   "year": 2016,
+   "files": 41,
+   "bytes": 1539698164,
+   "bundle": "UO-archive-2016.zip",
+   "bundle_bytes": 1539704316,
+   "bundle_sha256": "1268305cb849d2dedaeba09b17c83a472076fb8669dc539f170d98d728ac19fd",
+   "entries": [
+    {
+     "path": "2016/Air Quality/2016-CO.csv.zip",
+     "bytes": 174485108,
+     "sha256": "710335121c34f556ddc6dafb0adccafa7b9c6be2f36c6460d49e48db823a93dd"
+    },
+    {
+     "path": "2016/Air Quality/2016-CO2.csv.zip",
+     "bytes": 375386,
+     "sha256": "c075be9717b2bbe7176332cdc0079dadfa64b4d37427a186d9de3ea4f9bd00ef"
+    },
+    {
+     "path": "2016/Air Quality/2016-Dust.csv.zip",
+     "bytes": 9707737,
+     "sha256": "41ceff1fd076753da5296d33de94211e141d660e593a0bbb1e994c0d465676c4"
+    },
+    {
+     "path": "2016/Air Quality/2016-NO.csv.zip",
+     "bytes": 239609372,
+     "sha256": "9f095e7e9ee522977050f29daa03172920d0c03818ede6e12d880f930a87641f"
+    },
+    {
+     "path": "2016/Air Quality/2016-NO2.csv.zip",
+     "bytes": 237793579,
+     "sha256": "a4d8e95bf0913dcb43d43d3d3ed8ede355f7a89cfea4882ab8152cd744a8a382"
+    },
+    {
+     "path": "2016/Air Quality/2016-NOx.csv.zip",
+     "bytes": 152078,
+     "sha256": "145f7ea0501dfbdd65577fa7157dd65f1f5d37c994ceac2974621f2d3066bfea"
+    },
+    {
+     "path": "2016/Air Quality/2016-O3.csv.zip",
+     "bytes": 7184421,
+     "sha256": "507915644e7c989db181f75513fa7c8d88b73f4d6314a2d4edc239624d620dcd"
+    },
+    {
+     "path": "2016/Air Quality/2016-PM 4.csv.zip",
+     "bytes": 71852,
+     "sha256": "2cb571103f67da7b7d29becff2198f209b50c3812a3d0ec7f9aafbd1921bf5eb"
+    },
+    {
+     "path": "2016/Air Quality/2016-PM.csv.zip",
+     "bytes": 576901,
+     "sha256": "c5b1da03d0b4282a094ef62a8d77f30a621730ac0faaba86c2efbc414e70d45d"
+    },
+    {
+     "path": "2016/Air Quality/2016-PM1.csv.zip",
+     "bytes": 195125,
+     "sha256": "366bcd46199752aafc76f71777d2c7d7e2770ede008d0e819acd92da971ecd28"
+    },
+    {
+     "path": "2016/Air Quality/2016-PM10.csv.zip",
+     "bytes": 206191,
+     "sha256": "bd76e07f0f8344f47114f686368407bab2da73f81c9b94ec3a6cd117ca9d978a"
+    },
+    {
+     "path": "2016/Air Quality/2016-PM2.5.csv.zip",
+     "bytes": 200008,
+     "sha256": "355c3d423778fe2376f3792234ab21381acb59941e121c7e1e7483bdd5e06657"
+    },
+    {
+     "path": "2016/Air Quality/2016-Particle Count.csv.zip",
+     "bytes": 70574,
+     "sha256": "7f834cecad5f45259916f2d4b9afd2159574e41e3b91ba93d621807b599a6c63"
+    },
+    {
+     "path": "2016/Air Quality/2016-VOC.csv.zip",
+     "bytes": 7676203,
+     "sha256": "b82c57774a6b49f6737a5159eb51f23e2d4d4e5182069ff38230137a2af88693"
+    },
+    {
+     "path": "2016/Air Quality/2016-allpollu.csv.zip",
+     "bytes": 492760,
+     "sha256": "a2d2d3fa0d6892e5f0ebbe92f392a76ae9ebb657fda400a34aaa8c1adb2fd071"
+    },
+    {
+     "path": "2016/Electrical/2016-Real Power.csv.zip",
+     "bytes": 1648363,
+     "sha256": "8de39fec064adf925e7f82b1ce63bb550eff6e6a79013c441c79be2b02538c16"
+    },
+    {
+     "path": "2016/Environment/2016-Luminosity.csv.zip",
+     "bytes": 94497,
+     "sha256": "7867493181d2a5610f01cdc0af827acec410aeac28976d0c6ffc105e6dbd149b"
+    },
+    {
+     "path": "2016/Noise/2016-Sound.csv.zip",
+     "bytes": 125175781,
+     "sha256": "46be1b84584e47fecc173cd10d3e944894a5215639a2e77c4d09aab073ca2adf"
+    },
+    {
+     "path": "2016/People/2016-Walking.csv.zip",
+     "bytes": 94702,
+     "sha256": "73932db5e81046dc8c5792f53821cd24fcbc8816d6ab6563ba53bd890b7a4708"
+    },
+    {
+     "path": "2016/Vehicles/2016-Average Speed.csv.zip",
+     "bytes": 10264469,
+     "sha256": "d7cc18894a2dd682ff285b27aa102dabac1ed98f3dc95997fdc84e1addb87bd3"
+    },
+    {
+     "path": "2016/Vehicles/2016-Cars.csv.zip",
+     "bytes": 1759009,
+     "sha256": "a022ef6e05de352c4e4289ca86f336b4372db2604ae500b4b718ada7d9dd9d0c"
+    },
+    {
+     "path": "2016/Vehicles/2016-Congestion.csv.zip",
+     "bytes": 14234710,
+     "sha256": "7a728d5584eb08d2dc98d955ad07d68fd6125624e68536ccf86399d2bc851663"
+    },
+    {
+     "path": "2016/Vehicles/2016-Journey Time.csv.zip",
+     "bytes": 55349587,
+     "sha256": "73976f302f402e6ce1aeaa4630d636bab3d79d4d2017f06cfde110225d665c79"
+    },
+    {
+     "path": "2016/Vehicles/2016-Parking Spaces.csv.zip",
+     "bytes": 1372536,
+     "sha256": "6350a66b030f59f8888da9338c85bef5cd23ebf4a34c68456790476fcaeeddaf"
+    },
+    {
+     "path": "2016/Vehicles/2016-Traffic Flow.csv.zip",
+     "bytes": 10912821,
+     "sha256": "3a82d9dffa188de61ff0d2027ee08bf7f17c4c7c95bf5335e1e8adff00643432"
+    },
+    {
+     "path": "2016/Water Level/2016-Relative River Level.csv.zip",
+     "bytes": 149177,
+     "sha256": "9b790ebd64aebdc3d7a97af3cd1f11a4145ded623323aa09e625b193311b639d"
+    },
+    {
+     "path": "2016/Water Level/2016-Relative Tidal Level.csv.zip",
+     "bytes": 442261,
+     "sha256": "088d86be5dc55b6d9b0a03acdce8bfbcd1fe4cb136a9a6b65a1dc2b84b96e5c8"
+    },
+    {
+     "path": "2016/Water Level/2016-River Level.csv.zip",
+     "bytes": 2642357,
+     "sha256": "a53fca0ef38c0977c00e42cb863750580b748d8544a972596d26cbc7a6d91e5f"
+    },
+    {
+     "path": "2016/Weather/2016-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 10674573,
+     "sha256": "d3fd4c14c3038edb115f8e1e6d6f7e03050af6a12924dac0df3414ca0a031fe7"
+    },
+    {
+     "path": "2016/Weather/2016-Humidity.csv.zip",
+     "bytes": 282709727,
+     "sha256": "1d3ed7b32f32143208487cff4603cc1c0cab859434432cf1715b4e7788333cd6"
+    },
+    {
+     "path": "2016/Weather/2016-Max Wind Speed.csv.zip",
+     "bytes": 206620,
+     "sha256": "c98b4e0415920ce319ac95cbd545371c26cc70061d75c35170464364b84ecc5f"
+    },
+    {
+     "path": "2016/Weather/2016-Pressure.csv.zip",
+     "bytes": 28672779,
+     "sha256": "6dd1da6821c1aaf920d8e533f75f11f31b448466ecf692fd5fdc24b0cde0c8c4"
+    },
+    {
+     "path": "2016/Weather/2016-Rain Acc.csv.zip",
+     "bytes": 140200,
+     "sha256": "bfd815705306a70393aa75289f15bd3cc68c39f1d3bb782c55dac2767a911a10"
+    },
+    {
+     "path": "2016/Weather/2016-RainInt.csv.zip",
+     "bytes": 141440,
+     "sha256": "185312d49b42b2e5a39d75cabf77d60f6832962d561e32f6a290504e8de7708b"
+    },
+    {
+     "path": "2016/Weather/2016-Rainfall.csv.zip",
+     "bytes": 16100958,
+     "sha256": "b963508e25f11e0b1ddacdd02a676a916c5b8cb388d8abd81b5946bb5390ebcd"
+    },
+    {
+     "path": "2016/Weather/2016-Solar Radiation.csv.zip",
+     "bytes": 11866273,
+     "sha256": "c2dbcbc16ebb188fd231454a0665f07aae77d8020a1701b3e3de6d8fe354488b"
+    },
+    {
+     "path": "2016/Weather/2016-Temperature.csv.zip",
+     "bytes": 225265277,
+     "sha256": "6a4bd028c3f94c9df60b732c2f94100858cf59d5f585d2f5e5ffaada3ba2f39f"
+    },
+    {
+     "path": "2016/Weather/2016-Visibility.csv.zip",
+     "bytes": 145704,
+     "sha256": "a8756d753580e935a36e9983547433b3ff96f1985cc3f9825970e2b84c7f9487"
+    },
+    {
+     "path": "2016/Weather/2016-Wind Direction.csv.zip",
+     "bytes": 26416806,
+     "sha256": "672676d987f666b7aa49727e1d0604db4b7fc245bce8028be4a2c54626c679fe"
+    },
+    {
+     "path": "2016/Weather/2016-Wind Gust.csv.zip",
+     "bytes": 8043251,
+     "sha256": "11984595d7373af8c7c6de5fb004cd977856d11d424055e86af5828ff7d906b0"
+    },
+    {
+     "path": "2016/Weather/2016-Wind Speed.csv.zip",
+     "bytes": 26376991,
+     "sha256": "616b067e69ec34c75d99b29ffb24fde42274606eb4e3778daa33732c287e3855"
+    }
+   ]
+  },
+  {
+   "year": 2017,
+   "files": 66,
+   "bytes": 3551577979,
+   "bundle": "UO-archive-2017.zip",
+   "bundle_bytes": 3551588451,
+   "bundle_sha256": "642103829f221361917ff2b1cff400615152316f888686134bb620cc91309bfc",
+   "entries": [
+    {
+     "path": "2017/Air Quality/2017-CO.csv.zip",
+     "bytes": 570847671,
+     "sha256": "036db668d271d6bba3638b82f7fe7ce2f3387ad0513944d491cf3196e020c1de"
+    },
+    {
+     "path": "2017/Air Quality/2017-Dust.csv.zip",
+     "bytes": 9479189,
+     "sha256": "896135a918836e543c580a6745f16f4acc09ab053eb8f455ac36b43d0559a63a"
+    },
+    {
+     "path": "2017/Air Quality/2017-Filter.csv.zip",
+     "bytes": 4092,
+     "sha256": "d83836cdf00aae7e9ac014bef0fb49280df92373bb9935393e0ee5642f962256"
+    },
+    {
+     "path": "2017/Air Quality/2017-NO Concentration.csv.zip",
+     "bytes": 113687,
+     "sha256": "2ad29e883275ada08a7b6497e541e7bbb5afcadfc0fb6249f95b47378fea1d64"
+    },
+    {
+     "path": "2017/Air Quality/2017-NO.csv.zip",
+     "bytes": 558905803,
+     "sha256": "ab2cf5094daf35054c730cccbb0fec36ad9f992c2558dfab9a2b6a21f95a1674"
+    },
+    {
+     "path": "2017/Air Quality/2017-NO2 Concentration.csv.zip",
+     "bytes": 124191,
+     "sha256": "447e82205c66f373f10316560b678c32025746e31d0009009593e622ed6005ef"
+    },
+    {
+     "path": "2017/Air Quality/2017-NO2.csv.zip",
+     "bytes": 590549568,
+     "sha256": "df43dd978abb4b21790ceb780e06a0c67499179a18939ad46cccc1fa3c17bf41"
+    },
+    {
+     "path": "2017/Air Quality/2017-NOXasNO2 Concentration.csv.zip",
+     "bytes": 129842,
+     "sha256": "b5da0712ccf2028d753b5717f03510d7d8465b7c9a644449b07be1fb2ffe132f"
+    },
+    {
+     "path": "2017/Air Quality/2017-NOx.csv.zip",
+     "bytes": 654892,
+     "sha256": "59f02c5dcb9979bb8c333de15ae34b96bdbb9013ed912c69cdb9abc18f0878bb"
+    },
+    {
+     "path": "2017/Air Quality/2017-Non-volatile PM10.csv.zip",
+     "bytes": 36277,
+     "sha256": "22cfd59c70edd9e8cf1ad25cc32d4e4a195ee78e0818832e772f44cde42d9b60"
+    },
+    {
+     "path": "2017/Air Quality/2017-Non-volatile PM2.5.csv.zip",
+     "bytes": 67370,
+     "sha256": "c845be9508cf27a7ba530d6f3129aa9bb062263ab344163c3efc2fdb094d10a8"
+    },
+    {
+     "path": "2017/Air Quality/2017-O3.csv.zip",
+     "bytes": 9581408,
+     "sha256": "1ce1975a66afbfb75972e97092147af57ca28bbb7f9767952f908329f4ea6f74"
+    },
+    {
+     "path": "2017/Air Quality/2017-Ozone Concentration.csv.zip",
+     "bytes": 96909,
+     "sha256": "902b9e41bbbf2075b3c19d982aeb59d172460af181e5753e59b42cf3c555b66e"
+    },
+    {
+     "path": "2017/Air Quality/2017-PM 4.csv.zip",
+     "bytes": 222835,
+     "sha256": "49494524f50fe8a734316831b7f7c73126da2e13a8afdc3f36c23e257b12dfbd"
+    },
+    {
+     "path": "2017/Air Quality/2017-PM.csv.zip",
+     "bytes": 244596,
+     "sha256": "380355262b787a87bdabbae0640937b4440f59317f313e62b14506d507791f94"
+    },
+    {
+     "path": "2017/Air Quality/2017-PM1.csv.zip",
+     "bytes": 1783418,
+     "sha256": "97c044c04b5febde94d289c92fcab1fda471b7eaf8990ae34fa368fe86c76671"
+    },
+    {
+     "path": "2017/Air Quality/2017-PM10.csv.zip",
+     "bytes": 2332146,
+     "sha256": "900259f9d912ceb9eb50d2996eaf2c526f3cf1af27be7564c469a8d1b68dd947"
+    },
+    {
+     "path": "2017/Air Quality/2017-PM2.5.csv.zip",
+     "bytes": 2288910,
+     "sha256": "3c07ff67b836331b7cf0b206251984f35749a8957dfae891b7cccbcdea32308d"
+    },
+    {
+     "path": "2017/Air Quality/2017-Particle Count.csv.zip",
+     "bytes": 2044236,
+     "sha256": "bc55586268c1c5f2fcf17a5ec822d75744187feb20bb82ce87c536ff5e661863"
+    },
+    {
+     "path": "2017/Air Quality/2017-VOC.csv.zip",
+     "bytes": 6855118,
+     "sha256": "ffe08d215630e16fa610ae88af22dc7a2d10a85c2201c1289f2854426f82a599"
+    },
+    {
+     "path": "2017/Air Quality/2017-Volatile PM10.csv.zip",
+     "bytes": 25632,
+     "sha256": "dede08f85a03e6c9c02223207b134e5af77c2e1e2bf40a3b50ae3836009808b8"
+    },
+    {
+     "path": "2017/Air Quality/2017-Volatile PM2.5.csv.zip",
+     "bytes": 57836,
+     "sha256": "cb67f788d866629ed22521f171ffdae0ce4b068bed1441fa327e8d62a1ffef39"
+    },
+    {
+     "path": "2017/Bee Hive/2017-Brood.csv.zip",
+     "bytes": 205582,
+     "sha256": "b9285ce207c18ef75abfd3e7e1a2dc6205642a6a96fd976134eab84d3766a2d6"
+    },
+    {
+     "path": "2017/Bee Hive/2017-Hive Activity.csv.zip",
+     "bytes": 180771,
+     "sha256": "522a597c0daaf7fa182d5edc32a813bee5a16b4ac9ece09a1672ddafdb6118d1"
+    },
+    {
+     "path": "2017/Bee Hive/2017-Mean Fanning.csv.zip",
+     "bytes": 144200,
+     "sha256": "35fa0956ae087bf11f6f5dbb5705cdd577b567ea240b1680e0ee4daca6e19437"
+    },
+    {
+     "path": "2017/Bee Hive/2017-Mean Flight Noise.csv.zip",
+     "bytes": 143975,
+     "sha256": "887b0b99e6847905a46a6e7f9d0f4de86efcf82bf5926e1c807c65dccbc0fe1b"
+    },
+    {
+     "path": "2017/Bee Hive/2017-Weight.csv.zip",
+     "bytes": 250096,
+     "sha256": "aa163f7f1fcdaac31ddb247e74840d2fae58adfd8fe671ffd6f539a08485a0f4"
+    },
+    {
+     "path": "2017/Building/2017-Strain 1.csv.zip",
+     "bytes": 3373416,
+     "sha256": "75eb23a43fc56ef68f69effe0b6119f5085bc8fa91b7eb150309c9a66a315b9d"
+    },
+    {
+     "path": "2017/Building/2017-Strain 2.csv.zip",
+     "bytes": 3384252,
+     "sha256": "8a0eb7358b0726def5424fe66f0e4ae0eee15ab73e16a21a6f855cbb5214c3e0"
+    },
+    {
+     "path": "2017/Building/2017-Strain 3.csv.zip",
+     "bytes": 3373742,
+     "sha256": "630d266803f817108ee4df4a75f9d8dd0a09ea5654c0ab2139cd3cffbf6b7552"
+    },
+    {
+     "path": "2017/Building/2017-Strain 4.csv.zip",
+     "bytes": 3095916,
+     "sha256": "0a1835751209fbd547f154ffc25fb01f78f469390be80c63bc4b562f61694dfc"
+    },
+    {
+     "path": "2017/Electrical/2017-Real Power.csv.zip",
+     "bytes": 2838771,
+     "sha256": "4ff5b725e20e622151bfb58c2e4371a781ad5927cb6d5b3f42c19d6464778d91"
+    },
+    {
+     "path": "2017/Environment/2017-CO2 High Range.csv.zip",
+     "bytes": 953431,
+     "sha256": "21ec35dae8678d2f52a8703a445a97a444edb2b53c27a7c1cf8c4483dccb02a5"
+    },
+    {
+     "path": "2017/Environment/2017-CO2 Low Range.csv.zip",
+     "bytes": 969284,
+     "sha256": "3f064f0b19dc4d8c3edd3c886f64965b7365964e976c46db1f6b8341a2c4b8c2"
+    },
+    {
+     "path": "2017/Environment/2017-Luminosity.csv.zip",
+     "bytes": 102100,
+     "sha256": "c788a824265aacd19732e64c3cbcde4827d20a7e922a85de5ef1c5c8d0f8dd23"
+    },
+    {
+     "path": "2017/Environment/2017-Soil Moisture.csv.zip",
+     "bytes": 2298469,
+     "sha256": "37e261affb0d6919ab54476c64fdeab6a8217224726d16ffe7f90f9688f635c4"
+    },
+    {
+     "path": "2017/Environment/2017-Soil Temperature.csv.zip",
+     "bytes": 666421,
+     "sha256": "cbb280205afe4f0bf33630a4160fcfc2db973814d3dbd381edb34c6f0c6983c6"
+    },
+    {
+     "path": "2017/Noise/2017-Max Sound.csv.zip",
+     "bytes": 766,
+     "sha256": "38b4eea1d7c8b834ef577062c3315ea4446a7ede88dc4d5ff0844251e3fe7409"
+    },
+    {
+     "path": "2017/Noise/2017-Sound.csv.zip",
+     "bytes": 273636510,
+     "sha256": "d418eab2e687802c85659f48d8e0fffd6b1c572405c14c5a356b2244ad6b72d4"
+    },
+    {
+     "path": "2017/People/2017-Walking.csv.zip",
+     "bytes": 3219085,
+     "sha256": "2e0cc7bbbe2e7add8dbc6730080526a033941fa913a84845ac7138eec01fc2b5"
+    },
+    {
+     "path": "2017/Sewage/2017-Sewage Level.csv.zip",
+     "bytes": 165815,
+     "sha256": "c28ccb3bb6bb858f4159b45fb8603ced080588ad9dd04d41d809ffdac8f8d929"
+    },
+    {
+     "path": "2017/Vehicles/2017-Average Speed.csv.zip",
+     "bytes": 10397949,
+     "sha256": "7c6d3cdbb441466456dd3b5c12abfb21703b9417b5805f20a648c429bd9033db"
+    },
+    {
+     "path": "2017/Vehicles/2017-Cars.csv.zip",
+     "bytes": 1776372,
+     "sha256": "e9522b58a833d9d0f9a5edfaecbf13d945bf31f7ba799cd0062fef0d3c96b391"
+    },
+    {
+     "path": "2017/Vehicles/2017-Congestion.csv.zip",
+     "bytes": 8863808,
+     "sha256": "a682a651dbdf759e25de8de3f05e3e0425b9f1487b6d6f54078afb5d64e64332"
+    },
+    {
+     "path": "2017/Vehicles/2017-Journey Time.csv.zip",
+     "bytes": 494609032,
+     "sha256": "3b0bac7cd1e99ee36e508950412814088ccae310934f599bd0ed17b8484be23d"
+    },
+    {
+     "path": "2017/Vehicles/2017-Parking Spaces.csv.zip",
+     "bytes": 1384188,
+     "sha256": "5f0f493b7ae94714ce9ab45903a1a33df6b72f5c1a520c5c6705335c6a17cea8"
+    },
+    {
+     "path": "2017/Vehicles/2017-Traffic Flow.csv.zip",
+     "bytes": 17023475,
+     "sha256": "f420c81792229eaf8adfcbff94e404f25f2f8b6287e7a7d7204275408a91712e"
+    },
+    {
+     "path": "2017/Water Level/2017-Relative River Level.csv.zip",
+     "bytes": 122880,
+     "sha256": "4fc283f514c6879536496009bb449a9eff1c554e2b9f1ccc0650e5a947a20230"
+    },
+    {
+     "path": "2017/Water Level/2017-Relative Tidal Level.csv.zip",
+     "bytes": 445940,
+     "sha256": "09672de616f8aedb618860adbc51023dcbbdbb51fa3e432cf4e3d87f082dec18"
+    },
+    {
+     "path": "2017/Water Level/2017-River Level.csv.zip",
+     "bytes": 3863123,
+     "sha256": "6f8aed1cc67d2989e6ce953484bf7b289820c63ae73a56001104c66e53fdeaa3"
+    },
+    {
+     "path": "2017/Weather/2017-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 8169875,
+     "sha256": "cb6e7578ff7fe16cbd32f80329eb9d20083cfd9ab8a36648d43639903abd1676"
+    },
+    {
+     "path": "2017/Weather/2017-Humidity.csv.zip",
+     "bytes": 432183928,
+     "sha256": "53bd817f93ac342ed0b017d764cbade2c0049f35c09c85a56f0c4b07b78810ed"
+    },
+    {
+     "path": "2017/Weather/2017-Max Wind Speed.csv.zip",
+     "bytes": 2046803,
+     "sha256": "992ca3d58295f1173e6806bda0c6a1fb1fdf88362edae448150bef71b9858ffe"
+    },
+    {
+     "path": "2017/Weather/2017-Pressure.csv.zip",
+     "bytes": 35012033,
+     "sha256": "b7406ca87894ea7e04b2a12711f1622c456f8a9c26366163e4ec661ad7904e2c"
+    },
+    {
+     "path": "2017/Weather/2017-Rain Acc.csv.zip",
+     "bytes": 2443809,
+     "sha256": "a2ae4fa717602aba671525faebc95051416aacfc650648974a7d9c65c331ce75"
+    },
+    {
+     "path": "2017/Weather/2017-Rain Duration.csv.zip",
+     "bytes": 95919,
+     "sha256": "ea543cf6df706c2ea6750f3bac24e63d06ad5b0deb13797645f61c0fc8424c21"
+    },
+    {
+     "path": "2017/Weather/2017-RainInt.csv.zip",
+     "bytes": 1743134,
+     "sha256": "7a75fbf9241048d237a158116e394c151617129db312d091e321c72c6c0e0fbc"
+    },
+    {
+     "path": "2017/Weather/2017-Rainfall.csv.zip",
+     "bytes": 20754835,
+     "sha256": "d8cdd38b73e5867fb4b42d654bb9ce67fd4cc94357186b2f4c8bfa9ec4f67ac9"
+    },
+    {
+     "path": "2017/Weather/2017-Solar Diffuse Radiation.csv.zip",
+     "bytes": 548345,
+     "sha256": "f62dfb3b48814104bef0ca5b5ef4040ebf3e765b1eb6413615a2bc46216eb1dc"
+    },
+    {
+     "path": "2017/Weather/2017-Solar Radiation.csv.zip",
+     "bytes": 9511577,
+     "sha256": "247cf1f10074f6ea4726eb67b23eec07a2d702ca749ec677851350a6e3edbbbf"
+    },
+    {
+     "path": "2017/Weather/2017-Sunshine Duration.csv.zip",
+     "bytes": 196236,
+     "sha256": "45a70652147fd0b3b0fe5dcb44773bb57c0197e7f70ed144517a5c4e251187d2"
+    },
+    {
+     "path": "2017/Weather/2017-Temperature.csv.zip",
+     "bytes": 364629536,
+     "sha256": "424186bfd8a68776a09379e76b7270fdcd1dd54450141481ee2ae47fb890d453"
+    },
+    {
+     "path": "2017/Weather/2017-Visibility.csv.zip",
+     "bytes": 29400,
+     "sha256": "d073f8fc4429c1b401ac1ea07453e140579e66248edcbcbfe26c72eff674f296"
+    },
+    {
+     "path": "2017/Weather/2017-Wind Direction.csv.zip",
+     "bytes": 33643772,
+     "sha256": "6b21cdc025f1e150fee1141ab196091f0a5d0485c1ed925cef4befd0e5d0ca23"
+    },
+    {
+     "path": "2017/Weather/2017-Wind Gust.csv.zip",
+     "bytes": 14209403,
+     "sha256": "7254bd7490df42585c3a0cc717febccaf1e30412eb4c25d6802aa3c5045516ce"
+    },
+    {
+     "path": "2017/Weather/2017-Wind Speed.csv.zip",
+     "bytes": 32424379,
+     "sha256": "3d6724cda873c89a617e9758483abf43e366d6df77ba951332cb9b1d96bf204b"
+    }
+   ]
+  },
+  {
+   "year": 2018,
+   "files": 75,
+   "bytes": 3678574151,
+   "bundle": "UO-archive-2018.zip",
+   "bundle_bytes": 3678586341,
+   "bundle_sha256": "5aa9b707a40cc80e667a56c914d4f230a3f32f98cc3888aff64dcff05440cc04",
+   "entries": [
+    {
+     "path": "2018/Air Quality/2018-CO.csv.zip",
+     "bytes": 575302409,
+     "sha256": "98a75322738133dac57ea304dfe33f7b15275faab428ebbf5e2066ea425f23c3"
+    },
+    {
+     "path": "2018/Air Quality/2018-CO2.csv.zip",
+     "bytes": 278880,
+     "sha256": "367b346a5046be4c1a7a66f56788026df866d33801ba9c08aa1a0cd0a4df7e3a"
+    },
+    {
+     "path": "2018/Air Quality/2018-Filter.csv.zip",
+     "bytes": 398,
+     "sha256": "2d5cdde804b7590dcd14a88a0f5716428073c2516cbada5810239c306520335b"
+    },
+    {
+     "path": "2018/Air Quality/2018-NO Concentration.csv.zip",
+     "bytes": 136696,
+     "sha256": "3710139975fab098adadaef0144fe667542138b69bad9ff6bfb0b45362bd6ce7"
+    },
+    {
+     "path": "2018/Air Quality/2018-NO.csv.zip",
+     "bytes": 494698383,
+     "sha256": "74d5f4a7b426486b6bce81b36e4878c120cb8f0491678f3e42d91c293d0e8774"
+    },
+    {
+     "path": "2018/Air Quality/2018-NO2 Concentration.csv.zip",
+     "bytes": 131945,
+     "sha256": "2d09504f9f8cd8d25e3d11f717cf141256e5cdfaaefd809e1e72b8236bcbeae2"
+    },
+    {
+     "path": "2018/Air Quality/2018-NO2.csv.zip",
+     "bytes": 542718343,
+     "sha256": "bb86bbb75889e398020e00d48f4b46cf7d3330a6229b21b76830b84e2ad4e658"
+    },
+    {
+     "path": "2018/Air Quality/2018-NOXasNO2 Concentration.csv.zip",
+     "bytes": 136969,
+     "sha256": "5782835052f825c8f28e4480804a7c3cc095117e18108060569fcd164600f5e1"
+    },
+    {
+     "path": "2018/Air Quality/2018-NOx.csv.zip",
+     "bytes": 1004251,
+     "sha256": "f53e630206005bf391a439afa9b717de67480ca3abd90ef66d3394a6250ea1de"
+    },
+    {
+     "path": "2018/Air Quality/2018-Non-volatile PM10.csv.zip",
+     "bytes": 28699,
+     "sha256": "d6a8c6b8f9bada95f1cf4ea3751fcb65006c687525029c0e1ceaecbe0add4d16"
+    },
+    {
+     "path": "2018/Air Quality/2018-Non-volatile PM2.5.csv.zip",
+     "bytes": 51344,
+     "sha256": "1ebb2acdd17f56ad975b99c210664cbd0d5fbc1d4176206f857a30c68df4b9a2"
+    },
+    {
+     "path": "2018/Air Quality/2018-O3.csv.zip",
+     "bytes": 37094201,
+     "sha256": "474addb5b996adc7f262f554ac7b76f968afb7958e98de7aa69f242fcb8b9454"
+    },
+    {
+     "path": "2018/Air Quality/2018-Ozone Concentration.csv.zip",
+     "bytes": 81970,
+     "sha256": "4ad1b1ecd71d6d05b20342d7385e99bfd0c5fb093bba7daf73ef562f03a58806"
+    },
+    {
+     "path": "2018/Air Quality/2018-PM 4.csv.zip",
+     "bytes": 8421504,
+     "sha256": "9e7960c80d3368e5e791e43aba0142d80634f3a4d97a21f84cfc88b92bd9a8d1"
+    },
+    {
+     "path": "2018/Air Quality/2018-PM.csv.zip",
+     "bytes": 1097100,
+     "sha256": "e7fe2cdbd1cb19357826a93618322cfd1ac14a0aac2cd5c6513945c6b04de5e3"
+    },
+    {
+     "path": "2018/Air Quality/2018-PM1.csv.zip",
+     "bytes": 63725405,
+     "sha256": "4725f7e0847461bd673a68540529cec6edb8e3f1d05095385a1e73ea03f52ba7"
+    },
+    {
+     "path": "2018/Air Quality/2018-PM10.csv.zip",
+     "bytes": 67865002,
+     "sha256": "7df98bebda578d495b0507675962036d7a41dc0e2e0c8eeb63ff41201bf140c6"
+    },
+    {
+     "path": "2018/Air Quality/2018-PM2.5.csv.zip",
+     "bytes": 66363863,
+     "sha256": "b5a2c63a8198103f404b14f91c0ca1aa4a7a3bb4d7853f9df787162c94dcdc17"
+    },
+    {
+     "path": "2018/Air Quality/2018-Particle Count.csv.zip",
+     "bytes": 69451385,
+     "sha256": "e0460eb358df2ae186181ff71523e31514976d4e73cb1154409b4eb3c6d4935f"
+    },
+    {
+     "path": "2018/Air Quality/2018-VOC.csv.zip",
+     "bytes": 261342,
+     "sha256": "dfb4310631e48f18a18fabfb38c4f8d9c723d12524abd6ea86061ea7117c2377"
+    },
+    {
+     "path": "2018/Air Quality/2018-Volatile PM10.csv.zip",
+     "bytes": 20122,
+     "sha256": "a74427815b78adadec96ce76c483b9bfd6fb3768daec1f0c794a1010be2ef8b6"
+    },
+    {
+     "path": "2018/Air Quality/2018-Volatile PM2.5.csv.zip",
+     "bytes": 44644,
+     "sha256": "eca926defd957a07db196af1af276584896eca2465622818a03ee582e72186f2"
+    },
+    {
+     "path": "2018/Air Quality/2018-allpollu.csv.zip",
+     "bytes": 355046,
+     "sha256": "4cb2fa9d6ddaaf820ccc89cd16be37eaeb02290668c6928cca697d93aac61f40"
+    },
+    {
+     "path": "2018/Bee Hive/2018-Brood.csv.zip",
+     "bytes": 457582,
+     "sha256": "0fb64155b7e80f34a694d64423dc405fe693ca8a2f22860bcf24835faae43214"
+    },
+    {
+     "path": "2018/Bee Hive/2018-Hive Activity.csv.zip",
+     "bytes": 395085,
+     "sha256": "42c57529fc311ef3133bf12b7b4f71e7138c1594dba21af391c342ebdcf55dde"
+    },
+    {
+     "path": "2018/Bee Hive/2018-Mean Fanning.csv.zip",
+     "bytes": 310477,
+     "sha256": "f8a868d69265f9852942868c8c713ca6802632c569a0b81b44a7b98728ffc033"
+    },
+    {
+     "path": "2018/Bee Hive/2018-Mean Flight Noise.csv.zip",
+     "bytes": 308948,
+     "sha256": "7d0fa4acbc65281adfdfd407c91d8b5655cda1aff7147419180e9e005ff122f4"
+    },
+    {
+     "path": "2018/Bee Hive/2018-Weight.csv.zip",
+     "bytes": 541415,
+     "sha256": "51cfe96367cc5b404a47dd45a5e8db18294a1536acbd4175ecbb5510dd0812aa"
+    },
+    {
+     "path": "2018/Building/2018-Strain 1.csv.zip",
+     "bytes": 705963,
+     "sha256": "e7f3b2bc96c8a8387e772a963e7bb20bbdd500ef885bf72fe732051b9677bf5e"
+    },
+    {
+     "path": "2018/Building/2018-Strain 2.csv.zip",
+     "bytes": 744534,
+     "sha256": "89208483284559bf04f095e11db278369366f82e6cdb81bbf52a9fabddfe7b9b"
+    },
+    {
+     "path": "2018/Building/2018-Strain 3.csv.zip",
+     "bytes": 745550,
+     "sha256": "a5ec43d0ac1ef94010dab4ef21b6c9e1c0e54080dae0f60d3105ef33a7093515"
+    },
+    {
+     "path": "2018/Building/2018-Strain 4.csv.zip",
+     "bytes": 744765,
+     "sha256": "d7a84fe3043baea0f4a36721a5724c37a08b3849c46c920c488587abbfdf89fe"
+    },
+    {
+     "path": "2018/Electrical/2018-Real Power.csv.zip",
+     "bytes": 1056206,
+     "sha256": "efcca800eaabc8fdafb4354844eb1de6e8c7834982d19a3e0df846031a139781"
+    },
+    {
+     "path": "2018/Environment/2018-CO2 High Range.csv.zip",
+     "bytes": 348122,
+     "sha256": "cf40b1688d80c68636a2d217b141385639f6a4485c2b710d51e7b837a66d2630"
+    },
+    {
+     "path": "2018/Environment/2018-CO2 Low Range.csv.zip",
+     "bytes": 347409,
+     "sha256": "b3aa4b9f09e860ac9d62a55aee45e0d4b708f4ce9fce5890ba56b71770fd40b0"
+    },
+    {
+     "path": "2018/Environment/2018-Luminosity.csv.zip",
+     "bytes": 472,
+     "sha256": "796b78e971689d75a2cec97a3d3fe5ac2bba8ba7000fed633050d34df16319d6"
+    },
+    {
+     "path": "2018/Environment/2018-Soil Moisture.csv.zip",
+     "bytes": 11424162,
+     "sha256": "67c7bc034adfbc8a3a72c64a614b18b45181a5885b4a77c0a24cfb104214ca3d"
+    },
+    {
+     "path": "2018/Environment/2018-Soil Temperature.csv.zip",
+     "bytes": 269202,
+     "sha256": "3c25ca9be31dd6c888fd9eb765da718cb19573f5eb0eda26c71b5e8e2300f9e6"
+    },
+    {
+     "path": "2018/Noise/2018-Max Sound.csv.zip",
+     "bytes": 7377639,
+     "sha256": "7b5a4ed9f84cd37559d8aba317150a1ce6193872537d2c97753220f47ba534df"
+    },
+    {
+     "path": "2018/Noise/2018-Sound.csv.zip",
+     "bytes": 247439517,
+     "sha256": "a9dcd990d9fe45e7cb6e4571012d69e136c45c741ee9dd886be7a055615fb8cd"
+    },
+    {
+     "path": "2018/People/2018-Walking.csv.zip",
+     "bytes": 2459932,
+     "sha256": "3333a1255677fd313c1c60c8ebd3286a9eff1690de19ce0f37f3dab2eb5ecefa"
+    },
+    {
+     "path": "2018/Sewage/2018-Sewage Level.csv.zip",
+     "bytes": 492880,
+     "sha256": "5626b8767ba6e3c29ea6a3aba0ef5512055d26eaa8a05cf5f1dd737a3d64fc48"
+    },
+    {
+     "path": "2018/Vehicles/2018-Average Speed.csv.zip",
+     "bytes": 14017092,
+     "sha256": "9ba160eea3b788970f7ed051c05922b0e553921bed1496f59a27b1c314aa06a3"
+    },
+    {
+     "path": "2018/Vehicles/2018-Congestion.csv.zip",
+     "bytes": 12220574,
+     "sha256": "584bdb22945e0ad437d48077434d3eab69bdacbae067030245ce2cc5cfa0378a"
+    },
+    {
+     "path": "2018/Vehicles/2018-Journey Time.csv.zip",
+     "bytes": 323278651,
+     "sha256": "f12c2edf60f3c4df0e0fbc6d0bddd4e0687db9e62dbd2237918dec70c3711528"
+    },
+    {
+     "path": "2018/Vehicles/2018-Traffic Flow.csv.zip",
+     "bytes": 14994508,
+     "sha256": "2548a6326ef8f000025ea1c724eaafd133e5f9fa946c2cc3fd80599d7de2f123"
+    },
+    {
+     "path": "2018/Vehicles/2018-Vehicle Count.csv.zip",
+     "bytes": 105357047,
+     "sha256": "158059130cb92467b5c6f7cc8ebcb9f75105f3520d6b45933e51326056dc7d27"
+    },
+    {
+     "path": "2018/Water Level/2018-Relative River Level.csv.zip",
+     "bytes": 120776,
+     "sha256": "10392a07992390b5ff43a5f2e15da9582a089f4aa6e7872b3435debd6b6138b6"
+    },
+    {
+     "path": "2018/Water Level/2018-Relative Tidal Level.csv.zip",
+     "bytes": 433123,
+     "sha256": "d53bb643932c54e63324d165c4d0f2a8be7bc340742b0a1a52e878861dc33287"
+    },
+    {
+     "path": "2018/Water Level/2018-River Level.csv.zip",
+     "bytes": 2620737,
+     "sha256": "b838ba41306387e4fed617714f5005d48e20a8a7b8c9204e05977f3a038c15b0"
+    },
+    {
+     "path": "2018/Water Quality/2018-Depth.csv.zip",
+     "bytes": 740244,
+     "sha256": "6a637dc04ffa9927c7039a38c42ca89f916a5201d463bcf9dd76710bda280c62"
+    },
+    {
+     "path": "2018/Water Quality/2018-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 1131420,
+     "sha256": "1f8cf010a74ea9998b90c8b43c63bd97800848c8f60a78de5915bc856cc5cce5"
+    },
+    {
+     "path": "2018/Water Quality/2018-Dissolved Oxygen.csv.zip",
+     "bytes": 1060741,
+     "sha256": "784a9d90f2ea48fd01e66554604e620f512e3785d8bd43ba02ffe4775ec3d24a"
+    },
+    {
+     "path": "2018/Water Quality/2018-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 1021652,
+     "sha256": "0cc93ec84dca0bfbded165c1561af3b3a0dd2426d78189a14a7778263bce0ea8"
+    },
+    {
+     "path": "2018/Water Quality/2018-NH4+N.csv.zip",
+     "bytes": 324006,
+     "sha256": "a0425ccd01438addc35aeb9f8922ffae34e8c2f1b2c69a321e629efc9f79d53a"
+    },
+    {
+     "path": "2018/Water Quality/2018-NO3-N.csv.zip",
+     "bytes": 469642,
+     "sha256": "cd4df937827dce40230ce07e5454cd8cc77ef985f4ad682f23eb3cf2ed957123"
+    },
+    {
+     "path": "2018/Water Quality/2018-Specific Conductance.csv.zip",
+     "bytes": 1304658,
+     "sha256": "de22b34cb1a141057e62760599ebfd80a15637d50bbd76d86e8e024b1150af6c"
+    },
+    {
+     "path": "2018/Water Quality/2018-Turbidity.csv.zip",
+     "bytes": 944647,
+     "sha256": "65fa5332f36653d2ce715197839a17732f92fff4d1c0fbd516c8801cc8cd5d62"
+    },
+    {
+     "path": "2018/Water Quality/2018-Water Temperature.csv.zip",
+     "bytes": 1050781,
+     "sha256": "de0a1aeb7d959452f003bae183da621c7780311f96903ab1a26063fa68a008ac"
+    },
+    {
+     "path": "2018/Weather/2018-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 1905793,
+     "sha256": "f407e3d195e44af0caf30e791f59a68f891f5a33c5c7bec4a4f751bd67ded7d0"
+    },
+    {
+     "path": "2018/Weather/2018-Humidity.csv.zip",
+     "bytes": 433975415,
+     "sha256": "269df81c664d5e3ae417fcaf3d92605ae154394ca5640b7eaecd1ab4d7d33488"
+    },
+    {
+     "path": "2018/Weather/2018-Max Wind Speed.csv.zip",
+     "bytes": 1866928,
+     "sha256": "866bb969e1a676dee3d85319f57ca05c3625b3ead421030a1ce9db638f9b8f14"
+    },
+    {
+     "path": "2018/Weather/2018-Pressure.csv.zip",
+     "bytes": 37932728,
+     "sha256": "f77ab82aa9f5065ebf227b1e0ac6fe677bec4f1c537c6b6b77dd2627c0bc00cf"
+    },
+    {
+     "path": "2018/Weather/2018-Rain Acc.csv.zip",
+     "bytes": 2876851,
+     "sha256": "15e27fd76dc7e6b07eb2d67df79bc314ae6d41daff73ca42bec4dbf51a665aac"
+    },
+    {
+     "path": "2018/Weather/2018-Rain Duration.csv.zip",
+     "bytes": 121318,
+     "sha256": "5502bb84014f667e5cbddba0a29ea12f00d241fbe94f5f1c2c19350fb4dc0fc9"
+    },
+    {
+     "path": "2018/Weather/2018-RainInt.csv.zip",
+     "bytes": 1470925,
+     "sha256": "9f517556c2bf5e46ab984999dfd6677493a02579481672b47a111a5f913207af"
+    },
+    {
+     "path": "2018/Weather/2018-Rainfall.csv.zip",
+     "bytes": 11850008,
+     "sha256": "d07201dec778c0bb46fd8c85cb95c69d02dc6af0b504d7eb9a2fb628d7007b6a"
+    },
+    {
+     "path": "2018/Weather/2018-Solar Diffuse Radiation.csv.zip",
+     "bytes": 877522,
+     "sha256": "d948475704da6cb17157e787147b686d8f30d94f79a7f3285625c34c9e77cf24"
+    },
+    {
+     "path": "2018/Weather/2018-Solar Radiation.csv.zip",
+     "bytes": 3212923,
+     "sha256": "5c8d87ecf13470809eb35f8995c2345a5fe81681d2a810da2dbdcb7fd17f03a8"
+    },
+    {
+     "path": "2018/Weather/2018-Sunshine Duration.csv.zip",
+     "bytes": 6625,
+     "sha256": "b88da6104907a89f984235da79cc400387ff42fff317f703b4b78f1027121588"
+    },
+    {
+     "path": "2018/Weather/2018-Temperature.csv.zip",
+     "bytes": 436818135,
+     "sha256": "ad1d498972a718759af7b507f0ed29cc124e1c50db8f8df9132dfb6f9268b4bd"
+    },
+    {
+     "path": "2018/Weather/2018-Visibility.csv.zip",
+     "bytes": 24072,
+     "sha256": "f389cd8bb4666b2955ae8ddabb28fb61b072aa7939db6f807a848b0a3bf097ff"
+    },
+    {
+     "path": "2018/Weather/2018-Wind Direction.csv.zip",
+     "bytes": 23800606,
+     "sha256": "ddefeec104ce1045dde706291b2ad51c29bf93b6336460092d3e58cec5c391a5"
+    },
+    {
+     "path": "2018/Weather/2018-Wind Gust.csv.zip",
+     "bytes": 13577935,
+     "sha256": "bb25e2eb60827dd4c98f5de4c5f9cb77040e644b7cdc07d025e96e7a9bbdbbfa"
+    },
+    {
+     "path": "2018/Weather/2018-Wind Speed.csv.zip",
+     "bytes": 21726307,
+     "sha256": "4babbe215ff35fba1416fd6edfa938067ac5a5a4ece4710b4128df78fabc2c4a"
+    }
+   ]
+  },
+  {
+   "year": 2019,
+   "files": 66,
+   "bytes": 4678344570,
+   "bundle": "UO-archive-2019.zip",
+   "bundle_bytes": 4678355622,
+   "bundle_sha256": "86aa9a2cdb32e9ab584ad159847daffafd94da835045c639c8247c78bba20aeb",
+   "entries": [
+    {
+     "path": "2019/Air Quality/2019-CO.csv.zip",
+     "bytes": 655622648,
+     "sha256": "0cd71f0230819ff6d91627fe8ba20f79977c8b7746d24f13daab12cf2d0c6ad7"
+    },
+    {
+     "path": "2019/Air Quality/2019-CO2.csv.zip",
+     "bytes": 686697,
+     "sha256": "302a2f590cb9cd681b64c86c02d34cf8b9c1db9f5e77d3740e3b85f084e4dfe6"
+    },
+    {
+     "path": "2019/Air Quality/2019-NO.csv.zip",
+     "bytes": 576639079,
+     "sha256": "c7718934e4a9c908b708bdbcdda8b445a4ee521df252d252a7f7ee39092b0f26"
+    },
+    {
+     "path": "2019/Air Quality/2019-NO2.csv.zip",
+     "bytes": 663483291,
+     "sha256": "169c8a3f2551372bfd8693535b6e493397723226a08e896b174c2193ee8fce8c"
+    },
+    {
+     "path": "2019/Air Quality/2019-NOx.csv.zip",
+     "bytes": 1257002,
+     "sha256": "3beb44db0076a6713f34a9be3608256870ba34d960ee2d23de5cff5b763a82f8"
+    },
+    {
+     "path": "2019/Air Quality/2019-O3.csv.zip",
+     "bytes": 105338761,
+     "sha256": "8bfbd8516026abe87dc6a07adffe49074a808a4dcbf8943ec0f1863e08855887"
+    },
+    {
+     "path": "2019/Air Quality/2019-PM 4.csv.zip",
+     "bytes": 137803568,
+     "sha256": "36ae4e3c2cdda7619df30da9865ef171b0fea3922e4577efdf7227b01d7a8f65"
+    },
+    {
+     "path": "2019/Air Quality/2019-PM.csv.zip",
+     "bytes": 4251647,
+     "sha256": "7751abd6473791816afc80dbd1822714c36f33f4e4dbc6890c284e83702bea48"
+    },
+    {
+     "path": "2019/Air Quality/2019-PM1.csv.zip",
+     "bytes": 152296305,
+     "sha256": "42dc295c2eaaec0aaffd416b2c9edd046d345b51be824c6c233afab9dfef64ef"
+    },
+    {
+     "path": "2019/Air Quality/2019-PM10.csv.zip",
+     "bytes": 155393466,
+     "sha256": "bd3b1217d9bafe783078b3f908884896cee3710b29019a71f49dafaf484f8e8b"
+    },
+    {
+     "path": "2019/Air Quality/2019-PM2.5.csv.zip",
+     "bytes": 141167118,
+     "sha256": "4c78d06260d6c463580a6b3f816b8cb1f2c4a3ffd9318c36958405704b85dbdb"
+    },
+    {
+     "path": "2019/Air Quality/2019-Particle Count.csv.zip",
+     "bytes": 103950740,
+     "sha256": "e8e0a99450bef096ffe5882a1ae660ed8f1c740c116ca234f16809bb1a643146"
+    },
+    {
+     "path": "2019/Air Quality/2019-VOC.csv.zip",
+     "bytes": 660869,
+     "sha256": "11f0524ca1802d7b47764cfbfc1e8a697ec23b8245cbd11417f1af59d49da131"
+    },
+    {
+     "path": "2019/Air Quality/2019-allpollu.csv.zip",
+     "bytes": 841029,
+     "sha256": "471d22f51d301501074356332c73f202472faea221e8f3224b4a433bac5c0b78"
+    },
+    {
+     "path": "2019/Bee Hive/2019-Brood.csv.zip",
+     "bytes": 251559,
+     "sha256": "44a4d64b3860b2c87b819e175e12010f9dc32014f0ebe407daaf49c733f6d4ac"
+    },
+    {
+     "path": "2019/Bee Hive/2019-Hive Activity.csv.zip",
+     "bytes": 218447,
+     "sha256": "5057cd32bcf404ab864355bac9e2cc6788ce142bf2ab85710843a5e66a7a6544"
+    },
+    {
+     "path": "2019/Bee Hive/2019-Mean Fanning.csv.zip",
+     "bytes": 154708,
+     "sha256": "e921d71710c45ab1f311f96ac9a2717bab7c46d9e9117a103fbf9d79c797d309"
+    },
+    {
+     "path": "2019/Bee Hive/2019-Mean Flight Noise.csv.zip",
+     "bytes": 153017,
+     "sha256": "6d5b6d0509e541c453acd85c322be3d1aa1229719235486dfa9cefd53dea0c39"
+    },
+    {
+     "path": "2019/Bee Hive/2019-Weight.csv.zip",
+     "bytes": 304028,
+     "sha256": "dd5426f8becea38d60cf10f755b914bea7667db152a9769a11a8a54e3f0f49cc"
+    },
+    {
+     "path": "2019/Electrical/2019-Real Power.csv.zip",
+     "bytes": 2373563,
+     "sha256": "acb0723fb97daa3f38cf1e1be5503bc552f2a709090f8932967a7ec9668adf38"
+    },
+    {
+     "path": "2019/Environment/2019-Luminosity.csv.zip",
+     "bytes": 606,
+     "sha256": "02c2cfb2daecb7653d6247c5b31fa84ab32517b54ee69452e908c6b4e99f0af0"
+    },
+    {
+     "path": "2019/Environment/2019-Soil Moisture.csv.zip",
+     "bytes": 6005636,
+     "sha256": "203a606a2187c6a449a44bf221783d7f4113d543bfbdfacd56011b9e88bd232e"
+    },
+    {
+     "path": "2019/Noise/2019-Max Sound.csv.zip",
+     "bytes": 649522,
+     "sha256": "8a7310afd046db29cfb7d2024c658a183ef90b97f24af895b8376e8da3829496"
+    },
+    {
+     "path": "2019/Noise/2019-Sound.csv.zip",
+     "bytes": 226238363,
+     "sha256": "a4a829f3ae833c2ee181a17ce43e1290aeefb9e1bb0c8fd2bb7ec27f4e33b438"
+    },
+    {
+     "path": "2019/People/2019-Walking.csv.zip",
+     "bytes": 15443874,
+     "sha256": "b0b346920606aae6f18c27caf88248dbbc9ee9286fca8fdd7683fe804a06a5a4"
+    },
+    {
+     "path": "2019/Seismic/2019-East-West Horizontal Displacement.csv.zip",
+     "bytes": 7542243,
+     "sha256": "19be8f713379cf2e0ad8aa15d3979ed5ad5c6c864895b4f9c299d25d3d1a0ecb"
+    },
+    {
+     "path": "2019/Seismic/2019-North-South Horizontal Displacement.csv.zip",
+     "bytes": 7538467,
+     "sha256": "321f01c3a7ccb61ced2f5170385d57bb0285143e6a86385e3eb73a25512b106b"
+    },
+    {
+     "path": "2019/Seismic/2019-Vertical Displacement.csv.zip",
+     "bytes": 7222185,
+     "sha256": "e5e704ea1af637781617d1423ba410440228a651a2942ca99ab0232805f018d4"
+    },
+    {
+     "path": "2019/Sewage/2019-Sewage Level.csv.zip",
+     "bytes": 328881,
+     "sha256": "cfa1d10c5ba0d297480058e2380d66cbd175835b67b07bae0f0a09f36f6b0f9d"
+    },
+    {
+     "path": "2019/Vehicles/2019-Average Speed.csv.zip",
+     "bytes": 10003653,
+     "sha256": "48d018f95827b7f0fecbd1ac5a2df0b4d1fa2218a50ec4529a40b9a9f091ef38"
+    },
+    {
+     "path": "2019/Vehicles/2019-Bus Count East.csv.zip",
+     "bytes": 60275,
+     "sha256": "439f226067bb31faa586a7ca70002e89fd81c29e6fc1a2c9107ff9b753ae8446"
+    },
+    {
+     "path": "2019/Vehicles/2019-Bus Count West.csv.zip",
+     "bytes": 60373,
+     "sha256": "03a201faebf2430392f87655bf323e19fcff4cc50d90f7d4e0e0a2a382887bdb"
+    },
+    {
+     "path": "2019/Vehicles/2019-Congestion.csv.zip",
+     "bytes": 11967489,
+     "sha256": "e5abd05b0cf7307b175e49db4790ff8b189afae74f35b2e9299f8b8ebcb456e3"
+    },
+    {
+     "path": "2019/Vehicles/2019-Journey Time.csv.zip",
+     "bytes": 565044891,
+     "sha256": "164485af4f033774c313d4206a8cc6197f5aec2eff08b8c6250ac00ce025fb0c"
+    },
+    {
+     "path": "2019/Vehicles/2019-Traffic Flow.csv.zip",
+     "bytes": 10571270,
+     "sha256": "e59cc25f750ce0c8fe3634b525cab55ce4727b944d53bfdb1102d7507b1334bf"
+    },
+    {
+     "path": "2019/Vehicles/2019-Vehicle Count East.csv.zip",
+     "bytes": 46849,
+     "sha256": "b07560314eadc6d3b9be96f8b9a2b8d058634d122b4e78cf0de356adfd4a502f"
+    },
+    {
+     "path": "2019/Vehicles/2019-Vehicle Count West.csv.zip",
+     "bytes": 46631,
+     "sha256": "b2b649f565ee3d4ac52ac8c6c5abc940b3a34c80f3113f3e27b6f89e1d381fab"
+    },
+    {
+     "path": "2019/Vehicles/2019-Vehicle Count.csv.zip",
+     "bytes": 125222403,
+     "sha256": "7ae67cdc852627b65f47edc47e738e7d11b08726ccde5c9d39604820a9d3aa23"
+    },
+    {
+     "path": "2019/Water Level/2019-Relative River Level.csv.zip",
+     "bytes": 82323,
+     "sha256": "6327dd6e1231cbcf1198c21b39873b9e1f3cdb122c38e2e1fc8fbaabb26aa0b5"
+    },
+    {
+     "path": "2019/Water Level/2019-Relative Tidal Level.csv.zip",
+     "bytes": 291413,
+     "sha256": "ec2a50d6f20fdfc55ece16d7a9f86ad84fea18f7e5f602444c7cfb8b5d687ff0"
+    },
+    {
+     "path": "2019/Water Level/2019-River Level.csv.zip",
+     "bytes": 2061667,
+     "sha256": "be00ad42e266191266ad5eb64f656c37ee2cb3bffd9d23a629887aef752de95a"
+    },
+    {
+     "path": "2019/Water Quality/2019-Depth.csv.zip",
+     "bytes": 1245989,
+     "sha256": "270880ee3e6ae9a700e18e6dc6624d66a1ad4b400b6ff30f719989d7a84c03be"
+    },
+    {
+     "path": "2019/Water Quality/2019-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 1717895,
+     "sha256": "45305ff21a7733ca9595c875a80a285e3ceb0c919ba1c4f73764af9a8efbf603"
+    },
+    {
+     "path": "2019/Water Quality/2019-Dissolved Oxygen.csv.zip",
+     "bytes": 1714635,
+     "sha256": "6fab2f23e00295f789ddfbe4ee4bb1eeb03e1cab2918fafdf6c06f106d81c75f"
+    },
+    {
+     "path": "2019/Water Quality/2019-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 1737847,
+     "sha256": "cc9131bb2435d74ee1df92b59e06296afb7aee5789831892b49f5cee03cf50e4"
+    },
+    {
+     "path": "2019/Water Quality/2019-NH4+N.csv.zip",
+     "bytes": 364107,
+     "sha256": "c8180642c5d02ed8a635af8028176a28d94f5d9fd3c3694f438fb4d08a3d3dd6"
+    },
+    {
+     "path": "2019/Water Quality/2019-NO3-N.csv.zip",
+     "bytes": 330960,
+     "sha256": "aa1574a46ad470fcf82d97612f261281dc54b45bdd4d86991456a9835637ff37"
+    },
+    {
+     "path": "2019/Water Quality/2019-Specific Conductance.csv.zip",
+     "bytes": 1928700,
+     "sha256": "fed1f180cb77880b18b7193e6468b4d6cc480ff0e41e64a7415e641c610b14fb"
+    },
+    {
+     "path": "2019/Water Quality/2019-Turbidity.csv.zip",
+     "bytes": 1847344,
+     "sha256": "8c3aed9bf00bc969973cb49ebe315aef2fda59b3cc35dbbc0402b152082effa3"
+    },
+    {
+     "path": "2019/Water Quality/2019-Water Temperature.csv.zip",
+     "bytes": 1700382,
+     "sha256": "aa1c5cef97a4dd1d8d6cdd016bae76c20359ab4e85e02fe5e5f12ed356b6275b"
+    },
+    {
+     "path": "2019/Weather/2019-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 5333443,
+     "sha256": "7ec4bd40dae533b518967a265a7b55aba9fb2cd1c3f83ae44f3068f4c6516b2b"
+    },
+    {
+     "path": "2019/Weather/2019-Humidity.csv.zip",
+     "bytes": 389471884,
+     "sha256": "a92e666437e0d82bdf663a5bd0a6457158c58c6ffad9c3d07f23545ae1454d65"
+    },
+    {
+     "path": "2019/Weather/2019-Max Wind Speed.csv.zip",
+     "bytes": 1390266,
+     "sha256": "cdea3eabf3b690052e09d1153ee8a59ab1619f9f48d67105f37f7d0cb13207fa"
+    },
+    {
+     "path": "2019/Weather/2019-Pressure.csv.zip",
+     "bytes": 119886658,
+     "sha256": "333863f05de7653004d1c1f29e24e307cd9af527bf49c8b4b9f19830b4a9e0d2"
+    },
+    {
+     "path": "2019/Weather/2019-Rain Acc.csv.zip",
+     "bytes": 2505374,
+     "sha256": "2c5660ccb8a045b09efe7f36e869e715b3fc36b52b9d5a89b3f4b3a85834bfef"
+    },
+    {
+     "path": "2019/Weather/2019-Rain Duration.csv.zip",
+     "bytes": 123330,
+     "sha256": "29ab405e313558f4a6454138bf1389c9cb3b77aa311597d5a028be05b392b911"
+    },
+    {
+     "path": "2019/Weather/2019-Rain.csv.zip",
+     "bytes": 252379,
+     "sha256": "060098a5a1eb92a014236dde0a7b64fb145f40732ca41537c4826438e7c96e1a"
+    },
+    {
+     "path": "2019/Weather/2019-RainInt.csv.zip",
+     "bytes": 1120539,
+     "sha256": "112c4720a692800506fa8f1e9a80e08df8bb508c13e50f332cfc66c37301cbe3"
+    },
+    {
+     "path": "2019/Weather/2019-Rainfall.csv.zip",
+     "bytes": 3733682,
+     "sha256": "c4362e5518825fe79eaa7db2bcfcc24ffa5b6be4172955d7e01f94eb943aa1ac"
+    },
+    {
+     "path": "2019/Weather/2019-Solar Diffuse Radiation.csv.zip",
+     "bytes": 753084,
+     "sha256": "57287a9dee6e3cad437e56a3e0cb54d7173b96b448f85e38ec7e300f9673efcf"
+    },
+    {
+     "path": "2019/Weather/2019-Solar Radiation.csv.zip",
+     "bytes": 7095336,
+     "sha256": "238a73069ff2a0202150494689ce71c8719e3d74d29a30108baa693a8328f28c"
+    },
+    {
+     "path": "2019/Weather/2019-Temperature.csv.zip",
+     "bytes": 404611715,
+     "sha256": "4a9d11a69aeec38af1d5d1b2b28df577e8a4641d88950016b9ee30983665a157"
+    },
+    {
+     "path": "2019/Weather/2019-Visibility.csv.zip",
+     "bytes": 38819,
+     "sha256": "5a434d013a445107b7a3b6797661d01ce2e4bfd8236199bc0556e99388702b6e"
+    },
+    {
+     "path": "2019/Weather/2019-Wind Direction.csv.zip",
+     "bytes": 13990032,
+     "sha256": "e89e44a124baf5096ee3a6562a9b85bb95e55bb7896381b5a51e7147199f3020"
+    },
+    {
+     "path": "2019/Weather/2019-Wind Gust.csv.zip",
+     "bytes": 2227198,
+     "sha256": "1660c442cbe760fbc9a1665a41aec478fa6360c843ce4271995fc4bf7ff2b76d"
+    },
+    {
+     "path": "2019/Weather/2019-Wind Speed.csv.zip",
+     "bytes": 13946416,
+     "sha256": "48e774ff14beb2224ef2651c8aafa9e52f0aaa7b8d8b85a8e4e373f0932ca8c1"
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "files": 75,
+   "bytes": 5028089751,
+   "bundle": "UO-archive-2020.zip",
+   "bundle_bytes": 5028102273,
+   "bundle_sha256": "e203e2cf58d8db7ee8b8e9d2b3c68d85b146b09e725ba5fbf61b6c84b2de5d55",
+   "entries": [
+    {
+     "path": "2020/Air Quality/2020-CO.csv.zip",
+     "bytes": 713806534,
+     "sha256": "d8825da869af898ff991c8a5d026f37adeca971212508edffb0652a4d67c601f"
+    },
+    {
+     "path": "2020/Air Quality/2020-CO2.csv.zip",
+     "bytes": 255803,
+     "sha256": "1c96204778a3f7aff9dbe5d00ae7eeeba7e93fb58c4e3a0aeeb9cbc4d7f6a8af"
+    },
+    {
+     "path": "2020/Air Quality/2020-NO.csv.zip",
+     "bytes": 602643512,
+     "sha256": "25aad6c4508ed892df3e02bfa49c1a931806dd76b1f861470fe8cfbd7a160f51"
+    },
+    {
+     "path": "2020/Air Quality/2020-NO2.csv.zip",
+     "bytes": 681342508,
+     "sha256": "3d25390c290ca741546fb9477bcdf9e55722390ea1f304e90ef9ae71ed054e7d"
+    },
+    {
+     "path": "2020/Air Quality/2020-NOx.csv.zip",
+     "bytes": 2074496,
+     "sha256": "dedbff0cd9eb0568cc3b2303c955184e6d98420f0558825c2fa86db54ff33373"
+    },
+    {
+     "path": "2020/Air Quality/2020-O3.csv.zip",
+     "bytes": 116792095,
+     "sha256": "78534a39728bd238dbf135b51315a24f1555fb2824bedd6abd42d1116c1ad1b3"
+    },
+    {
+     "path": "2020/Air Quality/2020-PM 4.csv.zip",
+     "bytes": 131390445,
+     "sha256": "65a61a841c68de2f385e479b5a374925e2c315737f7697818019e72ec666e6a0"
+    },
+    {
+     "path": "2020/Air Quality/2020-PM.csv.zip",
+     "bytes": 217869,
+     "sha256": "0e154fe8c0edf33e709692a2936e7abe8874665d51cd76c2681706037ef0a76f"
+    },
+    {
+     "path": "2020/Air Quality/2020-PM1.csv.zip",
+     "bytes": 147791882,
+     "sha256": "2ab316cf6b30c4c361d6bb5ba46cd930c4239f0d6f6729047af86522527a9053"
+    },
+    {
+     "path": "2020/Air Quality/2020-PM10.csv.zip",
+     "bytes": 146096609,
+     "sha256": "6cea3f67b54c7163468ddedee00ad045362f35d6afaefd203b38ce13bb1bc2dc"
+    },
+    {
+     "path": "2020/Air Quality/2020-PM2.5.csv.zip",
+     "bytes": 133737374,
+     "sha256": "b73519bc7f2972ce846ec93cf42623f3b8a7b398d2cc8917ca6affde9eb9775e"
+    },
+    {
+     "path": "2020/Air Quality/2020-Particle Count.csv.zip",
+     "bytes": 1775143,
+     "sha256": "a15750921ddbc40e540fc7d0b8d12efe1cb88c6e1d7b3db987d9c37213977939"
+    },
+    {
+     "path": "2020/Air Quality/2020-VOC.csv.zip",
+     "bytes": 240429,
+     "sha256": "5ef572637c566ce3531266b4ad59a2340f0da76c46d5db7ad5d735b30d3c738f"
+    },
+    {
+     "path": "2020/Air Quality/2020-allpollu.csv.zip",
+     "bytes": 358232,
+     "sha256": "49dca9b47b1e4629c6d838a007492013db568f0b4140ad597d7c19d887b7f61b"
+    },
+    {
+     "path": "2020/Bee Hive/2020-Brood.csv.zip",
+     "bytes": 52705,
+     "sha256": "05d5516be6d1f13fa4bbd679ea14273efb233747f17d2df0857a6a7a9df78338"
+    },
+    {
+     "path": "2020/Bee Hive/2020-Hive Activity.csv.zip",
+     "bytes": 42330,
+     "sha256": "12b2e1f20c22fb2b3658784be9a60396fc8022d0ef49f5ac8e1cb793d8a48244"
+    },
+    {
+     "path": "2020/Bee Hive/2020-Mean Fanning.csv.zip",
+     "bytes": 32516,
+     "sha256": "2562bec946c035e0e3eeff144c9e3993331f7587de5aec019fab4fcbe4689fad"
+    },
+    {
+     "path": "2020/Bee Hive/2020-Mean Flight Noise.csv.zip",
+     "bytes": 31595,
+     "sha256": "721bd8075429b6caa952b6d8507df1b16e27b48668540214098a76807467377e"
+    },
+    {
+     "path": "2020/Bee Hive/2020-Weight.csv.zip",
+     "bytes": 59591,
+     "sha256": "47a9f65a8a742c9f301cbff19afb166651284bc8402bd028ef1b0dd111d037c0"
+    },
+    {
+     "path": "2020/Electrical/2020-Real Power.csv.zip",
+     "bytes": 2341867,
+     "sha256": "c0ab5919d40a5335f4e7ec2ed92f3ca2cdee286e1fd2bf7d1bc304601e66257f"
+    },
+    {
+     "path": "2020/Environment/2020-Soil Moisture.csv.zip",
+     "bytes": 2115714,
+     "sha256": "e63c085c9c276e6990fae66f743619780f84f8acf0d5027556c14968a6ceaf7a"
+    },
+    {
+     "path": "2020/Noise/2020-Sound.csv.zip",
+     "bytes": 213161228,
+     "sha256": "25848cd16e819d61bff819f960a6f472962edee23a396ecb1f4b2ee3d8097df1"
+    },
+    {
+     "path": "2020/People/2020-People Count.csv.zip",
+     "bytes": 42981542,
+     "sha256": "0f1ccdd40648b468497f9e24caa0731aef8ab86185762a070f4e527642f00f51"
+    },
+    {
+     "path": "2020/People/2020-Walking.csv.zip",
+     "bytes": 19739560,
+     "sha256": "e8e4cc889e911cbb727b373629432e94b6a0ae721401fd1fff0197e0e9a989c0"
+    },
+    {
+     "path": "2020/Seismic/2020-East-West Horizontal Displacement.csv.zip",
+     "bytes": 6372020,
+     "sha256": "91b2303ff84f7b5fc96764611db14a87cc05c7d102083c0bca299a50bc4a73fe"
+    },
+    {
+     "path": "2020/Seismic/2020-North-South Horizontal Displacement.csv.zip",
+     "bytes": 6368878,
+     "sha256": "4ae626974653b1dd3df69f9734332bcbe4fbcc0825b7b165b1f8f4f0f70637d8"
+    },
+    {
+     "path": "2020/Seismic/2020-Vertical Displacement.csv.zip",
+     "bytes": 5879203,
+     "sha256": "605c13990f9fc7872ffa660d90a0d2ec896e22afb91ca0362b99c609e6011fd6"
+    },
+    {
+     "path": "2020/Sensor Metrics/2020-Battery.csv.zip",
+     "bytes": 50962,
+     "sha256": "b86f88a67dce2a10225df6f6517a8d12e5b49aa0ad2bb7402511b9b573dc32bc"
+    },
+    {
+     "path": "2020/Sewage/2020-Sewage Level.csv.zip",
+     "bytes": 212882,
+     "sha256": "13cff50eb8c889615a6150025e270456a6d524e6c2a1af36adf522f8d51fce6e"
+    },
+    {
+     "path": "2020/Vehicles/2020-Average Speed.csv.zip",
+     "bytes": 8420514,
+     "sha256": "8ea1e9e650c41c6a904ff80c1c580255dd55e83c0fc26342285215688773130c"
+    },
+    {
+     "path": "2020/Vehicles/2020-Bus Count East.csv.zip",
+     "bytes": 29765,
+     "sha256": "2550f281eb4f72914af8f1efa43e2dfe659ba8263ee2a5510951bd04ded17b70"
+    },
+    {
+     "path": "2020/Vehicles/2020-Bus Count West.csv.zip",
+     "bytes": 29699,
+     "sha256": "1cbd3224f81de156d4827bf6f49ad5504a49987b56de68692b58bd9d327b6460"
+    },
+    {
+     "path": "2020/Vehicles/2020-Bus Count.csv.zip",
+     "bytes": 42884981,
+     "sha256": "89231b908670d90f3bcb25e0a6514020dcf97f1d2f9185ebadf6e63fbccef33d"
+    },
+    {
+     "path": "2020/Vehicles/2020-Car Count.csv.zip",
+     "bytes": 47521303,
+     "sha256": "e2a481a22705ba8d4aae72a74cc583edf018e6c9de59c2470187497863917451"
+    },
+    {
+     "path": "2020/Vehicles/2020-Congestion.csv.zip",
+     "bytes": 7806964,
+     "sha256": "a06ca998f9e38e5cfecfbe53253ebeae91031ee30c761ce4ab85ec3226ccdf1c"
+    },
+    {
+     "path": "2020/Vehicles/2020-Cycle Count.csv.zip",
+     "bytes": 41924195,
+     "sha256": "af2e42b7f10026728928db526245c538c2b7e33af951295240b624a0e9cee0d7"
+    },
+    {
+     "path": "2020/Vehicles/2020-Journey Time.csv.zip",
+     "bytes": 515558898,
+     "sha256": "d3effaaae393ddbc2ac68589e38b79535eb4438c640c7f5fda93ee38ee65d4d0"
+    },
+    {
+     "path": "2020/Vehicles/2020-Motorcycle Count.csv.zip",
+     "bytes": 42592680,
+     "sha256": "fc42647454028b4f10a2527dfb9cbd4c6cefe9c2d8ebb801f621a0132237916b"
+    },
+    {
+     "path": "2020/Vehicles/2020-Occupied spaces.csv.zip",
+     "bytes": 30972498,
+     "sha256": "5712c0fbc81542babd4625115c4b1d95d62df011f4f131d64c287ac32f5b45d8"
+    },
+    {
+     "path": "2020/Vehicles/2020-Plates In.csv.zip",
+     "bytes": 5908826,
+     "sha256": "bd8d7cbd65f432e6d41d960e0a6dfb2769cf740523473e2f6c3340f609e840c7"
+    },
+    {
+     "path": "2020/Vehicles/2020-Plates Matching.csv.zip",
+     "bytes": 5405909,
+     "sha256": "f747aaf51babd327931914f86eeb8f1056aa2d7c355d8635efc9212878c2bb73"
+    },
+    {
+     "path": "2020/Vehicles/2020-Plates Out.csv.zip",
+     "bytes": 51779878,
+     "sha256": "41e34e06b0440e0d87002791ced4a519300409ac4c7c8845d17e4a6fd39a66f2"
+    },
+    {
+     "path": "2020/Vehicles/2020-Traffic Flow.csv.zip",
+     "bytes": 8610715,
+     "sha256": "95c5acfab528021564aa6bcb6c5bec5c1aceaf3f21313bba979beaa4ff670316"
+    },
+    {
+     "path": "2020/Vehicles/2020-Truck Count.csv.zip",
+     "bytes": 42717325,
+     "sha256": "08be12d6c74ff30ca84ed3140ad491c2d8faeb9d0e7ad482ee31907340532b66"
+    },
+    {
+     "path": "2020/Vehicles/2020-Van Count.csv.zip",
+     "bytes": 43678758,
+     "sha256": "e24b0ebc57f9c277201d1c1aeb78fc655ea6405f91f4d11f9216fe94fdaabe35"
+    },
+    {
+     "path": "2020/Vehicles/2020-Vehicle Count East.csv.zip",
+     "bytes": 29834,
+     "sha256": "47dc60eea97a5f0fce89b508a4581eaec17a5a02f231c273a76c38c0748a105b"
+    },
+    {
+     "path": "2020/Vehicles/2020-Vehicle Count West.csv.zip",
+     "bytes": 29650,
+     "sha256": "87a3da1dcef317c5a97351833a529797bb7d7acf43d510eb835ab545e095738f"
+    },
+    {
+     "path": "2020/Vehicles/2020-Vehicle Count.csv.zip",
+     "bytes": 109060232,
+     "sha256": "ac7f58de1cc818dd74eaff243e53054efde6f227eb9ae038c47f4a25674e7287"
+    },
+    {
+     "path": "2020/Water Quality/2020-Depth.csv.zip",
+     "bytes": 788477,
+     "sha256": "593f609214f2df7311007cd1263263dec212c76a872cd08a9f353805caa3662f"
+    },
+    {
+     "path": "2020/Water Quality/2020-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 1246372,
+     "sha256": "c2a9c34300e788057956b4dbad2ab53e7fb811c328dc75531595c6d27654f07c"
+    },
+    {
+     "path": "2020/Water Quality/2020-Dissolved Oxygen.csv.zip",
+     "bytes": 1182164,
+     "sha256": "ef7123aa787fd8890212599c4ef77b8bfcd88241bfb7d1cfe6c7fc3fd34bb353"
+    },
+    {
+     "path": "2020/Water Quality/2020-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 936316,
+     "sha256": "e9b6adcb02de57691878b1a1e4b1c7f6faac16d4dd9c10fc291018dba938d428"
+    },
+    {
+     "path": "2020/Water Quality/2020-NH4+N.csv.zip",
+     "bytes": 20800,
+     "sha256": "e1ea1ea70618272979ffd1ed7e71f0b2eba48b1a403a06396994673ea58da749"
+    },
+    {
+     "path": "2020/Water Quality/2020-NO3-N.csv.zip",
+     "bytes": 8521,
+     "sha256": "acec6b1426d5caa49de85e747f93fe93622b3566559526ab38bec39d09ab57e4"
+    },
+    {
+     "path": "2020/Water Quality/2020-Salinity.csv.zip",
+     "bytes": 7067,
+     "sha256": "d8ffd636fa598089526458afb04a0d5d84ed9f1eaec23d8538365cddd5113fe7"
+    },
+    {
+     "path": "2020/Water Quality/2020-Specific Conductance.csv.zip",
+     "bytes": 1345250,
+     "sha256": "423f4f41663a3b1c1d3ad8ea6879ebd6c336b1cd97d8b56700c45fc2be315a0c"
+    },
+    {
+     "path": "2020/Water Quality/2020-Turbidity.csv.zip",
+     "bytes": 1099610,
+     "sha256": "71b10af1dfbd62752bfecb8654a7ddfa9fdc50e7248255e2ea6c31271a51a18b"
+    },
+    {
+     "path": "2020/Water Quality/2020-Water Temperature.csv.zip",
+     "bytes": 1411377,
+     "sha256": "718c41f14eb481f9bcb47e4ffb4246426a5a417fc6eecdbbfc96697653c75333"
+    },
+    {
+     "path": "2020/Weather/2020-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 6886680,
+     "sha256": "fa96d17762d8c0cf6ebda9d293fce3ea6dd8eea083792c3c4b87298fe36adc2b"
+    },
+    {
+     "path": "2020/Weather/2020-Dew Point.csv.zip",
+     "bytes": 3571683,
+     "sha256": "361e1931ac64f297f4231a121205457b06329ebc2dc8f9062e5157555a261be2"
+    },
+    {
+     "path": "2020/Weather/2020-Humidity.csv.zip",
+     "bytes": 423687281,
+     "sha256": "e8a375ed470434feb58ce76bee987582b103259745e01fa47ed5a5399d6c2a1c"
+    },
+    {
+     "path": "2020/Weather/2020-Max Wind Speed.csv.zip",
+     "bytes": 1008449,
+     "sha256": "771e8293609b9925199c041168ab46e618a7292e0875888694b72a28d2879ff1"
+    },
+    {
+     "path": "2020/Weather/2020-Pressure.csv.zip",
+     "bytes": 120242902,
+     "sha256": "8e3915ef0e10c88e95af95b27f591b15c6caccbdde3a725417b55c911fc190d0"
+    },
+    {
+     "path": "2020/Weather/2020-Rain Acc.csv.zip",
+     "bytes": 1725683,
+     "sha256": "230972466e51dd8e91c97559137ced0a9641db8aded02f872a5509d3f4a47613"
+    },
+    {
+     "path": "2020/Weather/2020-Rain Duration.csv.zip",
+     "bytes": 51750,
+     "sha256": "a9b63de83571ef82b9431fce70679c22f6897ab783eadaae4bfc61a2d936477c"
+    },
+    {
+     "path": "2020/Weather/2020-Rain.csv.zip",
+     "bytes": 2577118,
+     "sha256": "9033e71b1513e0cfc6c3cff1612c6726cddc6e797ea3abd489b62eca4a590d4d"
+    },
+    {
+     "path": "2020/Weather/2020-RainInt.csv.zip",
+     "bytes": 744025,
+     "sha256": "19d055f6390905e5498240658507adde78e207be67cca92b677d1d01134cdd70"
+    },
+    {
+     "path": "2020/Weather/2020-Rainfall.csv.zip",
+     "bytes": 2527218,
+     "sha256": "f1b2573edbf5aaaf67cc70f1fff4008d1a62028aed5102e9af766f254d66bd52"
+    },
+    {
+     "path": "2020/Weather/2020-Solar Diffuse Radiation.csv.zip",
+     "bytes": 42718,
+     "sha256": "709a39dbca88b88b46f9876a09ef12b03750d8278e82cd7e897b417bd6df9d4c"
+    },
+    {
+     "path": "2020/Weather/2020-Solar Radiation.csv.zip",
+     "bytes": 11425690,
+     "sha256": "9c9a3a9ed6e1f0ac817196aa2451b858227f6acb72f8754fa5a0bdd3c7b44996"
+    },
+    {
+     "path": "2020/Weather/2020-Sunshine Hours.csv.zip",
+     "bytes": 3222581,
+     "sha256": "ffba7f141bdc2dbfb3408788df7ac41093d9afafdd665bbbc87e30100bc73953"
+    },
+    {
+     "path": "2020/Weather/2020-Temperature.csv.zip",
+     "bytes": 424604251,
+     "sha256": "fcdc33d6f7586016f72570374e969e30ce885da7be228c705614a661a04f895b"
+    },
+    {
+     "path": "2020/Weather/2020-Visibility.csv.zip",
+     "bytes": 37751,
+     "sha256": "a7575fffeb32d7bdb4411ad46e7d98de849bbe5d3edbc5da3620c09dd6fc78c8"
+    },
+    {
+     "path": "2020/Weather/2020-Wind Direction.csv.zip",
+     "bytes": 17638078,
+     "sha256": "70497c15a4dfea6da26d0ce09be08eb205a865ab85b36ad9d1a28d9387122740"
+    },
+    {
+     "path": "2020/Weather/2020-Wind Speed.csv.zip",
+     "bytes": 17121791,
+     "sha256": "a49a54b6a84fdae1fa43992fa8753e9125946318869ea10c9f18d82599cc29f0"
+    }
+   ]
+  },
+  {
+   "year": 2021,
+   "files": 64,
+   "bytes": 3562636507,
+   "bundle": "UO-archive-2021.zip",
+   "bundle_bytes": 3562646839,
+   "bundle_sha256": "6f11018def305214307a7712bdb4ee9ada7701a667b628cbc29962ae8c5e6833",
+   "entries": [
+    {
+     "path": "2021/Air Quality/2021-CO.csv.zip",
+     "bytes": 393628845,
+     "sha256": "27ff0497263363d5bec99a23c36635ba749c0eed0b2bd572c486df8e4d5ad838"
+    },
+    {
+     "path": "2021/Air Quality/2021-CO2.csv.zip",
+     "bytes": 26343,
+     "sha256": "a27c22e181bd49375779defd681f1fa02896d9eaa7e34760235ea1cadd734b04"
+    },
+    {
+     "path": "2021/Air Quality/2021-NO.csv.zip",
+     "bytes": 363986013,
+     "sha256": "8054cc6bbaf3c08bd4832122fd07d287528127bc666ff406a398a1273e86f0b1"
+    },
+    {
+     "path": "2021/Air Quality/2021-NO2.csv.zip",
+     "bytes": 396021738,
+     "sha256": "4904ce3682cfd70743e8516702690c4f0cd73b946327b4185a49df67d3947208"
+    },
+    {
+     "path": "2021/Air Quality/2021-NOx.csv.zip",
+     "bytes": 1948271,
+     "sha256": "fa23a07b21cebe64a278288d51187cdaae06f80da9eb7a6349385fc9683ff4de"
+    },
+    {
+     "path": "2021/Air Quality/2021-O3.csv.zip",
+     "bytes": 48589024,
+     "sha256": "28e2818d066438d926cdf80a6bc509c469e09566feec1d5a37bf99a5575cad2a"
+    },
+    {
+     "path": "2021/Air Quality/2021-PM 4.csv.zip",
+     "bytes": 110328640,
+     "sha256": "dfff5cd10c7d0dc0ceef201583d0d269d25c6e6535b44801afb332b41036109d"
+    },
+    {
+     "path": "2021/Air Quality/2021-PM.csv.zip",
+     "bytes": 23718,
+     "sha256": "2763eeb2d81e18c6684a3c62097b92a06e6224fd3118db6f51d92e7c582a8de0"
+    },
+    {
+     "path": "2021/Air Quality/2021-PM1.csv.zip",
+     "bytes": 102682262,
+     "sha256": "91ed40d790e70db78058bd4d3919ffe942f40f2d7c2ea28c7cfdd67933be6cee"
+    },
+    {
+     "path": "2021/Air Quality/2021-PM10.csv.zip",
+     "bytes": 117605433,
+     "sha256": "9f1cbd21bf597449ebbbfd3287594172da9cc4771e8a928ea5a164269c47c81c"
+    },
+    {
+     "path": "2021/Air Quality/2021-PM2.5.csv.zip",
+     "bytes": 111112775,
+     "sha256": "2d937af5aec006ef57ac1cd277e4adcf9e2b6b1585b6eac33d66e01a13a69f50"
+    },
+    {
+     "path": "2021/Air Quality/2021-Particle Count.csv.zip",
+     "bytes": 40264127,
+     "sha256": "46a7fe7e46459514739cbb45977871186ab519b15360b575286748128929d3fa"
+    },
+    {
+     "path": "2021/Air Quality/2021-VOC.csv.zip",
+     "bytes": 25417,
+     "sha256": "0639e9d485c5e9ae9a0881dbf6fbb816c59035d99e719a309e2cc20ad5c1d6e5"
+    },
+    {
+     "path": "2021/Air Quality/2021-allpollu.csv.zip",
+     "bytes": 32450,
+     "sha256": "e6113b4568a4c0936772569af299bf89762fbf5569ebfa7dc7a35708964abf59"
+    },
+    {
+     "path": "2021/Electrical/2021-Real Power.csv.zip",
+     "bytes": 3062605,
+     "sha256": "d2504de48204c62d043440ee3a88ca46c29c7fe33d39da8f14021606f55240b9"
+    },
+    {
+     "path": "2021/Environment/2021-Luminosity.csv.zip",
+     "bytes": 269552,
+     "sha256": "76c47adcd3106bfa15d34ad596475326531adac698d29d7fc144dd2a1ce80c61"
+    },
+    {
+     "path": "2021/Environment/2021-Soil Moisture.csv.zip",
+     "bytes": 251306,
+     "sha256": "a48b269c7eafc0d391256a377f4cfe5baafb2717559aba7fb02be1418adcb74b"
+    },
+    {
+     "path": "2021/Noise/2021-Sound.csv.zip",
+     "bytes": 149957703,
+     "sha256": "8eb719afecdcc9cbeeee7790d97e4ca88c74c4db619ae0a56e344e3c619a7f4a"
+    },
+    {
+     "path": "2021/People/2021-People Count.csv.zip",
+     "bytes": 15845637,
+     "sha256": "4f4a5c14ff43b8434267e04fb1f3b61c77ea67f3b0e3d2f5d44af1602dd8528b"
+    },
+    {
+     "path": "2021/People/2021-Walking.csv.zip",
+     "bytes": 24183514,
+     "sha256": "1fb84c7b3e081004563dab13b87f35dc87768cf6f7d54396b3e45587c65c7568"
+    },
+    {
+     "path": "2021/Sensor Metrics/2021-Battery.csv.zip",
+     "bytes": 358108,
+     "sha256": "3c7fc2508812c46d63354189caba58df5d33a4e7e634df9167a31027be8b41fa"
+    },
+    {
+     "path": "2021/Sewage/2021-Sewage Level.csv.zip",
+     "bytes": 241206,
+     "sha256": "6a2b4f440073ffec3b8c0a65c2609a93a97e4a80695135c613322f0a56ef08c3"
+    },
+    {
+     "path": "2021/Vehicles/2021-Average Speed.csv.zip",
+     "bytes": 4389,
+     "sha256": "ba6d265deba969274acccd8698b4a4b70ecebed3697e3501c0a55c9be96df737"
+    },
+    {
+     "path": "2021/Vehicles/2021-Bus Count.csv.zip",
+     "bytes": 15802365,
+     "sha256": "9ff7e1097d6500405120c4a51f625e559293d5be7c7f8a145346d24dfd7795b3"
+    },
+    {
+     "path": "2021/Vehicles/2021-Car Count.csv.zip",
+     "bytes": 17339919,
+     "sha256": "fcc0e93c4bb47229e29552e55583b21dd67b51160b9af9d60c1191899bb917d3"
+    },
+    {
+     "path": "2021/Vehicles/2021-Congestion.csv.zip",
+     "bytes": 4082,
+     "sha256": "49bff3f5011373d59535b311e9bf2350961c331d19c1e0602ecfa83dbd5ac1a1"
+    },
+    {
+     "path": "2021/Vehicles/2021-Cycle Count.csv.zip",
+     "bytes": 15566875,
+     "sha256": "981ff16da70d705847f7d2e3a559e23de7f1a10e14e1fc5f92e673b9b618648c"
+    },
+    {
+     "path": "2021/Vehicles/2021-Journey Time.csv.zip",
+     "bytes": 649376174,
+     "sha256": "cccd02becd0fcc272270d215da8cef275bd4bbb84e73d99048183c9af85bddff"
+    },
+    {
+     "path": "2021/Vehicles/2021-Motorcycle Count.csv.zip",
+     "bytes": 15820001,
+     "sha256": "bb033a3ec6c6015ee6be4dc601bb4f9342d3474acd7194806087a5a1c777f878"
+    },
+    {
+     "path": "2021/Vehicles/2021-Occupied spaces.csv.zip",
+     "bytes": 26799141,
+     "sha256": "f27b5175c373623ad9a1ba155430d88aae32075d570c574e5123121228cf8ca3"
+    },
+    {
+     "path": "2021/Vehicles/2021-Plates In.csv.zip",
+     "bytes": 115945516,
+     "sha256": "02071fab361c393d6d476ed4ef475266e3940fda44d052220f20f0cf106edd8e"
+    },
+    {
+     "path": "2021/Vehicles/2021-Plates Matching.csv.zip",
+     "bytes": 104229521,
+     "sha256": "7777ffa45728d304d2ed0eb32e6f215633970726501833f9514dc40eb27ca9dd"
+    },
+    {
+     "path": "2021/Vehicles/2021-Plates Out.csv.zip",
+     "bytes": 115267565,
+     "sha256": "ae596fa1545181115378007cb327f6f84758d810881e74156f9f74eb702d8b2a"
+    },
+    {
+     "path": "2021/Vehicles/2021-Traffic Flow.csv.zip",
+     "bytes": 4263,
+     "sha256": "a453ec2a45434981dd4c4c19ff8adb5eb100ee412662118f58d69d01e8bf3522"
+    },
+    {
+     "path": "2021/Vehicles/2021-Truck Count.csv.zip",
+     "bytes": 60593328,
+     "sha256": "d18a7096a38d04d61584ea632393750fe2953ca98d5f14c455e1d7cdb80a7a66"
+    },
+    {
+     "path": "2021/Vehicles/2021-Van Count.csv.zip",
+     "bytes": 16157683,
+     "sha256": "888a98bf3572d7aa5d0c2e10abb77e3c3f19ff2ddafca3e3c4637801408aa614"
+    },
+    {
+     "path": "2021/Water Level/2021-Relative Water Level.csv.zip",
+     "bytes": 4012833,
+     "sha256": "5f4df00049b88f6665cd0514cfef0b8ee58db28a22bdf5fdfd61f82595dc9d86"
+    },
+    {
+     "path": "2021/Water Level/2021-Water Level.csv.zip",
+     "bytes": 3521052,
+     "sha256": "8d4af229d513a687c09e786009a6318fbcf39f732ae62670b0ed636a2fc9ca33"
+    },
+    {
+     "path": "2021/Water Quality/2021-Depth.csv.zip",
+     "bytes": 576827,
+     "sha256": "ddb3b9eb63ea5d413db71c0bd2065018bd3ae2d2b5eb788073c74ee1821cd3bf"
+    },
+    {
+     "path": "2021/Water Quality/2021-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 855127,
+     "sha256": "91eeb9d44bec44aa170fe053240f3da9623307532d8973927bd13c1c65d6a308"
+    },
+    {
+     "path": "2021/Water Quality/2021-Dissolved Oxygen.csv.zip",
+     "bytes": 803700,
+     "sha256": "c1e39c7162d57d4f122add61d15697356b70fbaa152159855853b287f4be9c56"
+    },
+    {
+     "path": "2021/Water Quality/2021-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 477897,
+     "sha256": "c425ca7dfd01201bef868a6778318cee101aa148dbda12c053ff410e1e7e3aca"
+    },
+    {
+     "path": "2021/Water Quality/2021-NH4+N.csv.zip",
+     "bytes": 673825,
+     "sha256": "b3555c6ec94b15e23e7d5e88a255781d42c181b933b542b2dbca0ac6cf6d8571"
+    },
+    {
+     "path": "2021/Water Quality/2021-NO3-N.csv.zip",
+     "bytes": 13718,
+     "sha256": "2c1d57c27865087bdd82b83149e519d9bbef06385693deddb9f4757b67b7a98d"
+    },
+    {
+     "path": "2021/Water Quality/2021-Salinity.csv.zip",
+     "bytes": 46932,
+     "sha256": "2da02657375b889bdd01067be3e5867fff307c69b6756a812fad128da58227d1"
+    },
+    {
+     "path": "2021/Water Quality/2021-Specific Conductance.csv.zip",
+     "bytes": 1069982,
+     "sha256": "d557cfb4153356dc3948944fc3ab8c7955c0bb328d3b136db1d3a060c4d342bb"
+    },
+    {
+     "path": "2021/Water Quality/2021-Turbidity.csv.zip",
+     "bytes": 996394,
+     "sha256": "0e32508e57eeff970a94455822c556ef2a44c2713f1779563bb8e17cff1a54e8"
+    },
+    {
+     "path": "2021/Water Quality/2021-Water Temperature.csv.zip",
+     "bytes": 1273814,
+     "sha256": "3deabbcb2de0d38f916b18fec22f213a5d202911f2801a0f8dfa4a5a575a952b"
+    },
+    {
+     "path": "2021/Weather/2021-Daily Accumulation Rainfall.csv.zip",
+     "bytes": 7601,
+     "sha256": "d507fd0083f3dc1ed0058613c80d628cee2e3dac149d85eb334ccccd735809e6"
+    },
+    {
+     "path": "2021/Weather/2021-Dew Point.csv.zip",
+     "bytes": 3536568,
+     "sha256": "e929de54e32e7e2781cd4186ce9084c1b53c8ec642209a343fdb7fbadd3b1ba1"
+    },
+    {
+     "path": "2021/Weather/2021-Humidity.csv.zip",
+     "bytes": 222003764,
+     "sha256": "a8db5d36a22d9f7fb64db2068fcc799815faf45c432a0d97948afdc2fbafe93c"
+    },
+    {
+     "path": "2021/Weather/2021-Max Wind Speed.csv.zip",
+     "bytes": 740946,
+     "sha256": "4bb7f7c4f96fb61def38150b1a3bec50f76ef6cdd3428bf1f96607277e9edd67"
+    },
+    {
+     "path": "2021/Weather/2021-Pressure.csv.zip",
+     "bytes": 44937585,
+     "sha256": "e8fc5dee67af186997fb1a626ad3c4e35709fd4a1a42cc85f15f6c1bb3b779e5"
+    },
+    {
+     "path": "2021/Weather/2021-Rain Acc.csv.zip",
+     "bytes": 17586,
+     "sha256": "124c8b296fd9903650eda451cfb733396b43596175331f8a011483b515c744e5"
+    },
+    {
+     "path": "2021/Weather/2021-Rain Duration.csv.zip",
+     "bytes": 34940,
+     "sha256": "3392f8451165c507872855a903baaea27e54e9edbd8f7e370d1add4f0b74d216"
+    },
+    {
+     "path": "2021/Weather/2021-Rain.csv.zip",
+     "bytes": 3336969,
+     "sha256": "693cb2d957f2f077bdf0fa4875a8aeaa41dfa1783c5b6346570aaf7d04578975"
+    },
+    {
+     "path": "2021/Weather/2021-RainInt.csv.zip",
+     "bytes": 42424,
+     "sha256": "b3287d4e58758170902596e16b42fef3c11c4fa0e0d7b84d9e6cba46aacd4dd1"
+    },
+    {
+     "path": "2021/Weather/2021-Rainfall.csv.zip",
+     "bytes": 3200196,
+     "sha256": "097fa184db3d5c216be924cadfd894db53fa44b5528d384eb4a599994b23c5cb"
+    },
+    {
+     "path": "2021/Weather/2021-Solar Radiation.csv.zip",
+     "bytes": 3517417,
+     "sha256": "4f9b146a41ce6a5f10d5c22cdee6784ed2a11cf094c46449606f8bef9eefb485"
+    },
+    {
+     "path": "2021/Weather/2021-Sunshine Hours.csv.zip",
+     "bytes": 3038964,
+     "sha256": "3d09ca789ae43f8a4eff811d3497e9b782071b5cdb15164f39a4a4f6f43757dc"
+    },
+    {
+     "path": "2021/Weather/2021-Temperature.csv.zip",
+     "bytes": 219840164,
+     "sha256": "d11bbc716c347ed4eca289235856b5cb3c301c4b43422964b2716ee6f16f407d"
+    },
+    {
+     "path": "2021/Weather/2021-Visibility.csv.zip",
+     "bytes": 5696,
+     "sha256": "47098d422dad2b03b504ff8a9699b199df6a51133d3fa3d2292c671bc68d5cf4"
+    },
+    {
+     "path": "2021/Weather/2021-Wind Direction.csv.zip",
+     "bytes": 5756293,
+     "sha256": "50efab0d3f3186449b2cd28b729bfdb1423d7dd88665607125904be4425fac2c"
+    },
+    {
+     "path": "2021/Weather/2021-Wind Speed.csv.zip",
+     "bytes": 4941784,
+     "sha256": "f93f46f298d52d2cd82c7c024910f907ef459bedd2ab27dce8bc8fbf200f964c"
+    }
+   ]
+  },
+  {
+   "year": 2022,
+   "files": 48,
+   "bytes": 8525639151,
+   "bundle": "UO-archive-2022.zip",
+   "bundle_bytes": 8525646979,
+   "bundle_sha256": "a61e3154e668b2e305b5fb9d810189cd14941eb599b0d3fef85314553dfb6321",
+   "entries": [
+    {
+     "path": "2022/Air Quality/2022-CO.csv.zip",
+     "bytes": 331117102,
+     "sha256": "97a930f7498efca8152b9bcf9c96d5fcdb3a9f1729049e6bcc66447a8b772fff"
+    },
+    {
+     "path": "2022/Air Quality/2022-NO.csv.zip",
+     "bytes": 263527989,
+     "sha256": "c155cfb05e6f6199b38e01af0ed5cd319b435648d34fecb160b0074321b90b83"
+    },
+    {
+     "path": "2022/Air Quality/2022-NO2.csv.zip",
+     "bytes": 331016853,
+     "sha256": "1def906b4224c485f0671bbfade48c448b8979629daf35ae828299e2137bc15a"
+    },
+    {
+     "path": "2022/Air Quality/2022-NOx.csv.zip",
+     "bytes": 2019705,
+     "sha256": "f58f5d63bcc24235817a3695d0f57d3e5e4db09afbb1eba4cecbd9e968d0a546"
+    },
+    {
+     "path": "2022/Air Quality/2022-O3.csv.zip",
+     "bytes": 172630897,
+     "sha256": "4ac5fc7dbe8593a9d562190a6305503bedf7e8f7bdb243bdd0550c05ff6e975b"
+    },
+    {
+     "path": "2022/Air Quality/2022-PM 4.csv.zip",
+     "bytes": 152743436,
+     "sha256": "4ac12bca45f28f46969d64d73b14a136b75659ecc5f43029edd72f80373a2c4f"
+    },
+    {
+     "path": "2022/Air Quality/2022-PM1.csv.zip",
+     "bytes": 149996212,
+     "sha256": "44c32fc41523dfc40ba85d7241a7e2792ee0c62a34590e5779edd3d49062c339"
+    },
+    {
+     "path": "2022/Air Quality/2022-PM10.csv.zip",
+     "bytes": 163651982,
+     "sha256": "3c0b0756c4d4c4f1da8b4e6e220fd5e7370734ffda35272a5c3c0659f241eb4b"
+    },
+    {
+     "path": "2022/Air Quality/2022-PM2.5.csv.zip",
+     "bytes": 159275127,
+     "sha256": "a407cc7073544439860d8c9522491b300854ee568aa41ca3db8f0f4785f3b514"
+    },
+    {
+     "path": "2022/Air Quality/2022-Particle Count.csv.zip",
+     "bytes": 158049963,
+     "sha256": "7c9c0383e0f4ab560cb4d6fc636cd7371b15d2b3fe20bf4e0fcbba27595797e9"
+    },
+    {
+     "path": "2022/Electrical/2022-Real Power.csv.zip",
+     "bytes": 1095404,
+     "sha256": "a6709636d824847a5f48ef7407c9483f7a14fb48e17394881f8ae94cb2baddf5"
+    },
+    {
+     "path": "2022/Environment/2022-Luminosity.csv.zip",
+     "bytes": 630,
+     "sha256": "34630c6366a7193d12422bd589a4d1bebb5fd6fb82de7da59dfa1a1b7d2ebdb6"
+    },
+    {
+     "path": "2022/Noise/2022-Sound.csv.zip",
+     "bytes": 49223641,
+     "sha256": "1ac033eab629f2f51031d1dfccbff924374c71651eb7d6cc26d163a96beb1fdb"
+    },
+    {
+     "path": "2022/People/2022-Walking.csv.zip",
+     "bytes": 23657938,
+     "sha256": "7b4e3b2a07a277cf3bdd7c1b193f4ac77892a8f4091bfd199ea9b21b67214984"
+    },
+    {
+     "path": "2022/Sensor Metrics/2022-Battery.csv.zip",
+     "bytes": 855192,
+     "sha256": "59c41570eacbc657b95a3de873a271e1d06b28bdb35f88b80c1c1a6f94569184"
+    },
+    {
+     "path": "2022/Sewage/2022-Sewage Level.csv.zip",
+     "bytes": 247684,
+     "sha256": "42fdb14b77c74f2fd2366f68274f9b85803cbb25875c34e1916ea166890b53c9"
+    },
+    {
+     "path": "2022/Vehicles/2022-Average Speed.csv.zip",
+     "bytes": 4979,
+     "sha256": "7c5f271b8b43b3de525728f315f29e01212c72aa243a180911a4be39af6c3bdc"
+    },
+    {
+     "path": "2022/Vehicles/2022-Congestion.csv.zip",
+     "bytes": 4642,
+     "sha256": "1b04b0e4a2cd25d05527eaf9ab1219cb56a91f4b35c0eb66b76cd98f9f0f3acb"
+    },
+    {
+     "path": "2022/Vehicles/2022-Journey Time.csv.zip",
+     "bytes": 1705256799,
+     "sha256": "3b717c39f98a57e7c031bc4712cd3c367b61e00f69fedd15a011221eb35636fd"
+    },
+    {
+     "path": "2022/Vehicles/2022-Occupied spaces.csv.zip",
+     "bytes": 21667705,
+     "sha256": "7ce9a31ca8abf18767d1ce9ed45bf04df263aa457288c9ab6ad3c13ade5ab053"
+    },
+    {
+     "path": "2022/Vehicles/2022-Plates In.csv.zip",
+     "bytes": 1390882152,
+     "sha256": "e1786e92ee11f4dd45fc6cb45fcf6a4c436fe95066585c61a223bd7eeac88508"
+    },
+    {
+     "path": "2022/Vehicles/2022-Plates Matching.csv.zip",
+     "bytes": 1401475821,
+     "sha256": "b1e46f96d1bb668042d09091ce5622640e06c27fa1810171b09aaf486e2200bb"
+    },
+    {
+     "path": "2022/Vehicles/2022-Plates Out.csv.zip",
+     "bytes": 1393037864,
+     "sha256": "e85cd7eab0d72e02a2488503cf2289ab13ab2cb49ce57412759b6c2cf9c2a871"
+    },
+    {
+     "path": "2022/Vehicles/2022-Traffic Flow.csv.zip",
+     "bytes": 4667,
+     "sha256": "c865363a2c38abdda6c5629592b08b3307e4756ece4c2d22381cdeeff385d4f7"
+    },
+    {
+     "path": "2022/Water Level/2022-Relative Water Level.csv.zip",
+     "bytes": 5830672,
+     "sha256": "c0320e935df57a05612f1d46c917693c169b05aec55dc55af37fd0b945836066"
+    },
+    {
+     "path": "2022/Water Level/2022-Water Level.csv.zip",
+     "bytes": 5589098,
+     "sha256": "7e1c5a844d4cf69e55ddc93b00e722d4fd42110332067d43e814bc4358e47c44"
+    },
+    {
+     "path": "2022/Water Quality/2022-Depth.csv.zip",
+     "bytes": 323225,
+     "sha256": "f17dc40cd2b176be2001db8214eec08df84dfd213c83c36c329b38e103e09cb2"
+    },
+    {
+     "path": "2022/Water Quality/2022-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 479993,
+     "sha256": "18d6993584861bdd56b315b5226ca0bd3e0a6755228385f55966948bb58bb017"
+    },
+    {
+     "path": "2022/Water Quality/2022-Dissolved Oxygen.csv.zip",
+     "bytes": 470235,
+     "sha256": "1c4b8f48f90eaa9282ff9b59f58cceda36cbdb86fe3865cc9f6f5a3771d4e4e6"
+    },
+    {
+     "path": "2022/Water Quality/2022-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 250990,
+     "sha256": "abecea8dba50ca7f92ac65b91fd1765b2a770e7191173c65a506b331f6096899"
+    },
+    {
+     "path": "2022/Water Quality/2022-NH4+N.csv.zip",
+     "bytes": 237820,
+     "sha256": "f55238e9656a9e926ea9cf3e889c2017af75a99e4bf9198146a71c89e2e3634b"
+    },
+    {
+     "path": "2022/Water Quality/2022-NO3-N.csv.zip",
+     "bytes": 237824,
+     "sha256": "a96bfe4f80bf2c61ae8cc116850f9100b64c9d15badd5b305f00d61509069210"
+    },
+    {
+     "path": "2022/Water Quality/2022-Salinity.csv.zip",
+     "bytes": 27375,
+     "sha256": "52a0f9911030be1b4f716019c20e42ce38057e0270e2afabb561737a9dbd8068"
+    },
+    {
+     "path": "2022/Water Quality/2022-Specific Conductance.csv.zip",
+     "bytes": 561804,
+     "sha256": "33716c4e40064b25b66dba6d8fa81f759915c119f53d186b63d039576e65f905"
+    },
+    {
+     "path": "2022/Water Quality/2022-Turbidity.csv.zip",
+     "bytes": 560722,
+     "sha256": "5bb8bf85a752f6bfc326efb8eb445e424052448988ed5a193c1936f0bf70391d"
+    },
+    {
+     "path": "2022/Water Quality/2022-Water Temperature.csv.zip",
+     "bytes": 509711,
+     "sha256": "031b72b21262c753b8c8446858ca5d182ac9abc70d268c95f33c137db82ecc05"
+    },
+    {
+     "path": "2022/Weather/2022-Dew Point.csv.zip",
+     "bytes": 7003798,
+     "sha256": "93d95dd970dbbbbac6cb02601088b06740beb0fb9c40514b7479259f12ac5d25"
+    },
+    {
+     "path": "2022/Weather/2022-Humidity.csv.zip",
+     "bytes": 217125349,
+     "sha256": "e65b151624e8074bf8a6b288b0af4410c1878424e4cfd707b72a54e1f4986a67"
+    },
+    {
+     "path": "2022/Weather/2022-Max Wind Speed.csv.zip",
+     "bytes": 1837526,
+     "sha256": "3d84bd85200a0ac4d532cf65a81d2a75ebb891b0f3fc04d1d41e25956ecb2ad2"
+    },
+    {
+     "path": "2022/Weather/2022-Pressure.csv.zip",
+     "bytes": 164068397,
+     "sha256": "8042bcd0a5164e2c7c558c9e7ff566ebfa7d45f9674af266319bd0d87beacae5"
+    },
+    {
+     "path": "2022/Weather/2022-Rain.csv.zip",
+     "bytes": 3992799,
+     "sha256": "a422cad0525f4d06149040e813b574fae0ec15148525491268d4b3e324c8af65"
+    },
+    {
+     "path": "2022/Weather/2022-Rainfall.csv.zip",
+     "bytes": 6349295,
+     "sha256": "bc2275aa98dcb248b40357b1336dc6029b7ee000f8be0bf1312b08bab23959e4"
+    },
+    {
+     "path": "2022/Weather/2022-Solar Radiation.csv.zip",
+     "bytes": 7138522,
+     "sha256": "7f42e10a8adc1e08ca0bb6acc92da168085a7692900bf3bfc5daecf837755bd9"
+    },
+    {
+     "path": "2022/Weather/2022-Sunshine Hours.csv.zip",
+     "bytes": 6046556,
+     "sha256": "079e9f01bdb5a90eddcc4688c936450c74749456240dd8682485daf657db01de"
+    },
+    {
+     "path": "2022/Weather/2022-Temperature.csv.zip",
+     "bytes": 204284865,
+     "sha256": "e8670f33fa68cd7f0c02767ba4177fc487cb49f10a121bdc8742ebdf67c67c55"
+    },
+    {
+     "path": "2022/Weather/2022-Visibility.csv.zip",
+     "bytes": 2896,
+     "sha256": "3fd4ca1adfe9691e229f32cec5f893a7345d567c43b374fd8db07f73a018d498"
+    },
+    {
+     "path": "2022/Weather/2022-Wind Direction.csv.zip",
+     "bytes": 11364385,
+     "sha256": "647bcc3af7c1c8457649610e09d9b61cb758ec4b36ec3fb82a3c0dcf40375319"
+    },
+    {
+     "path": "2022/Weather/2022-Wind Speed.csv.zip",
+     "bytes": 9900910,
+     "sha256": "1ff8c6e6e3139a0dd253eec1e243342704187467fd1c537eaac9d98b21582181"
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "files": 49,
+   "bytes": 15939538058,
+   "bundle": "UO-archive-2023.zip",
+   "bundle_bytes": 15939546170,
+   "bundle_sha256": "51ce0c77125b662721a1f24a9e9874823f8d4488fd99f9261c101246498f4c12",
+   "entries": [
+    {
+     "path": "2023/Air Quality/2023-CO.csv.zip",
+     "bytes": 206485534,
+     "sha256": "026077429a075ae74e87a34a96f48a2c9efb36e51088a29986ac09540bc520cc"
+    },
+    {
+     "path": "2023/Air Quality/2023-CO2.csv.zip",
+     "bytes": 85773,
+     "sha256": "3294715fcd9d45d6c7606028a4ee9d8eaffd4c8d5d576e911432646942f6daba"
+    },
+    {
+     "path": "2023/Air Quality/2023-NO.csv.zip",
+     "bytes": 184693227,
+     "sha256": "6fa0461592a8f506919a97d56206f9a9f86e91591732404d48ca391d3777516a"
+    },
+    {
+     "path": "2023/Air Quality/2023-NO2.csv.zip",
+     "bytes": 205245936,
+     "sha256": "27089ce77f16ad1fe6d0890a9d5b01f707b3aab8517573d6a9fbcf4fa05526b6"
+    },
+    {
+     "path": "2023/Air Quality/2023-NOx.csv.zip",
+     "bytes": 2133303,
+     "sha256": "66f7e5b96345487fdc565728e49bcb790537ee3b8e16dbb504b01b0dba1fec25"
+    },
+    {
+     "path": "2023/Air Quality/2023-O3.csv.zip",
+     "bytes": 127060764,
+     "sha256": "45ea69dd2681938daac84b15e103fa2215a15c73d671e19e2ed5e4f48e53f973"
+    },
+    {
+     "path": "2023/Air Quality/2023-PM 4.csv.zip",
+     "bytes": 114743694,
+     "sha256": "431bb3c19e2b56472b7140b4f2e558aed169084f5c2fd7da807f747539abb271"
+    },
+    {
+     "path": "2023/Air Quality/2023-PM1.csv.zip",
+     "bytes": 113099373,
+     "sha256": "7c6dba9687615d2009d45da0f07be2a00fad3754d13d55064fedf705bd3c64f9"
+    },
+    {
+     "path": "2023/Air Quality/2023-PM10.csv.zip",
+     "bytes": 123180060,
+     "sha256": "8c39ed20836a092527a3b0dedd7a27d4d753dff88a1040158599928c04c9f60d"
+    },
+    {
+     "path": "2023/Air Quality/2023-PM2.5.csv.zip",
+     "bytes": 119805924,
+     "sha256": "888974f156736552c2135240e2207818abacae96218adccc68e74502c14a6cba"
+    },
+    {
+     "path": "2023/Air Quality/2023-Particle Count.csv.zip",
+     "bytes": 117917607,
+     "sha256": "7da2b914370d7e289233bd8a8a108d4a8662f13bf00adb84ede14566616c96eb"
+    },
+    {
+     "path": "2023/Air Quality/2023-VOC.csv.zip",
+     "bytes": 66606,
+     "sha256": "2eeee092a25d4484988ba17bd5ede2a78f1e55d8c0d5a983afe167735f7cd629"
+    },
+    {
+     "path": "2023/Building/2023-Internal Humidity.csv.zip",
+     "bytes": 24756,
+     "sha256": "61b4fce66feaa41043996c68c4df8932bea93e0f22d04789458cf70668ce1374"
+    },
+    {
+     "path": "2023/Building/2023-Internal Temperature.csv.zip",
+     "bytes": 23023,
+     "sha256": "3263d324b4dbda70ca89a2809d57491c3412f4fdde74ec0f485a11526521f12c"
+    },
+    {
+     "path": "2023/Noise/2023-Sound.csv.zip",
+     "bytes": 15480179,
+     "sha256": "73fa221d27141c78d370ae3654f3d471a544c9b62c50c4a9a59968e0ef000c8c"
+    },
+    {
+     "path": "2023/People/2023-Walking.csv.zip",
+     "bytes": 10921650,
+     "sha256": "fe7b88c296b48b8dbff12fb6968f7a124fd7bd53b167ffd48fe1986c93ba6fc0"
+    },
+    {
+     "path": "2023/Sensor Metrics/2023-Battery.csv.zip",
+     "bytes": 6899490,
+     "sha256": "c46ced905874c02d8eee21e85163c3c08ece2f8e269d6971638cd9b70fdbbf0b"
+    },
+    {
+     "path": "2023/Sewage/2023-Sewage Level.csv.zip",
+     "bytes": 232930,
+     "sha256": "83f7feac62ba46974d54b3002848a6ab007b7f3659dab16a96bbf6a7b8526bbf"
+    },
+    {
+     "path": "2023/Vehicles/2023-Average Speed.csv.zip",
+     "bytes": 2503,
+     "sha256": "215808013bcba1ce5e001b46d045df6539fc4cba80aa1f295969275bb3582707"
+    },
+    {
+     "path": "2023/Vehicles/2023-Congestion.csv.zip",
+     "bytes": 2372,
+     "sha256": "781702d582a9b6254069ab791eae9cfea34b76abaad1b63514588f0f01f875d3"
+    },
+    {
+     "path": "2023/Vehicles/2023-Journey Time.csv.zip",
+     "bytes": 3843524154,
+     "sha256": "1f8d56a73315b40d8470f32ce1ede7eb6c6fcf521a4ca45a9312b7a27006780b"
+    },
+    {
+     "path": "2023/Vehicles/2023-Plates In.csv.zip",
+     "bytes": 3448479521,
+     "sha256": "8d6f35148e76d90b582250cb1932851e454f13e9e3999c12239c0679329ffca9"
+    },
+    {
+     "path": "2023/Vehicles/2023-Plates Matching.csv.zip",
+     "bytes": 3451277440,
+     "sha256": "2631f63318799575f622bebfa6b33b427f80b8469d3393abcc8eba075265bd89"
+    },
+    {
+     "path": "2023/Vehicles/2023-Plates Out.csv.zip",
+     "bytes": 3451228086,
+     "sha256": "5977fb7f5492d0fef1724b30bf67e53d30137fa335a03e679ae9aaeb46a50c95"
+    },
+    {
+     "path": "2023/Vehicles/2023-Traffic Flow.csv.zip",
+     "bytes": 2392,
+     "sha256": "4f6e638bad2bec09d973e614a49a7cecbd9d9c8c47abc08634553ed09ea99135"
+    },
+    {
+     "path": "2023/Water Level/2023-Relative Water Level.csv.zip",
+     "bytes": 5302762,
+     "sha256": "11ce7e79bc98c5ee6b4d689b1e484f9f24b4a1f353f5f6c059a6ca293f0cf1d2"
+    },
+    {
+     "path": "2023/Water Level/2023-Water Level.csv.zip",
+     "bytes": 5726362,
+     "sha256": "269782d4b49926db7fb43eae25bd200afa895bc195bc4cb9bdf69b8dac251bff"
+    },
+    {
+     "path": "2023/Water Quality/2023-Depth.csv.zip",
+     "bytes": 496296,
+     "sha256": "2128228467a6fc57070f2f23f33e385e2064c27a0337a42b1a78306817a8e03a"
+    },
+    {
+     "path": "2023/Water Quality/2023-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 735497,
+     "sha256": "f0c6453f557ebf8b2d803fe2726750c66a6aabe2d5f81bf1f29d73b8404b19bb"
+    },
+    {
+     "path": "2023/Water Quality/2023-Dissolved Oxygen.csv.zip",
+     "bytes": 645909,
+     "sha256": "72b0ae7c047e18e8ecce3a2cacd201faaa3ba6cff2593d640e0ba28c700a1902"
+    },
+    {
+     "path": "2023/Water Quality/2023-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 436064,
+     "sha256": "9d2e3492c9efe9cc9d113e96504df4d34507cab23f36b5e65ef7eabd72b50e20"
+    },
+    {
+     "path": "2023/Water Quality/2023-NH4+N.csv.zip",
+     "bytes": 363652,
+     "sha256": "b7f81d0f81cd267192c1345c18e564225654b165fdae3595414aa7311011c686"
+    },
+    {
+     "path": "2023/Water Quality/2023-NO3-N.csv.zip",
+     "bytes": 369464,
+     "sha256": "bb67b8d5904a6fafba95aee0fcc47b8fc69e7aede32867eca5f02289cff785b1"
+    },
+    {
+     "path": "2023/Water Quality/2023-Salinity.csv.zip",
+     "bytes": 152658,
+     "sha256": "8132138307747fd85c6115bb05c88a9ea445ac781fe518fea4893ff8f4a4e5eb"
+    },
+    {
+     "path": "2023/Water Quality/2023-Specific Conductance.csv.zip",
+     "bytes": 847578,
+     "sha256": "18468dee15baa5a05eb5272ce78735894f701f9939daf0970f199182b23ca53f"
+    },
+    {
+     "path": "2023/Water Quality/2023-Turbidity.csv.zip",
+     "bytes": 907399,
+     "sha256": "bd3e176fb0d0e1af01013d7fd54b82f4b1f883fb435f31df043a214867d18f4c"
+    },
+    {
+     "path": "2023/Water Quality/2023-Water Temperature.csv.zip",
+     "bytes": 849123,
+     "sha256": "6ac8c8670786b3740b7f80a14d383de7fe1b5c79d8d862164db30e93a93a90c6"
+    },
+    {
+     "path": "2023/Weather/2023-Dew Point.csv.zip",
+     "bytes": 5498771,
+     "sha256": "f2a69a23d261581603443a332fae6a35371c8d03360682464d574c2c87afdbfd"
+    },
+    {
+     "path": "2023/Weather/2023-Humidity.csv.zip",
+     "bytes": 132477426,
+     "sha256": "9ea1bdd0b5d70fa4acdbe95f5c500a3ada7fde43b39d984fee2f2f62383d8e9e"
+    },
+    {
+     "path": "2023/Weather/2023-Max Wind Speed.csv.zip",
+     "bytes": 130781,
+     "sha256": "13e0b2f713e79032772b66d0571a5587909a3b64aa28f74d90989b95f9dc874e"
+    },
+    {
+     "path": "2023/Weather/2023-Pressure.csv.zip",
+     "bytes": 102958363,
+     "sha256": "0b5c7ad1e55b676257643ad3705c74c0bbacd4c9ee3197cdaeb804af9172b3d2"
+    },
+    {
+     "path": "2023/Weather/2023-Rain.csv.zip",
+     "bytes": 2080179,
+     "sha256": "5588fa07c63feeceb7f02385be372326c722346e45776cd6af0444cf484721b7"
+    },
+    {
+     "path": "2023/Weather/2023-Rainfall.csv.zip",
+     "bytes": 4014407,
+     "sha256": "bd8615b9bcd25f379dc894174fa8c98ea89a73654b00aa8a815ce5304015a35e"
+    },
+    {
+     "path": "2023/Weather/2023-Solar Radiation.csv.zip",
+     "bytes": 4829183,
+     "sha256": "8897f65cf17d594ec95c5bd16cda2e7aa1f94359df93c527dacca06642496330"
+    },
+    {
+     "path": "2023/Weather/2023-Sunshine Hours.csv.zip",
+     "bytes": 3957175,
+     "sha256": "a01b5edaa5ede389a5776e74abc68209579c92c3eaf9ca77d96ece8005e1ece3"
+    },
+    {
+     "path": "2023/Weather/2023-Temperature.csv.zip",
+     "bytes": 107054834,
+     "sha256": "1d9ed85584f32e113160cdab27aeb01130cf8bedaa9ca24cc4db747bfb4a68df"
+    },
+    {
+     "path": "2023/Weather/2023-Visibility.csv.zip",
+     "bytes": 27548,
+     "sha256": "233256dc026114fdad5ee7992af2e97c59327c1af5d8592a0701c37888620bed"
+    },
+    {
+     "path": "2023/Weather/2023-Wind Direction.csv.zip",
+     "bytes": 9384831,
+     "sha256": "a6681b3c4e560898c4eb0a353ea149777997d3be01515acc12c03622c0614146"
+    },
+    {
+     "path": "2023/Weather/2023-Wind Speed.csv.zip",
+     "bytes": 7675499,
+     "sha256": "a92e2ba39b72328cc5866c82d6da6794c13cda1980327596b5c941f876cbf556"
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "files": 45,
+   "bytes": 10782486607,
+   "bundle": "UO-archive-2024.zip",
+   "bundle_bytes": 10782494079,
+   "bundle_sha256": "09580713fe4dde83dbbd812bbf9e5b4614815cd0cabbeff1725b8ba6b721a087",
+   "entries": [
+    {
+     "path": "2024/Air Quality/2024-CO.csv.zip",
+     "bytes": 63723445,
+     "sha256": "1be73015e03cb4cbce0303479f0a1f7db7389c10d27fd101ae196d2acb72df00"
+    },
+    {
+     "path": "2024/Air Quality/2024-CO2.csv.zip",
+     "bytes": 6338,
+     "sha256": "cad86772d246ca7659c159a04a066c205502b04108727acdf28680af6df14f04"
+    },
+    {
+     "path": "2024/Air Quality/2024-NO.csv.zip",
+     "bytes": 57690408,
+     "sha256": "aa9068bb724b6aec6bb851eda91c57762b45e108cc0af3471c4cc88e5f2f8e2f"
+    },
+    {
+     "path": "2024/Air Quality/2024-NO2.csv.zip",
+     "bytes": 72957031,
+     "sha256": "543427b041ae6aa48e500cc535dd8e5d927bba8ce7f33e2acebf25e79355f632"
+    },
+    {
+     "path": "2024/Air Quality/2024-NOx.csv.zip",
+     "bytes": 2272218,
+     "sha256": "c5b49fdc9a9db05fc36ae2ac5d325a6c9ab4f132213eb8a308af452719f5c30e"
+    },
+    {
+     "path": "2024/Air Quality/2024-O3.csv.zip",
+     "bytes": 60000551,
+     "sha256": "798ba89fc453d1bac54bf069532b48c906ced7212f8b50522656b8992fa7d076"
+    },
+    {
+     "path": "2024/Air Quality/2024-PM 4.csv.zip",
+     "bytes": 42519349,
+     "sha256": "ed8bed673ca6612facc5386274ab66f4eec879db63638ccc35f4f8dc868874a1"
+    },
+    {
+     "path": "2024/Air Quality/2024-PM1.csv.zip",
+     "bytes": 41757437,
+     "sha256": "55affe66fb2939c28ffcf3e774a3a55b7628c1bcd03f05d4b42cb5783340c059"
+    },
+    {
+     "path": "2024/Air Quality/2024-PM10.csv.zip",
+     "bytes": 50990353,
+     "sha256": "6e8bb76f88644ab0ec1f328d681e84185bace6db3d32a180fdd445a4779dd1c2"
+    },
+    {
+     "path": "2024/Air Quality/2024-PM2.5.csv.zip",
+     "bytes": 48783243,
+     "sha256": "7659c0033e6d48dc9494539c5f92383962bcfa5ad2806a96aca42562bb22aaf8"
+    },
+    {
+     "path": "2024/Air Quality/2024-Particle Count.csv.zip",
+     "bytes": 44355609,
+     "sha256": "c108f02ef742a89fb5c690ad65a8ccd9a25dc22c9c41c2344ed88cf79298adbf"
+    },
+    {
+     "path": "2024/Air Quality/2024-VOC.csv.zip",
+     "bytes": 5202,
+     "sha256": "6a76288e2618e0704617f8122f25106a38efb3e21004373ba59ad62db8ca5a2a"
+    },
+    {
+     "path": "2024/Building/2024-Internal Humidity.csv.zip",
+     "bytes": 1827152,
+     "sha256": "c2203c3d8d65ffdbe60f21187b02222193fed527796a8d02159f848842280d3a"
+    },
+    {
+     "path": "2024/Building/2024-Internal Temperature.csv.zip",
+     "bytes": 1731184,
+     "sha256": "c174a6513ff6b82a1cfb2e9b377400cd280c6c418f69ec4190053d3f287bcb9b"
+    },
+    {
+     "path": "2024/Noise/2024-Sound.csv.zip",
+     "bytes": 62187,
+     "sha256": "26ea2a6663f45ccc6d16d115eb0addec9fc68eff35adf06624aba1ca22ab6952"
+    },
+    {
+     "path": "2024/People/2024-Walking.csv.zip",
+     "bytes": 18185747,
+     "sha256": "6ba30673625f9294b182724881ee53b30434acb5cc7292fa46f89f3b263ce4d3"
+    },
+    {
+     "path": "2024/Sensor Metrics/2024-Battery.csv.zip",
+     "bytes": 9338765,
+     "sha256": "a8894ae92193588acf34d87914667b78cb3828e45a3ab5e244a701465d3f7d69"
+    },
+    {
+     "path": "2024/Sewage/2024-Sewage Level.csv.zip",
+     "bytes": 365,
+     "sha256": "094dcc5347628d9c1cac129c254c0e68738ddcf17ce3f6c01c7aea4fdb6d3c61"
+    },
+    {
+     "path": "2024/Vehicles/2024-Journey Time.csv.zip",
+     "bytes": 2704644665,
+     "sha256": "1eafc464830448f924e00ca2772ac36db6abee37c8f2ca71bc892575e40cfd9c"
+    },
+    {
+     "path": "2024/Vehicles/2024-Plates In.csv.zip",
+     "bytes": 2444985558,
+     "sha256": "360300f7291e3dba6a01421c2cdb69fe10ae31cbd58d4e8427551fd3c464af39"
+    },
+    {
+     "path": "2024/Vehicles/2024-Plates Matching.csv.zip",
+     "bytes": 2450304842,
+     "sha256": "701af88f48e115f9dc86691b31f051a4aeeed0adcefc7c6586c5299855436713"
+    },
+    {
+     "path": "2024/Vehicles/2024-Plates Out.csv.zip",
+     "bytes": 2446543855,
+     "sha256": "d9d8bb53a7783b6a33dc654f819a415252d270418af4caeaea58d158a975ceac"
+    },
+    {
+     "path": "2024/Water Level/2024-Relative Water Level.csv.zip",
+     "bytes": 6279555,
+     "sha256": "d189ef1ad5e9562e82b8a83b88c3720fcc5c07309a225487e17c16ff82e2bf87"
+    },
+    {
+     "path": "2024/Water Level/2024-Water Level.csv.zip",
+     "bytes": 6899060,
+     "sha256": "6d7c1181638cd5c681ee850be75847ed2bcc189a2392a9266f36caf661aad346"
+    },
+    {
+     "path": "2024/Water Quality/2024-Depth.csv.zip",
+     "bytes": 603839,
+     "sha256": "7a51f4e7721deba94118a765789a1a7fc1d723c5cccc6a4cbbc2dd989c91b7d5"
+    },
+    {
+     "path": "2024/Water Quality/2024-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 839677,
+     "sha256": "be7e75825f94430e16e88b7465b95db58a15947b4698885c0263c4da0849b4af"
+    },
+    {
+     "path": "2024/Water Quality/2024-Dissolved Oxygen.csv.zip",
+     "bytes": 756400,
+     "sha256": "34d0c619d355d86ba40cb42f9c06ee4b90f870ee45792053c64825ad33e9eba5"
+    },
+    {
+     "path": "2024/Water Quality/2024-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 504723,
+     "sha256": "fe249488ab208df8568be9c6f815f5deedc6f939e11e1833aac7e85380220a4d"
+    },
+    {
+     "path": "2024/Water Quality/2024-NH4+N.csv.zip",
+     "bytes": 445802,
+     "sha256": "bb5ae798fa36f6cc165fc0869c2b005abee5e6d61b350d3be24c64ccca4af825"
+    },
+    {
+     "path": "2024/Water Quality/2024-NO3-N.csv.zip",
+     "bytes": 445645,
+     "sha256": "c98491575e7bd4aff7728614460574b3c52f24286684858a033f82e97ce2ece2"
+    },
+    {
+     "path": "2024/Water Quality/2024-Salinity.csv.zip",
+     "bytes": 181091,
+     "sha256": "e3a8e716957a9b410759046a374e53216b59f534e6ad03aa68a72204077ee655"
+    },
+    {
+     "path": "2024/Water Quality/2024-Specific Conductance.csv.zip",
+     "bytes": 971430,
+     "sha256": "20f2d3621b8f5eb7c2b58b2417ff4f97359c9232ff541cd6fcd6a6de4c5fe129"
+    },
+    {
+     "path": "2024/Water Quality/2024-Turbidity.csv.zip",
+     "bytes": 1022504,
+     "sha256": "cbc2bc89acb318a48d88295148cbe5298099aca0bd4aafc2b4f879fdaeb9c13b"
+    },
+    {
+     "path": "2024/Water Quality/2024-Water Temperature.csv.zip",
+     "bytes": 1043430,
+     "sha256": "16d1c7ce54975aa15550ccf418adb9d17faf95d31ce061489a13d01a16d9a799"
+    },
+    {
+     "path": "2024/Weather/2024-Dew Point.csv.zip",
+     "bytes": 4543226,
+     "sha256": "0bc35ab041d330383c315fa176121e922f994d2d76229b798af6efc91cfcdd96"
+    },
+    {
+     "path": "2024/Weather/2024-Humidity.csv.zip",
+     "bytes": 55017782,
+     "sha256": "b7d124b837638e9707ff1a61c14b144d583264ee1e1746861642d75f1f3e8eee"
+    },
+    {
+     "path": "2024/Weather/2024-Pressure.csv.zip",
+     "bytes": 57681059,
+     "sha256": "4752b4e4619d7d6bd57761d5bace30dd75ec9c872e0eca8465a099e71da071e2"
+    },
+    {
+     "path": "2024/Weather/2024-Rain.csv.zip",
+     "bytes": 2399774,
+     "sha256": "b196044cd4da9dab1cb308652193f35e65038eb7f45c8c28af3d990a7dc49999"
+    },
+    {
+     "path": "2024/Weather/2024-Rainfall.csv.zip",
+     "bytes": 3114727,
+     "sha256": "c993d7302dc701eb77e81bf1688b59f2a31c016a1724066bd11ec3dccdc15e44"
+    },
+    {
+     "path": "2024/Weather/2024-Solar Radiation.csv.zip",
+     "bytes": 3182187,
+     "sha256": "1fa56da1a594e517253ba3b9a91f69a144bb848d98cc670003bd6922302795fd"
+    },
+    {
+     "path": "2024/Weather/2024-Sunshine Hours.csv.zip",
+     "bytes": 2594670,
+     "sha256": "291a934f12175fcd97579f83c11b7f8e192342926b4fbaccbbb590eb104fed0f"
+    },
+    {
+     "path": "2024/Weather/2024-Temperature.csv.zip",
+     "bytes": 55962815,
+     "sha256": "6b5f17b054274feaad8651e4f931c9a93e7ae7237faf1f9c3bba213ba199fd45"
+    },
+    {
+     "path": "2024/Weather/2024-Visibility.csv.zip",
+     "bytes": 38358,
+     "sha256": "82574f8c2005b11ee5d545f267cb6b41d3c414ed6dea7c7c1a78941a78d42bea"
+    },
+    {
+     "path": "2024/Weather/2024-Wind Direction.csv.zip",
+     "bytes": 8380629,
+     "sha256": "3b2548194b57ed6b7abdf0c198567e35e9adf09e011a9e4ad1834019de90162a"
+    },
+    {
+     "path": "2024/Weather/2024-Wind Speed.csv.zip",
+     "bytes": 6892720,
+     "sha256": "4cd0aa27124bce8ac128267e36bd806f6a6c507eab57c1e4209d377a0f11ca4b"
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "files": 41,
+   "bytes": 8480873160,
+   "bundle": "UO-archive-2025.zip",
+   "bundle_bytes": 8480879936,
+   "bundle_sha256": "8202346cd12d60257c1fbbbf83142944b851501f3668f97ce560eafb635ad6db",
+   "entries": [
+    {
+     "path": "2025/Air Quality/2025-CO.csv.zip",
+     "bytes": 41234573,
+     "sha256": "3a480ef65db7e2ba2467a5626dd88723b5787fcbd6260f9d0244c6346a4d17f7"
+    },
+    {
+     "path": "2025/Air Quality/2025-NO.csv.zip",
+     "bytes": 39452032,
+     "sha256": "0f85a474119335d93d7221cee5fdbf2b9bff13bda8e9ed3e4ed7efbefff3d7da"
+    },
+    {
+     "path": "2025/Air Quality/2025-NO2.csv.zip",
+     "bytes": 48705349,
+     "sha256": "97f7f302ac4142b5f927e2a1452be35d3df2e63d8fce07c2563fa1c46c606120"
+    },
+    {
+     "path": "2025/Air Quality/2025-NOx.csv.zip",
+     "bytes": 1949744,
+     "sha256": "2968386498f6ce95e7c79eee652328a786dc8c870ecc49f5da13c825af471082"
+    },
+    {
+     "path": "2025/Air Quality/2025-O3.csv.zip",
+     "bytes": 33106501,
+     "sha256": "1f998656d842139dc05361d6497aefe64acbb1ef821bcc206398c1b9e591dc9b"
+    },
+    {
+     "path": "2025/Air Quality/2025-PM 4.csv.zip",
+     "bytes": 34498303,
+     "sha256": "c7880b862cf405d9f495bd8baf850ace170b861f41244c63e9d146b712dc534f"
+    },
+    {
+     "path": "2025/Air Quality/2025-PM1.csv.zip",
+     "bytes": 35024167,
+     "sha256": "67a0074ad05fa280a214efa0bacb904c4a70e6a876064d9132fd00ff5caee595"
+    },
+    {
+     "path": "2025/Air Quality/2025-PM10.csv.zip",
+     "bytes": 43550710,
+     "sha256": "b400d31eccefbae667a85d92f74e5f4604c0f02262ae292819b72ee36dfa12c8"
+    },
+    {
+     "path": "2025/Air Quality/2025-PM2.5.csv.zip",
+     "bytes": 41990555,
+     "sha256": "f2d68501b4fc2807f656eec6281875794509e8acebfa25729200a7581758b379"
+    },
+    {
+     "path": "2025/Air Quality/2025-Particle Count.csv.zip",
+     "bytes": 35403598,
+     "sha256": "295950122930374bb1d7a2947385aa2f57e01d1529d4a53f537bc223487ab817"
+    },
+    {
+     "path": "2025/Building/2025-Internal Humidity.csv.zip",
+     "bytes": 2027437,
+     "sha256": "48d4d32253e7b066e234adf237e0fd70c5f4ec01ce273b16b068132525013ad6"
+    },
+    {
+     "path": "2025/Building/2025-Internal Temperature.csv.zip",
+     "bytes": 1941515,
+     "sha256": "0bdc68aee9e419b902e81772022ab445d6e4925b86055aefc94af0b5b9291649"
+    },
+    {
+     "path": "2025/People/2025-Walking.csv.zip",
+     "bytes": 37656613,
+     "sha256": "bab07a22ed30ab29422805be5b450faf1f3c8f6492c945dc0b37106877534fe9"
+    },
+    {
+     "path": "2025/Sensor Metrics/2025-Battery.csv.zip",
+     "bytes": 5523105,
+     "sha256": "04b2d8a45d378fa0b5d409b518e27278e5b254c662812aa10ca0c77cfa59733e"
+    },
+    {
+     "path": "2025/Vehicles/2025-Journey Time.csv.zip",
+     "bytes": 2098363774,
+     "sha256": "9b2fe228f5be49cc61424cf2164d224a0596b70b542dc0b7157606169fe0e005"
+    },
+    {
+     "path": "2025/Vehicles/2025-Plates In.csv.zip",
+     "bytes": 1942246815,
+     "sha256": "a61efb1d6d7799724ad21aecfe082dba595800b2af0a4d04c311630d4399a311"
+    },
+    {
+     "path": "2025/Vehicles/2025-Plates Matching.csv.zip",
+     "bytes": 1951933988,
+     "sha256": "832477754dd50a3ffeb470b802da946458d9cdbf28669f65a72b71edc28dc188"
+    },
+    {
+     "path": "2025/Vehicles/2025-Plates Out.csv.zip",
+     "bytes": 1944305566,
+     "sha256": "614fee0f2f59cad0c0789a32ef40226e6aa99e280c5ba04bf430f28b36daeb0a"
+    },
+    {
+     "path": "2025/Water Level/2025-Relative Water Level.csv.zip",
+     "bytes": 6074594,
+     "sha256": "843bd8c9fe27794359a1c28d42033911668b624099ad6ee933bbb1449fe6c85c"
+    },
+    {
+     "path": "2025/Water Level/2025-Water Level.csv.zip",
+     "bytes": 6665969,
+     "sha256": "3af5947fa9e4686814b1aa303527522e1175025beb2a81f0aafa50554d052a26"
+    },
+    {
+     "path": "2025/Water Quality/2025-Depth.csv.zip",
+     "bytes": 84492,
+     "sha256": "42292e549e9f829854f07058481125e21f0f3b5a9e8a317dd37ab1bc42afc696"
+    },
+    {
+     "path": "2025/Water Quality/2025-Dissolved Oxygen Percentage.csv.zip",
+     "bytes": 152917,
+     "sha256": "adf744aba75ee338956cffa842dd09e72666441ced627eeebcf4ec930fab5630"
+    },
+    {
+     "path": "2025/Water Quality/2025-Dissolved Oxygen.csv.zip",
+     "bytes": 133004,
+     "sha256": "6b4b5e5d69e063d0e2f065e1dbee9987539c3bcba4e2f409d0e4f03c209af7bf"
+    },
+    {
+     "path": "2025/Water Quality/2025-Fluorescent Dissolved Organic Matter.csv.zip",
+     "bytes": 75821,
+     "sha256": "05d19aa27b63a2aa39f92c218fade222e55c5b5e745e988cabd94d498334a446"
+    },
+    {
+     "path": "2025/Water Quality/2025-NH4+N.csv.zip",
+     "bytes": 75679,
+     "sha256": "5f60936e4cdc868ef2e0c08304b656287b68e02f707a9ebae3b9c77d8a788269"
+    },
+    {
+     "path": "2025/Water Quality/2025-NO3-N.csv.zip",
+     "bytes": 75678,
+     "sha256": "c7a57603472959b30442b8e25b9cfbea896c48ce7d9945c6d903cfc2ce7b0bb9"
+    },
+    {
+     "path": "2025/Water Quality/2025-Salinity.csv.zip",
+     "bytes": 55687,
+     "sha256": "1268e1e926a3fb8f8acefedcc649c31d98d1bcab05c6c25f21d7573d2dc7da71"
+    },
+    {
+     "path": "2025/Water Quality/2025-Specific Conductance.csv.zip",
+     "bytes": 162782,
+     "sha256": "3deb74523d5feae5e70e8282c355aaabe9bc2a31764a16eef14dffd951c3f364"
+    },
+    {
+     "path": "2025/Water Quality/2025-Turbidity.csv.zip",
+     "bytes": 151729,
+     "sha256": "b5ef2bdc8982221bde716f5ae36e32886205826b3b51494b4bc026501fc3998f"
+    },
+    {
+     "path": "2025/Water Quality/2025-Water Temperature.csv.zip",
+     "bytes": 187463,
+     "sha256": "c29f487f3def87a112a412d355242eaee3b5676341e8b1abb635030f8597af2b"
+    },
+    {
+     "path": "2025/Weather/2025-Dew Point.csv.zip",
+     "bytes": 2485284,
+     "sha256": "b5af8f0b7e8462e510637e0d2e393fbe45d8a08dbf64b01f12bedc25052bc574"
+    },
+    {
+     "path": "2025/Weather/2025-Humidity.csv.zip",
+     "bytes": 36202316,
+     "sha256": "16faf1d9b80b2a376420477c9237b159c022078cb8744510b6fbabf6d9331540"
+    },
+    {
+     "path": "2025/Weather/2025-Pressure.csv.zip",
+     "bytes": 35737930,
+     "sha256": "0272a718e3f08de0bc8fe304a18f35f1c3708c92c50fb9b1b41fe0949359360f"
+    },
+    {
+     "path": "2025/Weather/2025-Rain.csv.zip",
+     "bytes": 2618098,
+     "sha256": "7190e4d366ba305b4f9baf30aef55d5ec1ce326b178966f1f4d1e008c8f503e8"
+    },
+    {
+     "path": "2025/Weather/2025-Rainfall.csv.zip",
+     "bytes": 1661468,
+     "sha256": "6f15c5516b631514bb929377373a49a0f86215ab6cf68b8ccb758b210f7c62ed"
+    },
+    {
+     "path": "2025/Weather/2025-Solar Radiation.csv.zip",
+     "bytes": 1647717,
+     "sha256": "996a4402a83b23d048526eaa582352225a30a5fcf585f00ee51314bc81424ff9"
+    },
+    {
+     "path": "2025/Weather/2025-Sunshine Hours.csv.zip",
+     "bytes": 1347653,
+     "sha256": "7a9ea3fcbe19fc0053e281a86e1ab744beb8d85d0da87869004d667116b608a7"
+    },
+    {
+     "path": "2025/Weather/2025-Temperature.csv.zip",
+     "bytes": 36926457,
+     "sha256": "2c9756d1d4f762c3445e62887d726f05e092bbbc28478727b7c87ecda922f4f0"
+    },
+    {
+     "path": "2025/Weather/2025-Visibility.csv.zip",
+     "bytes": 37978,
+     "sha256": "4a252c9cc15a1b48e9922d69ec5de1f39c513568ace1055177578e47dc35bd06"
+    },
+    {
+     "path": "2025/Weather/2025-Wind Direction.csv.zip",
+     "bytes": 5201372,
+     "sha256": "78babf4b4f690541c873c0f6835b7ddf305d40babdf2e39537b330df138aba28"
+    },
+    {
+     "path": "2025/Weather/2025-Wind Speed.csv.zip",
+     "bytes": 4196727,
+     "sha256": "d1ccf35b2d736ccb6d2f4dd6ba4e389c295cda89ca62a6da461277fe622233ee"
+    }
+   ]
+  },
+  {
+   "year": 2026,
+   "files": 257,
+   "bytes": 7751771715,
+   "bundle": "UO-archive-2026.zip",
+   "bundle_bytes": 7751816063,
+   "bundle_sha256": "dc4f94300ceb4119fe86fe04a9a422b3a8ed6dc921baa0df2db523615ab1ed35",
+   "entries": [
+    {
+     "path": "2026/Air Quality/April/2026-4-CO.csv.zip",
+     "bytes": 3936394,
+     "sha256": "a81192f7bcecfb0b04a736874ff46647c7f488c49f5f1d688fd51e066ce2f961"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-NO.csv.zip",
+     "bytes": 3323992,
+     "sha256": "73937169e9501b626d2820361514e22b3ec14f13cff317f61b37a856387eea37"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-NO2.csv.zip",
+     "bytes": 4277375,
+     "sha256": "2bd3d8e70766c91e6275b055f99a52677257853aa0d9baab4b44247a1d1a98a4"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-NOx.csv.zip",
+     "bytes": 139215,
+     "sha256": "4c6d39fd0983e8df4a9b859c0bf0458848fda99b4d272d174183ef6f1b6a3eab"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-O3.csv.zip",
+     "bytes": 2990534,
+     "sha256": "7115696998135ad34f973cc99c8264cceb988e9a4fcbd25f301451aa7f48284d"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-PM 4.csv.zip",
+     "bytes": 2516287,
+     "sha256": "e5a190e2747e6fd2cfd1249d73e697a5dd5be569134867a7d4b45ad58c7310a5"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-PM1.csv.zip",
+     "bytes": 2527652,
+     "sha256": "1726a2aca8d76a28e30904fab15a99d910a43c32c47046fcbcab7a9fc98b801e"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-PM10.csv.zip",
+     "bytes": 3121941,
+     "sha256": "9eb657138c6cbdef1ff5efbf1c96f258b4c9d3529a87e1de8b2c44925706b0de"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-PM2.5.csv.zip",
+     "bytes": 3038956,
+     "sha256": "6e567411dc2b648f4b1f5ba0ee8ca53eae7d1692f47fc2644ac1eb167652add8"
+    },
+    {
+     "path": "2026/Air Quality/April/2026-4-Particle Count.csv.zip",
+     "bytes": 2555273,
+     "sha256": "7a275a54561bdbea82bb695a1a59ea9df23c8919183a8eaa3b1fb26eccdaa271"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-CO.csv.zip",
+     "bytes": 3714717,
+     "sha256": "980f1eaaf2b71d0a74b72ece0be6b9d117ec4ff7bef765c9f18985695f03dace"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-NO.csv.zip",
+     "bytes": 3155669,
+     "sha256": "d5886d8aeb32aa9d7dfd7ec04c8043b750621b48b93a9eae8ea010534482990a"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-NO2.csv.zip",
+     "bytes": 1803672,
+     "sha256": "dea393846f41f49bb68bc62922d93cecedb70e843e421139de84a46737e1264c"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-NOx.csv.zip",
+     "bytes": 138988,
+     "sha256": "60d68605e0db0eb2fce980233bfa47e63d31a63dd2a3950f26bfd557386d1566"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-O3.csv.zip",
+     "bytes": 2881499,
+     "sha256": "8ba00a128556b6b4fd16d955c9edc0c2f0742dfe18b1e9c77fe3a6c5cb0a8af8"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-PM 4.csv.zip",
+     "bytes": 2246200,
+     "sha256": "52b93d36703fddb3f44653c2f108c972e8af7af0d2030530f6cc164cd890e526"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-PM1.csv.zip",
+     "bytes": 2238220,
+     "sha256": "bbedeb152eaffd44fb6a1a68b6c7f56ee9761e670687269c32acfd22ff07a86f"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-PM10.csv.zip",
+     "bytes": 2811674,
+     "sha256": "ad46ce4a79867c9999b5d21a5bc2a768e338031c513531b08d1b7a9d54e3fc51"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-PM2.5.csv.zip",
+     "bytes": 2742019,
+     "sha256": "bef4bf2f4011a4ebf16d710228e2e52003afc5e423ef5fa3f190c1abf12681ef"
+    },
+    {
+     "path": "2026/Air Quality/August/2026-8-Particle Count.csv.zip",
+     "bytes": 2278771,
+     "sha256": "c84cc45ad5389c04f0472584232e6758ece2bcf0d8566dd87accd26eca3435ea"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-CO.csv.zip",
+     "bytes": 2673308,
+     "sha256": "7137dc75e0cc55a13eb8f2f93d30d57673fa21c6809268c26fe7fd661536cb05"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-NO.csv.zip",
+     "bytes": 2520042,
+     "sha256": "cbf5241fd5c415a8185a9a30fdb9323368708b8b37dac634f6cffb42611fe884"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-NO2.csv.zip",
+     "bytes": 3030817,
+     "sha256": "79c64230a1829aa611aed249a04c81f146728d968a70baac14a46122bd654bd4"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-NOx.csv.zip",
+     "bytes": 130932,
+     "sha256": "80028fa389dc7ab18e3ff85e937df79610d2500e361a8969457a53e7d41e6695"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-O3.csv.zip",
+     "bytes": 1975721,
+     "sha256": "2a5ee06f7177f00ce9ab986e26bebb901703160ffcf0d2d751d4d0f3664547e7"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-PM 4.csv.zip",
+     "bytes": 2051877,
+     "sha256": "febee0dc60e2269343a7a42081b37cb04a8a4d9438efee3db6b9cf0a66ca4dea"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-PM1.csv.zip",
+     "bytes": 2124748,
+     "sha256": "4ee5ad4c1027ebfd4bf7d4a0c218edc0b770c29bd30e8239959a675e4919456b"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-PM10.csv.zip",
+     "bytes": 2621917,
+     "sha256": "56b7f3d6519da1e7e23513b86c93b476844d42707abe63924b2ece2f6fefb5ac"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-PM2.5.csv.zip",
+     "bytes": 2538697,
+     "sha256": "09e1ca3e33056b6fa88f4dc6c327213cc33464870b38025b0c18e34b563c3638"
+    },
+    {
+     "path": "2026/Air Quality/February/2026-2-Particle Count.csv.zip",
+     "bytes": 2122379,
+     "sha256": "739aa1b3e8d5e6e11d5e5a51461fc7eafc8d08761f10a95be00f27f0a45cb48b"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-CO.csv.zip",
+     "bytes": 2535188,
+     "sha256": "8be10b27274d82c777c480c0069d78022342ecb13a2c015af84da9b8a7a8548a"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-NO.csv.zip",
+     "bytes": 2727816,
+     "sha256": "c0c819890c24233367e70c01b7fa2f1fcbdb43739d6c9fd5e9725925288abc26"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-NO2.csv.zip",
+     "bytes": 3278363,
+     "sha256": "3e936fe936b95de41e4fba1dc7727f8b31b8126671d25b28828b068ca19addb6"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-NOx.csv.zip",
+     "bytes": 145867,
+     "sha256": "bdf48f435ebeab3c1b7cf1f9767b7dbf312113a2ced04a150b89f4c91678ac60"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-O3.csv.zip",
+     "bytes": 2133116,
+     "sha256": "fb189d1272fb0353ae9cc3da559e4f9c19b37476ab96bf177dd8663ad506b4cb"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-PM 4.csv.zip",
+     "bytes": 2337796,
+     "sha256": "5e21e4606867b9c97c0a6af299b690c1527356e0dfd657eb33be77b341c1764f"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-PM1.csv.zip",
+     "bytes": 2416371,
+     "sha256": "92137c966b25588ca3119abbbd7e289ea7e35ea3b6e4159b918707b3e449d894"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-PM10.csv.zip",
+     "bytes": 3002793,
+     "sha256": "18a8079bbe749c47eeda3514ee5915962abe523fe2db0d7331d53967afd4d0f9"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-PM2.5.csv.zip",
+     "bytes": 2929257,
+     "sha256": "801335878f238c00ae1b25aaa651c592c16ccb444f1ed877f1957b7796adeb93"
+    },
+    {
+     "path": "2026/Air Quality/January/2026-1-Particle Count.csv.zip",
+     "bytes": 2403870,
+     "sha256": "894fb05561123d6424d12f76b50d3157719edc8bd2855af136c6995d85814e3b"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-CO.csv.zip",
+     "bytes": 3693136,
+     "sha256": "15ac96ce7528449ef43cab4d994a60528a1263d51ed4f57603d45d496cfe97a9"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-NO.csv.zip",
+     "bytes": 3134642,
+     "sha256": "96fa47652065da7561f6864db931efd0a7c245ab41ccdfd1ae96811754afe7d6"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-NO2.csv.zip",
+     "bytes": 4067994,
+     "sha256": "05c9ab62ce6b6c42c596b05842ec415ce27f29b4c988e2fd0f6c0ee3adcf4109"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-NOx.csv.zip",
+     "bytes": 139306,
+     "sha256": "c66dea3509a3a114ba97a93a82edad5c0a711616d1c8112e7b865d52b8e0130c"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-O3.csv.zip",
+     "bytes": 2852076,
+     "sha256": "2075c970eea09a45b481183ab00864e911c00125035f243363eb97824ee8813e"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-PM 4.csv.zip",
+     "bytes": 2223303,
+     "sha256": "b48bdae3ce863f464a649cdc4bdfa088e8442e2ffbd07846d561262fee94ff48"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-PM1.csv.zip",
+     "bytes": 2235318,
+     "sha256": "e3d7eba9372a18b15eac97724c4e91c2b8a4b753b90ad918545d06ff5b43aea3"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-PM10.csv.zip",
+     "bytes": 2781843,
+     "sha256": "5788e3af52885aabde4dce1dd0a75321bd34f4a02e8b00166427566ab46eb88d"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-PM2.5.csv.zip",
+     "bytes": 2717160,
+     "sha256": "926032924e058aaf009b197ffe4be8121f4ce88649b895434e5ccb9a49df03a7"
+    },
+    {
+     "path": "2026/Air Quality/July/2026-7-Particle Count.csv.zip",
+     "bytes": 2272248,
+     "sha256": "f8c3ac64400f95906b0436bd1a62a3eebdacf4e05390941f0ea135cb5d316ddc"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-CO.csv.zip",
+     "bytes": 3596206,
+     "sha256": "d7568280d6d72308bcf5ac6837847d6329ea222d271deabf7679570808d9e2be"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-NO.csv.zip",
+     "bytes": 3061655,
+     "sha256": "8eff2c5545c87e5c06291cb5eddd4e6a755f9721d9e592647f8be969b3b8e95a"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-NO2.csv.zip",
+     "bytes": 3962628,
+     "sha256": "e1732c150b64261eadf3c8e2a59fe2f9f13dcb136ee6a913a939d8390d262c34"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-NOx.csv.zip",
+     "bytes": 138711,
+     "sha256": "c352a32000bcc4c6cdbf871f5262cad285ecb90e26414cf18af30510ccb89580"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-O3.csv.zip",
+     "bytes": 2783058,
+     "sha256": "311b321a0e9ac6da1a141b8d159208ffc7de21ddcab4fb3812b8a0108c755c7d"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-PM 4.csv.zip",
+     "bytes": 2100908,
+     "sha256": "7f6f1e6c1e2416c01ca27fa3c05cf1016cca56334a0e102efd0cdb845a9204b4"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-PM1.csv.zip",
+     "bytes": 2093576,
+     "sha256": "b66a687526d5171c68f7e56d8d2ec16a78ca88d5a9ee614903054dc3b17e7c21"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-PM10.csv.zip",
+     "bytes": 2633147,
+     "sha256": "348f1c3e218b379a068627aa2edb4ed98b7239faa592f50158362740dd5773ab"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-PM2.5.csv.zip",
+     "bytes": 2560613,
+     "sha256": "7e93e5e5e625c7fa826588ed64eae35afe59164a1caf41c9cb765307c1302fb1"
+    },
+    {
+     "path": "2026/Air Quality/June/2026-6-Particle Count.csv.zip",
+     "bytes": 2123540,
+     "sha256": "5c29444228f7e21e01aadd01e1de7a5ec5ed2aa5f9cc75d2333965988cee0f28"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-CO.csv.zip",
+     "bytes": 4238052,
+     "sha256": "4db4c228d4a0e8471d1c03f657e6b0cb21dffc366d99e3c9b9ae43f34d9b1a31"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-NO.csv.zip",
+     "bytes": 3898571,
+     "sha256": "37bf90de458a5458a665dbd011103e05bc321f7d3be97b73bf8931cf1bd3c69d"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-NO2.csv.zip",
+     "bytes": 3105989,
+     "sha256": "fc70f21a8b227974600147235b54f02c6303f86c133bd7bb4e5df9f79769751d"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-NOx.csv.zip",
+     "bytes": 144309,
+     "sha256": "41d8818498eda19fc8b10c16ea1b3a946a1a89b0a89a38811177fa8927467ed9"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-O3.csv.zip",
+     "bytes": 3177510,
+     "sha256": "e39c5deab76ca752be52b255f20a94442087635b60ef4e0a1b80e0ad31a71102"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-PM 4.csv.zip",
+     "bytes": 3050080,
+     "sha256": "3f7dd17ee3ff2f99ed566cffba41aaef7e94bc56d31d861ca5cd9ef4c27e0f43"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-PM1.csv.zip",
+     "bytes": 3104663,
+     "sha256": "90f086bcf1784bf0d2f6fa268dab491557abac963b486d31265312f14cf726ae"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-PM10.csv.zip",
+     "bytes": 3765921,
+     "sha256": "7808cc7a286b6f7e1cc2f5e8fd4cbfef558953e5c322d63aed49b6f565f17890"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-PM2.5.csv.zip",
+     "bytes": 3643376,
+     "sha256": "14cfd3b071e3c5dd8502666ac939ce701890b2259de84bc95744f08a62e84e89"
+    },
+    {
+     "path": "2026/Air Quality/March/2026-3-Particle Count.csv.zip",
+     "bytes": 3128116,
+     "sha256": "f8ddbc2d53bea44893462e9f7978ad37ddda121cae5b8b5d611c50be3f2bbeb5"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-CO.csv.zip",
+     "bytes": 4287766,
+     "sha256": "ba916d49c703eba87e4497432d2fb0e6d68053e06a893ccb51e5a0cdb09844a8"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-NO.csv.zip",
+     "bytes": 3641310,
+     "sha256": "50ea36d4b1efa860938d2460dc090ac606c9e4edf75f059b92b510df249bb8b6"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-NO2.csv.zip",
+     "bytes": 4639738,
+     "sha256": "584175e5cd2734047c0bd698e3477a857c245455350fd614cf70337f8cb73bff"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-NOx.csv.zip",
+     "bytes": 143078,
+     "sha256": "9d54e0a361a996299300d99908463793d6f1ea7a7b16f7791c15c79862f8265e"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-O3.csv.zip",
+     "bytes": 3319299,
+     "sha256": "53f66fef73826220b57a1a10a896090d0691751c47f7ebc1a9710c706ffca6ad"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-PM 4.csv.zip",
+     "bytes": 2567961,
+     "sha256": "632c43f52f7fa31ddfb27ca3b90069ae1333aa1b5241ce1ed8f06f37e8fc7e9c"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-PM1.csv.zip",
+     "bytes": 2551227,
+     "sha256": "1e436582643f401dbeab83ad6bac1499b7666a8231fa6d45e32bf87de3db1336"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-PM10.csv.zip",
+     "bytes": 3126774,
+     "sha256": "ced0c988af98c432d04995bae6d2ad3ea2f70e33b68618ce725f4f25a55f7e4e"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-PM2.5.csv.zip",
+     "bytes": 3052355,
+     "sha256": "3f0f3cdcc95bca1bc2492ea864a8b77a285174699b0d3ae95be03494cdffee0a"
+    },
+    {
+     "path": "2026/Air Quality/May/2026-5-Particle Count.csv.zip",
+     "bytes": 2595415,
+     "sha256": "9acc6be2dfe634b616bcef61ba607f22b43ccf50ba3019ade8d8e7cfcef0c2db"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-CO.csv.zip",
+     "bytes": 4337014,
+     "sha256": "8e29752b1aa25373901c56f22129e487a18dc3a65dbccfdf7417303d3dc39464"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-NO.csv.zip",
+     "bytes": 3506581,
+     "sha256": "7c91bd90c1d212e2e7af696f21afa7c18e8934bfc74b16fe128d1d2adbe16608"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-NO2.csv.zip",
+     "bytes": 4510505,
+     "sha256": "966d2064d8f66e43dce809da298eb07198f2b299adb980c06cab8389f8c98438"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-NOx.csv.zip",
+     "bytes": 131859,
+     "sha256": "d165e814346e3d90ff9497166d90c2e309731877bd0bd9bf861b61cd0a229f45"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-O3.csv.zip",
+     "bytes": 3171393,
+     "sha256": "85124aa24b99d20f052b7f03d40902d80773639d358632de6be1dbdfda4d275f"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-PM 4.csv.zip",
+     "bytes": 2464999,
+     "sha256": "831deebdc89e60ffcad8cf0a26a6ad0338ca216642290e2e51d0a9fcbd8666c3"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-PM1.csv.zip",
+     "bytes": 2456532,
+     "sha256": "84e057aec82242043a9bb52b9ed438a40c868174804f2163b9ff6f93002255cc"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-PM10.csv.zip",
+     "bytes": 3010365,
+     "sha256": "0ad8b5375c98a52c315c7c65ce0dc4e72ab92349eb1f55e41b9b64ef3361f6da"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-PM2.5.csv.zip",
+     "bytes": 2932762,
+     "sha256": "907b217c687cbf1cfee0c06052fe7d0c1c66ea49b29b40371945ec67d82f69fe"
+    },
+    {
+     "path": "2026/Air Quality/September/2026-9-Particle Count.csv.zip",
+     "bytes": 2498355,
+     "sha256": "e8170c0017a2c54cf443a87174ea7d555c66a73078c04debf9d51cd75d673ed7"
+    },
+    {
+     "path": "2026/Building/April/2026-4-Internal Humidity.csv.zip",
+     "bytes": 160054,
+     "sha256": "84c4485084242a5bcc58d3a4627b1e6a104c1eba5c60893ece7474af72ac722d"
+    },
+    {
+     "path": "2026/Building/April/2026-4-Internal Temperature.csv.zip",
+     "bytes": 152420,
+     "sha256": "d0f67afb099ad8d98b6e44a30a83fce8a2d667f2cacd8e6ab55bf6af20f2ef61"
+    },
+    {
+     "path": "2026/Building/August/2026-8-Internal Humidity.csv.zip",
+     "bytes": 167720,
+     "sha256": "6764059ae7d192b5d310dda2d369107b628b49acf889276554f4b939b4b4ae55"
+    },
+    {
+     "path": "2026/Building/August/2026-8-Internal Temperature.csv.zip",
+     "bytes": 161767,
+     "sha256": "9dbd3914b2600c08ad5b534649c342cb4ebf73db3f95902729a16c415257af46"
+    },
+    {
+     "path": "2026/Building/August/2026-8-Internal Water Pressure.csv.zip",
+     "bytes": 17260,
+     "sha256": "88eac54c90f6216a434f0637074b6c5c3727a2aeb0d77a8f26438295e24067aa"
+    },
+    {
+     "path": "2026/Building/August/2026-8-Internal Water Temperature.csv.zip",
+     "bytes": 18910,
+     "sha256": "ef9d84c6e53df7a50e9cfdd936682327f223ef5e18754b3cadb94118d900b133"
+    },
+    {
+     "path": "2026/Building/February/2026-2-Internal Humidity.csv.zip",
+     "bytes": 146822,
+     "sha256": "f6bfeeea52800a061956b6ac65a295a05f1ef1ff8174bb654f34ba3e7bc875c2"
+    },
+    {
+     "path": "2026/Building/February/2026-2-Internal Temperature.csv.zip",
+     "bytes": 143473,
+     "sha256": "f0c5f574251ffef1cedfe14c8e0b9304c4becc34db15ba4157a81f96e99f17fc"
+    },
+    {
+     "path": "2026/Building/January/2026-1-Internal Humidity.csv.zip",
+     "bytes": 160544,
+     "sha256": "64cece73290e6a9a69fb53823af1d6641758e701308ea60d54730950e70b784c"
+    },
+    {
+     "path": "2026/Building/January/2026-1-Internal Temperature.csv.zip",
+     "bytes": 155561,
+     "sha256": "805417b8b9a89e1af5b475838ac72ae689f3952b85ad2c9ad8f5fb2091406f65"
+    },
+    {
+     "path": "2026/Building/July/2026-7-Internal Humidity.csv.zip",
+     "bytes": 170075,
+     "sha256": "7d19a6a383750f34ef98be56873bed2c0df62896289f7b014bd870a079e3ec72"
+    },
+    {
+     "path": "2026/Building/July/2026-7-Internal Temperature.csv.zip",
+     "bytes": 163845,
+     "sha256": "7d357c3b282a4bcc256c8775dbcb8ab9be275c881987871d36b9c74d77c8eff6"
+    },
+    {
+     "path": "2026/Building/July/2026-7-Internal Water Pressure.csv.zip",
+     "bytes": 17203,
+     "sha256": "882660b41e07a61d56a298d3d34874333245bb66b4af0eae7af6ec89ddba49a3"
+    },
+    {
+     "path": "2026/Building/July/2026-7-Internal Water Temperature.csv.zip",
+     "bytes": 18797,
+     "sha256": "34de118054a90d31ec5a7f1a3f2b9a99eb974464d867c44d353bf12c80103dd8"
+    },
+    {
+     "path": "2026/Building/June/2026-6-Internal Humidity.csv.zip",
+     "bytes": 160779,
+     "sha256": "f3f900a37d3da4060939e31bcb3aa03795e92d3ea5967bb0c8ec8661f6834918"
+    },
+    {
+     "path": "2026/Building/June/2026-6-Internal Temperature.csv.zip",
+     "bytes": 154110,
+     "sha256": "31c65d869906a27dbe836abba8761d0b8e33b39a55c6a81112aa71de7c38c600"
+    },
+    {
+     "path": "2026/Building/June/2026-6-Internal Water Pressure.csv.zip",
+     "bytes": 12130,
+     "sha256": "9422e1162371ff50906124b4e6c40a790baa5a8332f11bef9eb16742319da06a"
+    },
+    {
+     "path": "2026/Building/June/2026-6-Internal Water Temperature.csv.zip",
+     "bytes": 14093,
+     "sha256": "abf3892a5a056e928fad1ff20e582859af7f648d510004ba2db729320bbfb835"
+    },
+    {
+     "path": "2026/Building/March/2026-3-Internal Humidity.csv.zip",
+     "bytes": 163755,
+     "sha256": "07a31db373cd6bfa68e421b7000404eec5d932d4f954b264c340330aed9ea880"
+    },
+    {
+     "path": "2026/Building/March/2026-3-Internal Temperature.csv.zip",
+     "bytes": 156147,
+     "sha256": "0fbe89fd3117b0e762cdf1bfb3c3aa687e463b4c03f9b9365eed34ca6a8ce761"
+    },
+    {
+     "path": "2026/Building/May/2026-5-Internal Humidity.csv.zip",
+     "bytes": 168045,
+     "sha256": "0b9be0d943b3f5893b05ab3258724bf5168f1fa5e29d4ef6ca89f27bd73d21fb"
+    },
+    {
+     "path": "2026/Building/May/2026-5-Internal Temperature.csv.zip",
+     "bytes": 160915,
+     "sha256": "0f996a2e43f254eaadbecd34f5ebaf5aeffa15d23bf0b617bcc63cc2e7ea750b"
+    },
+    {
+     "path": "2026/Building/September/2026-9-Internal Humidity.csv.zip",
+     "bytes": 148705,
+     "sha256": "2045c056fea692f6041fb6783687f12c0533302272353d743b828042725c0a40"
+    },
+    {
+     "path": "2026/Building/September/2026-9-Internal Temperature.csv.zip",
+     "bytes": 142108,
+     "sha256": "09c8585796d034134e8dade69801e0929c54b03a00a5504d9ba05cb7b4952f15"
+    },
+    {
+     "path": "2026/Building/September/2026-9-Internal Water Pressure.csv.zip",
+     "bytes": 18148,
+     "sha256": "5df9794f1e319071d930576b076295b83cdc9a972d3935c4b879a8fb08e022a2"
+    },
+    {
+     "path": "2026/Building/September/2026-9-Internal Water Temperature.csv.zip",
+     "bytes": 20485,
+     "sha256": "b0ac0b6907752809fc0797772d49920904d92092c6cf1ea13bd32a995f7d52d4"
+    },
+    {
+     "path": "2026/Noise/April/2026-4-Max Sound.csv.zip",
+     "bytes": 149074,
+     "sha256": "5fe6252506834cd1018d8c42ed0a4ef9e35c778b9b349554319169ade820e8bb"
+    },
+    {
+     "path": "2026/Noise/April/2026-4-Sound.csv.zip",
+     "bytes": 142989,
+     "sha256": "a6c0258c74c8e5598d478268a3c083a9ae1645cce6e7ac90a82eb49ec9b81c42"
+    },
+    {
+     "path": "2026/Noise/August/2026-8-Max Sound.csv.zip",
+     "bytes": 219628,
+     "sha256": "b53ba7088f3de2a3500bc466c12e92ae2ecbc879b611d1677d8cc9d2c31450cd"
+    },
+    {
+     "path": "2026/Noise/August/2026-8-Sound.csv.zip",
+     "bytes": 209999,
+     "sha256": "9c0c321f12b5a8b5d69e0034b8c5c0fa9ce285e657c1066f84352c6b5e048f63"
+    },
+    {
+     "path": "2026/Noise/July/2026-7-Max Sound.csv.zip",
+     "bytes": 214110,
+     "sha256": "89936c425537b5eca00faa2b4e75d92f74a462883cfd0890f513df7ba6365ecc"
+    },
+    {
+     "path": "2026/Noise/July/2026-7-Sound.csv.zip",
+     "bytes": 204676,
+     "sha256": "4eda54bc69037eb5c6c3206047a31220ec81ab3439a7c12928f092cf6d5129b8"
+    },
+    {
+     "path": "2026/Noise/June/2026-6-Max Sound.csv.zip",
+     "bytes": 213660,
+     "sha256": "9b7431a779c4a12e5a30890e04628bd9e1bf6b426d150fb619518853817002e3"
+    },
+    {
+     "path": "2026/Noise/June/2026-6-Sound.csv.zip",
+     "bytes": 204845,
+     "sha256": "962882b186474525a353971a934a867aefb7963b8eb6880b40f30259e32e17c9"
+    },
+    {
+     "path": "2026/Noise/May/2026-5-Max Sound.csv.zip",
+     "bytes": 219856,
+     "sha256": "4cb5765d7619050712c4f66d26e41a924b3112cc825656d27838515217534540"
+    },
+    {
+     "path": "2026/Noise/May/2026-5-Sound.csv.zip",
+     "bytes": 210888,
+     "sha256": "0f73f75d085620344eee0115305a5ab8b097effd4bd3cfefd10e782ea5777bc9"
+    },
+    {
+     "path": "2026/Noise/September/2026-9-Max Sound.csv.zip",
+     "bytes": 213557,
+     "sha256": "6b5fe1d725868369b305e44234112ac5ce5cb0387dac1afeaec7f6238eb673ca"
+    },
+    {
+     "path": "2026/Noise/September/2026-9-Sound.csv.zip",
+     "bytes": 204236,
+     "sha256": "ae6b461b297bebc57b9e811a0c568d1af12527b458d885758f46e24c6fa9abd4"
+    },
+    {
+     "path": "2026/People/April/2026-4-Walking.csv.zip",
+     "bytes": 2930043,
+     "sha256": "769aa1480a31e45cdb2d3380922295a51aaca456bb5b2e52a686223760d004f8"
+    },
+    {
+     "path": "2026/People/August/2026-8-Walking.csv.zip",
+     "bytes": 2536414,
+     "sha256": "6e2e3d6df02c08036d569568c764f50a26a5be15fbe1c5cc22a58bfe5de292ab"
+    },
+    {
+     "path": "2026/People/February/2026-2-Walking.csv.zip",
+     "bytes": 2492773,
+     "sha256": "0cb570e1688f941be9fe9e3aa391479af8a3942b43e794894410741208f7a500"
+    },
+    {
+     "path": "2026/People/January/2026-1-Walking.csv.zip",
+     "bytes": 2756732,
+     "sha256": "b6815ae83edb410fe26550febc260ba83133ae733855c785cd87482f0065ca41"
+    },
+    {
+     "path": "2026/People/July/2026-7-Walking.csv.zip",
+     "bytes": 2606684,
+     "sha256": "b3353684d58430b939e3c557b3308d6c09f5cf55bcb905069bc8f1d2d735a72c"
+    },
+    {
+     "path": "2026/People/June/2026-6-Walking.csv.zip",
+     "bytes": 2645593,
+     "sha256": "1f0743944a60f49d8f78ab3bf59ef27e290ff886446a0dc512771b58c2c237e6"
+    },
+    {
+     "path": "2026/People/March/2026-3-Walking.csv.zip",
+     "bytes": 2930370,
+     "sha256": "be162854bc4120631d452d39e01a7bbed31564db32e9ac0d51b1d57ab9706dee"
+    },
+    {
+     "path": "2026/People/May/2026-5-Walking.csv.zip",
+     "bytes": 3113199,
+     "sha256": "ed31e468d2e5ac02548ea2fed53fc6a2dd24512ebf9eebc49578929a653f0b9b"
+    },
+    {
+     "path": "2026/People/September/2026-9-Walking.csv.zip",
+     "bytes": 2555347,
+     "sha256": "ac6334eeb10e364ce0c54240bdc2c4fa4c6673d7cd91b394523bd319ec8dc6db"
+    },
+    {
+     "path": "2026/Sensor Metrics/April/2026-4-Battery.csv.zip",
+     "bytes": 149016,
+     "sha256": "b3e44c120e5942201de842cad9c92e5ffb735b486022f6ad6bab29caf3a4751c"
+    },
+    {
+     "path": "2026/Sensor Metrics/August/2026-8-Battery.csv.zip",
+     "bytes": 176558,
+     "sha256": "d88c9b95260f3aae0a596f420b52285da5aae597fc7ace366352955f1e2de763"
+    },
+    {
+     "path": "2026/Sensor Metrics/February/2026-2-Battery.csv.zip",
+     "bytes": 137785,
+     "sha256": "2807c94f9515e91e3dd4c49562b66a04002a22c8b0e42d917779fc58b1f2b251"
+    },
+    {
+     "path": "2026/Sensor Metrics/January/2026-1-Battery.csv.zip",
+     "bytes": 152332,
+     "sha256": "d1b64bcc71466e370920cbb8d91bd1fbcb8b587afe5daab2bb6989f96dfebfc1"
+    },
+    {
+     "path": "2026/Sensor Metrics/July/2026-7-Battery.csv.zip",
+     "bytes": 176895,
+     "sha256": "76bd8452a54b2cd75892b52dfdeb372bab8f2a0bf03f1115698bb94b1e2f54fb"
+    },
+    {
+     "path": "2026/Sensor Metrics/June/2026-6-Battery.csv.zip",
+     "bytes": 165397,
+     "sha256": "8f22c5929b695336ec81a69348226181d232a91964833ad14a410078481f56f8"
+    },
+    {
+     "path": "2026/Sensor Metrics/March/2026-3-Battery.csv.zip",
+     "bytes": 153703,
+     "sha256": "b72673b6c887db54c05602faaecffc2fcf4d418dde7749aa70a22b50cd04968e"
+    },
+    {
+     "path": "2026/Sensor Metrics/May/2026-5-Battery.csv.zip",
+     "bytes": 157703,
+     "sha256": "86120f44d967b9d64a6eb19d2d34a894e3df160de49bbb4d1c01ad1ea479e0f7"
+    },
+    {
+     "path": "2026/Sensor Metrics/September/2026-9-Battery.csv.zip",
+     "bytes": 170604,
+     "sha256": "cc7eeacba1cb574559b2317b715fda38b69f92e87eb692ec8b92bd46cf636dc1"
+    },
+    {
+     "path": "2026/Vehicles/April/2026-4-Journey Time.csv.zip",
+     "bytes": 232505401,
+     "sha256": "8d63cbe633b73db484f882571e25b69820c3310682ecc4706f75a2e050912627"
+    },
+    {
+     "path": "2026/Vehicles/April/2026-4-Plates In.csv.zip",
+     "bytes": 213329997,
+     "sha256": "89fc767ccf25c261d704c876dc1b3f781161537d0ce09b0ef1dbdad2e49a1d11"
+    },
+    {
+     "path": "2026/Vehicles/April/2026-4-Plates Matching.csv.zip",
+     "bytes": 214481186,
+     "sha256": "819f37e727d900d9bd0d20e84cbe7e9db631797bc884f5e7e37f88ead1c1ef5d"
+    },
+    {
+     "path": "2026/Vehicles/April/2026-4-Plates Out.csv.zip",
+     "bytes": 213610817,
+     "sha256": "435116ebe339babfdbca7e44af6cc73b1eadbc2268b3db4b1a019bf4f2004f60"
+    },
+    {
+     "path": "2026/Vehicles/August/2026-8-Journey Time.csv.zip",
+     "bytes": 238203681,
+     "sha256": "4cb3498fbe00b66ebe44c129851d6dd2277c0b79e5f051cbeda08a2d85c9e1d4"
+    },
+    {
+     "path": "2026/Vehicles/August/2026-8-Plates In.csv.zip",
+     "bytes": 17573455,
+     "sha256": "1dea20379db8fa06d729997b1e1ec1f536b44b8cf1be8b5e54b9f534aaa5524a"
+    },
+    {
+     "path": "2026/Vehicles/August/2026-8-Plates Matching.csv.zip",
+     "bytes": 220716221,
+     "sha256": "38343b9487bf6737385c4be77cb4e555fa123c00edc4216ca479a1790664cfc7"
+    },
+    {
+     "path": "2026/Vehicles/August/2026-8-Plates Out.csv.zip",
+     "bytes": 142,
+     "sha256": "7ed4a90b027472dc39b020fcc09a3d74a9fb414b76e96069eee3e8bcd3bc2e5e"
+    },
+    {
+     "path": "2026/Vehicles/February/2026-2-Journey Time.csv.zip",
+     "bytes": 197414680,
+     "sha256": "486ed1d8e8ced1ed392a11b7bd128dba03aebc37a0d3b6f61edbe927f2ede6ee"
+    },
+    {
+     "path": "2026/Vehicles/February/2026-2-Plates In.csv.zip",
+     "bytes": 176748491,
+     "sha256": "8580d4150411a571a8a6c079b8a89295b48cedfdc82013b1430cb9077eff66d7"
+    },
+    {
+     "path": "2026/Vehicles/February/2026-2-Plates Matching.csv.zip",
+     "bytes": 177634470,
+     "sha256": "3f2d3973fbb9a1a9b1405e160bc572601bf992edae1583a5abeaed04bbe12efe"
+    },
+    {
+     "path": "2026/Vehicles/February/2026-2-Plates Out.csv.zip",
+     "bytes": 176908766,
+     "sha256": "a995f0490a91d05045ab7190a4a4f798dba873ac2357ceeb6aa7e1b628164f48"
+    },
+    {
+     "path": "2026/Vehicles/January/2026-1-Journey Time.csv.zip",
+     "bytes": 252499426,
+     "sha256": "3eeb1620c989dd3e57d67962f7f76eb23cd3b94f284b27f64435e49b6d88f97a"
+    },
+    {
+     "path": "2026/Vehicles/January/2026-1-Plates In.csv.zip",
+     "bytes": 221023364,
+     "sha256": "1410b11f88f9c99595651ff73b549c1d07ba120fab555d0b5d80930fb0fcfa2f"
+    },
+    {
+     "path": "2026/Vehicles/January/2026-1-Plates Matching.csv.zip",
+     "bytes": 222003543,
+     "sha256": "e89f3ae8c1e400c61d6d851bfcabadd90c3c2a9ffc084569bcce17da66535742"
+    },
+    {
+     "path": "2026/Vehicles/January/2026-1-Plates Out.csv.zip",
+     "bytes": 221209223,
+     "sha256": "08e243accdeb436fee59b7dce579cf4f6c2e30b719c0a9398d29048a617c3d7e"
+    },
+    {
+     "path": "2026/Vehicles/July/2026-7-Journey Time.csv.zip",
+     "bytes": 239802643,
+     "sha256": "def7d368665a8fd2c27265d4c5b60414bfb96d6af28fa4b3024a4b344ce73ccb"
+    },
+    {
+     "path": "2026/Vehicles/July/2026-7-Plates In.csv.zip",
+     "bytes": 220750146,
+     "sha256": "ed130811dfac2dba63ee343c4ff005926de5a32d1a90b0913f2ba977e7ef5be6"
+    },
+    {
+     "path": "2026/Vehicles/July/2026-7-Plates Matching.csv.zip",
+     "bytes": 221858682,
+     "sha256": "7ba49a34352bfbc00e810524af9a192d1a81f20d7d3857a67b1dcf3054c9a96a"
+    },
+    {
+     "path": "2026/Vehicles/July/2026-7-Plates Out.csv.zip",
+     "bytes": 220966067,
+     "sha256": "16894e70b1eb1a4667280b83170a06aeb84e89132c85009484a138e1b9ffbd1d"
+    },
+    {
+     "path": "2026/Vehicles/June/2026-6-Journey Time.csv.zip",
+     "bytes": 230662154,
+     "sha256": "9b1ded8d72cd3b375a08517585b862cfc977a2ba4814c6b4f02b0e3576e5f25d"
+    },
+    {
+     "path": "2026/Vehicles/June/2026-6-Plates In.csv.zip",
+     "bytes": 212447304,
+     "sha256": "29d1a4007c5a45f1ea68029cb158de2d09de935d5ff3819e932c0fc318f57455"
+    },
+    {
+     "path": "2026/Vehicles/June/2026-6-Plates Matching.csv.zip",
+     "bytes": 213535069,
+     "sha256": "82071628615823002f38966c7d9081abd0b95ee4c5705e728f818c1c6ba5f13b"
+    },
+    {
+     "path": "2026/Vehicles/June/2026-6-Plates Out.csv.zip",
+     "bytes": 212687212,
+     "sha256": "d99dfa338b4e8b4e68f27bc83286629d44a803001e87856f245009598f3442a4"
+    },
+    {
+     "path": "2026/Vehicles/March/2026-3-Journey Time.csv.zip",
+     "bytes": 237789855,
+     "sha256": "4feebdc477d5b8ab3b28e3f31e35b3659bcf4a50907391634ed7cac1ab9500c4"
+    },
+    {
+     "path": "2026/Vehicles/March/2026-3-Plates In.csv.zip",
+     "bytes": 217300541,
+     "sha256": "25484a33fb92a69c4aea0b97b8d64bd3459858101cafca9d9a861e97544bc66c"
+    },
+    {
+     "path": "2026/Vehicles/March/2026-3-Plates Matching.csv.zip",
+     "bytes": 219291140,
+     "sha256": "4b1762b18a63d9a21635e6efe2c8b3423e906c14fabc563716cf7d125db9cd47"
+    },
+    {
+     "path": "2026/Vehicles/March/2026-3-Plates Out.csv.zip",
+     "bytes": 218424115,
+     "sha256": "ee9b58194bd6e7fd3362674468d78acab3862bb28459a867f76b65c7637bdbf3"
+    },
+    {
+     "path": "2026/Vehicles/May/2026-5-Journey Time.csv.zip",
+     "bytes": 231136144,
+     "sha256": "f5007f616e372f2a43ab3718fc3245f716f886340dd4fb506404dd3297aa3e6b"
+    },
+    {
+     "path": "2026/Vehicles/May/2026-5-Plates In.csv.zip",
+     "bytes": 212437994,
+     "sha256": "ee1c97999c7b824205dcb3eac80b108f3b861309a0a3be6cb0d8b33c08060ace"
+    },
+    {
+     "path": "2026/Vehicles/May/2026-5-Plates Matching.csv.zip",
+     "bytes": 213506258,
+     "sha256": "bd543537cca3722d89fb93c3c1468f31b8eeb912684f68c5aee43d4686d3bdc8"
+    },
+    {
+     "path": "2026/Vehicles/May/2026-5-Plates Out.csv.zip",
+     "bytes": 212671166,
+     "sha256": "5d6097fb652dbd400cd8d4044ed9a60dd77e57d7f770d9a6f3141d61bb82ac08"
+    },
+    {
+     "path": "2026/Vehicles/September/2026-9-Journey Time.csv.zip",
+     "bytes": 230599870,
+     "sha256": "bc6e3ad2e7156eedd5d230cd889c8b4ca9de3a57090e15c07050767ffd1acad5"
+    },
+    {
+     "path": "2026/Vehicles/September/2026-9-Plates In.csv.zip",
+     "bytes": 212176108,
+     "sha256": "51c200ebc7b00a7858fb071ef0341669e9a6785040431f562118e018b43eca99"
+    },
+    {
+     "path": "2026/Vehicles/September/2026-9-Plates Matching.csv.zip",
+     "bytes": 213122928,
+     "sha256": "41acbc92340a060a22de0ea4e49473bfb0de3bc529b541370a56dc9e669a2681"
+    },
+    {
+     "path": "2026/Vehicles/September/2026-9-Plates Out.csv.zip",
+     "bytes": 212363756,
+     "sha256": "70d58d9ecc2f417110fe64a03288c402bf19fe46200c7f6e18f27df1bda5e498"
+    },
+    {
+     "path": "2026/Water Level/April/2026-4-Relative Water Level.csv.zip",
+     "bytes": 514249,
+     "sha256": "5b1e24db5fc57448e2e6aba559e0aa78ecd3fdf21bd0a1fdfff367e49d8c1f1e"
+    },
+    {
+     "path": "2026/Water Level/April/2026-4-Water Level.csv.zip",
+     "bytes": 532099,
+     "sha256": "cc90dca463f6af6676706485c680414a54d286f4ec8365a809b29fbdd619ef64"
+    },
+    {
+     "path": "2026/Water Level/August/2026-8-Relative Water Level.csv.zip",
+     "bytes": 526919,
+     "sha256": "ab821133834b03081f4d8243697e04f48771e5fc49ed115c20b1568b14d51c0a"
+    },
+    {
+     "path": "2026/Water Level/August/2026-8-Water Level.csv.zip",
+     "bytes": 545278,
+     "sha256": "43b0042db8b345028e848323050b24077ce6d795acf5cd52bb0ff96220aaf6ca"
+    },
+    {
+     "path": "2026/Water Level/February/2026-2-Relative Water Level.csv.zip",
+     "bytes": 510848,
+     "sha256": "24ceceb1a136d1fd89e50bd19182a6e6b6b51733eabd081ad6c20e4ae00aa5a9"
+    },
+    {
+     "path": "2026/Water Level/February/2026-2-Water Level.csv.zip",
+     "bytes": 559571,
+     "sha256": "f3e77ea91b455d3b3ea08c69b5fa2cc13d501b794566f1958e09a566f103f43a"
+    },
+    {
+     "path": "2026/Water Level/January/2026-1-Relative Water Level.csv.zip",
+     "bytes": 554170,
+     "sha256": "3bc591f5aa7c22f7b4a8fe80a91e8dbfbfad9c6dc908cb8f3d95f6f509e8f2c3"
+    },
+    {
+     "path": "2026/Water Level/January/2026-1-Water Level.csv.zip",
+     "bytes": 610372,
+     "sha256": "587e553a197f0e6e9da091dc677f6768d9c0aefe352b1ba49da903082da29742"
+    },
+    {
+     "path": "2026/Water Level/July/2026-7-Relative Water Level.csv.zip",
+     "bytes": 502205,
+     "sha256": "fe1434aca49f2f020eb44e34235b6c1c34912fda9ca0f0e9f32e9206aa396721"
+    },
+    {
+     "path": "2026/Water Level/July/2026-7-Water Level.csv.zip",
+     "bytes": 516807,
+     "sha256": "38d396f9fffa866a8bf1ebdbb7ea96d4405564b4932f918ffd21085b3c2d2db3"
+    },
+    {
+     "path": "2026/Water Level/June/2026-6-Relative Water Level.csv.zip",
+     "bytes": 498217,
+     "sha256": "e247217d7c3e1064b3c127e8af6730dad060163daa27576bff700ab09fad1e59"
+    },
+    {
+     "path": "2026/Water Level/June/2026-6-Water Level.csv.zip",
+     "bytes": 515240,
+     "sha256": "e0db8f95c9486c90807b3fac11c1fdd24bed9554ecbeb844dd5e71be68408ba5"
+    },
+    {
+     "path": "2026/Water Level/March/2026-3-Relative Water Level.csv.zip",
+     "bytes": 523542,
+     "sha256": "8356993f368c7a7a57cd0f115af05e7332ee5b84a66fe3cbd985ad3e48258517"
+    },
+    {
+     "path": "2026/Water Level/March/2026-3-Water Level.csv.zip",
+     "bytes": 573063,
+     "sha256": "43091ffe04a35b525847184381924e04827a13198430de7091f9b1192ac4f657"
+    },
+    {
+     "path": "2026/Water Level/May/2026-5-Relative Water Level.csv.zip",
+     "bytes": 519052,
+     "sha256": "264fc0bc88382a325f21bb29168ef0967e9b5269434c2551fdfe87c285f0b3ca"
+    },
+    {
+     "path": "2026/Water Level/May/2026-5-Water Level.csv.zip",
+     "bytes": 534761,
+     "sha256": "7b34ae6132044377a1e038564ead766ffd3e7ee2c5a9a7d72f1328c8496e8515"
+    },
+    {
+     "path": "2026/Water Level/September/2026-9-Relative Water Level.csv.zip",
+     "bytes": 509971,
+     "sha256": "7594e9cc98dc8fd1f0f5c0610cab8e214d44d3b8c40ab150f0e4081e1fe4287e"
+    },
+    {
+     "path": "2026/Water Level/September/2026-9-Water Level.csv.zip",
+     "bytes": 528956,
+     "sha256": "6b6e8f22ddda3e5ff2f173884937c0f1821eb1a2d3aa5071a01bb62436a34755"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Dew Point.csv.zip",
+     "bytes": 373,
+     "sha256": "d288293fa559774818b8f9e6211a4579813617010bd467dede19c6dbe771dc33"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Humidity.csv.zip",
+     "bytes": 2759622,
+     "sha256": "8c0b541cc9451478874d8dff701b94f48553729e261963229b3908a4e459f531"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Pressure.csv.zip",
+     "bytes": 2537783,
+     "sha256": "dfa3ce7dca4084f3effb405643308582b8e286bd79d2dcde63f3c4dea4cee3a4"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Rain.csv.zip",
+     "bytes": 215950,
+     "sha256": "65c04f2811ca2e2f617259ec85fdc8591c2c3a0942999d1ca7f3fd7203e5ccad"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Temperature.csv.zip",
+     "bytes": 2628891,
+     "sha256": "1e6607e6c89cc1d34339067dfbae3fe60f1167044711cb5a9ee50a283b062a12"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Wind Direction.csv.zip",
+     "bytes": 46678,
+     "sha256": "6326b149793571394aac24a24534aef5ca500fba135cb320de023fcf51af2dd7"
+    },
+    {
+     "path": "2026/Weather/April/2026-4-Wind Speed.csv.zip",
+     "bytes": 46263,
+     "sha256": "37e5b66e925758ea1a491e5b3ca0e65f8c351850f6220abf16eb548b511ad4ac"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Humidity.csv.zip",
+     "bytes": 2687302,
+     "sha256": "142e10aa0ab25eac3f55213484cd76382f9ac193aeb866cee0731e5e04ba1356"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Pressure.csv.zip",
+     "bytes": 2455570,
+     "sha256": "3d24aa6857adeb3c3714d62cfe183f71fa0370af25be630894951532173a98f0"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Rain.csv.zip",
+     "bytes": 250112,
+     "sha256": "034e816f1b831ed6bde596549eb112497019c060740f7fc4d347f7778385b935"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Temperature.csv.zip",
+     "bytes": 2579948,
+     "sha256": "103af0fbc256a89cc937ecc238026601e47c3d5c2e1d550f743456651327f5d4"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Wind Direction.csv.zip",
+     "bytes": 60877,
+     "sha256": "ee6ad03c8242bf5e723322ff64438b78378c1a36428f3c4652aa9f86d91f1fe0"
+    },
+    {
+     "path": "2026/Weather/August/2026-8-Wind Speed.csv.zip",
+     "bytes": 60554,
+     "sha256": "286db0674deec64282f22edbe78717d1f93df969b5884e8e2319e7f21141c7b2"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Humidity.csv.zip",
+     "bytes": 1950837,
+     "sha256": "bc549001e81beddc0f6166749d20af9e0abae241b6fa5dd52b3a5d737416b0a1"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Pressure.csv.zip",
+     "bytes": 1917512,
+     "sha256": "30d74e71eef702ce314c105d84774fc569e53dd3588ef1bc4a1a03efdbac7b58"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Rain.csv.zip",
+     "bytes": 218856,
+     "sha256": "7f14def6d1b88252879b6adae7a33c6a4d98ba9455475067400580f0088f67be"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Temperature.csv.zip",
+     "bytes": 1952661,
+     "sha256": "614fbd370e34a843eaa311d3026628d4b54e26cd5cafd404a9d808138318a07a"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Wind Direction.csv.zip",
+     "bytes": 43301,
+     "sha256": "d9eaf9c156e991d88a6836a370efc405ebd50cb724eb54593f18f007d1606a6d"
+    },
+    {
+     "path": "2026/Weather/February/2026-2-Wind Speed.csv.zip",
+     "bytes": 42923,
+     "sha256": "5b8ce9792a36db028fc958f08b7903aed2fbb4fa1527ff16df987b88cde6ec68"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Humidity.csv.zip",
+     "bytes": 2079766,
+     "sha256": "51293ac2d1e96c9a50f8bc81d6df64bdc6458b3433a1ab39ea020f8a7aa06a44"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Pressure.csv.zip",
+     "bytes": 2070690,
+     "sha256": "4802a8cf55e57972d0688f080acc6bed27a7db517233923efad3878a81ddde48"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Rain.csv.zip",
+     "bytes": 240964,
+     "sha256": "945dc7ba73d85f3c2123f4c4a6aee884752c0031eb1e73fb66e2e6a644711105"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Temperature.csv.zip",
+     "bytes": 2108420,
+     "sha256": "99578992f1e7de9977eeaa04ad1c3e9aca345c9c6aa786f8c623e02a94d2594d"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Visibility.csv.zip",
+     "bytes": 910,
+     "sha256": "15b489690950ba4db9b6150524fa1ff4c8c59c00880fcd2c46c54103f1ff10d7"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Wind Direction.csv.zip",
+     "bytes": 48978,
+     "sha256": "b344c6155dca1b0d2d9411cc72c15d40f99ef6d06d4d149bdc35c1aa6569e38c"
+    },
+    {
+     "path": "2026/Weather/January/2026-1-Wind Speed.csv.zip",
+     "bytes": 49121,
+     "sha256": "45b02aad0028cdbf89d10cfc3a7c3a23a8c424f795464599792f6e2db05b3609"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Humidity.csv.zip",
+     "bytes": 2636050,
+     "sha256": "8f51382eb6435d89316e4a9d5459af624fafd055c178f1188d0839abbd86e604"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Pressure.csv.zip",
+     "bytes": 2424698,
+     "sha256": "7ddca8f197ad8d43304683bc4bfdc26135418cbb93ac2648e174a8d1b415605b"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Rain.csv.zip",
+     "bytes": 249912,
+     "sha256": "0f6153ca84199a9af4f7c8a078722f9f302d0777f79a4c774b24390d2d079a34"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Temperature.csv.zip",
+     "bytes": 2532297,
+     "sha256": "352d3297fa565acf044b52d2c5964c4d79a6cd8bd7dbc1b614f9d37f604ff289"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Wind Direction.csv.zip",
+     "bytes": 54113,
+     "sha256": "aa1cfededbad3ca8a7961d3491714dc7a0bfc0a90534a762ad7166f3e4ac0c6c"
+    },
+    {
+     "path": "2026/Weather/July/2026-7-Wind Speed.csv.zip",
+     "bytes": 53915,
+     "sha256": "bc8eb8a42942d318c66c36762baaf161a3e75be26a20ebf6d7a890b705bbd220"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Humidity.csv.zip",
+     "bytes": 2587697,
+     "sha256": "8fdbf0e7f4d1086d114f427d6279ef7c61076c5520dd6ff2536c867f9041ac4d"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Pressure.csv.zip",
+     "bytes": 2351792,
+     "sha256": "10a52c2e9067ae65a0f085ec45655f2cdcb2a057cb58213323c4e944a0a2f088"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Rain.csv.zip",
+     "bytes": 226118,
+     "sha256": "b0b46ef9c251963392616421f9f84e31c5e1cee49a603962fa66c54420a42a14"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Temperature.csv.zip",
+     "bytes": 2459553,
+     "sha256": "fb941f925d13ddd8b30a605cdf379ed6f2d4545ce8507cea14992ad9b7c316ca"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Wind Direction.csv.zip",
+     "bytes": 46744,
+     "sha256": "f3f5cf688d737433e8438233dd0723f8c6ce3d3d402cc88713cb474a96ce0d24"
+    },
+    {
+     "path": "2026/Weather/June/2026-6-Wind Speed.csv.zip",
+     "bytes": 46274,
+     "sha256": "1a9873e7407a167c9467d5390a0dc8e01368a139b9a29edce997e65da795ada4"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Humidity.csv.zip",
+     "bytes": 3112755,
+     "sha256": "0541993ef081bf7002902b69eb428ce700c290946568b262714f266bcc6018ba"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Pressure.csv.zip",
+     "bytes": 3021361,
+     "sha256": "0abb0ce05e67719a7571c1c1f0dc4fc7fa7a2e13a034608d7de4234f85fcb242"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Rain.csv.zip",
+     "bytes": 230662,
+     "sha256": "45d3e8faac937c566839b7ae5ea62cbf77edaf0ea7684b8e72a52daf134dab52"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Temperature.csv.zip",
+     "bytes": 3048923,
+     "sha256": "72f767733bddb937609406cd58cd819fd5c611fb46f5ab2f3d7ec53b82579b32"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Wind Direction.csv.zip",
+     "bytes": 48145,
+     "sha256": "28c8e2f0bca3dcb84c53645db6e4a0cbe000564394a19b6c2951890472c63d83"
+    },
+    {
+     "path": "2026/Weather/March/2026-3-Wind Speed.csv.zip",
+     "bytes": 47756,
+     "sha256": "af3391e70c3d13b8a5642bafa03baafab85bb4949d2307e9984f9ab14f37dc79"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Dew Point.csv.zip",
+     "bytes": 1802,
+     "sha256": "3a2410c3277ad9dfe27eb7de429522c29792343c2ad1ef5836f298d2780f80f3"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Humidity.csv.zip",
+     "bytes": 3002143,
+     "sha256": "9738e7597d8aaa66aa8ead131b9d3b1328ec4768a33ba0c76cf9a7a29c740912"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Pressure.csv.zip",
+     "bytes": 2759558,
+     "sha256": "99a716fe9de32e1d9557378c9bf0501c6fd0725be1dd3cee8f0ce6b427a5c144"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Rain.csv.zip",
+     "bytes": 236907,
+     "sha256": "46ed8942141515d20ac6c3f2840aa6037abac842a16296084b88db5377fd2b6d"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Temperature.csv.zip",
+     "bytes": 2836356,
+     "sha256": "0fe1d667c5506fb19edc3ccea82807b4517250a7f802c80fb19f0dffd40b8e67"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Wind Direction.csv.zip",
+     "bytes": 47917,
+     "sha256": "120e80162d64e198da9efe6ede7a26f98b9b6327b6c4fbf326d258e55a596144"
+    },
+    {
+     "path": "2026/Weather/May/2026-5-Wind Speed.csv.zip",
+     "bytes": 47228,
+     "sha256": "917b8c08f24aa0cf4b63d2ec3b1346010366b131718fccf5f5e5446531648957"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Humidity.csv.zip",
+     "bytes": 2868726,
+     "sha256": "6ac45fcae67e1e7a4464d64b3429efab7973721db6d3262344bc2db2f9ff432c"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Pressure.csv.zip",
+     "bytes": 2724535,
+     "sha256": "321ca01ba7320b385b9e8a0f0c1a20da38779b7e3027ac13f4006807ff6a2e4c"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Rain.csv.zip",
+     "bytes": 241923,
+     "sha256": "ef33aeff237cc20cc5d9579ac1eda9c432c09e6828b7f8638cbe257c1d08257d"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Temperature.csv.zip",
+     "bytes": 2788220,
+     "sha256": "e4ce373e8465613003ce84fbf2db2bb51101257aeca2595c9f5b4c74609df4ff"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Wind Direction.csv.zip",
+     "bytes": 57063,
+     "sha256": "391af5c46eaeac50b93844a8a753a8e95e7694dd70b8ca48586ce652fcc106bd"
+    },
+    {
+     "path": "2026/Weather/September/2026-9-Wind Speed.csv.zip",
+     "bytes": 56972,
+     "sha256": "e5fc2255afa6346b768e37dff849f5d09e84669834b34a3391711bb06d786eb2"
+    }
+   ]
+  }
+ ]
+}

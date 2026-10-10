@@ -1,0 +1,505 @@
+{
+ "years_covered": [
+  2013,
+  2026
+ ],
+ "n_years": 14,
+ "per_year": [
+  {
+   "year": 2013,
+   "instruments": 41,
+   "themes_used": 3,
+   "gini_20x20": 0.3953,
+   "gini_ci95": [
+    0.0,
+    0.585
+   ],
+   "clark_evans_R": 0.7298,
+   "nn_mean_m": 1848.1,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.2699,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 58.5,
+   "vehicle_pct": 58.5,
+   "themes": {
+    "Vehicles": 24,
+    "People": 15,
+    "Weather": 2
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2014,
+   "instruments": 97,
+   "themes_used": 4,
+   "gini_20x20": 0.4422,
+   "gini_ci95": [
+    0.2425,
+    0.5527
+   ],
+   "clark_evans_R": 0.5998,
+   "nn_mean_m": 1065.0,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.3298,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 61.9,
+   "vehicle_pct": 61.9,
+   "themes": {
+    "Vehicles": 60,
+    "People": 19,
+    "Air Quality": 10,
+    "Weather": 8
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2015,
+   "instruments": 228,
+   "themes_used": 6,
+   "gini_20x20": 0.4992,
+   "gini_ci95": [
+    0.3886,
+    0.5721
+   ],
+   "clark_evans_R": 0.4509,
+   "nn_mean_m": 612.0,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.7627,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 70.2,
+   "vehicle_pct": 70.2,
+   "themes": {
+    "Vehicles": 160,
+    "Water Level": 21,
+    "Weather": 20,
+    "People": 16,
+    "Air Quality": 10,
+    "Electrical": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2016,
+   "instruments": 199,
+   "themes_used": 7,
+   "gini_20x20": 0.5531,
+   "gini_ci95": [
+    0.3926,
+    0.6182
+   ],
+   "clark_evans_R": 0.5108,
+   "nn_mean_m": 735.3,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.5895,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 55.2,
+   "vehicle_pct": 55.2,
+   "themes": {
+    "Vehicles": 111,
+    "Weather": 39,
+    "Air Quality": 16,
+    "People": 13,
+    "Water Level": 13,
+    "Environment": 8,
+    "Electrical": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2017,
+   "instruments": 605,
+   "themes_used": 11,
+   "gini_20x20": 0.6403,
+   "gini_ci95": [
+    0.5353,
+    0.706
+   ],
+   "clark_evans_R": 0.3301,
+   "nn_mean_m": 313.4,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.1771,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 59.8,
+   "vehicle_pct": 59.8,
+   "themes": {
+    "Vehicles": 363,
+    "Weather": 149,
+    "Air Quality": 31,
+    "Water Level": 23,
+    "Bee Hive": 12,
+    "People": 12,
+    "Environment": 8,
+    "Noise": 4,
+    "Building": 3,
+    "Electrical": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2018,
+   "instruments": 367,
+   "themes_used": 12,
+   "gini_20x20": 0.6585,
+   "gini_ci95": [
+    0.4101,
+    0.7704
+   ],
+   "clark_evans_R": 0.4303,
+   "nn_mean_m": 735.2,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.7643,
+   "top_theme": "Weather",
+   "top_theme_pct": 45.8,
+   "vehicle_pct": 16.8,
+   "themes": {
+    "Weather": 169,
+    "Vehicles": 62,
+    "Air Quality": 41,
+    "Noise": 37,
+    "People": 15,
+    "Bee Hive": 14,
+    "Water Level": 11,
+    "Water Quality": 8,
+    "Environment": 7,
+    "Building": 3,
+    "Electrical": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2019,
+   "instruments": 474,
+   "themes_used": 12,
+   "gini_20x20": 0.6604,
+   "gini_ci95": [
+    0.5147,
+    0.7406
+   ],
+   "clark_evans_R": 0.3822,
+   "nn_mean_m": 503.8,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.0369,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 56.5,
+   "vehicle_pct": 56.5,
+   "themes": {
+    "Vehicles": 268,
+    "Weather": 80,
+    "Noise": 41,
+    "People": 30,
+    "Air Quality": 21,
+    "Water Level": 13,
+    "Water Quality": 8,
+    "Bee Hive": 7,
+    "Environment": 3,
+    "Electrical": 1,
+    "Seismic": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2020,
+   "instruments": 749,
+   "themes_used": 11,
+   "gini_20x20": 0.7392,
+   "gini_ci95": [
+    0.6143,
+    0.7872
+   ],
+   "clark_evans_R": 0.2647,
+   "nn_mean_m": 348.4,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.295,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 69.1,
+   "vehicle_pct": 69.1,
+   "themes": {
+    "Vehicles": 521,
+    "Air Quality": 85,
+    "Weather": 63,
+    "Noise": 42,
+    "People": 26,
+    "Water Quality": 7,
+    "Bee Hive": 6,
+    "Electrical": 1,
+    "Seismic": 1,
+    "Sensor Metrics": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2021,
+   "instruments": 800,
+   "themes_used": 11,
+   "gini_20x20": 0.7534,
+   "gini_ci95": [
+    0.6497,
+    0.8049
+   ],
+   "clark_evans_R": 0.3356,
+   "nn_mean_m": 476.8,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.2774,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 70.3,
+   "vehicle_pct": 70.3,
+   "themes": {
+    "Vehicles": 566,
+    "Air Quality": 85,
+    "Weather": 50,
+    "Noise": 38,
+    "Water Level": 30,
+    "People": 20,
+    "Water Quality": 7,
+    "Sensor Metrics": 5,
+    "Environment": 2,
+    "Electrical": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2022,
+   "instruments": 566,
+   "themes_used": 11,
+   "gini_20x20": 0.7048,
+   "gini_ci95": [
+    0.5705,
+    0.7665
+   ],
+   "clark_evans_R": 0.2825,
+   "nn_mean_m": 397.0,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.976,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 58.3,
+   "vehicle_pct": 58.3,
+   "themes": {
+    "Vehicles": 330,
+    "People": 79,
+    "Weather": 46,
+    "Air Quality": 43,
+    "Water Level": 31,
+    "Noise": 16,
+    "Sensor Metrics": 7,
+    "Water Quality": 7,
+    "Environment": 5,
+    "Electrical": 1,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2023,
+   "instruments": 466,
+   "themes_used": 10,
+   "gini_20x20": 0.6057,
+   "gini_ci95": [
+    0.5234,
+    0.6479
+   ],
+   "clark_evans_R": 0.2836,
+   "nn_mean_m": 331.2,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.2654,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 73.0,
+   "vehicle_pct": 73.0,
+   "themes": {
+    "Vehicles": 340,
+    "Air Quality": 50,
+    "Weather": 30,
+    "Water Level": 16,
+    "People": 12,
+    "Noise": 6,
+    "Water Quality": 6,
+    "Building": 3,
+    "Sensor Metrics": 2,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2024,
+   "instruments": 549,
+   "themes_used": 9,
+   "gini_20x20": 0.5939,
+   "gini_ci95": [
+    0.4574,
+    0.7005
+   ],
+   "clark_evans_R": 0.2958,
+   "nn_mean_m": 271.8,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.0058,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 65.8,
+   "vehicle_pct": 65.8,
+   "themes": {
+    "Vehicles": 361,
+    "People": 76,
+    "Air Quality": 42,
+    "Water Level": 31,
+    "Weather": 18,
+    "Building": 9,
+    "Sensor Metrics": 6,
+    "Water Quality": 5,
+    "Sewage": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2025,
+   "instruments": 707,
+   "themes_used": 8,
+   "gini_20x20": 0.5983,
+   "gini_ci95": [
+    0.5127,
+    0.6533
+   ],
+   "clark_evans_R": 0.2341,
+   "nn_mean_m": 190.0,
+   "perm_p": 0.005,
+   "theil_T_themes": 1.0181,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 63.4,
+   "vehicle_pct": 63.4,
+   "themes": {
+    "Vehicles": 448,
+    "People": 176,
+    "Water Level": 30,
+    "Air Quality": 21,
+    "Weather": 18,
+    "Building": 9,
+    "Sensor Metrics": 4,
+    "Water Quality": 1
+   },
+   "perm_p_bh": 0.005
+  },
+  {
+   "year": 2026,
+   "instruments": 706,
+   "themes_used": 7,
+   "gini_20x20": 0.6088,
+   "gini_ci95": [
+    0.5174,
+    0.6605
+   ],
+   "clark_evans_R": 0.2382,
+   "nn_mean_m": 193.9,
+   "perm_p": 0.005,
+   "theil_T_themes": 0.8574,
+   "top_theme": "Vehicles",
+   "top_theme_pct": 59.5,
+   "vehicle_pct": 59.5,
+   "themes": {
+    "Vehicles": 420,
+    "People": 199,
+    "Water Level": 31,
+    "Air Quality": 28,
+    "Weather": 19,
+    "Building": 8,
+    "Sensor Metrics": 1
+   },
+   "perm_p_bh": 0.005
+  }
+ ],
+ "births_by_year": {
+  "2013": 41,
+  "2014": 69,
+  "2015": 147,
+  "2016": 122,
+  "2017": 413,
+  "2018": 150,
+  "2019": 104,
+  "2020": 231,
+  "2021": 133,
+  "2022": 82,
+  "2023": 74,
+  "2024": 100,
+  "2025": 196,
+  "2026": 44
+ },
+ "silences_by_year": {
+  "2013": 12,
+  "2014": 7,
+  "2015": 62,
+  "2016": 80,
+  "2017": 107,
+  "2018": 158,
+  "2019": 74,
+  "2020": 59,
+  "2021": 291,
+  "2022": 121,
+  "2023": 72,
+  "2024": 96,
+  "2025": 61
+ },
+ "leave_one_theme_out": [
+  {
+   "excluded_theme": "Weather",
+   "clark_evans_R": 0.2222
+  },
+  {
+   "excluded_theme": "Sensor Metrics",
+   "clark_evans_R": 0.257
+  },
+  {
+   "excluded_theme": "Water Quality",
+   "clark_evans_R": 0.2573
+  },
+  {
+   "excluded_theme": "Electrical",
+   "clark_evans_R": 0.2587
+  },
+  {
+   "excluded_theme": "Seismic",
+   "clark_evans_R": 0.2587
+  },
+  {
+   "excluded_theme": "Sewage",
+   "clark_evans_R": 0.2587
+  },
+  {
+   "excluded_theme": "Building",
+   "clark_evans_R": 0.2593
+  },
+  {
+   "excluded_theme": "Bee Hive",
+   "clark_evans_R": 0.2596
+  },
+  {
+   "excluded_theme": "Environment",
+   "clark_evans_R": 0.26
+  },
+  {
+   "excluded_theme": "Noise",
+   "clark_evans_R": 0.2616
+  },
+  {
+   "excluded_theme": "Air Quality",
+   "clark_evans_R": 0.27
+  },
+  {
+   "excluded_theme": "Water Level",
+   "clark_evans_R": 0.2728
+  },
+  {
+   "excluded_theme": "People",
+   "clark_evans_R": 0.2848
+  },
+  {
+   "excluded_theme": "Vehicles",
+   "clark_evans_R": 0.3067
+  }
+ ],
+ "notes": [
+  "Gini is computed on occupied 20x20 grid cells, the resolution declared in advance; CI is a 500-resample bootstrap of the observed cell counts.",
+  "Clark-Evans R is tested against complete spatial randomness by 199 uniform draws inside the observed bounding box; p is corrected across years with Benjamini-Hochberg.",
+  "A sensor counts as present in a year if it appears in any archive file for that year, so births and silences are observation-based, not vendor-declared deployment dates."
+ ]
+}

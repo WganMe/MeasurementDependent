@@ -1,0 +1,48 @@
+{
+ "years": [
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "reading_bearing": {
+  "n": 24,
+  "n_in_census": 0,
+  "n_snapshot_only": 24,
+  "themes": {}
+ },
+ "snapshot_only": {
+  "n": 179,
+  "n_with_coords": 179,
+  "frac_inside_hull": 1.0,
+  "median_dist_to_census_m": 6.38277313895865
+ },
+ "gini_mde": {
+  "se": 0.0020779466215423677,
+  "mde80": 0.004631382756692749,
+  "mde90": 0.0056362944546214004,
+  "uncorrected_slope": 0.0128
+ },
+ "multiscale_exclusions": {
+  "slope_all_500": -313.135695967067,
+  "slope_excl_500": -312.24214529785996,
+  "slope_all_1000": -426.379940286897,
+  "slope_excl_1000": -439.9049361594729
+ },
+ "infill_exclusions": {
+  "n_above": 12,
+  "n": 13,
+  "n_above_sub": 9,
+  "n_sub": 10
+ }
+}

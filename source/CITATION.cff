@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: "If you use this software or its derived data, please cite it as below."
+title: "Measurement-Dependent Clustering in the Growing Urban Observatory Sensor Network"
+abstract: >-
+  Companion repository for the manuscript of the same name, submitted to PeerJ.
+  An annual census of the Newcastle Urban Observatory's instrument
+  population from 2013 to 2026: the network grew 17.2x, and on a reference frame
+  fixed for every year the Clark-Evans index on deduplicated locations fell 45%
+  (0.367 to 0.202), so instruments sit closer to their nearest neighbours,
+  relative to their own density, than they did in 2013. Rarefying every year to a
+  common sample size removes the clustering trend, and the concentration index
+  shows no robust trend once sample size is fixed. Size and elapsed time cannot
+  be separated at fourteen collinear points, so the paper reports an association
+  and declines a causal attribution. A provenance audit of a frozen benchmark
+  snapshot shows it is not a census and its gaps are not random with respect to
+  theme.
+type: software
+license: CC-BY-4.0
+version: "1.0.1"
+date-released: "2026-10-02"
+doi: "10.5281/zenodo.23099939"
+repository-code: "https://github.com/WganMe/MeasurementDependent"
+keywords:
+  - urban sensor networks
+  - smart-city infrastructure
+  - spatial clustering
+  - longitudinal analysis
+  - descriptive census
+  - data provenance
+authors:
+  - family-names: Alnahari
+    given-names: Wael
+    orcid: "https://orcid.org/0000-0001-5247-3713"
+    affiliation: "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
+  - family-names: Arbaaeen
+    given-names: Ammar
+    orcid: "https://orcid.org/0000-0003-2165-3185"
+    affiliation: "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+  - family-names: Alsaig
+    given-names: Ammar
+    orcid: "https://orcid.org/0000-0002-6756-9766"
+    affiliation: "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+  - family-names: Hasanin
+    given-names: Tawfiq
+    orcid: "https://orcid.org/0000-0003-1072-278X"
+    affiliation: "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
+  - family-names: Alnahri
+    given-names: Wasem
+    orcid: "https://orcid.org/0009-0004-6963-5773"
+    affiliation: "Independent Researcher, Mecca 24331, Saudi Arabia"

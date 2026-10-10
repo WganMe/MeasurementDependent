@@ -1,0 +1,36 @@
+{
+ "snapshot_creation_utc": "2026-09-20T04:21:36+00:00",
+ "readings_window": [
+  "2026-05-11 00:55:00+00:00",
+  "2026-05-18 00:47:40+00:00"
+ ],
+ "readings_rows": 87962,
+ "snapshot_ids": 1411,
+ "snapshot_ids_with_readings": 24,
+ "census_ids": 1899,
+ "matched": 1232,
+ "only_snapshot": 179,
+ "only_census": 667,
+ "coverage_of_census": 64.87625065824118,
+ "n_active_2026_census": 706,
+ "n_active_2026_in_snapshot": 440,
+ "n_active_2026_omitted": 266,
+ "coverage_active_2026": 62.32294617563739,
+ "vehicle": {
+  "base_all": 0.5039494470774092,
+  "omitted_2026cond": 0.7293233082706767,
+  "matched_2026cond": 0.5136363636363637,
+  "table": [
+   [
+    194,
+    72
+   ],
+   [
+    226,
+    214
+   ]
+  ],
+  "odds_ratio": 2.5513765978367746,
+  "fisher_p": 1.642772431139034e-08
+ }
+}
