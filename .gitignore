@@ -55,8 +55,19 @@ MDPI_template_APA.zip
 # PeerJ submission and must contain PeerJ material only, so they are excluded from it.
 source/archive/
 
-# ---- caches: rebuilt from the archive, not source material ----
-source/uo_sensor_cache.json
+# ---- NOT ignored: uo_sensor_cache.json - it is REQUIRED ----
+# This file was briefly excluded on a wrong assumption. It is an INPUT, not a cache that can
+# be rebuilt: `longitudinal_census.py` and `census_model.py` both read it, and CI runs both.
+# Without it the census cannot be regenerated from the checkout, so there is deliberately NO
+# ignore rule for it -- see the note in the repository README.
+#
+# It is safe to publish, and the manuscript says so itself. Its Data Availability statement
+# describes this exact artefact: "the one-week instrument catalogue the snapshot audit is
+# computed from ... a list of instruments -- identity, position, broker and variable names
+# -- and every measured quantity in it has been removed; no temperature, concentration or
+# count is redistributed". Checked directly: the file holds 1906 instruments with lon/lat,
+# name, theme and variable, plus the archive FILENAMES each appears in. No reading, no value,
+# no concentration. It is the same kind of catalogue already published in the Zenodo deposit.
 
 # ---- working documents ----
 local_only/
