@@ -42,9 +42,36 @@ from collections import Counter
 HERE = pathlib.Path(__file__).resolve().parent
 OUT = HERE.parent                      # the submission root, one level up
 
+# THE LIMITS COME FROM THE FORM'S OWN maxlength ATTRIBUTES, not from a screenshot's counter.
+# Read off the portal markup for manuscript 150843:
+#   title        maxlength="250"
+#   shortTitle   maxlength="40"
+#   abstract     maxlength="3000"   and a stated MINIMUM of 500 characters
+#
+# An earlier version of this file used 50 and 2000, misread from the counters on screen, and
+# the short-title recommendation it produced was 45 characters -- five over the real limit.
+# The `maxlength` attribute is what the browser enforces, so it is what is checked here.
 TITLE_LIMIT = 250
-SHORT_LIMIT = 50
-ABSTRACT_LIMIT = 2000                  # CHARACTERS, not words
+SHORT_LIMIT = 40
+ABSTRACT_LIMIT = 3000                  # CHARACTERS, not words
+ABSTRACT_MIN = 500                     # the form refuses less than this
+
+# The published title and the portal title MUST match: the portal says plainly, "This text
+# will be used in your published article (not the text from your manuscript document)".
+# PeerJ asks for SENTENCE CASING and its own form warns against many capitals, and the
+# published example in the same journal uses it:
+#   "A spatially interpretable machine learning framework for urban waterlogging risk
+#    mapping in Beijing"
+# The manuscript's title is Title Case. A naive sentence-caser would also lowercase "Urban
+# Observatory", which is a proper noun (the Newcastle Urban Observatory platform), so the
+# compliant form is written out by hand rather than generated:
+TITLE_SENTENCE_CASE = (
+    "Measurement-dependent clustering in the growing "
+    "Urban Observatory sensor network")
+
+# The form supports inline markup: [b] [i] [sup] [sub]. Neither the title nor the abstract
+# needs any of it, so no markup is emitted. The abstract also accepts LaTeX equations
+# (\(...\), $$...$$, \[...\]); this abstract contains no equation.
 
 # Characters whose ASCII form is a faithful stand-in. Anything not listed is left alone and
 # reported, so a new character cannot slip through unnoticed.
@@ -56,14 +83,18 @@ NORMALISE = {
     "\u2012": "-",      # FIGURE DASH
 }
 
-# The portal wants a short title (<= 50 characters) and the manuscript has none: it is a
-# portal-only field. This is a RECOMMENDATION, not a value read from the paper -- the author
-# can replace it. The alternatives are given so the choice is visible.
-SHORT_TITLE = "Measurement-dependent urban sensor clustering"
+# The portal wants a short title (<= 40 characters) and the manuscript has none: it is a
+# portal-only field. The guidance is "make your short title as descriptive as possible", and
+# the examples given are noun phrases ("Canada buffaloberry demographic effects"), so these are
+# noun phrases. This is a RECOMMENDATION, not a value read from the paper -- the author can
+# replace it. Neither uses an acronym, which the title guidelines ask to avoid.
+SHORT_TITLE = "Measurement-dependent sensor clustering"          # 39
 SHORT_TITLE_ALTERNATIVES = [
-    "Measurement-dependent spatial clustering",
-    "Measurement-dependent clustering at city scale",
+    "Measurement-dependent urban clustering",                    # 38
+    "Measurement-dependent clustering",                          # 32
+    "Urban observatory clustering is measurement-dependent",     # 53 -- too long, kept out
 ]
+SHORT_TITLE_ALTERNATIVES = [a for a in SHORT_TITLE_ALTERNATIVES if len(a) <= SHORT_LIMIT]
 
 
 def pdf_text(pdf: pathlib.Path) -> str:
@@ -129,6 +160,36 @@ def normalise(text: str) -> tuple[str, Counter]:
     return "".join(out), changed
 
 
+# Faithful ASCII forms for the typographic characters a paste can mangle. These CHANGE the
+# text, which is why they are not applied to the primary copy; they exist so there is a
+# fallback that cannot paste badly.
+ASCII_FOLD = {
+    "\u2013": "-",      # en dash
+    "\u2014": "--",     # em dash
+    "\u2018": "'", "\u2019": "'",
+    "\u201c": '"', "\u201d": '"',
+    "\u2026": "...",
+    "\u00a0": " ",
+    "\u2212": "-",
+}
+
+
+def ascii_fold(text: str) -> tuple[str, Counter]:
+    """Map every non-ASCII character to a faithful ASCII form; report what changed."""
+    changed = Counter()
+    out = []
+    for ch in text:
+        if ord(ch) < 128:
+            out.append(ch)
+        elif ch in ASCII_FOLD:
+            changed[ch] += 1
+            out.append(ASCII_FOLD[ch])
+        else:
+            changed[ch] += 1
+            out.append("?")            # nothing sensible to map to: make it visible
+    return "".join(out), changed
+
+
 def main() -> int:
     pdf = OUT / "peerj-main.pdf"
     if not pdf.exists():
@@ -140,6 +201,14 @@ def main() -> int:
     title, t_changed = normalise(raw_title)
     abstract, a_changed = normalise(raw_abstract)
 
+    # A second, fully ASCII copy of the abstract, for the "no strange characters" warning.
+    # The portal's own help says to use an online text-cleaning tool when a paste brings
+    # strange characters in. Rather than trusting a cleaner to leave the text alone, this is
+    # the text with every non-ASCII character mapped to a faithful ASCII form, so there is a
+    # version that cannot paste badly if the typographic one does. It is generated for
+    # comparison, and the differences are counted so the two can be checked by eye.
+    ascii_abstract, ascii_changed = ascii_fold(abstract)
+
     # --- the portal's own limits, enforced here rather than discovered at the portal
     problems = []
     if len(title) > TITLE_LIMIT:
@@ -147,9 +216,15 @@ def main() -> int:
     if len(SHORT_TITLE) > SHORT_LIMIT:
         problems.append("short title is %d characters, limit %d"
                         % (len(SHORT_TITLE), SHORT_LIMIT))
+    if len(TITLE_SENTENCE_CASE) > TITLE_LIMIT:
+        problems.append("sentence-case title is %d characters, limit %d"
+                        % (len(TITLE_SENTENCE_CASE), TITLE_LIMIT))
     if len(abstract) > ABSTRACT_LIMIT:
         problems.append("abstract is %d characters, limit %d"
                         % (len(abstract), ABSTRACT_LIMIT))
+    if len(abstract) < ABSTRACT_MIN:
+        problems.append("abstract is %d characters, MINIMUM is %d"
+                        % (len(abstract), ABSTRACT_MIN))
     if "\n" in abstract:
         problems.append("abstract contains a linebreak")
     if problems:
@@ -170,15 +245,32 @@ def main() -> int:
                "characters. The fenced blocks below are the exact strings to paste.\n")
 
     doc.append("## Title — %d of %d characters\n" % (len(title), TITLE_LIMIT))
+    doc.append("The portal states plainly: *\"This text will be used in your published article "
+               "(not the text from your manuscript document).\"* So the title below must be the "
+               "published title, and it must match what the PDF prints.\n")
+    doc.append("**Paste this one.** PeerJ asks for sentence casing, and its form warns when a "
+               "title carries many capitals. This is the manuscript's title in sentence case, "
+               "with `Urban Observatory` kept capitalised because it is the name of the "
+               "Newcastle platform, not a common noun — an automatic sentence-caser would "
+               "wrongly lowercase it.\n")
+    doc.append("```text")
+    doc.append(TITLE_SENTENCE_CASE)
+    doc.append("```\n")
+    doc.append("The manuscript PDF prints the Title Case form, and the two must not drift:\n")
     doc.append("```text")
     doc.append(title)
     doc.append("```\n")
+    doc.append("Either is within the %d-character limit; the sentence-case one is what PeerJ "
+               "asks for. If you prefer the Title Case form in the published article, paste "
+               "that instead.\n" % TITLE_LIMIT)
 
     doc.append("## Short Title — %d of %d characters\n"
                % (len(SHORT_TITLE), SHORT_LIMIT))
     doc.append("**This one is a recommendation, not a value read from the paper:** the "
                "manuscript carries no short title, because the portal is the only place that "
-               "asks for one. Replace it if you prefer another.\n")
+               "asks for one. The limit is **%d** characters (the form's `maxlength`), and the "
+               "guidance is to make it as descriptive as possible. Replace it if you prefer "
+               "another.\n" % SHORT_LIMIT)
     doc.append("```text")
     doc.append(SHORT_TITLE)
     doc.append("```\n")
@@ -189,12 +281,36 @@ def main() -> int:
 
     doc.append("## Abstract — %d of %d characters, %d words, one line\n"
                % (len(abstract), ABSTRACT_LIMIT, len(abstract.split())))
-    doc.append("The limit is **characters, not words**, which is worth noting because every "
-               "other place in this submission counts the abstract in words (199). The field "
-               "is a single paragraph: the text below carries no linebreaks.\n")
+    doc.append("The limit is **characters, not words** — and it is a **range**: `maxlength` is "
+               "%d and the form refuses fewer than **%d**. This abstract is %d, comfortably "
+               "inside both. Every other place in this submission counts the abstract in words "
+               "(199), which is a different number and does not substitute for this one. The "
+               "field is a single paragraph, so the text carries no linebreaks.\n"
+               % (ABSTRACT_LIMIT, ABSTRACT_MIN, len(abstract)))
+    doc.append("**Paste this one.**\n")
     doc.append("```text")
     doc.append(abstract)
     doc.append("```\n")
+
+    doc.append("### If the paste brings strange characters: a fully ASCII copy\n")
+    doc.append("The portal's checklist warns about *\"linebreaks or strange characters\"* and "
+               "suggests an online text-cleaning tool. This is the same abstract with every "
+               "non-ASCII character mapped to a faithful ASCII form, so there is a version "
+               "that cannot paste badly. It **changes the text** (%s), which is why it is the "
+               "fallback rather than the default — prefer the copy above.\n"
+               % ", ".join("%s x%d" % (c, n) for c, n in sorted(ascii_changed.items()))
+               if ascii_changed else
+               "The portal's checklist warns about *\"linebreaks or strange characters\"* and "
+               "suggests an online text-cleaning tool. This abstract has no non-ASCII "
+               "characters at all, so a plain paste cannot go wrong.\n")
+    if ascii_changed:
+        doc.append("```text")
+        doc.append(ascii_abstract)
+        doc.append("```\n")
+        doc.append("The differences, so the two can be checked by eye:\n")
+        for ch, n in sorted(ascii_changed.items(), key=lambda kv: -kv[1]):
+            doc.append("- `%s` (U+%04X) → `%s`  ×%d" % (ch, ord(ch), ASCII_FOLD.get(ch, "?"), n))
+        doc.append("")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "

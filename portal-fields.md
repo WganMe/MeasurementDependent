@@ -6,30 +6,57 @@ The portal's checklist asks that these be entered *"exactly as you want them to 
 
 ## Title — 80 of 250 characters
 
+The portal states plainly: *"This text will be used in your published article (not the text from your manuscript document)."* So the title below must be the published title, and it must match what the PDF prints.
+
+**Paste this one.** PeerJ asks for sentence casing, and its form warns when a title carries many capitals. This is the manuscript's title in sentence case, with `Urban Observatory` kept capitalised because it is the name of the Newcastle platform, not a common noun — an automatic sentence-caser would wrongly lowercase it.
+
+```text
+Measurement-dependent clustering in the growing Urban Observatory sensor network
+```
+
+The manuscript PDF prints the Title Case form, and the two must not drift:
+
 ```text
 Measurement-Dependent Clustering in the Growing Urban Observatory Sensor Network
 ```
 
-## Short Title — 45 of 50 characters
+Either is within the 250-character limit; the sentence-case one is what PeerJ asks for. If you prefer the Title Case form in the published article, paste that instead.
 
-**This one is a recommendation, not a value read from the paper:** the manuscript carries no short title, because the portal is the only place that asks for one. Replace it if you prefer another.
+## Short Title — 39 of 40 characters
+
+**This one is a recommendation, not a value read from the paper:** the manuscript carries no short title, because the portal is the only place that asks for one. The limit is **40** characters (the form's `maxlength`), and the guidance is to make it as descriptive as possible. Replace it if you prefer another.
 
 ```text
-Measurement-dependent urban sensor clustering
+Measurement-dependent sensor clustering
 ```
 
 Alternatives, all within the limit:
 
-- `Measurement-dependent spatial clustering` (40)
-- `Measurement-dependent clustering at city scale` (46)
+- `Measurement-dependent urban clustering` (38)
+- `Measurement-dependent clustering` (32)
 
-## Abstract — 1287 of 2000 characters, 199 words, one line
+## Abstract — 1287 of 3000 characters, 199 words, one line
 
-The limit is **characters, not words**, which is worth noting because every other place in this submission counts the abstract in words (199). The field is a single paragraph: the text below carries no linebreaks.
+The limit is **characters, not words** — and it is a **range**: `maxlength` is 3000 and the form refuses fewer than **500**. This abstract is 1287, comfortably inside both. Every other place in this submission counts the abstract in words (199), which is a different number and does not substitute for this one. The field is a single paragraph, so the text carries no linebreaks.
+
+**Paste this one.**
 
 ```text
 Urban sensing studies describe a network from a single slice, so they cannot show whether its structure changes as it grows. We census the Newcastle Urban Observatory instrument population annually, 2013–2026 (41 to 706 identifiers), and ask how much of the apparent strengthening of nearest-neighbour clustering is a property of the deployment, not the measurement. The Clark–Evans index falls 67% on each year’s own bounding box and identifiers, 57% on a fixed reference hull, and 45% once identifiers at one coordinate are counted once; measuring each year on its own hull gives 64.7%. Merging registrations within 25 m leaves 4.3%, shrinking monotonically with no plateau, so the tolerance is a choice, not a threshold the data identify. The two controls interact rather than partition the decline: registration removes it on the fixed hull, support matching restores 38.6%, so we report a range, not a decomposition. On each year’s own footprint the multiscale decline is -99 m per year, indistinguishable from zero, and rarefaction also removes the trend. Clustering is defined against a homogeneous Poisson process, invariant under translation and rotation of the window; window, density and registration each move the index from that reference value without moving an instrument.
 ```
+
+### If the paste brings strange characters: a fully ASCII copy
+
+The portal's checklist warns about *"linebreaks or strange characters"* and suggests an online text-cleaning tool. This is the same abstract with every non-ASCII character mapped to a faithful ASCII form, so there is a version that cannot paste badly. It **changes the text** (– x2, ’ x2), which is why it is the fallback rather than the default — prefer the copy above.
+
+```text
+Urban sensing studies describe a network from a single slice, so they cannot show whether its structure changes as it grows. We census the Newcastle Urban Observatory instrument population annually, 2013-2026 (41 to 706 identifiers), and ask how much of the apparent strengthening of nearest-neighbour clustering is a property of the deployment, not the measurement. The Clark-Evans index falls 67% on each year's own bounding box and identifiers, 57% on a fixed reference hull, and 45% once identifiers at one coordinate are counted once; measuring each year on its own hull gives 64.7%. Merging registrations within 25 m leaves 4.3%, shrinking monotonically with no plateau, so the tolerance is a choice, not a threshold the data identify. The two controls interact rather than partition the decline: registration removes it on the fixed hull, support matching restores 38.6%, so we report a range, not a decomposition. On each year's own footprint the multiscale decline is -99 m per year, indistinguishable from zero, and rarefaction also removes the trend. Clustering is defined against a homogeneous Poisson process, invariant under translation and rotation of the window; window, density and registration each move the index from that reference value without moving an instrument.
+```
+
+The differences, so the two can be checked by eye:
+
+- `–` (U+2013) → `-`  ×2
+- `’` (U+2019) → `'`  ×2
 
 ## Character handling
 
