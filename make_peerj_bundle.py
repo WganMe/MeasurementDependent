@@ -60,7 +60,9 @@ ARCHIVES = (
      + [("peerj-main.tex", "peerj-main.tex"),
         ("references.bib", "references.bib"),
         ("wlpeerj.cls", "wlpeerj.cls")]),
-    ("source_si.zip", [("peerj-si.tex", "peerj-si.tex"), ("wlpeerj.cls", "wlpeerj.cls")]),
+    ("source_si.zip", [("peerj-si.tex", "peerj-si.tex"),
+                       ("references.bib", "references.bib"),
+                       ("wlpeerj.cls", "wlpeerj.cls")]),
 )
 # Each entry is (path on disk relative to the submission root, name inside the zip).
 

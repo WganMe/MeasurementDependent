@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Final audit of the manuscript against the five stated requirements."""
+"""Final audit of the manuscript against the five stated requirements.
+
+WHERE THE FILES ARE. This script reads the NEUTRAL source and the GENERATED documents, and
+those live in different places. `main.tex` and `main_si.tex` are this directory (`source/`),
+but the typeset output is written to the repository root as `peerj-main.*`, because the root
+is the submission folder. The bibliography is shared, so it is read from the source copy.
+
+The script used to look for `main.pdf`, `main.log`, `main.blg` and `main.bbl` beside itself,
+which stopped existing when the generated documents moved one level up and were renamed. It
+then crashed on the first read, so this whole audit had been silently dead -- including its
+uncited-bibliography-entry report, which is the one output here that nothing else produces.
+"""
 import json
 import pathlib
 import re
@@ -7,11 +18,24 @@ import subprocess
 import sys
 from collections import Counter
 
-PAPER = pathlib.Path(__file__).resolve().parent
+PAPER = pathlib.Path(__file__).resolve().parent          # source/
+ROOT = PAPER.parent                                      # the submission folder
+
 TEX = (PAPER / "main.tex").read_text()
 BIB = (PAPER / "references.bib").read_text()
 BODY = TEX.split("\\begin{document}", 1)[1]
-PDF = PAPER / "main.pdf"
+
+# The generated documents, under their PeerJ names, at the repository root.
+PDF = ROOT / "peerj-main.pdf"
+LOG = ROOT / "peerj-main.log"
+BLG = ROOT / "peerj-main.blg"
+BBL = ROOT / "peerj-main.bbl"
+
+_missing = [p.name for p in (PDF, LOG, BLG, BBL) if not p.exists()]
+if _missing:
+    raise SystemExit(
+        "REFUSING: the generated documents are missing from %s: %s\n"
+        "Run ./build.sh at the repository root first." % (ROOT, ", ".join(_missing)))
 
 print("=" * 68)
 print(" FINAL AUDIT — five requirements, measured")
@@ -115,19 +139,24 @@ print("    prose words %d | sentences %d | mean %.1f | max %d | >45w %d"
 
 # ---------- build ----------
 print("\n[6] BUILD")
-# main.log holds only the LAST pdflatex pass. Earlier passes legitimately warn
+# peerj-main.log holds only the LAST pdflatex pass. Earlier passes legitimately warn
 # that citations are undefined because BibTeX has not run yet; those warnings are
 # not a defect and must not be read as one.
-log = (PAPER / "main.log").read_text(errors="replace")
-blg = (PAPER / "main.blg").read_text(errors="replace")
-bbl = (PAPER / "main.bbl").read_text(errors="replace")
+log = LOG.read_text(errors="replace")
+blg = BLG.read_text(errors="replace")
+bbl = BBL.read_text(errors="replace")
 info = subprocess.run(["pdfinfo", str(PDF)], capture_output=True, text=True).stdout
 pages = re.search(r"Pages:\s+(\d+)", info)
-print("    LaTeX errors              : %d" % len(re.findall(r"^!", log, re.M)))
-print("    undefined citations       : %d" % len(re.findall(r"Citation.*undefined", log)))
-print("    undefined references      : %d" % len(re.findall(r"Reference.*undefined", log)))
-print("    missing bib entries       : %d" % len(re.findall(r"didn't find a database entry", blg)))
-print("    overfull hbox             : %d" % len(re.findall(r"Overfull", log)))
+n_errors = len(re.findall(r"^!", log, re.M))
+n_undef_c = len(re.findall(r"Citation.*undefined", log))
+n_undef_r = len(re.findall(r"Reference.*undefined", log))
+n_missing = len(re.findall(r"didn't find a database entry", blg))
+n_overfull = len(re.findall(r"Overfull", log))
+print("    LaTeX errors              : %d" % n_errors)
+print("    undefined citations       : %d" % n_undef_c)
+print("    undefined references      : %d" % n_undef_r)
+print("    missing bib entries       : %d" % n_missing)
+print("    overfull hbox             : %d" % n_overfull)
 print("    references in .bbl        : %d" % len(re.findall(r"\\bibitem", bbl)))
 print("    pages                     : %s" % (pages.group(1) if pages else "?"))
 
@@ -153,3 +182,32 @@ for env in ("table", "figure", "equation"):
             if refs == 0:
                 print("    *** float never cited: %s" % lb.group(1))
 print("    floats/equations          : %d (all labelled and cited if no *** above)" % floats)
+
+# ---------- 7. attribution of named methods ----------
+# The audit above reports uncited bibliography ENTRIES. That is not the same defect as a
+# METHOD the text names and does not cite, which is what a reader checks: `Ripley's border
+# correction`, `Donnelly's correction` and `spatstat` all appeared in the prose with no
+# citation, while the same section does cite Theil, Efron, Mann, Sen, Newey-West and
+# Prais-Winsten. So the check is on the NAMES, not on the entry list.
+#
+# ONLY THE FIRST MENTION IS CHECKED, and the citation may sit in the SAME PARAGRAPH rather
+# than the same sentence. An earlier version of this check windowed one sentence either side
+# of EVERY occurrence, so it flagged "Donnelly flattens it slightly, to 41.9% ..." -- a later,
+# purely descriptive mention of a method already attributed 20 lines earlier. A method needs
+# to be attributed once; repeating the citation at each mention is not the convention.
+print("\n[7] NAMED METHODS ARE ATTRIBUTED")
+for name in ("Ripley", "Donnelly", "spatstat", "Besag", "van Lieshout", "Shannon"):
+    m = re.search(re.escape(name), BODY, re.I)
+    if not m:
+        continue
+    # the paragraph containing the first mention
+    start = BODY.rfind("\n\n", 0, m.start()) + 2
+    end = BODY.find("\n\n", m.end())
+    para = BODY[start:end if end > 0 else len(BODY)]
+    line = BODY.count("\n", 0, m.start()) + 1
+    if re.search(r"\\cite[a-zA-Z]*\{", para):
+        print("    %-12s first named at main.tex line ~%-4d cited in the same paragraph"
+              % (name, line))
+    else:
+        print("    *** %-12s first named at main.tex line ~%-4d with NO citation in its "
+              "paragraph" % (name, line))

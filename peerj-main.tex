@@ -827,7 +827,8 @@ The latter two are reported beside the headline in the Supplemental Information.
 \noindent\textbf{Edge correction.} A nearest-neighbour mean computed inside a finite window
 is biased because instruments near the boundary have unobserved neighbours outside it. The
 multiscale functions are computed on the \emph{fixed-hull}
-window with Ripley's \emph{border} correction, which is valid for a window of any shape.
+window with Ripley's \emph{border} correction \citep{ripley1977modelling}, which is valid for a
+window of any shape.
 Writing $W_{-r}$ for the hull eroded by $r$ --- for a convex polygon, the intersection of
 half-planes shifted inward by $r$ --- the estimator is
 $K(r) = |W| \sum_{i \in W_{-r}} \#\{j \neq i : d_{ij} \le r\} \big/ (n\,n_{-r})$, and
@@ -845,11 +846,13 @@ here, and on points truncated to the 95th-percentile core it returns $R$ within 
 of unity, so the bias is small relative to the effects measured.
 
 Two edge-corrected reference values exist, and both are reported.
-\emph{Donnelly's correction} replaces the complete-spatial-randomness expectation
+\emph{Donnelly's correction} \citep{donnelly1978simulations} replaces the
+complete-spatial-randomness expectation
 $1/(2\sqrt{N/A})$ with an edge-corrected value derived from the window's area and perimeter. On a
 complete-spatial-randomness control inside this hull it returns $\num{1.00} \pm \num{0.07}$ at
 $N = 50$, tightening to $\num{1.00} \pm \num{0.01}$ at $N = 2000$; the raw expectation passes
-that same check only in the large-$n$ limit. The reference implementation is more cautious than
+that same check only in the large-$n$ limit. The reference implementation
+\citep{baddeley2005spatstat} is more cautious than
 the formula, however: \textsf{spatstat} refuses the correction on a non-rectangular window, on the
 grounds that Donnelly's coefficients were estimated by simulation on rectangles, and this hull is
 not one. \emph{The general-region alternative}, \textsf{spatstat}'s \texttt{cdf} correction,

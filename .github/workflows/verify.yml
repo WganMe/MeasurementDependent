@@ -265,7 +265,15 @@ jobs:
       - name: Build the PeerJ submission from the neutral source
         working-directory: . # override the job default: build.sh is at the root
         run: ./build.sh
-
+      # The audit reads the GENERATED documents at the root (peerj-main.pdf and its .log/.bbl),
+      # so it can only run after the build above. It reports the bibliography entries nothing
+      # cites and any named method whose first mention carries no citation -- the latter was a
+      # real defect until this was added, and it appeared in neither the neutral build nor any
+      # other check. It is informational for the uncited entries (dropping or citing one is an
+      # author decision) but it fails on an unattributed method.
+      - name: Audit the manuscript for uncited entries and unattributed methods
+        working-directory: .
+        run: python3 source/final_audit.py | tee -a "$GITHUB_STEP_SUMMARY"
       # The bundle is what gets uploaded to the portal. Built here so a broken bundle fails
       # CI rather than being discovered at submission time. It refuses to build if a figure
       # is cited but missing, if the Figure N numbering disagrees with the converter, if the

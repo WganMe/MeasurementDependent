@@ -27,12 +27,12 @@ python3 source/make_portal_fields.py
 
 # 2. typeset: first pass, BibTeX, then enough passes to resolve everything
 #
-# BibTeX is run only when the document actually cites something. The supplement is
-# tables-only and carries no \citation commands, and BibTeX treats that as an error
-# ("I found no \citation commands") and exits 2 -- which, under `set -e`, aborted the whole
-# build after the supplement had already been typeset. The `|| true` is therefore not
-# sloppiness: a citation-free document is the expected state for the supplement, not a
-# failure. The real failure signal is the undefined-citation count reported in step 3.
+# BibTeX is run only when the document actually cites something. The supplement USED to be
+# tables-only with no \citation commands, and BibTeX treats that as an error ("I found no
+# \citation commands") and exits 2 -- which, under `set -e`, aborted the whole build. It now
+# cites Ripley, Donnelly and spatstat, so it has a bibliography of its own and BibTeX is
+# expected to run; the guard stays because a future edit could remove the citations again.
+# The real failure signal is the undefined-citation count reported in step 3.
 for d in peerj-main peerj-si; do
     pdflatex -interaction=nonstopmode "$d.tex" >/dev/null
     if grep -q '\\citation{' "$d.aux"; then

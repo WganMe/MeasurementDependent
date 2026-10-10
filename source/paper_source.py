@@ -237,6 +237,15 @@ def convert_supplement(src: pathlib.Path, out: pathlib.Path, venue: str) -> str:
         "\\usepackage{float}\n"          # the supplement uses [H] floats
         "\\usepackage{adjustbox}\n"      # wide tables scaled to the column
         "\\usepackage[hidelinks]{hyperref}\n"
+        "\\usepackage{url}\n"
+        "\\usepackage{xurl}\n"
+        # THE SUPPLEMENT CITES, so it needs natbib and its own reference list. It names
+        # Ripley's border correction, Donnelly's correction and spatstat -- the independent
+        # cross-check in S16 rests on spatstat -- and it is published as its own file, so a
+        # reader who downloads only the supplement must not be sent to the main text for
+        # them. wlpeerj.cls already loads natbib and sets \\bibliographystyle{apalike}, which
+        # is what gives PeerJ's "(Author, 2024)" form; no \\bibpunct is added here, because
+        # in this class that is what REMOVES the comma.
         "\\renewcommand{\\thesection}{S\\arabic{section}}\n"
         "\\renewcommand{\\thetable}{S\\arabic{table}}\n"
         "\\renewcommand{\\theequation}{S\\arabic{equation}}\n\n"

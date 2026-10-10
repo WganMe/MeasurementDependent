@@ -17,6 +17,16 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
+% natbib and a bibliography, because the supplement now CITES: it names Ripley's border
+% correction, Donnelly's correction and spatstat (the cross-check it rests on is a spatstat
+% run). An uncited name is a reader-visible gap, and the supplement is published as its own
+% file, so a reader who downloads only this document needs the references here rather than
+% having to find the main text.
+\usepackage[authoryear]{natbib}
+\bibliographystyle{plainnat}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
 \graphicspath{{figures/}}
 
 %% Front-matter macros, defined here rather than taken from a journal class: this
@@ -370,7 +380,8 @@ $N$ and the spatial extent move, so edge bias could itself trend. Table~\ref{si:
 four edge estimators on the fixed hull and \ref{si:edgetrend} their trends, and the trend table
 adds a fifth computed with an independent implementation. The first is the
 headline estimator with no correction; the second keeps only points strictly inside the hull,
-which drops the handful of sites lying exactly on it; the third is Ripley's border correction,
+which drops the handful of sites lying exactly on it; the third is Ripley's border correction
+\citep{ripley1977modelling},
 using each point's own nearest-neighbour distance as its guard width; the fourth uses a fixed
 \SI{500}{\meter} guard area. All five decline, with slopes between $-0.0107$ and $-0.0159$ per
 year, so edge bias does not drive the trend. The border estimator carries its own small bias:
@@ -378,11 +389,12 @@ on complete-spatial-randomness controls it returns $0.90$ at $n = 100$ and $0.98
 so it is reported as a sensitivity and not as the headline.
 
 A fifth estimator is in Table~\ref{si:edgetrend} because it is the only one computed with an
-independent implementation. Donnelly's correction is written in terms of the window's area and
-perimeter, both of which a hull has, but \textsf{spatstat} refuses it on any non-rectangular
+independent implementation. Donnelly's correction \citep{donnelly1978simulations} is written in
+terms of the window's area and
+perimeter, both of which a hull has, but \textsf{spatstat} \citep{baddeley2005spatstat} refuses it
+on any non-rectangular
 window, reporting that it is \emph{only available for rectangular windows}, because Donnelly's
 coefficients were estimated by simulation on rectangles. Its \texttt{cdf} correction makes no
-rectangular assumption: it compares the observed mean nearest-neighbour distance with the mean
 for random points drawn in the \emph{same} window. On our hull and points that correction gives
 a 2013--2026 fall of \SI{57.2}{\percent} against \SI{45.0}{\percent} for the raw index, and a
 steeper fitted slope, so the general-region correction steepens the uncorrected series. It does
@@ -1303,5 +1315,12 @@ Script & Produces \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+% THE SUPPLEMENT'S OWN REFERENCE LIST. This document carries three citations and is published
+% as its own file, so a reader who downloads only this cannot be sent to the main text for
+% them. It shares references.bib with the manuscript, so the two cannot disagree about a
+% reference.
+\section*{References}
+\bibliography{references}
 
 \end{document}
