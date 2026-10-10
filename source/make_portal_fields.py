@@ -152,6 +152,57 @@ def authors_from_tex(pdf: pathlib.Path) -> list[tuple[str, str]]:
     return out
 
 
+def competing_from_tex() -> str:
+    """The Competing Interests statement, as the manuscript words it.
+
+    PeerJ's form requires complete sentences and says that if there are no competing interests
+    then that fact must be stated explicitly. This manuscript has a NON-FINANCIAL interest --
+    the authors prepared the benchmark artifact whose provenance the paper audits -- so
+    answering "no competing interests" here would contradict the published statement.
+
+    Note the form's own example wording: PeerJ permits naming an academic-editor role. None is
+    declared here, and inventing one would be false.
+    """
+    tex = (OUT / "source" / "main.tex").read_text(encoding="utf-8")
+    m = re.search(r"\\conflictsofinterest\{(.*?)\}\n\n", tex, re.S)
+    if not m:
+        raise SystemExit("REFUSING: no \\conflictsofinterest{} in source/main.tex")
+    body = re.sub(r"\s+", " ", m.group(1)).strip()
+    # Resolve the source's LaTeX citation to the form the paper PRINTS. Left as \cite, the
+    # paste-ready text would carry LaTeX into a plain-text field, which is exactly what the
+    # portal's "special characters entered correctly" warning is about.
+    #
+    # The rendered form is "Newcastle University (2020)", NOT "(Newcastle University, 2020)".
+    # The sentence already says "published by Newcastle University", so the parenthetical form
+    # would repeat the name -- checked against the built PDF rather than assumed.
+    body = re.sub(r"\\cite\{uo_archive\}", "(2020)", body)
+    if "\\" in body:
+        raise SystemExit("REFUSING: LaTeX remains in the competing-interest text: %r"
+                         % re.search(r".{0,30}\\.{0,30}", body).group(0))
+    return body
+
+
+def funding_from_tex() -> tuple[str, str]:
+    """(funding statement, grant number) as the manuscript words them.
+
+    The form forbids financial information in the Acknowledgments and forbids the words
+    'generous', 'thankful', 'thanks' and 'acknowledge' in this statement, so the wording comes
+    from the manuscript's own \\funding block rather than being composed here.
+    """
+    tex = (OUT / "source" / "main.tex").read_text(encoding="utf-8")
+    m = re.search(r"\\funding\{(.*?)\}\n\n", tex, re.S)
+    if not m:
+        raise SystemExit("REFUSING: no \\funding{} in source/main.tex")
+    funding = re.sub(r"\s+", " ", m.group(1)).strip()
+    g = re.search(r"\\newcommand\{\\uquGrant\}\{([^}]*)\}", tex)
+    if not g:
+        raise SystemExit("REFUSING: no \\uquGrant definition in source/main.tex")
+    grant = g.group(1).strip()
+    if "\\uquGrant" in funding:
+        funding = funding.replace("\\uquGrant{}", grant)
+    return funding, grant
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -285,6 +336,8 @@ def main() -> int:
 
     authors = authors_from_tex(pdf)
     kw = keywords_from_tex()
+    COMPETING = competing_from_tex()
+    FUNDING, GRANT = funding_from_tex()
     for name, _affil in authors:
         o = ORCIDS.get(name)
         if o is None:
@@ -466,6 +519,32 @@ def main() -> int:
                "The authors have checked the tool's terms of use and take full responsibility "
                "for the integrity of the whole content, including the accuracy of all "
                "references.")
+    doc.append("```\n")
+
+    doc.append("## Competing Interest statement\n")
+    doc.append("The form requires complete sentences and says: *\"If there are no competing "
+               "interests then you must explicitly state this fact.\"* This manuscript has a "
+               "**non-financial** interest to declare, and it is declared in the paper, so the "
+               "form must not say \"no competing interests\" -- that would contradict the "
+               "published statement. Paste:\n")
+    doc.append("```text")
+    doc.append(COMPETING)
+    doc.append("```\n")
+
+    doc.append("## Funding statement\n")
+    doc.append("The form requires **every** external funding source named, with the agency and "
+               "the grant number, and says *\"All funding must be declared completely here\"*. "
+               "It also forbids financial information in the Acknowledgments and forbids "
+               "*'generous'*, *'thankful'*, *'thanks'* and *'acknowledge'* in this statement. "
+               "Paste:\n")
+    doc.append("```text")
+    doc.append(FUNDING)
+    doc.append("```\n")
+    doc.append("The grant number is read from the manuscript's `\\uquGrant` macro, so it cannot "
+               "differ from what the paper and the cover page print:\n")
+    doc.append("```text")
+    doc.append(GRANT + " (Umm Al-Qura University, Deanship of Postgraduate Studies and "
+               "Scientific Research) -- this is the `Grant Disclosures` field")
     doc.append("```\n")
 
     doc.append("## Character handling\n")

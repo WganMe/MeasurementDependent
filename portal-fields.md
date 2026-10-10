@@ -125,6 +125,28 @@ Description to paste, taken from the manuscript's own disclosure so the form and
 Drafting and editing LaTeX and typesetting support. The tool was not used to compute, alter or select any result; every number in the manuscript is read from a committed results file produced by the analysis scripts in the deposit. The authors have checked the tool's terms of use and take full responsibility for the integrity of the whole content, including the accuracy of all references.
 ```
 
+## Competing Interest statement
+
+The form requires complete sentences and says: *"If there are no competing interests then you must explicitly state this fact."* This manuscript has a **non-financial** interest to declare, and it is declared in the paper, so the form must not say "no competing interests" -- that would contradict the published statement. Paste:
+
+```text
+The authors prepared the benchmarking artifact whose provenance this paper audits, so the authors have a non-financial interest in the audit it receives; the audit is disclosed both in that section and here so that a reader can weight it. Apart from that, the authors declare no competing interests. The Newcastle Urban Observatory data the artifact derives from are independently published by Newcastle University (2020).
+```
+
+## Funding statement
+
+The form requires **every** external funding source named, with the agency and the grant number, and says *"All funding must be declared completely here"*. It also forbids financial information in the Acknowledgments and forbids *'generous'*, *'thankful'*, *'thanks'* and *'acknowledge'* in this statement. Paste:
+
+```text
+This research work was funded by Umm Al-Qura University, Saudi Arabia under grant number: 26UQU4350624GSSR07.
+```
+
+The grant number is read from the manuscript's `\uquGrant` macro, so it cannot differ from what the paper and the cover page print:
+
+```text
+26UQU4350624GSSR07 (Umm Al-Qura University, Deanship of Postgraduate Studies and Scientific Research) -- this is the `Grant Disclosures` field
+```
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:
