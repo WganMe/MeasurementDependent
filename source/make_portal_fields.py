@@ -381,6 +381,29 @@ def main() -> int:
                "the checksums prove the identifiers are well-formed, not that they belong to "
                "the right people.\n")
 
+    doc.append("## Subject areas — the portal's list, not ours\n")
+    doc.append("PeerJ's subjects are a fixed taxonomy: the portal presents them and you tick "
+               "the ones that apply. These are spelled exactly as PeerJ spells them, so they "
+               "can be matched against the portal's own list (see `portal-values.md`, which "
+               "carries the verified subject URLs):\n")
+    doc.append("- **Spatial and Geographic Information Systems** — primary")
+    doc.append("- Environmental Monitoring & Management")
+    doc.append("- Data Mining and Machine Learning")
+    doc.append("- Internet of Things")
+    doc.append("- Network Science and Online Social Networks")
+    doc.append("")
+    doc.append("PeerJ names this subject **Systems**, not *Science*; the published example "
+               "paper's own subject line reads *Spatial and Geographic Information Science*, so "
+               "take whichever the portal's list actually offers.\n")
+
+    doc.append("## Keywords\n")
+    doc.append("From `\\keyword{}` in the manuscript. PeerJ's class disables the keywords "
+               "block, so this is the only place they appear:\n")
+    doc.append("```text")
+    doc.append("urban sensor networks; smart-city infrastructure; spatial clustering; "
+               "spatial asymmetry; point-pattern analysis; longitudinal analysis")
+    doc.append("```\n")
+
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "
                "the character:\n")

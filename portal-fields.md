@@ -78,6 +78,26 @@ Wael Alnahari — walnahari0004@stu.kau.edu.sa
 
 The manuscript does **not** print ORCIDs in the title block, and the published PeerJ paper beside this one prints none either, so there is nothing to match in the PDF; the portal is where they are entered and where they will be published. Confirm each against the author's own ORCID record before saving: the checksums prove the identifiers are well-formed, not that they belong to the right people.
 
+## Subject areas — the portal's list, not ours
+
+PeerJ's subjects are a fixed taxonomy: the portal presents them and you tick the ones that apply. These are spelled exactly as PeerJ spells them, so they can be matched against the portal's own list (see `portal-values.md`, which carries the verified subject URLs):
+
+- **Spatial and Geographic Information Systems** — primary
+- Environmental Monitoring & Management
+- Data Mining and Machine Learning
+- Internet of Things
+- Network Science and Online Social Networks
+
+PeerJ names this subject **Systems**, not *Science*; the published example paper's own subject line reads *Spatial and Geographic Information Science*, so take whichever the portal's list actually offers.
+
+## Keywords
+
+From `\keyword{}` in the manuscript. PeerJ's class disables the keywords block, so this is the only place they appear:
+
+```text
+urban sensor networks; smart-city infrastructure; spatial clustering; spatial asymmetry; point-pattern analysis; longitudinal analysis
+```
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:
