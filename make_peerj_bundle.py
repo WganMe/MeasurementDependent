@@ -28,12 +28,6 @@ UPLOADS = {
 SOURCES = ["peerj-main.tex", "peerj-si.tex", "peerj-cover.tex", "references.bib",
            "wlpeerj.cls"]
 
-# Files the portal does NOT accept as loose uploads. PeerJ lists the accepted types and then
-# says: "For other file types, please upload a zip file containing the file you want to
-# upload." `.tex` is accepted; `.cls` and `.bib` are not on any of the lists, so the LaTeX
-# sources are shipped as an archive too, not only as loose files.
-NOT_A_DIRECT_UPLOAD = {".cls", ".bib"}
-
 START = """# PeerJ submission bundle ({day})
 
 Created by `make_peerj_bundle.py`. Every file below was built from `peerj-*.tex` in this
@@ -61,28 +55,40 @@ a zip file containing the file you want to upload."*
 | `3_author_cover_page.pdf` | Manuscript | PDF — accepted |
 | `figures/Figure 1.pdf` … `Figure 4.pdf` | Manuscript (figures) | PDF — accepted |
 | `2_supplemental_information_S1.pdf` | Supplemental Files | PDF — accepted |
-| `latex_source.zip` | Supplemental Files (Datasets) | ZIP — accepted, and the form PeerJ asks for the files it does not name |
-| `latex_source/*.tex` | Manuscript and Source files | TEX — accepted |
-| `latex_source/*.cls`, `latex_source/*.bib` | — | **`cls` and `bib` are on no list.** Send them inside `latex_source.zip` |
+| `latex_source/*.tex` | Manuscript and Source files | TEX — accepted (the portal says so by name) |
+| `latex_source/references.bib` | Manuscript and Source files | BIB — accepted (the portal says so by name) |
+| `latex_source/wlpeerj.cls` | — | **CLS is the one type PeerJ does not name.** Send it inside `latex_source.zip` |
+| `latex_source.zip` | Supplemental Files (Datasets) | ZIP — accepted; holds all five sources |
 
-`latex_source/` is kept loose here for reading. **Upload `latex_source.zip`**, not that folder,
-because two of its five files are types PeerJ does not accept as loose uploads.
+Every file in this bundle is an accepted type except `wlpeerj.cls`, and that one is covered
+by `latex_source.zip`, which PeerJ accepts under Datasets.
 
-so on; the source names (`figC0_study_area.pdf`, ...) are kept beside them.
+`latex_source/` is kept loose here for reading. The `.tex` and `.bib` in it are uploadable
+as they are; only the `.cls` needs the zip around it, so **upload `latex_source.zip`** and the
+typing is right either way.
+
+## Upload the four figures individually
+
+Upload the four files in `figures/` one at a time, as the Manuscript file type. PeerJ asks
+for figures as separate files under the names `Figure 1`, `Figure 2`, and so on; the source
+names (`figC0_study_area.pdf`, ...) are kept beside them.
 
 `Figure N.pdf` is named by the order the manuscript CITES the figures, not alphabetically.
 The two are different here: `Figure 1.pdf` is the merge-tolerance figure (cited first) and
 `Figure 4.pdf` is the study area (cited last). Keep the pairs together when uploading.
 
-## Source files: send the zip, not the loose files
+## Source files: send the zip, or the .tex and .bib direct
 
-PeerJ accepts `.tex` among its Table/Document types, but lists neither `.cls` nor `.bib` on
-any list, and says: *"For other file types, please upload a zip file containing the file you
-want to upload."* So:
+PeerJ's *Manuscript and Source files* section asks for "Complete PDF manuscript, TEX, BIB, 
+hi-res figures and tables", so `.tex` and `.bib` are named accepted types and can be uploaded
+as they are. `.cls` is the single file in this bundle that PeerJ does not name; its rule for
+that case is *"For other file types, please upload a zip file containing the file you want to
+upload."* So:
 
-- `latex_source.zip` — **upload this** if PeerJ asks for the sources. It holds all five.
-- `latex_source/` — the same five files loose, kept for reading here. The `.cls` and `.bib`
-  in it are the two types PeerJ does not name, so do not upload that directory as-is.
+- `latex_source.zip` — **upload this** if PeerJ asks for the sources. One upload, all five
+  files, and every type in it is acceptable inside the zip.
+- `latex_source/` — the same five files loose, kept for reading here. Fine to upload as-is
+  except for `wlpeerj.cls`.
 
 Do not upload `peerj-main.tex` on its own in any case: it will not compile without
 `wlpeerj.cls` and `references.bib`.
@@ -102,10 +108,8 @@ choose from its own list.
 
 ## Still open (author decisions, not file defects)
 
-- Chapter 3 note: this is the PeerJ paper, so that item does not apply here.
-- The IEEE Transactions on Computers manuscript may describe the sign error in Chapter 1's
-  gating cost as one wrong table row. This paper does not, but the two are related work.
-- Optional retitle, for discoverability. PeerJ does not judge novelty.
+- Optional retitle, for discoverability. PeerJ does not judge novelty, so a descriptive title
+  is fine either way.
 """
 
 
@@ -264,9 +268,10 @@ def main():
 
     for f in SOURCES:
         shutil.copy2(os.path.join(PJ, f), os.path.join(OUT, "latex_source", f))
-    # PeerJ accepts `.tex` but lists neither `.cls` nor `.bib`, and it says plainly: "For other
-    # file types, please upload a zip file". So the same sources are also written as one
-    # archive, which is the form the portal accepts for the files it does not name.
+    # `wlpeerj.cls` is the one file in this bundle whose type PeerJ does not name in either
+    # list. PeerJ's rule for an unnamed type: "For other file types, please upload a zip file
+    # containing the file you want to upload." Wrapping all five sources in one archive is
+    # the form that is correct regardless, and it keeps the source set together.
     tex_zip = os.path.join(OUT, "latex_source.zip")
     with zipfile.ZipFile(tex_zip, "w", zipfile.ZIP_DEFLATED) as z:
         for f in SOURCES:

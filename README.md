@@ -178,7 +178,8 @@ sequence matches `peerj-20977.pdf` exactly; `Fig.`/`Figure` split follows the do
 | **Open data and code at submission** (PeerJ policy requires raw data, code, protocols) | Zenodo deposit + third-party Newcastle readings (CC BY 4.0) — Data Availability statement present |
 | **Reviews are published** alongside the article | Noted — author's choice |
 | Figures uploaded as separate files, one per figure (300 dpi on resubmission) | Figures are separate PDFs in `figures/` — upload individually |
-| Figure/table citation style (`Fig.`, `Table 1`) | Manuscript uses `Figure~`/`Table~` — check at proofing |
+| Figure/table citation style (`Fig.`, `Table 1`) | **Met** — counted in the built PDF: 5 mid-sentence `Fig.` (`Fig. 1`, `Fig. 2`, `Fig. 4`), the 4 captions read `Figure N.`, and all 7 tables are cited as `Table N` |
+| Manuscript and Source files: *"Complete PDF manuscript, TEX, BIB, hi-res figures and tables"* | **Met** — the loose `.tex` and `.bib` are both named accepted types; only `wlpeerj.cls` is not, and `latex_source.zip` covers it |
 
 ## Fixed 2026-10-09 — two publishable defects
 
