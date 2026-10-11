@@ -272,7 +272,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2334 KB
+### `source_code_and_results.zip` — 108 files, 2336 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 
@@ -281,6 +281,34 @@ Title:  Analysis scripts, result files and figure generators behind every number
 
 Legend: Every number, table and figure in the manuscript is read from a JSON result file produced by a script in this archive; no value is typed by hand. It holds the analysis and figure-generating scripts, the result files they write, the frozen benchmark snapshot and instrument catalogue they read, and an independent re-implementation of the point-pattern estimators used as a cross-check. The scripts run from the archive as it stands.
 ```
+
+## Suggested reviewers — PeerJ requires at least 3
+
+The portal refuses the submission with *"More reviewer suggestions needed — Please suggest at least 3 reviewers."* These three are drawn from the manuscript's OWN reference list, so each has a genuine link to the work, and each was checked for a conflict of interest. Every e-mail below was read from an official source (a university page, a package's own documentation, or the publisher's article page) — none is guessed.
+
+### Professor Adrian Baddeley
+
+- **Why this work:** lead author of spatstat, the independent implementation this manuscript cross-checks its estimators against (see Section S16), and of Ripley's-L methodology used throughout; Professor of Computational Statistics, Curtin University, and a Fellow of the Australian Academy of Science
+- **E-mail:** `Adrian.Baddeley@curtin.edu.au`
+- **Source of the address:** the spatstat package documentation, which lists him as maintainer
+
+### Professor Lucio Barabesi
+
+- **Why this work:** author of the Theil-index decomposition this manuscript cites for its inequality measure (Barabesi, Crescenzi and Mori, Statistical Papers); Full Professor of Statistics, University of Siena, working on spatial and survey statistics
+- **E-mail:** `lucio.barabesi@unisi.it`
+- **Source of the address:** his University of Siena department page
+
+### Dr Sarah Barns
+
+- **Why this work:** author of the urban data platform work this manuscript cites; a researcher on city data strategy and platform urbanism, whose published work is directly on the governance questions the paper raises about municipal sensing platforms
+- **E-mail:** `barns.sarah@gmail.com`
+- **Source of the address:** the corresponding-address line of her Urban Studies article
+
+**THE CONFLICT CHECK MATTERS MORE THAN THE THREE NAMES.** The following authors of cited work are the Newcastle Urban Observatory team whose platform this paper AUDITS, or the team behind the benchmark it examines — they must NOT be suggested, and are in fact candidates for the *opposed* field:
+
+- Philip James, Tom Komar, Stuart Barr, Carrow Morris-Wiltshire — the Newcastle Urban Observatory authors (`james2020`, `morris2026`, `komar2026` in `references.bib`)
+
+**Confirm each suggested reviewer has no relationship with any author before submitting.** That is the one thing this list cannot check: it can verify that an address exists and that the person works on the subject, but not that they have no prior collaboration.
 
 ## Character handling
 

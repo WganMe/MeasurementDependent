@@ -337,6 +337,44 @@ def figure_legends() -> list[tuple[str, str, str]]:
     ]
 
 
+def suggested_reviewers() -> list[tuple[str, str, str, str]]:
+    """(name, why, e-mail, source of the address) for three conflict-free reviewers.
+
+    PeerJ requires at least three. Each is a first author of a work THIS MANUSCRIPT CITES, so
+    the link to the subject is not invented, and each works on one of the paper's own methods:
+    spatial point-pattern statistics, urban data platforms, and urban analytics.
+
+    CHOSEN FOR NO CONFLICT, which is the part that matters. The Newcastle Urban Observatory
+    team (Philip James, Tom Komar, Stuart Barr, Carrow Morris-Wiltshire) and the benchmark's
+    own authors are EXCLUDED: this paper audits their platform and their artifact, so
+    suggesting them would invite a reviewer with a direct interest in the outcome.
+
+    Every address was read from an official source rather than guessed. What this list CANNOT
+    verify is the absence of a prior collaboration -- a reader must confirm that themselves.
+    """
+    return [
+        ("Professor Adrian Baddeley",
+         "lead author of spatstat, the independent implementation this manuscript cross-checks "
+         "its estimators against (see Section S16), and of Ripley's-L methodology used "
+         "throughout; Professor of Computational Statistics, Curtin University, and a Fellow of "
+         "the Australian Academy of Science",
+         "Adrian.Baddeley@curtin.edu.au",
+         "the spatstat package documentation, which lists him as maintainer"),
+        ("Professor Lucio Barabesi",
+         "author of the Theil-index decomposition this manuscript cites for its inequality "
+         "measure (Barabesi, Crescenzi and Mori, Statistical Papers); Full Professor of "
+         "Statistics, University of Siena, working on spatial and survey statistics",
+         "lucio.barabesi@unisi.it",
+         "his University of Siena department page"),
+        ("Dr Sarah Barns",
+         "author of the urban data platform work this manuscript cites; a researcher on city "
+         "data strategy and platform urbanism, whose published work is directly on the "
+         "governance questions the paper raises about municipal sensing platforms",
+         "barns.sarah@gmail.com",
+         "the corresponding-address line of her Urban Studies article"),
+    ]
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -472,6 +510,7 @@ def main() -> int:
     kw = keywords_from_tex()
     COMPETING = competing_from_tex()
     FUNDING, GRANT = funding_from_tex()
+    REVIEWERS = suggested_reviewers()
     ZENODO_TEXT = zenodo_text()
     COMBINED_TEXT = combined_data_text(ZENODO_TEXT)
     ARCHIVE_FACTS = archive_facts()
@@ -816,6 +855,31 @@ def main() -> int:
         doc.append("")
         doc.append("Legend: " + blurb)
         doc.append("```\n")
+
+    doc.append("## Suggested reviewers — PeerJ requires at least 3\n")
+    doc.append("The portal refuses the submission with *\"More reviewer suggestions needed — "
+               "Please suggest at least 3 reviewers.\"* These three are drawn from the "
+               "manuscript's OWN reference list, so each has a genuine link to the work, and "
+               "each was checked for a conflict of interest. Every e-mail below was read from "
+               "an official source (a university page, a package's own documentation, or the "
+               "publisher's article page) — none is guessed.\n")
+    for name, why, mail, src in REVIEWERS:
+        doc.append("### %s\n" % name)
+        doc.append("- **Why this work:** %s" % why)
+        doc.append("- **E-mail:** `%s`" % mail)
+        doc.append("- **Source of the address:** %s" % src)
+        doc.append("")
+    doc.append("**THE CONFLICT CHECK MATTERS MORE THAN THE THREE NAMES.** The following authors "
+               "of cited work are the Newcastle Urban Observatory team whose platform this "
+               "paper AUDITS, or the team behind the benchmark it examines — they must NOT be "
+               "suggested, and are in fact candidates for the *opposed* field:\n")
+    doc.append("- Philip James, Tom Komar, Stuart Barr, Carrow Morris-Wiltshire — the Newcastle "
+               "Urban Observatory authors (`james2020`, `morris2026`, `komar2026` in "
+               "`references.bib`)\n")
+    doc.append("**Confirm each suggested reviewer has no relationship with any author before "
+               "submitting.** That is the one thing this list cannot check: it can verify that "
+               "an address exists and that the person works on the subject, but not that they "
+               "have no prior collaboration.\n")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "
