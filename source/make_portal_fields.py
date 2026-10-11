@@ -226,6 +226,31 @@ def zenodo_text() -> str:
         % (doi, rec.get("version"), concept, concept))
 
 
+def combined_data_text(zenodo: str) -> str:
+    """The single textarea the form's "Both" selection shows, as one block.
+
+    The form joins its two prompts with the word "and" and presents ONE textarea, so the
+    supplementary-file description and the repository description have to arrive together.
+    Building it from the same two pieces the other branches use keeps the three texts in
+    agreement -- the earlier version printed them separately, which would have left half the
+    field empty.
+    """
+    return (
+        "The analysis code and the results behind every number and table are provided as "
+        "supplementary files, and the same material is openly archived in a repository.\n"
+        "\n"
+        "Supplementary files: source_code_and_results.zip carries the analysis scripts, the "
+        "JSON result file behind every number and table, the figure generators, and the "
+        "committed inputs they read (the per-year instrument census and the one-week instrument "
+        "catalogue); the scripts run from the archive as it stands. source_main.zip carries the "
+        "manuscript source, its bibliography, the four cited figure PDFs and the PeerJ class "
+        "file; source_si.zip carries the supplement source. "
+        "2_supplemental_information_S1.pdf tabulates the robustness forks, sensitivity sweeps "
+        "and estimator controls that the main text summarises.\n"
+        "\n"
+        + zenodo)
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -362,6 +387,7 @@ def main() -> int:
     COMPETING = competing_from_tex()
     FUNDING, GRANT = funding_from_tex()
     ZENODO_TEXT = zenodo_text()
+    COMBINED_TEXT = combined_data_text(ZENODO_TEXT)
     for name, _affil in authors:
         o = ORCIDS.get(name)
         if o is None:
@@ -601,25 +627,18 @@ def main() -> int:
                "cannot be reviewed without the code, so the claim and the upload disagreed. "
                "`source_code_and_results.zip` closes that gap; see the note below.")
     doc.append("")
-    doc.append("Describe the uploaded files (question 91):\n")
+    doc.append("Describe the uploaded files **and** the repository access (question 93):\n")
+    doc.append("**This is the field the *Both* selection shows, and it is ONE textarea.** "
+               "The form labels it with both prompts joined by *and* -- describe the "
+               "supplementary files, AND describe the files you are providing repository access "
+               "to, numbered 1-3. Paste this single block:\n")
     doc.append("```text")
-    doc.append("source_code_and_results.zip carries the analysis code and its results: the "
-               "analysis scripts, the JSON result file behind every number and table, the "
-               "figure generators, and the committed inputs they read (the per-year instrument "
-               "census and the one-week instrument catalogue). This is the material the Data "
-               "Availability statement promises as Supplemental Information, and the scripts "
-               "run from the archive as it stands. source_main.zip carries the manuscript "
-               "source, its bibliography, the four cited figure PDFs and the PeerJ class file; "
-               "source_si.zip carries the supplement source. 2_supplemental_information_S1.pdf "
-               "tabulates the robustness forks, sensitivity sweeps and estimator controls that "
-               "the main text summarises.")
+    doc.append(COMBINED_TEXT)
     doc.append("```\n")
-    doc.append("Describe the repository access (question 92):\n")
-    doc.append("The accession is read from `source/ZENODO_RECORD.json`, so it cannot fall "
-               "behind the published version:\n")
-    doc.append("```text")
-    doc.append(ZENODO_TEXT)
-    doc.append("```\n")
+    doc.append("If the other branches are ever chosen instead, their separate texts are:\n")
+    doc.append("- *Upload to PeerJ* only (question 91) — the first paragraph above.\n")
+    doc.append("- *Submit repository link(s)* only (question 92) — the numbered three lines "
+               "above, without the supplementary-file paragraph.\n")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "

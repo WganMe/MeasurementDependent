@@ -168,23 +168,27 @@ Select **"Both upload to PeerJ & Submit repository link(s) to data"**. The Data 
 
 > **This was not true until 2026-10-11.** The manuscript claimed the code was provided as Supplemental Information, but the uploaded archives held only LaTeX sources -- no code at all. The portal states in bold that a submission cannot be reviewed without the code, so the claim and the upload disagreed. `source_code_and_results.zip` closes that gap; see the note below.
 
-Describe the uploaded files (question 91):
+Describe the uploaded files **and** the repository access (question 93):
+
+**This is the field the *Both* selection shows, and it is ONE textarea.** The form labels it with both prompts joined by *and* -- describe the supplementary files, AND describe the files you are providing repository access to, numbered 1-3. Paste this single block:
 
 ```text
-source_code_and_results.zip carries the analysis code and its results: the analysis scripts, the JSON result file behind every number and table, the figure generators, and the committed inputs they read (the per-year instrument census and the one-week instrument catalogue). This is the material the Data Availability statement promises as Supplemental Information, and the scripts run from the archive as it stands. source_main.zip carries the manuscript source, its bibliography, the four cited figure PDFs and the PeerJ class file; source_si.zip carries the supplement source. 2_supplemental_information_S1.pdf tabulates the robustness forks, sensitivity sweeps and estimator controls that the main text summarises.
-```
+The analysis code and the results behind every number and table are provided as supplementary files, and the same material is openly archived in a repository.
 
-Describe the repository access (question 92):
+Supplementary files: source_code_and_results.zip carries the analysis scripts, the JSON result file behind every number and table, the figure generators, and the committed inputs they read (the per-year instrument census and the one-week instrument catalogue); the scripts run from the archive as it stands. source_main.zip carries the manuscript source, its bibliography, the four cited figure PDFs and the PeerJ class file; source_si.zip carries the supplement source. 2_supplemental_information_S1.pdf tabulates the robustness forks, sensitivity sweeps and estimator controls that the main text summarises.
 
-The accession is read from `source/ZENODO_RECORD.json`, so it cannot fall behind the published version:
-
-```text
 1. Repository/database name: Zenodo
 2. Accession/id number: 10.5281/zenodo.23289669 (version v1.0.7); concept DOI 10.5281/zenodo.23099939
 3. Link: https://doi.org/10.5281/zenodo.23099939
 
 The concept DOI is the one cited in the manuscript and always resolves to the current version. The deposit carries the derived census, the fitted models, the snapshot audit and every analysis script behind the numbers in the paper, under CC BY 4.0.
 ```
+
+If the other branches are ever chosen instead, their separate texts are:
+
+- *Upload to PeerJ* only (question 91) — the first paragraph above.
+
+- *Submit repository link(s)* only (question 92) — the numbered three lines above, without the supplementary-file paragraph.
 
 ## Character handling
 
