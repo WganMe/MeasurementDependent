@@ -1,12 +1,14 @@
 {
- "deposition_id": 23103868,
- "doi": "10.5281/zenodo.23103868",
+ "deposition_id": 23289669,
+ "doi": "10.5281/zenodo.23289669",
  "conceptdoi": "10.5281/zenodo.23099939",
- "record_url": "https://zenodo.org/records/23103868",
- "file": "SymmetrySI-v1.0.6.zip",
- "bytes": 3576380,
- "md5": "4cc635d6c07373ce62aae5c24724c882",
- "version": "v1.0.6",
+ "record_url": "https://zenodo.org/records/23289669",
+ "file": "MeasurementDependent-v1.0.7.zip",
+ "bytes": 4196230,
+ "md5": "0c65d417d01984e4d8b879d157e3692c",
+ "version": "v1.0.7",
+ "published": "2026-10-11",
+ "commit": "cdbbc12",
  "license": "cc-by-4.0",
- "commit": "07b7451"
+ "title": "Measurement-Dependent Clustering in the Growing Urban Observatory Sensor Network"
 }
