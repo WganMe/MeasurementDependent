@@ -275,14 +275,45 @@ for _pdf in (ROOT / "peerj-main.pdf", ROOT / "peerj-si.pdf"):
               % ", ".join(_note))
 
 _fig_bad = 0
+# FIGURES ARE EMBEDDED IMAGES, so their own text layer is a separate copy of the same
+# corruption surface, and PeerJ's pipeline rewrites their font subsets too. Measured:
+# the panel title "Instrument population 2013-2026", written with an EN DASH, came back
+# from their pipeline as "201332026" -- the en dash read as a digit, exactly as the
+# minus was. The page renders correctly; the text layer does not.
+#
+# So every non-ASCII character in every figure is reported, and the ones whose
+# corruption changes a reading FAIL the build. Figures should be pure ASCII wherever the
+# label is a quantity, a date range or an identifier; a typographic dash or a degree sign
+# inside a figure label is not worth the risk when the same text is in the caption, set
+# from a text font that does survive.
+MANGLED_HARD = {
+    0x2212: "MINUS SIGN",              # a negative quantity becomes positive
+    0x2013: "EN DASH",                 # "2013-2026" becomes "201332026"
+    0x2014: "EM DASH",
+    0x2019: "RIGHT SINGLE QUOTE",      # "year's" becomes "year9s"
+    0x25E6: "WHITE BULLET",
+    0x2264: "LESS-THAN OR EQUAL",
+    0x2265: "GREATER-THAN OR EQUAL",
+    0x2192: "RIGHTWARDS ARROW",
+}
 for _fig in sorted((ROOT / "figures").glob("*.pdf")):
-    _n = _sp.run(["pdftotext", str(_fig), "-"], capture_output=True,
-                 text=True).stdout.count(chr(0x2212))
-    if _n:
-        _fig_bad += _n
-        print("    *** %s: %d x U+2212 in an axis label (axes.unicode_minus)" % (_fig.name, _n))
-print("    figure axis labels: %d sign-inverting glyph(s)" % _fig_bad)
+    _ft = _sp.run(["pdftotext", str(_fig), "-"], capture_output=True, text=True).stdout
+    _hits = ["U+%04X %s x%d" % (cp, nm, _ft.count(chr(cp)))
+             for cp, nm in MANGLED_HARD.items() if _ft.count(chr(cp))]
+    _other = sorted({c for c in _ft if ord(c) > 127 and ord(c) not in MANGLED_HARD})
+    if _hits:
+        _fig_bad += len(_hits)
+        print("    *** %s carries glyphs PeerJ's pipeline mangles:" % _fig.name)
+        for _h in _hits:
+            print("        %s" % _h)
+    elif _other:
+        print("    %s: only benign non-ASCII %s"
+              % (_fig.name, ", ".join("U+%04X" % ord(c) for c in _other)))
+if _fig_bad == 0:
+    print("    figures: all %d clean of every glyph PeerJ's pipeline mangles"
+          % len(list((ROOT / "figures").glob("*.pdf"))))
 
 if _fail or _fig_bad:
-    print("\n    BUILD FAILS: a minus sign is not safe for PeerJ's pipeline.")
+    print("\n    BUILD FAILS: a glyph in a figure or the text layer is not safe for "
+          "PeerJ's pipeline.")
     sys.exit(1)

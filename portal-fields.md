@@ -252,7 +252,7 @@ Legend: Two panels. (a) The fixed reference hull that all years are measured aga
 
 ### Section 2 — Supplemental Files (the three archives)
 
-### `source_main.zip` — 7 files, 120 KB
+### `source_main.zip` — 7 files, 119 KB
 
 **File type: LaTeX source file** — Title is 79 of the 200 characters:
 

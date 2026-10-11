@@ -47,7 +47,17 @@ def main() -> int:
     ax.axhline(0, color="k", lw=0.6)
     ax.set_xlabel("year")
     ax.set_ylabel("instruments")
-    ax.set_title("Instrument population 2013–2026: growth is churn, not a steady ramp",
+    # NO EN DASH IN A FIGURE. PeerJ's production pipeline rewrites the ToUnicode map of
+    # every embedded font subset, and the en dash is not spared: the panel title
+    # "Instrument population 2013-2026" came back from their pipeline as "201332026",
+    # the same corruption class that turned our minus sign into a digit (see
+    # convert_to_peerj.py). The page renders correctly, but the text layer does not.
+    #
+    # A HYPHEN is used here rather than an en dash or a word, because this is the axis
+    # over which the plot is drawn: "2013-2026" states the span of the data, and it is
+    # already the form the caption uses in one place. The manuscript's own prose keeps
+    # its en dashes -- those set from the TEXT fonts survive, verified on all 87 of them.
+    ax.set_title("Instrument population 2013-2026: growth is churn, not a steady ramp",
                  fontsize=9)
     ax.legend(fontsize=6.6, loc="upper left")
     fig.savefig(OUT / "figC1_population.pdf")
