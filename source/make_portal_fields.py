@@ -34,6 +34,7 @@ USAGE
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -251,6 +252,49 @@ def combined_data_text(zenodo: str) -> str:
         + zenodo)
 
 
+def archive_facts() -> dict:
+    """Counts and sizes of the built upload bundle, read from the archives themselves.
+
+    The Title and Legend fields describe files a reader will open, so the numbers in them have
+    to be the real ones. Reading them here means a description cannot drift from the archive it
+    describes -- and PeerJ validates this field ("Check file & file type"), so a wrong count is
+    a visible error rather than a cosmetic one.
+
+    The form marks "Copied text from the article" as BAD for the Legend, so the text below
+    describes the FILES -- what is in the archive and how to use it -- rather than restating the
+    manuscript.
+    """
+    import zipfile
+    out = os.path.join(OUT, "dist")
+    # ONLY DIRECTORIES. `sorted(...)[-1]` picked `PeerJ_submission_<date>.zip`, because
+    # alphabetically the `.zip` sorts after the bare date, so every lookup inside it failed and
+    # the counts silently came out empty. The bundle is also written as a zip of the same name,
+    # which is what made this a silent failure rather than a crash.
+    dates = sorted(d for d in os.listdir(out)
+                   if d.startswith("PeerJ_submission_")
+                   and os.path.isdir(os.path.join(out, d))) if os.path.isdir(out) else []
+    # THE BUNDLE MAY NOT EXIST YET, and that is not an error. build.sh runs this generator
+    # BEFORE make_peerj_bundle.py, because the portal values describe the documents the bundle
+    # is built from. So the counts are best-effort: when the archives are present they are read
+    # and printed, and when they are not, the descriptions are written without counts rather
+    # than refusing. Refusing here broke `./build.sh` outright, which is how I found it.
+    if not dates:
+        return {}
+    bundle = os.path.join(out, dates[-1])
+
+    def facts(name):
+        path = os.path.join(bundle, name)
+        if not os.path.exists(path):
+            return None
+        with zipfile.ZipFile(path) as z:
+            files = [i.filename for i in z.infolist() if not i.is_dir()]
+        return {"n": len(files), "kb": os.path.getsize(path) / 1024, "files": files}
+
+    return {n: f for n in ("source_main.zip", "source_si.zip",
+                           "source_code_and_results.zip")
+            if (f := facts(n)) is not None}
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -388,6 +432,7 @@ def main() -> int:
     FUNDING, GRANT = funding_from_tex()
     ZENODO_TEXT = zenodo_text()
     COMBINED_TEXT = combined_data_text(ZENODO_TEXT)
+    ARCHIVE_FACTS = archive_facts()
     for name, _affil in authors:
         o = ORCIDS.get(name)
         if o is None:
@@ -663,6 +708,48 @@ def main() -> int:
     doc.append("**Any other Information for the Academic Editor and Reviewers.** Left blank "
                "deliberately. It is optional, and its content is the author's judgement about "
                "what an editor should be told — not something to be composed on their behalf.\n")
+
+    doc.append("## Supplementary files — Title and Legend for each\n")
+    doc.append("The portal asks for a one-sentence **Title** and a **Legend** per uploaded file, "
+               "and its help marks *\"Copied text from the article\"* as **BAD** for the Legend "
+               "-- so the text below describes what is in each archive, not what the paper says. "
+               "The counts are read from the built archives, so they cannot be wrong.\n")
+    for name, title, blurb in (
+        ("source_main.zip",
+         "LaTeX source of the manuscript with its bibliography and the four cited figures",
+         "LaTeX source used to typeset the manuscript. It holds the manuscript file, its "
+         "BIB bibliography, the journal class file, and the four figure PDFs the manuscript "
+         "cites. It typesets as it stands."),
+        ("source_si.zip",
+         "LaTeX source of the supplementary information document and its bibliography",
+         "LaTeX source used to typeset the supplementary information. It holds the supplement "
+         "file, its BIB bibliography and the journal class file. It typesets as it stands."),
+        ("source_code_and_results.zip",
+         "Analysis scripts, result files and figure generators behind every number and figure",
+         "Every number, table and figure in the manuscript is read from a JSON result file "
+         "produced by a script in this archive; no value is typed by hand. It holds the "
+         "analysis and figure-generating scripts, the result files they write, the frozen "
+         "benchmark snapshot and instrument catalogue they read, and an independent "
+         "re-implementation of the point-pattern estimators used as a cross-check. The scripts "
+         "run from the archive as it stands."),
+    ):
+        f = ARCHIVE_FACTS.get(name)
+        if f:
+            doc.append("### `%s` — %d files, %.0f KB\n" % (name, f["n"], f["kb"]))
+        else:
+            doc.append("### `%s`\n" % name)
+        doc.append("**Title** (one sentence, ≤200 characters — this one is %d):\n"
+                   % len(title))
+        doc.append("```text")
+        doc.append(title)
+        doc.append("```\n")
+        doc.append("**Legend:**\n")
+        doc.append("```text")
+        doc.append(blurb)
+        doc.append("```\n")
+    doc.append("The figures are also uploaded individually as `Figure 1.pdf` … `Figure 4.pdf`, "
+               "so the copies inside `source_main.zip` are for typesetting rather than for "
+               "reading.\n")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "

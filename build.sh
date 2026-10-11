@@ -59,3 +59,10 @@ done
 
 # 4. bundle
 python3 make_peerj_bundle.py
+
+# 5. regenerate the portal fields, which now describe the BUILT archives.
+# This generator runs at step 1b so the portal text exists before the documents are typeset,
+# but its Title/Legend section reads file counts out of the bundle -- which by definition does
+# not exist yet at step 1b. Running it a second time here means the counts are present rather
+# than omitted. It is cheap and has no side effects on the documents.
+python3 source/make_portal_fields.py >/dev/null

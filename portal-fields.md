@@ -208,6 +208,54 @@ Senior Member, IEEE
 
 **Any other Information for the Academic Editor and Reviewers.** Left blank deliberately. It is optional, and its content is the author's judgement about what an editor should be told — not something to be composed on their behalf.
 
+## Supplementary files — Title and Legend for each
+
+The portal asks for a one-sentence **Title** and a **Legend** per uploaded file, and its help marks *"Copied text from the article"* as **BAD** for the Legend -- so the text below describes what is in each archive, not what the paper says. The counts are read from the built archives, so they cannot be wrong.
+
+### `source_main.zip` — 7 files, 120 KB
+
+**Title** (one sentence, ≤200 characters — this one is 79):
+
+```text
+LaTeX source of the manuscript with its bibliography and the four cited figures
+```
+
+**Legend:**
+
+```text
+LaTeX source used to typeset the manuscript. It holds the manuscript file, its BIB bibliography, the journal class file, and the four figure PDFs the manuscript cites. It typesets as it stands.
+```
+
+### `source_si.zip` — 3 files, 31 KB
+
+**Title** (one sentence, ≤200 characters — this one is 75):
+
+```text
+LaTeX source of the supplementary information document and its bibliography
+```
+
+**Legend:**
+
+```text
+LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
+```
+
+### `source_code_and_results.zip` — 108 files, 2331 KB
+
+**Title** (one sentence, ≤200 characters — this one is 83):
+
+```text
+Analysis scripts, result files and figure generators behind every number and figure
+```
+
+**Legend:**
+
+```text
+Every number, table and figure in the manuscript is read from a JSON result file produced by a script in this archive; no value is typed by hand. It holds the analysis and figure-generating scripts, the result files they write, the frozen benchmark snapshot and instrument catalogue they read, and an independent re-implementation of the point-pattern estimators used as a cross-check. The scripts run from the archive as it stands.
+```
+
+The figures are also uploaded individually as `Figure 1.pdf` … `Figure 4.pdf`, so the copies inside `source_main.zip` are for typesetting rather than for reading.
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:
