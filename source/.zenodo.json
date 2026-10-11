@@ -4,8 +4,8 @@
   "access_right": "open",
   "license": "cc-by-4.0",
   "language": "eng",
-  "version": "v1.0.6",
-  "publication_date": "2026-10-02",
+  "version": "v1.0.7",
+  "publication_date": "2026-10-11",
   "creators": [
     {
       "name": "Alnahari, Wael",
@@ -46,6 +46,6 @@
     "reference-frame sensitivity",
     "reproducible analysis"
   ],
-  "notes": "Archived at Zenodo with DOI 10.5281/zenodo.23102755 (concept DOI 10.5281/zenodo.23099939). Code repository: https://github.com/WganMe/MeasurementDependent, private while the manuscript is under review. The derived Newcastle Urban Observatory census and fitted results are deposited here; the observatory readings themselves are not redistributed and remain at https://doi.org/10.25405/data.ncl.c.5059913 under CC BY 4.0. A related-identifier DOI for the article will be added on acceptance.",
+  "notes": "Part of the concept DOI 10.5281/zenodo.23099939, which always resolves to the latest version; the DOI cited in the manuscript is that concept DOI, so it does not need updating when this deposit is versioned. Code repository: https://github.com/WganMe/MeasurementDependent (public). The derived Newcastle Urban Observatory census and fitted results are deposited here; the observatory readings themselves are not redistributed and remain at https://doi.org/10.25405/data.ncl.c.5059913 under CC BY 4.0. A related-identifier DOI for the article will be added on acceptance.",
   "communities": []
 }

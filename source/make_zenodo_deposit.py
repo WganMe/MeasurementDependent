@@ -25,10 +25,16 @@ import urllib.error
 import urllib.request
 
 HERE = pathlib.Path(__file__).resolve().parent
-# Point at the release archive for the version being deposited. The archive is
-# built with `git archive` from the commit to be archived, so this must be
-# updated per release rather than left at an old version number.
-ARCHIVE = pathlib.Path("/tmp/si_rel/urban-observatory-v1.0.6.zip")
+ROOT = HERE.parent          # the submission folder IS the repository root
+# The archive is built with `git archive` from the commit being deposited, so it must be
+# rebuilt per release rather than left at an old version number. The previous path pointed at
+# /tmp/si_rel/urban-observatory-v1.0.6.zip, which no longer existed at all, so the script could
+# not have run as written.
+#
+# The name matters as much as the path: the previous deposit's file was called
+# SymmetrySI-v1.0.6.zip, carrying the name of an MDPI venue this paper WITHDREW, inside an
+# archive that held the MDPI class files. This one is named after the software, not a venue.
+ARCHIVE = pathlib.Path("/tmp/si_rel/MeasurementDependent-v1.0.7.zip")
 ENV = pathlib.Path("/home/bcdr/phd/IEEETC/.env")
 API = "https://zenodo.org/api"
 
