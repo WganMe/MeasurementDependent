@@ -42,11 +42,13 @@ for d in peerj-main peerj-si; do
     fi
     for _ in 1 2 3; do pdflatex -interaction=nonstopmode "$d.tex" >/dev/null; done
 done
-for _ in 1 2; do pdflatex -interaction=nonstopmode peerj-cover.tex >/dev/null; done
+# NO SEPARATE COVER BUILD. The Author Cover Page is part of peerj-main.tex now -- PeerJ's
+# template says it "must be included in your main manuscript" -- so there is no third document
+# to typeset. peerj-cover.tex is still generated as the source of that content.
 
 # 3. report, and fail loudly rather than shipping a half-built document
 status=0
-for d in peerj-main peerj-si peerj-cover; do
+for d in peerj-main peerj-si; do
     errors=$(grep -c '^!' "$d.log" || true)
     undef=$(grep -c 'Citation.*undefined' "$d.log" || true)
     overfull=$(grep -c Overfull "$d.log" || true)

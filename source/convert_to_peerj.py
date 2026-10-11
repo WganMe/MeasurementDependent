@@ -31,7 +31,7 @@ import sys
 
 # shared source helpers (grab/drop, credit and disclosure constants, citation and
 # supplement conversion). These used to live in the Taylor & Francis converter.
-from paper_source import (SRC, grab, drop, first_authors,
+from paper_source import (SRC, ADDRESS, grab, drop, first_authors,
                           convert_citations, convert_supplement,
                           CREDIT, CONTRIBUTOR_NOTES,
                           AI_DECLARATION, AI_DISCLOSURE)
@@ -156,12 +156,36 @@ def main() -> int:
         "\\affil[2]{Department of Computer Science, College of Computer and Information "
         "Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia}\n"
         "\\affil[3]{Independent Researcher, Mecca 24331, Saudi Arabia}\n\n"
-        "\\corrauthor[1]{Wael Alnahari}{walnahari0004@stu.kau.edu.sa}\n")
+        "\\corrauthor[1]{Wael Alnahari}{walnahari0004@stu.kau.edu.sa}\n\n"
+        # THE TEMPLATE'S ONE FIELD THE CLASS DOES NOT PRINT.
+        #
+        # PeerJ's Author Cover Page template asks for: manuscript title; authors;
+        # affiliations; the corresponding author; that author's STREET ADDRESS, city,
+        # state/province, zip and country; and the e-mail address. wlpeerj's own \maketitle
+        # prints every one of those EXCEPT the postal address, and it prints them in the right
+        # order. So the cover page is not a separate document and not an extra block at the
+        # end of the page: it is this one field, added to the block \maketitle already emits
+        # as \thecorrauthor, which sits ABOVE the abstract.
+        #
+        # wlpeerj.cls hard-codes the text of \thecorrauthor, so the address cannot be passed
+        # through \corrauthor's arguments. It is appended to the definition instead: the class
+        # sets \thecorrauthor, and this extends it with the address and the originality
+        # statement, in the same style.
+        "\\let\\origTheCorrAuthor\\thecorrauthor\n"
+        "\\def\\thecorrauthor{\\origTheCorrAuthor\\medskip\n"
+        "Postal address: " + ADDRESS + "\\par}\n")
 
     front = (AUTHOR + "\n\\begin{abstract}\n" + abstract + "\n\\end{abstract}\n\n"
              "\\begin{document}\n\n\\flushbottom\n\\maketitle\n\\thispagestyle{empty}\n")
 
     tex = re.sub(r"\\begin\{document\}\s*\n\s*\\maketitle", lambda m: front, tex, count=1)
+
+    # ---- 2b. NOTE: the Author Cover Page is spliced in further down, at step 4b --------
+    #
+    # It has to be, and the reason is a real ordering constraint rather than tidiness.
+    # make_peerj_cover.py PARSES `peerj-main.tex` to read the title, authors, affiliations and
+    # corresponding e-mail, so it can only run after that file has been written. The cover
+    # content is therefore spliced in immediately after the write at step 4, not here.
 
     # ---- 3. citations (Harvard style) --------------------------------------
     bib_first = first_authors(src / "references.bib")
@@ -440,6 +464,7 @@ def main() -> int:
                          + (r.stdout or "") + (r.stderr or ""))
     for line in (r.stdout or "").splitlines():
         print("  " + line.strip())
+
     return 0
 
 

@@ -23,7 +23,10 @@ OUT = os.path.join(PJ, "dist", NAME)
 UPLOADS = {
     "peerj-main.pdf": "1_manuscript.pdf",
     "peerj-si.pdf": "2_supplemental_information_S1.pdf",
-    "peerj-cover.pdf": "3_author_cover_page.pdf",
+    # The Author Cover Page is NOT a separate upload. PeerJ's own template says it "must be
+    # included in your main manuscript ... the first page of your manuscript", so
+    # convert_to_peerj.py puts its fields on page 1 of peerj-main.pdf. One fewer upload, and
+    # no separate file to keep in step with the manuscript.
 }
 
 # The four figure PDFs the manuscript cites, under their source names, relative to `figures/`.
@@ -49,9 +52,10 @@ SOURCES = ["peerj-main.tex", "peerj-si.tex", "peerj-cover.tex", "references.bib"
 # "For other file types, please upload a zip file"; so the class goes inside both archives,
 # which is what lets either one be typeset from its archive alone.
 #
-# THE COVER IS NOT HERE. It is uploaded on its own as `3_author_cover_page.pdf`, so
-# `peerj-cover.tex` belongs to neither archive; it is kept loose in `latex_source/` so the
-# cover page can still be regenerated or read.
+# THE COVER IS NOT AN ARCHIVE MEMBER. The Author Cover Page is part of peerj-main.tex --
+# PeerJ's template says it "must be included in your main manuscript" -- so peerj-cover.tex
+# belongs to neither archive and is uploaded nowhere. It is kept loose in `latex_source/`, and
+# generated, only as the source of the page-1 content.
 # The manuscript's figures live under `figures/`, and `peerj-main.tex` reaches them through
 # \graphicspath{{figures/}}, so the archive keeps that layout: the figures are stored as
 # `figures/<name>` inside `source_main.zip`, and the archive typesets as it stands.
@@ -114,9 +118,9 @@ folder and checked with pdfLaTeX.
 
 | This file | Portal file type | What it is |
 | --- | --- | --- |
-| `1_manuscript.pdf` | Manuscript | The paper, 22 pages, line-numbered for review. |
+| `1_manuscript.pdf` | Manuscript | The paper, 22 pages, line-numbered for review. Its FIRST PAGE carries the Author Cover Page: title, authors, affiliations, corresponding author, e-mail and postal address, as PeerJ's own template instructs. |
 | `2_supplemental_information_S1.pdf` | Supplemental File | The supplement, 17 pages. The main text names it *Supplemental Information (S1)*. |
-| `3_author_cover_page.pdf` | Author Cover Page | Title, authors, affiliations, corresponding e-mail, prior dissemination, reviewer suggestions. |
+
 
 ## Every file, checked against PeerJ's accepted types
 
@@ -129,7 +133,7 @@ a zip file containing the file you want to upload."*
 | This bundle | PeerJ list | Type |
 | --- | --- | --- |
 | `1_manuscript.pdf` | Manuscript | PDF — accepted |
-| `3_author_cover_page.pdf` | Manuscript | PDF — accepted |
+| `1_manuscript.pdf` | Manuscript | PDF — accepted |
 | `figures/Figure 1.pdf` … `Figure 4.pdf` | Manuscript (figures) | PDF — accepted |
 | `2_supplemental_information_S1.pdf` | Supplemental Files | PDF — accepted |
 | `source_main.zip` | Manuscript and Source files | ZIP — accepted; the **manuscript's** own sources |
@@ -247,12 +251,16 @@ def check_citation_style(pdf):
 
 
 def check_abstract_length(main_tex):
-    """The cover page, the portal values and this bundle must state ONE abstract length.
+    """The manuscript's first page, the portal values and this bundle must state ONE length.
 
-    They disagreed: the cover said 197, `portal-values.md` said 198, and the rendered
-    abstract holds 199 words. Each number was computed independently and both were wrong, so
-    the check is now a comparison between the documents and the manuscript rather than a
-    number typed twice.
+    They disagreed once: the cover page said 197, `portal-values.md` said 198, and the rendered
+    abstract holds 199 words -- each computed independently, both wrong. The check is a
+    comparison between the documents and the manuscript rather than a number typed twice.
+
+    The first-page check now reads `peerj-main.tex`, not `peerj-cover.tex`. The cover page is no
+    longer a separate document -- PeerJ's template says it "must be included in your main
+    manuscript" -- so the abstract length is stated on the manuscript's first page, where the
+    same sentence is the thing that prints.
     """
     source = os.path.join(PJ, "source")
     if source not in sys.path:
@@ -262,11 +270,11 @@ def check_abstract_length(main_tex):
     truth = abstract_word_count(main_tex)
 
     cover = open(os.path.join(PJ, "peerj-cover.tex"), encoding="utf-8").read()
-    m = re.search(r"Abstract length\}\\\\\s*(\d+)\s*words", cover)
+    m = re.search(r"Abstract length[:\\\\ ]*\s*(\d+)\s*words", cover)
     if not m:
-        raise SystemExit("REFUSING: peerj-cover.tex states no abstract length to check")
+        raise SystemExit("REFUSING: the cover content states no abstract length to check")
     if int(m.group(1)) != truth:
-        raise SystemExit("REFUSING: the cover page says %s words, the abstract has %d"
+        raise SystemExit("REFUSING: the first page says %s words, the abstract has %d"
                          % (m.group(1), truth))
 
     portal = open(os.path.join(PJ, "portal-values.md"), encoding="utf-8").read()
@@ -280,9 +288,10 @@ def check_abstract_length(main_tex):
 
 
 def main():
-    # --- freshness: a PDF older than its source means the bundle would ship stale output
-    for tex, pdf in (("peerj-main.tex", "peerj-main.pdf"), ("peerj-si.tex", "peerj-si.pdf"),
-                     ("peerj-cover.tex", "peerj-cover.pdf")):
+    # --- freshness: a PDF older than its source means the bundle would ship stale output.
+    # There are only TWO PDFs to check now: the cover page is not a document of its own, so a
+    # third check would fail on a file that is correctly absent.
+    for tex, pdf in (("peerj-main.tex", "peerj-main.pdf"), ("peerj-si.tex", "peerj-si.pdf")):
         if (not os.path.exists(os.path.join(PJ, pdf))
                 or os.path.getmtime(os.path.join(PJ, pdf)) < os.path.getmtime(os.path.join(PJ, tex))):
             raise SystemExit("%s is missing or older than %s: rebuild with pdflatex first" % (pdf, tex))

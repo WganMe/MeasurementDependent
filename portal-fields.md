@@ -272,7 +272,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2333 KB
+### `source_code_and_results.zip` — 108 files, 2334 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 

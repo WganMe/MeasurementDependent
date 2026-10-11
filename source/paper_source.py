@@ -12,6 +12,26 @@ import re
 # The manuscript sources live beside this module.
 SRC = pathlib.Path(__file__).resolve().parent
 
+# The corresponding author's postal address, as PeerJ's template requires (street, city,
+# state/province, zip, country). SUPPLIED BY THE AUTHOR, in the Saudi National Address order:
+# building number, street, district, city, postcode, country.
+#
+# The author supplied it as:
+#   حي, MDFA3058, 3058 شارع الأمير ناصر بن عبد العزيز آل سعود, 6199, King Fahd, Makkah 24342
+#
+# The street name is transliterated ONLY, and the Arabic is deliberately NOT carried into the
+# .tex: this document is typeset with pdfLaTeX, which cannot set Arabic without a further
+# package and an Arabic-capable font, and the build's own guard refuses any non-ASCII byte in
+# the generated source. The prince's name renders in English as "Nasser bin Abdulaziz Al Saud"
+# (Wikipedia), giving "Prince Nasser bin Abdulaziz Street".
+#
+# "Makkah" and "MDFA3058" are kept exactly as the author wrote them rather than anglicised to
+# "Mecca" or reformatted, because a postal address has to match what the postal service prints.
+# If an Arabic line is wanted in the PDF, it needs \\usepackage{arabtex} or a XeLaTeX build,
+# which is a different change to the build, not a different string.
+ADDRESS = ("MDFA3058, 3058 Prince Nasser bin Abdulaziz Street, King Fahd District, "
+           "Makkah 24342, Saudi Arabia")
+
 CREDIT = (
     "\\subsection*{CRediT authorship contribution statement}\n\\noindent "
     "Wael Alnahari: Conceptualization, Methodology, Software, Validation, Formal analysis, "
