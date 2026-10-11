@@ -66,6 +66,45 @@ ARCHIVES = (
 )
 # Each entry is (path on disk relative to the submission root, name inside the zip).
 
+# THE ANALYSIS CODE AND ITS RESULTS, as a third archive.
+#
+# WHY THIS EXISTS. The manuscript's Data Availability statement says the census, the fitted
+# models, the snapshot audit and every analysis script "are also provided as Supplemental
+# Information". That was NOT true: the two source archives held only LaTeX. The reviewer
+# checks exactly this, and the portal says so in bold -- "Your submission cannot be reviewed
+# without your raw data or code".
+#
+# The full set is 716 KB against PeerJ's stated 50 MB supplemental limit, so the claim can
+# simply be made true by uploading it.
+#
+# The list is GLOBS, not filenames: a new analysis_*.py or results_*.json is picked up
+# automatically, and a file that matches nothing is reported rather than silently dropped.
+CODE_GLOBS = [
+    "analysis_*.py",            # every analysis behind a number or table
+    "results_*.json",           # what those scripts write
+    "make_*figure*.py",         # the figure generators
+    "uo_*results.json",         # the census and model results
+    # THE COMMITTED INPUTS the scripts READ. Without these the archive does not run at all:
+    # all 28 analysis scripts open `uo_archive_index.json` first, and the snapshot audit opens
+    # `urban_observatory.db`. A code archive that cannot execute is not "the code behind the
+    # numbers" in any useful sense, and I found this by running the archive rather than by
+    # reading it -- the first version omitted both.
+    "uo_archive_index.json",    # the per-year instrument census, from the archive
+    "uo_sensor_cache.json",     # the one-week instrument catalogue the audit counts
+    "urban_observatory.db",     # the frozen benchmark snapshot
+    "UO_ARCHIVE_MANIFEST.json",  # pins the archive snapshot by SHA-256
+    "longitudinal_census.py", "census_model.py", "build_archive_index.py",
+    "reproduce_snapshot_audit.py", "independent_recount.py", "fast_recount.py",
+    "verify_paper_numbers.py", "verify_estimators.py", "verify_ripley_sign.py",
+    "test_deduplication.py", "check_supplement.py", "check_grant_number.py",
+    "check_credit_roles.py", "check_justification.py", "ci_report_drift.py",
+    "crosscheck_*.py", "crosscheck_*.R",   # the independent re-implementations
+    "paper_source.py", "make_supplement.py", "convert_to_peerj.py",
+    "make_peerj_cover.py", "make_portal_fields.py", "make_zenodo_deposit.py",
+    "main.tex", "main_si.tex",   # the neutral sources the verification scripts read
+    "README.md", "NOTICE.md", "LICENSE",
+]
+
 START = """# PeerJ submission bundle ({day})
 
 Created by `make_peerj_bundle.py`. Every file below was built from `peerj-*.tex` in this
@@ -95,6 +134,7 @@ a zip file containing the file you want to upload."*
 | `2_supplemental_information_S1.pdf` | Supplemental Files | PDF — accepted |
 | `source_main.zip` | Manuscript and Source files | ZIP — accepted; the **manuscript's** own sources |
 | `source_si.zip` | Supplemental Files (Datasets) | ZIP — accepted; the **supplement's** own sources |
+| `source_code_and_results.zip` | Supplemental Files (Datasets) | ZIP — accepted; **the analysis code and its results**, which the Data Availability statement promises as Supplemental Information |
 | (loose) `peerj-main.tex`, `references.bib` | Manuscript and Source files | TEX and BIB — both accepted (the portal names them) |
 | (loose) `wlpeerj.cls` | — | **CLS is the one type PeerJ does not name**, hence the zips |
 
@@ -331,6 +371,32 @@ def main():
         with zipfile.ZipFile(os.path.join(OUT, zip_name), "w", zipfile.ZIP_DEFLATED) as z:
             for on_disk, in_zip in members:
                 z.write(os.path.join(PJ, on_disk), in_zip)
+
+    # ---- the analysis code and results, which the Data Availability promises ----
+    import glob as _glob
+    code_files, empty_globs = [], []
+    for pattern in CODE_GLOBS:
+        got = sorted(_glob.glob(os.path.join(PJ, "source", pattern)))
+        if not got:
+            empty_globs.append(pattern)
+        code_files += got
+    code_files = sorted(set(code_files))
+    if empty_globs:
+        raise SystemExit("REFUSING: these CODE_GLOBS matched nothing, so the archive would "
+                         "silently omit them: %s" % ", ".join(empty_globs))
+    with zipfile.ZipFile(os.path.join(OUT, "source_code_and_results.zip"), "w",
+                         zipfile.ZIP_DEFLATED) as z:
+        for p in code_files:
+            z.write(p, os.path.join("source", os.path.relpath(p, os.path.join(PJ, "source"))))
+    code_bytes = sum(os.path.getsize(p) for p in code_files)
+    if code_bytes > 50 * 1024 * 1024:
+        raise SystemExit("REFUSING: the code archive is %.1f MB, over PeerJ's 50 MB "
+                         "supplemental limit" % (code_bytes / 1e6))
+    report.append("")
+    report.append("source_code_and_results.zip: %d files, %.0f KB -- the analysis scripts and "
+                  "the result files behind every number, which the Data Availability "
+                  "statement promises as Supplemental Information"
+                  % (len(code_files), code_bytes / 1024))
     shutil.copy2(os.path.join(PJ, "portal-values.md"),
                  os.path.join(OUT, "portal-values.md"))
     # The portal's Title / Short Title / Abstract are plain-text fields with their own

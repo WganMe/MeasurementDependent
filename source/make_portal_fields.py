@@ -33,6 +33,7 @@ USAGE
 """
 from __future__ import annotations
 
+import json
 import pathlib
 import re
 import subprocess
@@ -203,6 +204,28 @@ def funding_from_tex() -> tuple[str, str]:
     return funding, grant
 
 
+def zenodo_text() -> str:
+    """The repository-access text for question 92, read from the published record.
+
+    The DOI is taken from `ZENODO_RECORD.json` rather than typed here, because typing it went
+    wrong once already: the text named the v1.0.6 accession after v1.0.7 had been published.
+    The concept DOI is the one the manuscript cites, and it is the one the form should be given
+    as the link -- it always resolves to the current version.
+    """
+    rec = json.loads((OUT / "source" / "ZENODO_RECORD.json").read_text(encoding="utf-8"))
+    doi, concept = rec.get("doi"), rec.get("conceptdoi")
+    if not doi or not concept:
+        raise SystemExit("REFUSING: ZENODO_RECORD.json has no doi/conceptdoi")
+    return (
+        "1. Repository/database name: Zenodo\n"
+        "2. Accession/id number: %s (version %s); concept DOI %s\n"
+        "3. Link: https://doi.org/%s\n\n"
+        "The concept DOI is the one cited in the manuscript and always resolves to the current "
+        "version. The deposit carries the derived census, the fitted models, the snapshot audit "
+        "and every analysis script behind the numbers in the paper, under CC BY 4.0."
+        % (doi, rec.get("version"), concept, concept))
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -338,6 +361,7 @@ def main() -> int:
     kw = keywords_from_tex()
     COMPETING = competing_from_tex()
     FUNDING, GRANT = funding_from_tex()
+    ZENODO_TEXT = zenodo_text()
     for name, _affil in authors:
         o = ORCIDS.get(name)
         if o is None:
@@ -568,25 +592,33 @@ def main() -> int:
                "Data Availability statement says both, and both are true:\n")
     doc.append("- the census, models, snapshot audit and every analysis script are archived at "
                "the DOI, and")
-    doc.append("- they are \"also provided as Supplemental Information\", which the bundle "
-               "does with `source_main.zip` and `source_si.zip`.")
+    doc.append("- they are \"also provided as Supplemental Information\", which the bundle now "
+               "does with `source_code_and_results.zip`.")
+    doc.append("")
+    doc.append("> **This was not true until 2026-10-11.** The manuscript claimed the code was "
+               "provided as Supplemental Information, but the uploaded archives held only "
+               "LaTeX sources -- no code at all. The portal states in bold that a submission "
+               "cannot be reviewed without the code, so the claim and the upload disagreed. "
+               "`source_code_and_results.zip` closes that gap; see the note below.")
     doc.append("")
     doc.append("Describe the uploaded files (question 91):\n")
     doc.append("```text")
-    doc.append("The manuscript source and its bibliography are in source_main.zip, which also "
-               "carries the four cited figure PDFs and the PeerJ class file. The supplement "
-               "source is in source_si.zip. The supplement PDF (2_supplemental_information_S1"
-               ".pdf) tabulates the robustness forks, sensitivity sweeps and estimator controls "
-               "that the main text summarises. Both archives typeset on their own.")
+    doc.append("source_code_and_results.zip carries the analysis code and its results: the "
+               "analysis scripts, the JSON result file behind every number and table, the "
+               "figure generators, and the committed inputs they read (the per-year instrument "
+               "census and the one-week instrument catalogue). This is the material the Data "
+               "Availability statement promises as Supplemental Information, and the scripts "
+               "run from the archive as it stands. source_main.zip carries the manuscript "
+               "source, its bibliography, the four cited figure PDFs and the PeerJ class file; "
+               "source_si.zip carries the supplement source. 2_supplemental_information_S1.pdf "
+               "tabulates the robustness forks, sensitivity sweeps and estimator controls that "
+               "the main text summarises.")
     doc.append("```\n")
     doc.append("Describe the repository access (question 92):\n")
+    doc.append("The accession is read from `source/ZENODO_RECORD.json`, so it cannot fall "
+               "behind the published version:\n")
     doc.append("```text")
-    doc.append("1. Repository: Zenodo\n"
-               "2. Accession: 10.5281/zenodo.23103868 (concept DOI 10.5281/zenodo.23099939, "
-               "which always resolves to the current version)\n"
-               "3. Link: https://doi.org/10.5281/zenodo.23099939\n\n"
-               "The deposit carries the derived census, the fitted models, the snapshot audit "
-               "and every analysis script behind the numbers in the paper, under CC BY 4.0.")
+    doc.append(ZENODO_TEXT)
     doc.append("```\n")
 
     doc.append("## Character handling\n")
