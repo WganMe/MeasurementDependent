@@ -1,0 +1,8 @@
+# Files excluded from `git archive`, which is what builds the Zenodo deposit.
+#
+# ZENODO_RECORD.json is a record OF the deposit, and it can only be written AFTER a version is
+# published. Any copy inside an archive therefore describes the PREVIOUS version, by
+# construction: v1.0.6's archive shipped a record describing v1.0.1, a different DOI and a
+# different commit. Excluding it removes the possibility rather than correcting one instance.
+# The published record on Zenodo is the authority for what a version contains.
+source/ZENODO_RECORD.json export-ignore
