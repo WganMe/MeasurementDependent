@@ -107,8 +107,11 @@ SHORT_TITLE_ALTERNATIVES = [a for a in SHORT_TITLE_ALTERNATIVES if len(a) <= SHO
 # to be noticed by eye. The portal publishes these, so a wrong one is a wrong identifier
 # attached to a real person.
 ORCIDS = {
-    "Wael Alnahari": "0000-0001-5247-3713",
+    # Listed in the manuscript's author order (Arbaaeen first), which is also the portal
+    # form's order. A dict, so this order is for the reader; the table below is built from
+    # `\author[]{}` in peerj-main.tex, so a reorder there is what the table follows.
     "Ammar Arbaaeen": "0000-0003-2165-3185",
+    "Wael Alnahari": "0000-0001-5247-3713",
     "Ammar Alsaig": "0000-0002-6756-9766",
     "Tawfiq Hasanin": "0000-0003-1072-278X",
     "Wasem Alnahri": "0009-0004-6963-5773",

@@ -8,14 +8,14 @@
   "publication_date": "2026-10-11",
   "creators": [
     {
-      "name": "Alnahari, Wael",
-      "orcid": "0000-0001-5247-3713",
-      "affiliation": "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
-    },
-    {
       "name": "Arbaaeen, Ammar",
       "orcid": "0000-0003-2165-3185",
       "affiliation": "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+    },
+    {
+      "name": "Alnahari, Wael",
+      "orcid": "0000-0001-5247-3713",
+      "affiliation": "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
     },
     {
       "name": "Alsaig, Ammar",

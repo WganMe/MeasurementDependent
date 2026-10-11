@@ -64,8 +64,8 @@ Read out of the manuscript (`peerj-main.tex`), so a name or affiliation that cha
 
 | # | Author | Affiliation | ORCID |
 | --- | --- | --- | --- |
-| 1 | Wael Alnahari | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | `0000-0001-5247-3713` |
-| 2 | Ammar Arbaaeen | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | `0000-0003-2165-3185` |
+| 1 | Ammar Arbaaeen | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | `0000-0003-2165-3185` |
+| 2 | Wael Alnahari | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | `0000-0001-5247-3713` |
 | 3 | Ammar Alsaig | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | `0000-0002-6756-9766` |
 | 4 | Tawfiq Hasanin | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | `0000-0003-1072-278X` |
 | 5 | Wasem Alnahri | Independent Researcher, Mecca 24331, Saudi Arabia | `0009-0004-6963-5773` |
@@ -252,7 +252,7 @@ Legend: Two panels. (a) The fixed reference hull that all years are measured aga
 
 ### Section 2 — Supplemental Files (the three archives)
 
-### `source_main.zip` — 7 files, 119 KB
+### `source_main.zip` — 7 files, 120 KB
 
 **File type: LaTeX source file** — Title is 79 of the 200 characters:
 
@@ -272,7 +272,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2338 KB
+### `source_code_and_results.zip` — 108 files, 2340 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 

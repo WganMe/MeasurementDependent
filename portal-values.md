@@ -52,12 +52,17 @@ From `\keyword{}` in `main.tex`:
 
 ## Authors and affiliations
 
+The order below is the order the portal's author list uses AND the order the manuscript
+prints, which must agree. It is Ammar Arbaaeen first: the submission form lists him first,
+and the manuscript was reordered to match. **Wael Alnahari remains the corresponding
+author** — that is a separate field, and it does not follow the first-author position.
+
 | # | Author | Affiliation | ORCID |
 | --- | --- | --- | --- |
-| 1 | Wael Alnahari (corresponding) | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | 0000-0001-5247-3713 |
-| 2 | Ammar Arbaaeen | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | 0000-0003-2165-3185 |
+| 1 | Ammar Arbaaeen | Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia | 0000-0003-2165-3185 |
+| 2 | Wael Alnahari (corresponding) | Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia | 0000-0001-5247-3713 |
 | 2 | Ammar Alsaig | as above (Umm Al-Qura University) | 0000-0002-6756-9766 |
-| 1 | Tawfiq Hasanin | as author 1 (King Abdulaziz University) | 0000-0003-1072-278X |
+| 1 | Tawfiq Hasanin | as author 2 (King Abdulaziz University) | 0000-0003-1072-278X |
 | 3 | Wasem Alnahri | Independent Researcher, Mecca 24331, Saudi Arabia | 0009-0004-6963-5773 |
 
 Corresponding e-mail: `walnahari0004@stu.kau.edu.sa`.

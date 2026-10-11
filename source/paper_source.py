@@ -34,19 +34,30 @@ ADDRESS = ("MDFA3058, 3058 Prince Nasser bin Abdulaziz Street, King Fahd Distric
 
 CREDIT = (
     "\\subsection*{CRediT authorship contribution statement}\n\\noindent "
+    # Ordered to match the byline (Arbaaeen first). THE ROLES ARE UNCHANGED -- only the
+    # order of the sentences moved. Author order and CRediT roles are independent: ICMJE
+    # states that the order "is to be decided collectively by the author group", so moving
+    # a name does not by itself move a role, and assigning Arbaaeen a role he was not
+    # recorded as performing would be inventing a claim rather than reordering one.
+    #
+    # REVIEW THIS: the byline now puts Arbaaeen first while the statement credits him with
+    # funding and review only, and credits Alnahari with the original draft and the
+    # software. That is permitted, but if the authors' actual division of labour differs,
+    # the statement is the place to say so -- and only the authors can say what changed.
+    "Ammar Arbaaeen: Funding acquisition, Writing -- review and editing. "
     "Wael Alnahari: Conceptualization, Methodology, Software, Validation, Formal analysis, "
     "Data curation, Writing -- original draft, Writing -- review and editing, Visualization, "
     "Project administration. Tawfiq Hasanin: Validation, Writing -- review and editing. "
-    "Ammar Arbaaeen: Funding acquisition, Writing -- review and editing. Ammar Alsaig: "
-    "Writing -- review and editing. Wasem Alnahri: Conceptualization, Validation, "
-    "Writing -- review and editing.")
+    "Ammar Alsaig: Writing -- review and editing. Wasem Alnahri: Conceptualization, "
+    "Validation, Writing -- review and editing.")
 
 CONTRIBUTOR_NOTES = (
     "\\subsection*{Notes on contributors}\n\\noindent "
-    "\\textbf{Wael Alnahari} is in the Department of Information Systems, Faculty of Computing "
-    "and Information Technology, King Abdulaziz University, Saudi Arabia. "
+    # Ordered to match the byline.
     "\\textbf{Ammar Arbaaeen} and \\textbf{Ammar Alsaig} are in the Department of Computer "
     "Science, College of Computer and Information Systems, Umm Al-Qura University, Saudi Arabia. "
+    "\\textbf{Wael Alnahari} is in the Department of Information Systems, Faculty of Computing "
+    "and Information Technology, King Abdulaziz University, Saudi Arabia. "
     "\\textbf{Tawfiq Hasanin} is in the Department of Information Systems, King Abdulaziz "
     "University, Saudi Arabia. \\textbf{Wasem Alnahri} is an independent researcher, Saudi "
     "Arabia.")
@@ -282,7 +293,10 @@ def convert_supplement(src: pathlib.Path, out: pathlib.Path, venue: str) -> str:
         "\\renewcommand{\\thetable}{S\\arabic{table}}\n"
         "\\renewcommand{\\theequation}{S\\arabic{equation}}\n\n"
         "\\title{" + title + "}\n"
-        "\\author[1]{Wael Alnahari}\n\\author[2]{Ammar Arbaaeen}\n"
+        # Same author order as the manuscript and the portal form: Arbaaeen first. The
+        # corresponding author is unchanged, and the optional argument of \corrauthor is
+        # the AFFILIATION superscript, so it stays [1] -- Alnahari is at KAU, \affil[1].
+        "\\author[2]{Ammar Arbaaeen}\n\\author[1]{Wael Alnahari}\n"
         "\\author[2]{Ammar Alsaig}\n\\author[1]{Tawfiq Hasanin}\n"
         "\\author[3]{Wasem Alnahri}\n"
         "\\affil[1]{Department of Information Systems, King Abdulaziz University, "

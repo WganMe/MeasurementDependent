@@ -191,10 +191,20 @@ def main() -> int:
     tex = re.sub(r"\\makeatletter\n\\setcounter\{page\}\{\\@firstpage\}\n\\makeatother",
                  "", tex)
 
+    # AUTHOR ORDER, and it must match the portal's author list exactly. The submission form
+    # lists Ammar Arbaaeen first, so the manuscript prints him first too. Wael Alnahari stays
+    # the CORRESPONDING author -- that is a separate field, and it does not follow the
+    # first-author position.
+    #
+    # \corrauthor's OPTIONAL ARGUMENT IS THE AFFILIATION SUPERSCRIPT, not the author's
+    # position: wlpeerj.cls sets \thecorrauthor as "#2$^{#1}$", so [1] prints
+    # "Wael Alnahari^1". Alnahari is still at KAU, which is \affil[1], so this stays [1].
+    # Changing it to [2] when the order changed would have printed the WRONG affiliation
+    # against his name, which is what a corresponding-author line must never do.
     AUTHOR = (
         "\\title{" + title + "}\n\n"
-        "\\author[1]{Wael Alnahari}\n"
         "\\author[2]{Ammar Arbaaeen}\n"
+        "\\author[1]{Wael Alnahari}\n"
         "\\author[2]{Ammar Alsaig}\n"
         "\\author[1]{Tawfiq Hasanin}\n"
         "\\author[3]{Wasem Alnahri}\n\n"

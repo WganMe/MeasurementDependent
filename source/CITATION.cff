@@ -28,14 +28,14 @@ keywords:
   - descriptive census
   - data provenance
 authors:
-  - family-names: Alnahari
-    given-names: Wael
-    orcid: "https://orcid.org/0000-0001-5247-3713"
-    affiliation: "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
   - family-names: Arbaaeen
     given-names: Ammar
     orcid: "https://orcid.org/0000-0003-2165-3185"
     affiliation: "Department of Computer Science, College of Computer and Information Systems, Umm Al-Qura University, Mecca 24381, Saudi Arabia"
+  - family-names: Alnahari
+    given-names: Wael
+    orcid: "https://orcid.org/0000-0001-5247-3713"
+    affiliation: "Department of Information Systems, Faculty of Computing and Information Technology, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
   - family-names: Alsaig
     given-names: Ammar
     orcid: "https://orcid.org/0000-0002-6756-9766"

@@ -374,8 +374,12 @@ def main() -> int:
 
 \Title{Supplementary Material: Measurement-Dependent Clustering in the Growing Urban Observatory
 Sensor Network}
-\Author{Wael Alnahari, Ammar Arbaaeen, Ammar Alsaig, Tawfiq Hasanin and Wasem Alnahri}
-\AuthorNames{Alnahari et al.}
+% SAME AUTHOR ORDER AS THE MANUSCRIPT: Arbaaeen first. The supplement is a separate file
+% that a reader may open alone, so an order here that disagreed with the byline would be a
+% second, contradictory statement of authorship. \AuthorNames is the running short form and
+% must name whoever is now FIRST, not whoever was first before the reorder.
+\Author{Ammar Arbaaeen, Wael Alnahari, Ammar Alsaig, Tawfiq Hasanin and Wasem Alnahri}
+\AuthorNames{Arbaaeen et al.}
 \corres{Correspondence: walnahari0004@stu.kau.edu.sa}
 \address{%
 $^{1}$~\quad Department of Information Systems, Faculty of Computing and Information
