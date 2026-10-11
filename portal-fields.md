@@ -190,6 +190,24 @@ If the other branches are ever chosen instead, their separate texts are:
 
 - *Submit repository link(s)* only (question 92) — the numbered three lines above, without the supplementary-file paragraph.
 
+## Declarations — Other tab
+
+Four optional fields on the *Other* tab.
+
+**Societies or professional associations.** Stated by the author, not read from the paper -- nothing in the repository records a membership, so this is recorded here as given:
+
+```text
+Senior Member, IEEE
+```
+
+*IEEE's grades are Student Member, Member, Senior Member, Fellow, Life Member, Life Senior and Life Fellow, so `Senior Member` is the grade itself and needs no qualifier. If more than one author holds a membership, name each one — the field is a list, and an unqualified entry would read as though it applied to every author.*
+
+**SI code (Special Issue or Collection).** Leave **blank**. That box takes a code issued by PeerJ. The only special-issue identifier anywhere in this project is `281361` — the MDPI *Symmetry* issue that was WITHDRAWN — so it must not be entered. This is a regular Research Article submission.
+
+**Was PeerJ recommended to you by someone?** Leave blank unless it was. If it was, the form wants the person's name and e-mail and will contact them, so this is an author's answer, not a derivable one.
+
+**Any other Information for the Academic Editor and Reviewers.** Left blank deliberately. It is optional, and its content is the author's judgement about what an editor should be told — not something to be composed on their behalf.
+
 ## Character handling
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:

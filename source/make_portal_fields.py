@@ -640,6 +640,30 @@ def main() -> int:
     doc.append("- *Submit repository link(s)* only (question 92) — the numbered three lines "
                "above, without the supplementary-file paragraph.\n")
 
+    doc.append("## Declarations — Other tab\n")
+    doc.append("Four optional fields on the *Other* tab.\n")
+    doc.append("**Societies or professional associations.** Stated by the author, not read "
+               "from the paper -- nothing in the repository records a membership, so this is "
+               "recorded here as given:\n")
+    doc.append("```text")
+    doc.append("Senior Member, IEEE")
+    doc.append("```\n")
+    doc.append("*IEEE's grades are Student Member, Member, Senior Member, Fellow, Life Member, "
+               "Life Senior and Life Fellow, so `Senior Member` is the grade itself and needs no "
+               "qualifier. If more than one author holds a membership, name each one — the field "
+               "is a list, and an unqualified entry would read as though it applied to every "
+               "author.*\n")
+    doc.append("**SI code (Special Issue or Collection).** Leave **blank**. That box takes a "
+               "code issued by PeerJ. The only special-issue identifier anywhere in this "
+               "project is `281361` — the MDPI *Symmetry* issue that was WITHDRAWN — so it must "
+               "not be entered. This is a regular Research Article submission.\n")
+    doc.append("**Was PeerJ recommended to you by someone?** Leave blank unless it was. If it "
+               "was, the form wants the person's name and e-mail and will contact them, so this "
+               "is an author's answer, not a derivable one.\n")
+    doc.append("**Any other Information for the Academic Editor and Reviewers.** Left blank "
+               "deliberately. It is optional, and its content is the author's judgement about "
+               "what an editor should be told — not something to be composed on their behalf.\n")
+
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "
                "the character:\n")
