@@ -691,7 +691,7 @@ randomness as well. Donnelly's own area-and-perimeter form is stable on the same
 $n = 2000$ --- but since the reference implementation declines to apply it to a polygon we report
 the \texttt{cdf} correction as the external check. Every corrected series falls, but they do not
 agree on the magnitude: \texttt{cdf} steepens the uncorrected series ($57.2\%$ against $45.0\%$),
-while Donnelly flattens it to $41.9\%$ ($0.341 \to 0.198$), a smaller fall than the raw index
+while Donnelly flattens it to $41.9\%$ ($0.341$ to $0.198$), a smaller fall than the raw index
 rather than a larger one. The direction is robust to the edge treatment; the magnitude is not.
 
 \begin{table}[H]
