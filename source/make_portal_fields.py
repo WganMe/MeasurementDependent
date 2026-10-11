@@ -295,6 +295,48 @@ def archive_facts() -> dict:
             if (f := facts(n)) is not None}
 
 
+def figure_legends() -> list[tuple[str, str, str]]:
+    """(filename, title, legend) for each cited figure, in citation order.
+
+    The portal marks "Copied text from the article" as BAD for a Legend, so each legend
+    DESCRIBES what the figure shows rather than reproducing the caption. The titles are
+    therefore not the captions either; they name the subject and the quantity. The order is
+    the citation order, which is also the order the files are numbered.
+    """
+    return [
+        ("Figure 1.pdf",
+         "The merge tolerance: how the clustering index varies with the merge radius",
+         "Two panels. (a) The fall in the clustering index on the fixed reference hull, from "
+         "2013 to 2026, plotted against the radius within which nearby registrations are merged "
+         "into one location; a dashed line marks the 25 m radius used in the analysis and a "
+         "second series gives the associated p-value on the right-hand axis. (b) The "
+         "nearest-neighbour distance distributions for a recent and the final year, on a "
+         "logarithmic axis, which is what shows whether a natural threshold exists between "
+         "co-located and distinct instruments."),
+        ("Figure 2.pdf",
+         "Instrument population of the Urban Observatory, 2013 to 2026, with arrivals and "
+         "departures",
+         "A line gives the number of instruments reporting in each year. Two bar series "
+         "underneath count the instruments appearing for the first time in that year and those "
+         "seen for the last time, drawn above and below the axis. Read together they show that "
+         "the population grows by turnover rather than as a steady ramp."),
+        ("Figure 3.pdf",
+         "Clustering index by year on the fixed reference hull, with rarefaction and the "
+         "expected envelope",
+         "The annual clustering index for both units of analysis, with the same series rarefied "
+         "to a common sample size shown faintly so that the changing instrument count cannot "
+         "drive the trend, and a horizontal line at the value expected under complete spatial "
+         "randomness. Fitted trends are drawn over the series, which is what shows the trend "
+         "disappearing once the sample size is held fixed."),
+        ("Figure 4.pdf",
+         "The study area: the fixed reference hull and each year's bounding box",
+         "Two panels. (a) The fixed reference hull that all years are measured against, with "
+         "the first and last years' instrument locations plotted on it. (b) Each year's own "
+         "bounding box shown as a share of that hull, which is what makes the reference frame "
+         "used for a given year visible."),
+    ]
+
+
 def pdf_text(pdf: pathlib.Path) -> str:
     p = subprocess.run(["pdftotext", "-layout", str(pdf), "-"],
                        capture_output=True, text=True)
@@ -709,22 +751,51 @@ def main() -> int:
                "deliberately. It is optional, and its content is the author's judgement about "
                "what an editor should be told — not something to be composed on their behalf.\n")
 
-    doc.append("## Supplementary files — Title and Legend for each\n")
-    doc.append("The portal asks for a one-sentence **Title** and a **Legend** per uploaded file, "
-               "and its help marks *\"Copied text from the article\"* as **BAD** for the Legend "
-               "-- so the text below describes what is in each archive, not what the paper says. "
-               "The counts are read from the built archives, so they cannot be wrong.\n")
-    for name, title, blurb in (
-        ("source_main.zip",
+    doc.append("## Every upload needs a Title and a Legend\n")
+    doc.append("The portal asks for a one-sentence **Title** and a **Legend** on every "
+               "uploaded file, in BOTH sections. Its help marks *\"Copied text from the "
+               "article\"* as **BAD** for the Legend, so each Legend describes what the file "
+               "IS -- its contents and how it is used -- rather than restating the paper. The "
+               "figure legends describe what each figure shows; the captions in the manuscript "
+               "are what they must NOT be copied from.\n")
+    doc.append("**Set the File type of each upload as shown.** `source_main.zip` and "
+               "`source_si.zip` are both LaTeX source; leaving the supplement's archive typed "
+               "*data or code* is wrong, because it contains neither.\n")
+
+    doc.append("### Section 1 — Manuscript (US Letter)\n")
+    doc.append("```text")
+    doc.append("1_manuscript.pdf   File type: Manuscript")
+    doc.append("Title:  Measurement-dependent clustering in the growing Urban Observatory "
+               "sensor network")
+    doc.append("Legend: The complete manuscript, line-numbered for review. It reports a "
+               "13-year census of the Newcastle Urban Observatory instrument population and "
+               "asks how much of the apparent strengthening of nearest-neighbour clustering is "
+               "a property of the deployment rather than of the measurement.")
+    doc.append("```\n")
+
+    doc.append("### Section 1 — Primary files: Hi-res figures and tables\n")
+    doc.append("The four figures are uploaded one per file, in the order the manuscript cites "
+               "them. The caption in the paper is NOT the legend; each legend below describes "
+               "what the figure shows so it can be read on its own.\n")
+    for name, caption, legend in figure_legends():
+        doc.append("```text")
+        doc.append("%s   File type: Figure" % name)
+        doc.append("Title:  " + caption)
+        doc.append("Legend: " + legend)
+        doc.append("```\n")
+
+    doc.append("### Section 2 — Supplemental Files (the three archives)\n")
+    for name, kind, title, blurb in (
+        ("source_main.zip", "LaTeX source file",
          "LaTeX source of the manuscript with its bibliography and the four cited figures",
          "LaTeX source used to typeset the manuscript. It holds the manuscript file, its "
          "BIB bibliography, the journal class file, and the four figure PDFs the manuscript "
          "cites. It typesets as it stands."),
-        ("source_si.zip",
+        ("source_si.zip", "LaTeX source file",
          "LaTeX source of the supplementary information document and its bibliography",
          "LaTeX source used to typeset the supplementary information. It holds the supplement "
          "file, its BIB bibliography and the journal class file. It typesets as it stands."),
-        ("source_code_and_results.zip",
+        ("source_code_and_results.zip", "data or code",
          "Analysis scripts, result files and figure generators behind every number and figure",
          "Every number, table and figure in the manuscript is read from a JSON result file "
          "produced by a script in this archive; no value is typed by hand. It holds the "
@@ -738,18 +809,13 @@ def main() -> int:
             doc.append("### `%s` — %d files, %.0f KB\n" % (name, f["n"], f["kb"]))
         else:
             doc.append("### `%s`\n" % name)
-        doc.append("**Title** (one sentence, ≤200 characters — this one is %d):\n"
-                   % len(title))
+        doc.append("**File type: %s** — Title is %d of the 200 characters:\n"
+                   % (kind, len(title)))
         doc.append("```text")
-        doc.append(title)
+        doc.append("Title:  " + title)
+        doc.append("")
+        doc.append("Legend: " + blurb)
         doc.append("```\n")
-        doc.append("**Legend:**\n")
-        doc.append("```text")
-        doc.append(blurb)
-        doc.append("```\n")
-    doc.append("The figures are also uploaded individually as `Figure 1.pdf` … `Figure 4.pdf`, "
-               "so the copies inside `source_main.zip` are for typesetting rather than for "
-               "reading.\n")
 
     doc.append("## Character handling\n")
     doc.append("Extracted from the PDF and normalised where a plain text box would not expect "

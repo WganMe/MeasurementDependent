@@ -208,53 +208,79 @@ Senior Member, IEEE
 
 **Any other Information for the Academic Editor and Reviewers.** Left blank deliberately. It is optional, and its content is the author's judgement about what an editor should be told — not something to be composed on their behalf.
 
-## Supplementary files — Title and Legend for each
+## Every upload needs a Title and a Legend
 
-The portal asks for a one-sentence **Title** and a **Legend** per uploaded file, and its help marks *"Copied text from the article"* as **BAD** for the Legend -- so the text below describes what is in each archive, not what the paper says. The counts are read from the built archives, so they cannot be wrong.
+The portal asks for a one-sentence **Title** and a **Legend** on every uploaded file, in BOTH sections. Its help marks *"Copied text from the article"* as **BAD** for the Legend, so each Legend describes what the file IS -- its contents and how it is used -- rather than restating the paper. The figure legends describe what each figure shows; the captions in the manuscript are what they must NOT be copied from.
+
+**Set the File type of each upload as shown.** `source_main.zip` and `source_si.zip` are both LaTeX source; leaving the supplement's archive typed *data or code* is wrong, because it contains neither.
+
+### Section 1 — Manuscript (US Letter)
+
+```text
+1_manuscript.pdf   File type: Manuscript
+Title:  Measurement-dependent clustering in the growing Urban Observatory sensor network
+Legend: The complete manuscript, line-numbered for review. It reports a 13-year census of the Newcastle Urban Observatory instrument population and asks how much of the apparent strengthening of nearest-neighbour clustering is a property of the deployment rather than of the measurement.
+```
+
+### Section 1 — Primary files: Hi-res figures and tables
+
+The four figures are uploaded one per file, in the order the manuscript cites them. The caption in the paper is NOT the legend; each legend below describes what the figure shows so it can be read on its own.
+
+```text
+Figure 1.pdf   File type: Figure
+Title:  The merge tolerance: how the clustering index varies with the merge radius
+Legend: Two panels. (a) The fall in the clustering index on the fixed reference hull, from 2013 to 2026, plotted against the radius within which nearby registrations are merged into one location; a dashed line marks the 25 m radius used in the analysis and a second series gives the associated p-value on the right-hand axis. (b) The nearest-neighbour distance distributions for a recent and the final year, on a logarithmic axis, which is what shows whether a natural threshold exists between co-located and distinct instruments.
+```
+
+```text
+Figure 2.pdf   File type: Figure
+Title:  Instrument population of the Urban Observatory, 2013 to 2026, with arrivals and departures
+Legend: A line gives the number of instruments reporting in each year. Two bar series underneath count the instruments appearing for the first time in that year and those seen for the last time, drawn above and below the axis. Read together they show that the population grows by turnover rather than as a steady ramp.
+```
+
+```text
+Figure 3.pdf   File type: Figure
+Title:  Clustering index by year on the fixed reference hull, with rarefaction and the expected envelope
+Legend: The annual clustering index for both units of analysis, with the same series rarefied to a common sample size shown faintly so that the changing instrument count cannot drive the trend, and a horizontal line at the value expected under complete spatial randomness. Fitted trends are drawn over the series, which is what shows the trend disappearing once the sample size is held fixed.
+```
+
+```text
+Figure 4.pdf   File type: Figure
+Title:  The study area: the fixed reference hull and each year's bounding box
+Legend: Two panels. (a) The fixed reference hull that all years are measured against, with the first and last years' instrument locations plotted on it. (b) Each year's own bounding box shown as a share of that hull, which is what makes the reference frame used for a given year visible.
+```
+
+### Section 2 — Supplemental Files (the three archives)
 
 ### `source_main.zip` — 7 files, 120 KB
 
-**Title** (one sentence, ≤200 characters — this one is 79):
+**File type: LaTeX source file** — Title is 79 of the 200 characters:
 
 ```text
-LaTeX source of the manuscript with its bibliography and the four cited figures
-```
+Title:  LaTeX source of the manuscript with its bibliography and the four cited figures
 
-**Legend:**
-
-```text
-LaTeX source used to typeset the manuscript. It holds the manuscript file, its BIB bibliography, the journal class file, and the four figure PDFs the manuscript cites. It typesets as it stands.
+Legend: LaTeX source used to typeset the manuscript. It holds the manuscript file, its BIB bibliography, the journal class file, and the four figure PDFs the manuscript cites. It typesets as it stands.
 ```
 
 ### `source_si.zip` — 3 files, 31 KB
 
-**Title** (one sentence, ≤200 characters — this one is 75):
+**File type: LaTeX source file** — Title is 75 of the 200 characters:
 
 ```text
-LaTeX source of the supplementary information document and its bibliography
+Title:  LaTeX source of the supplementary information document and its bibliography
+
+Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-**Legend:**
+### `source_code_and_results.zip` — 108 files, 2333 KB
+
+**File type: data or code** — Title is 83 of the 200 characters:
 
 ```text
-LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
+Title:  Analysis scripts, result files and figure generators behind every number and figure
+
+Legend: Every number, table and figure in the manuscript is read from a JSON result file produced by a script in this archive; no value is typed by hand. It holds the analysis and figure-generating scripts, the result files they write, the frozen benchmark snapshot and instrument catalogue they read, and an independent re-implementation of the point-pattern estimators used as a cross-check. The scripts run from the archive as it stands.
 ```
-
-### `source_code_and_results.zip` — 108 files, 2331 KB
-
-**Title** (one sentence, ≤200 characters — this one is 83):
-
-```text
-Analysis scripts, result files and figure generators behind every number and figure
-```
-
-**Legend:**
-
-```text
-Every number, table and figure in the manuscript is read from a JSON result file produced by a script in this archive; no value is typed by hand. It holds the analysis and figure-generating scripts, the result files they write, the frozen benchmark snapshot and instrument catalogue they read, and an independent re-implementation of the point-pattern estimators used as a cross-check. The scripts run from the archive as it stands.
-```
-
-The figures are also uploaded individually as `Figure 1.pdf` … `Figure 4.pdf`, so the copies inside `source_main.zip` are for typesetting rather than for reading.
 
 ## Character handling
 
