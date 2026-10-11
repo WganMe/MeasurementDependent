@@ -22,7 +22,8 @@ R = G["res"]["20"]["rows"]
 Y = [r["year"] for r in R]
 
 plt.rcParams.update({"font.size": 9, "pdf.fonttype": 42, "axes.grid": True, "grid.alpha": 0.3,
-                     "figure.dpi": 300, "savefig.bbox": "tight", "axes.axisbelow": True})
+                     "figure.dpi": 300, "savefig.bbox": "tight", "axes.axisbelow": True,
+                     "axes.unicode_minus": False})
 
 fig, ax = plt.subplots(figsize=(5.4, 3.2))
 ax.plot(Y, [r["raw"] for r in R], "s--", color="0.65", lw=1.2, ms=3,

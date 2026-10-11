@@ -49,6 +49,14 @@ symmetry_corpus/
 nuo_fulltext/
 MDPI_template_APA.zip
 
+# The PDF PeerJ's own production pipeline generated from our submission, returned to the
+# authors as peerj-reviewing-150843-v0.pdf. It is PeerJ's file, it carries the editorial
+# furniture ("Manuscript to be reviewed", "Important declarations"), and it is the artefact
+# the glyph-corruption analysis was measured against -- so it is worth keeping locally, and
+# it must not be published as part of the submission.
+peerj-reviewing-*.pdf
+Author-Cover-Page-Template.doc
+
 # ---- withdrawn venues: kept on disk, deliberately NOT part of this repository ----
 # These tarballs hold the MDPI/Symmetry and Taylor & Francis/IJGIS builds that were
 # withdrawn. They are kept locally so the work is not lost, but this repository is the

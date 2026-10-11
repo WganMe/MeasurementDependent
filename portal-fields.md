@@ -272,7 +272,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2336 KB
+### `source_code_and_results.zip` — 108 files, 2338 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 
@@ -314,7 +314,7 @@ The portal refuses the submission with *"More reviewer suggestions needed — Pl
 
 Extracted from the PDF and normalised where a plain text box would not expect the character:
 
-- Abstract: U+2212 − replaced x1 with '-'
+- Abstract: no character substitutions were needed
 - Title: no character substitutions were needed
 
 The en dash in `2013-2026` and `Clark-Evans`, and the curly apostrophe in `year's`, are kept as they are: they are ordinary published typography and PeerJ uses them, so replacing them would alter the text rather than repair it. The minus sign is different — U+2212 is a mathematical operator rather than the keyboard hyphen, and a plain field can reject or mis-render it, so `-99 m per year` uses the ASCII hyphen-minus.

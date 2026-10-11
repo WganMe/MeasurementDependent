@@ -29,6 +29,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter, NullFormatter
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from analysis_common import load_years                       # noqa: E402
@@ -49,7 +50,7 @@ def main() -> int:
 
     plt.rcParams.update({"font.size": 9, "pdf.fonttype": 42, "axes.grid": True, "grid.alpha": 0.3,
                          "figure.dpi": 300, "savefig.bbox": "tight",
-                         "axes.axisbelow": True})
+                         "axes.axisbelow": True, "axes.unicode_minus": False})
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.4, 3.1))
 
     # ---------------------------------------------------------------- panel A
@@ -71,6 +72,15 @@ def main() -> int:
     ax1b.tick_params(axis="y", colors="#55a868")
     ax1b.set_yscale("log")
     ax1b.set_ylim(0.02, 1.2)
+    # A log axis labels its decades with mathtext ("10^{-1}"), and mathtext sets its
+    # minus from the math-symbol font regardless of axes.unicode_minus. That glyph has
+    # no ToUnicode entry in the embedded subset, so the tick extracts as "101" instead
+    # of "10-1" once a production pipeline re-encodes the PDF. Plain decimals avoid
+    # mathtext altogether and read better on a p-value axis.
+    _fmt = ScalarFormatter()
+    _fmt.set_scientific(False)
+    ax1b.yaxis.set_major_formatter(_fmt)
+    ax1b.yaxis.set_minor_formatter(NullFormatter())
     ax1.grid(False)
     ax1b.grid(False)
     ax1.set_title("(a) the tolerance is a continuum, not a plateau", fontsize=8.4)

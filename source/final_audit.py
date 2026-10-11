@@ -211,3 +211,78 @@ for name in ("Ripley", "Donnelly", "spatstat", "Besag", "van Lieshout", "Shannon
     else:
         print("    *** %-12s first named at main.tex line ~%-4d with NO citation in its "
               "paragraph" % (name, line))
+
+
+# ---------- 8. the text layer survives PeerJ's font-map rewrite ----------
+# PeerJ's production pipeline rewrites the ToUnicode map of the CM math-symbol fonts. The
+# PAGE then still looks right -- this is invisible in print -- but the extracted text
+# reports a letter or a digit in place of the glyph. Measured on the reviewing PDF PeerJ
+# generated for this very submission (peerj-reviewing-150843-v0.pdf):
+#
+#     ours  "-99 m per year"  ->  bytes e2 88 92 39 39   (U+2212 MINUS SIGN)
+#     PeerJ "299 m per year"  ->  bytes 32 39 39         (the digit TWO)
+#
+# and the same rewrite turned U+2264 into "f", U+2265 into "g", U+2192 into "3", U+25E6
+# into a cedilla, and the figure tick "-200" into "2200". A reader, a search engine, a
+# reference manager or a screen reader sees the corrupted string, and a published paper
+# that reports negative quantities reads as if it reported positive ones.
+#
+# SEVERITY. Two classes of glyph have to be told apart:
+#
+#   SIGN-INVERTING. The minus. "−99" published as "299" states the OPPOSITE of the result,
+#   so this is a factual error and the build must fail if it ever comes back. Fixed at the
+#   source with \DeclareMathSymbol (text) and axes.unicode_minus (figures).
+#
+#   NOTATION. U+2264 <=, U+2265 >=, U+2192 ->, U+25E6 degree, U+2217 *, U+2208 in. These are
+#   relations and operators inside equations, not reported quantities; the PAGE prints
+#   correctly and a reader is never misled. No base text font carries them, so they cannot
+#   be re-sourced the way the minus was. They are REPORTED here, not failed on, so the
+#   residual risk is visible in every build rather than silently absent. The three that
+#   occur in PROSE or in a table -- >= and <= in the method table, -> in the results
+#   sentence, and the degree sign in the projection paragraph -- were rewritten to ASCII or
+#   to \textdegree and no longer appear at all.
+print("\n[8] TEXT LAYER SURVIVES THE PRODUCTION PIPELINE")
+
+import subprocess as _sp
+
+SIGN_INVERTING = {0x2212: "MINUS SIGN"}
+NOTATION = {
+    0x2264: "LESS-THAN OR EQUAL",
+    0x2265: "GREATER-THAN OR EQUAL",
+    0x2192: "RIGHTWARDS ARROW",
+    0x25E6: "WHITE BULLET (math-mode degree)",
+    0x2217: "ASTERISK OPERATOR",
+    0x2208: "ELEMENT OF",
+    0x221A: "SQUARE ROOT",
+}
+
+_fail = 0
+for _pdf in (ROOT / "peerj-main.pdf", ROOT / "peerj-si.pdf"):
+    _t = _sp.run(["pdftotext", str(_pdf), "-"], capture_output=True, text=True).stdout
+    _bad = ["U+%04X %s x%d" % (cp, nm, _t.count(chr(cp)))
+            for cp, nm in SIGN_INVERTING.items() if _t.count(chr(cp))]
+    if _bad:
+        _fail += 1
+        print("    *** %s still carries a sign-inverting glyph:" % _pdf.name)
+        for _b in _bad:
+            print("        %s" % _b)
+    else:
+        print("    %s: no sign-inverting glyph (the minus is safe)" % _pdf.name)
+    _note = ["U+%04X %s x%d" % (cp, nm, _t.count(chr(cp)))
+             for cp, nm in NOTATION.items() if _t.count(chr(cp))]
+    if _note:
+        print("        notation only (visually correct, extracts as a letter): %s"
+              % ", ".join(_note))
+
+_fig_bad = 0
+for _fig in sorted((ROOT / "figures").glob("*.pdf")):
+    _n = _sp.run(["pdftotext", str(_fig), "-"], capture_output=True,
+                 text=True).stdout.count(chr(0x2212))
+    if _n:
+        _fig_bad += _n
+        print("    *** %s: %d x U+2212 in an axis label (axes.unicode_minus)" % (_fig.name, _n))
+print("    figure axis labels: %d sign-inverting glyph(s)" % _fig_bad)
+
+if _fail or _fig_bad:
+    print("\n    BUILD FAILS: a minus sign is not safe for PeerJ's pipeline.")
+    sys.exit(1)

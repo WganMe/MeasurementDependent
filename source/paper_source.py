@@ -254,8 +254,20 @@ def convert_supplement(src: pathlib.Path, out: pathlib.Path, venue: str) -> str:
     head = (
         "\\documentclass[fleqn,10pt]{wlpeerj}\n"
         "\\usepackage{siunitx}\n"
+        # textcomp supplies the TEXT-font degree sign (\\textdegree), U+00B0 in Latin-1,
+        # which survives PeerJ's font-map rewrite; the math-font $^\\circ$ (U+25E6) does
+        # not. See convert_to_peerj.py for the full evidence.
+        "\\usepackage{textcomp}\n"
         "\\usepackage{float}\n"          # the supplement uses [H] floats
         "\\usepackage{adjustbox}\n"      # wide tables scaled to the column
+        # SET EVERY MINUS FROM THE OPERATORS FONT'S ASCII HYPHEN-MINUS. The supplement
+        # prints 99 minus signs, and PeerJ's production pipeline rewrites the ToUnicode
+        # map of the CM math-symbol font the default minus comes from, so those signs
+        # leave the PDF as digits in the text layer ("-99" becomes "299"). ASCII survives
+        # the rewrite because every encoding maps it identically. This is the same fix and
+        # the same evidence as convert_to_peerj.py; the supplement needs its own copy
+        # because it has its own preamble and is published as its own file.
+        "\\DeclareMathSymbol{-}{\\mathbin}{operators}{\"2D}\n"
         "\\usepackage[hidelinks]{hyperref}\n"
         "\\usepackage{url}\n"
         "\\usepackage{xurl}\n"

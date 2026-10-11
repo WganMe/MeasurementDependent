@@ -84,6 +84,53 @@ def main() -> int:
     # backslash in a replacement string as an escape.
     PEERJ_PREAMBLE = ("\\documentclass[fleqn,10pt,lineno]{wlpeerj}\n"
                       "\\usepackage{siunitx}\n"
+                      # textcomp supplies the TEXT-font degree sign (\\textdegree), which
+                      # is U+00B0 in Latin-1 and therefore survives PeerJ's font-map
+                      # rewrite. The math-font alternative ($^\\circ$, U+25E6) does not:
+                      # the same rewrite that turns the minus into a digit turns the
+                      # degree sign into a cedilla. See the minus note below.
+                      "\\usepackage{textcomp}\n"
+                      # MAKE EVERY MINUS AN ASCII HYPHEN-MINUS, because PeerJ's own PDF
+                      # pipeline CORRUPTED OURS. This was a real defect, found by comparing
+                      # the reviewing PDF PeerJ generated (peerj-reviewing-150843-v0.pdf)
+                      # against ours:
+                      #
+                      #   ours  : "the multiscale decline is U+2212 9 9 m per year"
+                      #   PeerJ : "the multiscale decline is 2 9 9 m per year"
+                      #
+                      # The bytes confirm it: ours is e2 88 92 (U+2212 MINUS SIGN), theirs
+                      # is 32 (the digit TWO). A published PDF would then state positive
+                      # quantities where the paper reports negative ones -- "-99 m per year"
+                      # published as "299 m per year".
+                      #
+                      # The cause is the GLYPH'S FONT. The math minus comes from CMSY10, a
+                      # Type 1 math-symbol font. PeerJ's pipeline rewrites that font's
+                      # ToUnicode map: the codes whose Unicode target is ASCII or Latin-1
+                      # are kept, and every code whose target is a maths symbol (U+2212,
+                      # U+2264, U+221A, U+2192, U+2208, U+2217) is replaced with whatever the
+                      # font's internal encoding happens to say. So the PAGE still looks
+                      # right -- this is a text-layer defect, invisible in print -- but a
+                      # text extractor, a search engine or a screen reader reads a digit.
+                      # The same rewrite cost us U+2264 <=, U+2265 >=, U+221A sqrt, U+2192 ->
+                      # and U+25E6 for the degree sign, so it is a class of defect, not one
+                      # character.
+                      #
+                      # ASCII is immune to the rewrite because every encoding maps it the
+                      # same way. \\DeclareMathSymbol re-points the math minus at the
+                      # operators font's ASCII hyphen-minus (slot "2D).
+                      #
+                      # Rejected alternatives, both measured:
+                      #   - \\mathcode`\\-="8000 with an active definition routes the minus
+                      #     through \\textminus, but raises "! Bad mathchar (32768)" at
+                      #     \\begin{document} because a mathcode of 0x8000 is out of range.
+                      #   - leaving the default in place, which keeps the proper U+2212 glyph
+                      #     but is exactly what PeerJ's pipeline mangles.
+                      #
+                      # Verified after the change: CMSY10 is no longer set from any text
+                      # minus, and a Ghostscript round trip (gs 9.54.0, the same family as
+                      # PeerJ's 9.56.1) leaves the byte 2d ("-"), which no encoding can
+                      # confuse with a digit.
+                      "\\DeclareMathSymbol{-}{\\mathbin}{operators}{\"2D}\n"
                       "\\usepackage[hidelinks]{hyperref}\n"
                       # PeerJ's review column is narrow (left=5cm in wlpeerj.cls) and the
                       # text has long unbreakable tokens (the grant number, DOI URLs);

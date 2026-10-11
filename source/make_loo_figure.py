@@ -58,7 +58,7 @@ def main() -> int:
 
     plt.rcParams.update({"font.size": 8.5, "pdf.fonttype": 42, "axes.grid": True, "grid.alpha": 0.3,
                          "figure.dpi": 300, "savefig.bbox": "tight",
-                         "axes.axisbelow": True})
+                         "axes.axisbelow": True, "axes.unicode_minus": False})
     fig, ax = plt.subplots(figsize=(5.6, 3.2))
     labels = [r[0] for r in rows]
     vals = [r[1] for r in rows]

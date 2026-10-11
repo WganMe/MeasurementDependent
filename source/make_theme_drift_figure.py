@@ -26,7 +26,8 @@ OUT = HERE / "figures"
 OUT.mkdir(exist_ok=True)
 
 plt.rcParams.update({"font.size": 9, "axes.grid": True, "grid.alpha": 0.3,
-                     "figure.dpi": 300, "savefig.bbox": "tight", "axes.axisbelow": True})
+                     "figure.dpi": 300, "savefig.bbox": "tight", "axes.axisbelow": True,
+                     "axes.unicode_minus": False})
 
 Y = [r["year"] for r in D["per_year"]]
 V = [r["vehicle_pct"] for r in D["per_year"]]

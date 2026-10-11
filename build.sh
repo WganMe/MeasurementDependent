@@ -62,6 +62,18 @@ done
 # 4. bundle
 python3 make_peerj_bundle.py
 
+# 4b. fail the local build on a sign-inverting glyph. PeerJ's production pipeline rewrites the
+# ToUnicode maps of the CM math-symbol fonts, so a minus set from CMSY10 left their reviewing
+# PDF as the digit "2" ("−99 m per year" published as "299"). `final_audit.py` guards this and
+# the figure axis labels; run it here too so the defect cannot reach a commit that CI has not
+# yet seen. It exits non-zero only for a sign-inverting glyph, not for the notation glyphs it
+# reports.
+python3 source/final_audit.py > /tmp/peerj-final-audit.txt || {
+    echo "BUILD FAILED: final_audit.py rejected the documents; see /tmp/peerj-final-audit.txt" >&2
+    tail -20 /tmp/peerj-final-audit.txt >&2
+    exit 1
+}
+
 # 5. regenerate the portal fields, which now describe the BUILT archives.
 # This generator runs at step 1b so the portal text exists before the documents are typeset,
 # but its Title/Legend section reads file counts out of the bundle -- which by definition does

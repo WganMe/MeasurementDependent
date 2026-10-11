@@ -21,6 +21,14 @@ import matplotlib
 # Type 3 bitmap fonts are rejected by journal production and break pdftex
 # microtype; embed TrueType outlines instead (matplotlib default is 3).
 matplotlib.rcParams["pdf.fonttype"] = 42
+# SET THE TICK-LABEL MINUS FROM THE FONT'S ASCII HYPHEN-MINUS. Matplotlib otherwise
+# labels negative ticks with U+2212 MINUS SIGN. The subset of DejaVuSans that gets
+# embedded for the axes carries no ToUnicode entry for that glyph (verified: the
+# embedded subsets list no 0x2212 target), so anything that re-encodes the PDF -- as
+# PeerJ's production pipeline does -- drops the sign and a reader, a search engine or
+# a screen reader sees "2200" where the axis reads "-200". The ASCII hyphen survives
+# every encoding. Visual difference is a slightly shorter minus; the axis stays correct.
+matplotlib.rcParams["axes.unicode_minus"] = False
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np

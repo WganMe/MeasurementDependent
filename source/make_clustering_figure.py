@@ -65,7 +65,7 @@ def main() -> int:
 
     plt.rcParams.update({"font.size": 9, "pdf.fonttype": 42, "axes.grid": True, "grid.alpha": 0.3,
                          "figure.dpi": 300, "savefig.bbox": "tight",
-                         "axes.axisbelow": True})
+                         "axes.axisbelow": True, "axes.unicode_minus": False})
     fig, ax = plt.subplots(figsize=(5.6, 3.3))
     ax.plot(Y, rare_ser, color="0.7", lw=1.0, ls=":", marker="o", ms=2.6,
             zorder=2, label="rarefied to $N=41$")

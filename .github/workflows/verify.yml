@@ -270,10 +270,20 @@ jobs:
       # cites and any named method whose first mention carries no citation -- the latter was a
       # real defect until this was added, and it appeared in neither the neutral build nor any
       # other check. It is informational for the uncited entries (dropping or citing one is an
-      # author decision) but it fails on an unattributed method.
-      - name: Audit the manuscript for uncited entries and unattributed methods
+      # author decision) but it fails on an unattributed method. It ALSO fails if a
+      # sign-inverting glyph (the minus sign) reaches the PDF: PeerJ's production pipeline
+      # rewrites the CM math-symbol font maps, and "−99" came back as "299" from the reviewing
+      # PDF they generated for this submission.
+      #
+      # `pipefail` IS REQUIRED HERE. Without it the step's status is `tee`'s, which is always
+      # 0, so the audit's own `sys.exit(1)` was being swallowed and a corrupted PDF could
+      # pass CI. Measured: with the pipe alone the step goes green on an exit-1 audit.
+      - name: Audit the manuscript for uncited entries, unattributed methods, unsafe glyphs
         working-directory: .
-        run: python3 source/final_audit.py | tee -a "$GITHUB_STEP_SUMMARY"
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 source/final_audit.py | tee -a "$GITHUB_STEP_SUMMARY"
       # The bundle is what gets uploaded to the portal. Built here so a broken bundle fails
       # CI rather than being discovered at submission time. It refuses to build if a figure
       # is cited but missing, if the Figure N numbering disagrees with the converter, if the

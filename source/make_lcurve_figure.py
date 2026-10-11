@@ -55,7 +55,7 @@ def main() -> int:
 
     plt.rcParams.update({"font.size": 9, "pdf.fonttype": 42, "axes.grid": True, "grid.alpha": 0.3,
                          "figure.dpi": 300, "savefig.bbox": "tight",
-                         "axes.axisbelow": True})
+                         "axes.axisbelow": True, "axes.unicode_minus": False})
     fig, ax = plt.subplots(figsize=(5.6, 3.3))
     for y in years:
         ax.plot(RS, curves[y], color="0.80", lw=0.7, zorder=1)

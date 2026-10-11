@@ -766,10 +766,10 @@ deduplication, but the magnitude is set partly by the unit: the endpoint fall is
 identifiers, \rHullDrop\% on identifiers on the fixed hull, and \locHullDrop\% on locations.
 
 Local coordinates use an equirectangular projection about
-($\varphi_0 = 54.97^{\circ}$\,N, $\lambda_0 = 1.61^{\circ}$\,W). The instruments of this network
+($\varphi_0 = 54.97$\textdegree\,N, $\lambda_0 = 1.61$\textdegree\,W). The instruments of this network
 span about \winEW\,km east--west and \winNS\,km north--south, not the \SI{20}{\kilo\meter} of a
 compact city centre, so the projection is chosen for that full extent, not for a city.
-At the latitude range the instruments occupy, $54.52^{\circ}$--$55.40^{\circ}$\,N, the
+At the latitude range the instruments occupy, $54.52$\textdegree--$55.40$\textdegree\,N, the
 $x$-scale of the projection varies by at most $1.1\%$ across the window, which is small relative
 to the effects measured; the departure from a true metric is therefore bounded and stated. The
 \SI{60}{\kilo\meter} cut described above is the only spatial filter applied. It removes seven
@@ -880,13 +880,13 @@ not one. \emph{The general-region alternative}, \textsf{spatstat}'s \texttt{cdf}
 carries no rectangular assumption: it compares the observed mean nearest-neighbour distance with
 the mean for random points drawn in the same window.
 
-The three readings are as follows. The raw index falls \locHullDrop\% ($\num{0.367} \to
-\num{0.202}$; slope $-0.0107$ per year, $p = \hullLocOlsP$); the \texttt{cdf} correction
+The three readings are as follows. The raw index falls \locHullDrop\% (\num{0.367} to
+\num{0.202}; slope $-0.0107$ per year, $p = \hullLocOlsP$); the \texttt{cdf} correction
 steepens the trajectory, to \num{57.2}\% ($-0.0159$ per year, $p < 10^{-4}$), though it
 \emph{raises} the level rather than lowering it in the two earliest years
 (\num{0.384} against \num{0.367} in 2013, \num{0.332} against \num{0.316} in 2014, and lower
-from 2015 onward); Donnelly flattens it slightly, to \num{41.9}\% ($\num{0.341} \to
-\num{0.198}$), which is a \emph{smaller} fall than the raw index, not a larger one. The three
+from 2015 onward); Donnelly flattens it slightly, to \num{41.9}\% (\num{0.341} to
+\num{0.198}), which is a \emph{smaller} fall than the raw index, not a larger one. The three
 therefore do not agree on the magnitude, and the earlier statement in this paper that both
 corrections fall faster than the raw index was wrong: only \texttt{cdf} does. All three fall, and
 the direction is robust to the edge treatment; the magnitude is not. We keep the raw index as
@@ -1066,7 +1066,7 @@ undesirable. It \emph{is} sensitive to the study-area definition, which is why t
 Does \emph{not} imply that a theme is over- or under-measured relative to need; a city
 may require more traffic counters than seismometers. \\
 \addlinespace
-\noindent Presence in year $y$ & Instrument appears in $\geq 1$ file that year &
+\noindent Presence in year $y$ & Instrument appears in one or more files that year &
 A silent instrument is \emph{indistinguishable from} a decommissioned one, and presence
 does not imply continuous operation within the year. \\
 \bottomrule
@@ -1456,7 +1456,7 @@ and it is a bound on the artefact, not a measurement of the deployment.
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{lrrrr}
 \toprule
- & \multicolumn{2}{c}{High precision ($\geq12$ dp)} & \multicolumn{2}{c}{Low precision ($\leq6$ dp)} \\
+ & \multicolumn{2}{c}{High precision (12 or more dp)} & \multicolumn{2}{c}{Low precision (6 or fewer dp)} \\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}
 Year & $N$ & Collapse & $N$ & Collapse \\
 \midrule
