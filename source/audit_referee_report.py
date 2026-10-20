@@ -162,6 +162,18 @@ add("M7 rarefaction anchors per unit",
     % (cnt(r"\b41\b"), cnt(r"\b39\b"), cnt(r"raref")))
 
 # ---------------------------------------------------------------- RESULTS
+# R0 CROSS-TABLE CONSISTENCY. The referee found the exact-location series quoted
+# as 45 % in Tables 2/4/5 (from results_trendtests.json, rounding to 1e-1 m) and
+# 45.3 % in Table 6 (from results_neardup.json, clustering at 1 mm). Both are
+# real computations on slightly different point sets -- 561 vs 566 locations in
+# 2026. The trend is IDENTICAL under either (slope -0.0107..-0.0108, p 0.035..
+# 0.037), so the right answer is to state which definition each uses, not to
+# change a number. This checks that the disclosure is present.
+_disc = has(r"clusters at \$r = \\SI\{1\}\{\\milli\\meter\}")
+add("R0 exact-location dedup defined (Table 6)",
+    _disc,
+    "Table 6 states its dedup precision and why it differs from Table 2: %s"
+    % _disc)
 # R1 turnover formulas written out. The reviewer asked for both, and Turnover
 # appears in a table column, so check for the inline definition in the prose.
 _inline_turn = has(r"\$\\mathrm\{Turnover\}_y\s*=")
