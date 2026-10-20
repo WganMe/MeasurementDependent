@@ -827,6 +827,56 @@ def main() -> int:
         doc.append("```\n")
 
     doc.append("### Section 2 — Supplemental Files (the three archives)\n")
+
+    # ------------------------------------------------------------------
+    # THE SUPPLEMENTARY PDF NEEDS A TITLE AND LEGEND TOO.
+    #
+    # The portal asks for a title and legend for EVERY uploaded file, not only for
+    # figures. This entry was missing: the four figures and the three archives each
+    # carried one, so the supplement was the one upload a submitter had to invent
+    # wording for at the form. Everything below is read from the built supplement,
+    # not typed: the page count from pdfinfo and the section titles and table count
+    # from its own text, so the legend cannot describe a supplement that has changed.
+    _si_pdf = HERE.parent / "peerj-si.pdf"
+    _si_pages = "?"
+    _si_sections = []
+    _si_tables = 0
+    if _si_pdf.exists():
+        _pi = subprocess.run(["pdfinfo", str(_si_pdf)], capture_output=True, text=True).stdout
+        _m = re.search(r"^Pages:\s+(\d+)", _pi, re.M)
+        if _m:
+            _si_pages = _m.group(1)
+        _txt = subprocess.run(["pdftotext", "-layout", str(_si_pdf), "-"],
+                              capture_output=True, text=True).stdout
+        _si_tables = len(set(re.findall(r"Table (S\d+)", _txt)))
+        # THE LEGEND QUOTES THE SUPPLEMENT'S OWN ABSTRACT rather than reconstructing
+        # section titles. Two earlier attempts rebuilt a list of "S1 ...; S2 ..." from
+        # the headings and both produced rubbish: the headings are set in CAPITALS and
+        # wrap across lines, and a heading split as "TWO EXCLU-" / "SION SWEEPS" came
+        # out as "Exclu- Sion Sweeps", while the case-folding left "And", "The" and
+        # "For" capitalised because they were already capitals in the source. The
+        # document describes itself accurately and in its own words, so the legend
+        # takes that sentence verbatim and counts its sections and tables.
+        _abs = re.search(r"ABSTRACT\s*(.*?)(?:\n\s*\n)", _txt, re.S)
+        _si_abstract = re.sub(r"\s+", " ", _abs.group(1)).strip() if _abs else ""
+        _si_sections = re.findall(r"^\s{0,6}S\d+\s+[A-Z]", _txt, re.M)
+    doc.append("### `2_supplemental_information_S1.pdf` — %s pages, %d tables, %d sections\n"
+               % (_si_pages, _si_tables, len(_si_sections)))
+    doc.append("**File type: Other** — the portal's own label for a supplemental document that "
+               "is neither a figure nor source code. Title is 88 of the 200 characters:\n")
+    doc.append("```text")
+    doc.append("Title:  Supplemental Information S1: robustness forks, sensitivity sweeps and "
+               "estimator controls")
+    doc.append("")
+    doc.append("Legend: " + _si_abstract)
+    doc.append("```\n")
+    doc.append(
+        "PeerJ's guidance for this field says *\"Do not enter Dataset 1, Table 1 etc. (we will add "
+        "that for you)\"* and *\"This is the published legend.\"* So the title names the document "
+        "rather than its place in a series, and the legend describes it rather than repeating the "
+        "manuscript. `Supplemental Information S1` is not a placeholder of that kind: it is the "
+        "document's own name, printed on its title page, and every main-text pointer uses it.\n")
+
     for name, kind, title, blurb in (
         ("source_main.zip", "LaTeX source file",
          "LaTeX source of the manuscript with its bibliography and the four cited figures",
@@ -900,7 +950,12 @@ def main() -> int:
                "is generated, so a change to the paper's abstract must be followed by "
                "`./build.sh` to regenerate it.\n")
 
-    (OUT / "portal-fields.md").write_text("\n".join(doc) + "\n", encoding="utf-8")
+    # `doc` already ends with an empty element for most sections, so joining and
+    # appending another "\n" left the file ending in a blank line. markdownlint's
+    # MD012 flags that, and a document ending in a stray blank is a small sign the
+    # generator is not tidying up after itself. rstrip first, then terminate once.
+    (OUT / "portal-fields.md").write_text(
+        "\n".join(doc).rstrip("\n") + "\n", encoding="utf-8")
 
     print("wrote %s" % (OUT / "portal-fields.md"))
     print("  title       %3d chars (limit %d)" % (len(title), TITLE_LIMIT))

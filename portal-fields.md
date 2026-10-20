@@ -252,6 +252,18 @@ Legend: Two panels. (a) The fixed reference hull that all years are measured aga
 
 ### Section 2 — Supplemental Files (the three archives)
 
+### `2_supplemental_information_S1.pdf` — 17 pages, 41 tables, 19 sections
+
+**File type: Other** — the portal's own label for a supplemental document that is neither a figure nor source code. Title is 88 of the 200 characters:
+
+```text
+Title:  Supplemental Information S1: robustness forks, sensitivity sweeps and estimator controls
+
+Legend: Supplemental Information S1 for the manuscript. This document carries the robustness forks, sensitivity sweeps and estimator controls that the main text summarises but does not tabulate. Sections and tables are numbered with an S prefix so the main-text pointers resolve against this document.
+```
+
+PeerJ's guidance for this field says *"Do not enter Dataset 1, Table 1 etc. (we will add that for you)"* and *"This is the published legend."* So the title names the document rather than its place in a series, and the legend describes it rather than repeating the manuscript. `Supplemental Information S1` is not a placeholder of that kind: it is the document's own name, printed on its title page, and every main-text pointer uses it.
+
 ### `source_main.zip` — 7 files, 121 KB
 
 **File type: LaTeX source file** — Title is 79 of the 200 characters:
@@ -272,7 +284,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2341 KB
+### `source_code_and_results.zip` — 108 files, 2342 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 
@@ -320,4 +332,3 @@ Extracted from the PDF and normalised where a plain text box would not expect th
 The en dash in `2013-2026` and `Clark-Evans`, and the curly apostrophe in `year's`, are kept as they are: they are ordinary published typography and PeerJ uses them, so replacing them would alter the text rather than repair it. The minus sign is different — U+2212 is a mathematical operator rather than the keyboard hyphen, and a plain field can reject or mis-render it, so `-99 m per year` uses the ASCII hyphen-minus.
 
 Verify by eye against the manuscript's own abstract before pasting; this file is generated, so a change to the paper's abstract must be followed by `./build.sh` to regenerate it.
-
