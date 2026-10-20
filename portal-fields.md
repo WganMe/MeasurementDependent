@@ -130,7 +130,7 @@ Drafting and editing LaTeX and typesetting support. The tool was not used to com
 The form requires complete sentences and says: *"If there are no competing interests then you must explicitly state this fact."* This manuscript has a **non-financial** interest to declare, and it is declared in the paper, so the form must not say "no competing interests" -- that would contradict the published statement. Paste:
 
 ```text
-The authors prepared the benchmarking artifact whose provenance this paper audits, so the authors have a non-financial interest in the audit it receives; the audit is disclosed both in that section and here so that a reader can weight it. Apart from that, the authors declare no competing interests. The Newcastle Urban Observatory data the artifact derives from are independently published by Newcastle University (2020).
+The authors prepared the benchmarking artifact whose provenance this paper audits, so the authors have a non-financial interest in the audit it receives; the audit is disclosed both in that section and here so that a reader can weight it. Apart from that, the authors declare no competing interests. The Newcastle Urban Observatory data the artifact derives from are independently published by James et al. (2020).
 ```
 
 ## Funding statement
@@ -252,7 +252,7 @@ Legend: Two panels. (a) The fixed reference hull that all years are measured aga
 
 ### Section 2 — Supplemental Files (the three archives)
 
-### `source_main.zip` — 7 files, 120 KB
+### `source_main.zip` — 7 files, 121 KB
 
 **File type: LaTeX source file** — Title is 79 of the 200 characters:
 
@@ -272,7 +272,7 @@ Title:  LaTeX source of the supplementary information document and its bibliogra
 Legend: LaTeX source used to typeset the supplementary information. It holds the supplement file, its BIB bibliography and the journal class file. It typesets as it stands.
 ```
 
-### `source_code_and_results.zip` — 108 files, 2340 KB
+### `source_code_and_results.zip` — 108 files, 2341 KB
 
 **File type: data or code** — Title is 83 of the 200 characters:
 

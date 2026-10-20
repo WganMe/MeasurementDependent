@@ -80,7 +80,13 @@ def main() -> int:
     ax.set_xlabel("year")
     ax.set_ylabel("per-year bounding box, % of hull area")
     ax.set_title("(b) the network fills a growing share of the frame")
-    ax.set_ylim(0, 112)
+    # THE LIMIT IS DERIVED FROM THE DATA, NOT TYPED. A previous version pinned
+    # ylim at 112, which clipped the curve where the per-year bounding box
+    # exceeds the convex hull -- 146.9 % in 2021, because the box is axis-aligned
+    # and the hull is not. The reviewer caught the clipped top border. Deriving
+    # the limit means the axis cannot fall behind the data again.
+    _peak = max(frac)
+    ax.set_ylim(0, max(112.0, _peak * 1.08))
     ax.grid(alpha=0.25, lw=0.5)
     for y, f in ((2013, frac[0]), (2021, frac[years.index(2021)])):
         ax.annotate("%.0f%%" % f, (y, f), textcoords="offset points",

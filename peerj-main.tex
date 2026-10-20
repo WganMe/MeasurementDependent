@@ -691,14 +691,16 @@ $\times$ twelve months. A file holds one theme for one month, so a month with se
 themes publishes several files, and the file count per year rises and falls with both the
 number of themes and the publishing regime. The counts run from \num{11} files in 2013 to a
 peak of \num{75} in 2018, back to \num{41} in 2025 and \nFilesLast{} in the partial 2026, and the
-\nArchiveFiles{} is their sum. Where the file inventory itself moves, as it does between 2017 and 2018, we
+\nArchiveFiles{} is their sum. Two inventories are in use: the deposited snapshot, pinned by
+SHA-256, holds \num{884} files of which \num{257} are 2026, while the census that reads
+coordinates records \num{881} and \num{254}; the difference is 2026 only, and each is quoted for
+what it counts. Where the file inventory itself moves, as it does between 2017 and 2018, we
 treat that as a platform-side change and not as a change in the city
 (the theme-discontinuity analysis). The 2026 slice is partial by
 construction: the archive held nine months, and 2026 values are marked as partial wherever they
 are compared with a complete year. Each record carries twelve
 fields, of which the instrument identity and location are \texttt{Sensor~Name},
 \texttt{Raw~ID}, and the two centroid coordinates.
-
 An instrument is counted as \textbf{present in year $y$} if it appears in at least one
 archive file for $y$. This is an observation-based definition, not a vendor deployment
 date, and we adopt it deliberately because deployment metadata for individual
@@ -936,7 +938,12 @@ from the effect the uncorrected index shows, with half of that margin reported a
 reading, and a minimum detectable effect at \SI{80}{\percent} power in place of a post-hoc power
 computed at the observed slope. \emph{Cluster inference} is against an
 \emph{inhomogeneous} null that preserves the first-order intensity, because complete spatial
-randomness mainly restates that a city network is not uniform, which is not in question.
+randomness mainly restates that a city network is not uniform, which is not in question. The
+intensity surface is a Gaussian kernel of \SI{750}{\meter} bandwidth fitted to each year's own
+points, resampled \num{199} times at fixed $N$ proportional to it, with the same border-corrected
+$L(r)$ used as on the observed pattern so like is compared with like; the bandwidth is stated
+because the result depends on it, and the surface is fitted to the points it tests, so the
+separation is a description rather than an independent test.
 \emph{Rarefaction} subsamples every year to a common sample size before a trend is read from it,
 with both the Newey--West and the rank-based Theil--Sen interval reported; it is applied to the
 count-based indices and to the clustering series, and the unrarefied trends are reported beside
@@ -1248,7 +1255,8 @@ correction goes the \emph{other} way: measuring each year on its own hull \emph{
 decline to \rOwnHull\%, because a small early footprint raises the early-year index. Combine them
 and the decline returns: on the merged unit and each year's own hull the fall is
 \num{38.6}\% (slope \num{-0.0201}, $p = 0.004$). The four configurations are set out in
-Table~\ref{tab:factorial}, and they do not add up in any direction---one control removes the
+Table~\ref{tab:factorial}, together with the identifier baseline and the published-archive
+figure they are measured from; they do not add up in any direction---one control removes the
 effect and the other restores it. Registration and support are therefore reported as a
 \emph{sensitivity range} (\locHullDrop\% down to \num{4.3}\% on the fixed hull, and
 \rOwnHull\% under support matching), not as a partition. Equation~\eqref{eq:decomp} likewise
@@ -1406,7 +1414,10 @@ The merge radius would be a free choice only if the co-location had no origin we
 It has one, and the archive records it. Coordinates are published to two different resolutions:
 \num{36.8}\% of identifier--year records are written to six decimal places or fewer, a quantum of
 about \SI{0.11}{\meter} in latitude, and \num{42.8}\% to twelve places or more, where the printed
-value is sub-millimetre. These are two publishing paths, not two kinds of instrument.
+value is sub-millimetre. These are two publishing paths, not two kinds of instrument. The
+remaining \num{20.5}\% sit between seven and eleven places and belong to neither class, so this is
+a description of the two dominant paths and not a partition of the record; Table~\ref{tab:precision}
+counts the two classes only, which is why its annual totals fall below the identifier count.
 
 Pooled over the record, \num{62.5}\% of high-precision records have a neighbour within
 \SI{25}{\meter} against \num{32.6}\% of low-precision records, so co-location is roughly twice as
@@ -1536,7 +1547,7 @@ The platform changed what it published twice, and both changes are visible in th
 than in the city. Vehicle share collapses to 16.8\% in 2018 on identifiers (17.4\% on locations)
 because the vehicle files for 2017 carry \texttt{Cars} and \texttt{Parking~Spaces} and the 2018
 files do not; a reader using 2018 as representative of that theme would be reading the
-publishing schema. Archive file counts run 11--75 per year to 2025 and then jump to \textbf{254}
+publishing schema. Archive file counts run 11--75 per year to 2025 and then jump to \textbf{257}
 in 2026, when the platform began publishing monthly files, not bundled ones, while the
 instrument roster is continuous (706 against 707), so the discontinuity is in file granularity
 and not in the deployment. Neither propagates into the fitted trend: on the fixed hull the slope
@@ -1556,7 +1567,7 @@ Supplemental Information.
 \label{sec:disc-longitudinal}
 
 A study that uses this observatory at a single moment is using one geometry from a series whose
-size grew \growth$\times$ and whose apparent clustering fell by between 4.3 and 67 per cent
+size grew \growth$\times$ and whose apparent clustering fell by between 4.3\,\% and 67\,\%
 depending on how co-located registrations are counted and which window is used. The practical
 warning is therefore not a number but the dependence itself: a spatial result computed against
 this platform is conditioned on the year, the frame and the unit, and that conditioning is not
@@ -1732,7 +1743,7 @@ grant number: \uquGrant{}.
 paper audits, so the authors have a non-financial interest in the audit it receives; the audit
 is disclosed both in that section and here so that a reader can weight it. Apart from that, the
 authors declare no competing interests. The Newcastle Urban Observatory data the artifact
-derives from are independently published by Newcastle University~\citeyearpar{uo_archive}.
+derives from are independently published by \citet{uo_archive}.
 
 \subsection*{Author Contributions}
 \noindent \noindent Ammar Arbaaeen: Funding acquisition, Writing -- review and editing. Wael Alnahari: Conceptualization, Methodology, Software, Validation, Formal analysis, Data curation, Writing -- original draft, Writing -- review and editing, Visualization, Project administration. Tawfiq Hasanin: Validation, Writing -- review and editing. Ammar Alsaig: Writing -- review and editing. Wasem Alnahri: Conceptualization, Validation, Writing -- review and editing.

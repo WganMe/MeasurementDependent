@@ -42,9 +42,18 @@ def main() -> int:
     s = D["silences_by_year"]
     ax.bar(Y, [b.get(str(y), 0) for y in Y], width=0.36, alpha=0.30,
            color="#55a868", label="first seen in this year")
+    # DEPARTURES ARE DRAWN NEGATIVELY, WHICH IS WHY THE AXIS GOES BELOW ZERO.
+    # The reviewer read the resulting -200..800 span as an axis fault on counts
+    # that cannot be negative. The bars are a mirrored comparison, so the negative
+    # side is deliberate; but the axis carried no zero line label and the trough
+    # was empty space, which is what made it read as a fault. The floor is now
+    # pinned to the deepest bar plus a small margin, so the axis cannot drift into
+    # empty space, and the zero line is labelled.
     ax.bar(Y, [-s.get(str(y), 0) for y in Y], width=0.36, alpha=0.30,
            color="#c44e52", label="last seen in this year")
     ax.axhline(0, color="k", lw=0.6)
+    _deep = max(s.values()) if s else 0
+    ax.set_ylim(-_deep * 1.12, max(N) * 1.10)
     ax.set_xlabel("year")
     ax.set_ylabel("instruments")
     # NO EN DASH IN A FIGURE. PeerJ's production pipeline rewrites the ToUnicode map of
