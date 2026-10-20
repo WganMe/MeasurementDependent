@@ -306,6 +306,23 @@ def main():
     # --- the cover page and the portal values must agree with the manuscript on one number
     abstract_words = check_abstract_length(main_tex)
 
+    # --- THE SHIPPED PDF MUST ACTUALLY PRINT AN ABSTRACT.
+    # source/main.tex is the venue-independent source: its \Abstract macro only STORES
+    # its argument, because convert_to_peerj.py reads it by name and rebuilds the PeerJ
+    # front matter. Compiling source/main.tex directly therefore yields a PDF with a
+    # title page and then "1 Introduction" -- no abstract at all. Such a PDF was once
+    # committed (2a52164) and was mistaken for the submission. This gate makes that
+    # class of mistake impossible to ship: if the word count above is non-zero but the
+    # rendered page does not print the abstract, the bundle refuses to build.
+    _front = subprocess.run(
+        ["pdftotext", "-f", "1", "-l", "3", os.path.join(PJ, "peerj-main.pdf"), "-"],
+        capture_output=True, text=True).stdout
+    if abstract_words and "ABSTRACT" not in _front.upper():
+        raise SystemExit(
+            "REFUSING: peerj-main.pdf does not print an abstract on its first three pages, "
+            "though the source declares %d words. The uploadable manuscript MUST carry it; "
+            "a PDF built straight from source/main.tex silently omits it." % abstract_words)
+
     # --- the built PDF must print peerJ's citation style, not the source's \bibpunct form
     citations = check_citation_style(os.path.join(PJ, "peerj-main.pdf"))
 

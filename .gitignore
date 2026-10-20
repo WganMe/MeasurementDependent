@@ -82,3 +82,20 @@ local_only/
 *.notes.md
 message_to_wael.md
 handling_issues_in_unpublished_papers.md
+
+# ---- the neutral source's own build output ----
+# source/main.tex is the VENUE-INDEPENDENT source: its \Abstract and \keyword macros
+# only STORE their arguments, because convert_to_peerj.py reads them by name and
+# rebuilds the PeerJ front matter. Compiling source/main.tex directly therefore
+# produces a PDF with NO ABSTRACT -- title page, then "1 Introduction".
+#
+# That file was committed once (2a52164) and was mistaken for the submission on
+# 2026-10-20. It is not the manuscript and is never shipped: the uploadable
+# manuscript is peerj-main.pdf, built by build.sh from the generated peerj-main.tex.
+# The real abstract is on the page after the cover page.
+source/main.pdf
+source/main.aux
+source/main.log
+source/main.out
+source/main.bbl
+source/main.blg
