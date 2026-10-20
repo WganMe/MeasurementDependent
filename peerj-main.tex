@@ -1118,14 +1118,18 @@ circulation in an archive of this kind, and we name whichever we use: \emph{firs
 appearance} are lifetime events, and \emph{entry to and exit from the annual roster} are
 membership events, which differ because an identifier can leave and return. We report a
 \emph{replacement rate} for the latter: the share of arrivals and departures that swap places
-instead of adding to the network. Its median over the record is \replMedian{}, lowest in the growth
-years (2015, 0.20) and highest in the flat ones (2026, 0.99, where 60 arrivals and 61
-departures nearly cancel). Table~\ref{tab:churn} gives the series, with a gap-filled panel as
-the sensitivity check; filling every one-year gap removes most of the apparent churn in 2018
-(672 against 367 as published). We do not report the growth benchmark $|\Delta N|/2N$ as a
-finding, because the excess of turnover over it is algebraically $\min(\mathrm{in},
-\mathrm{out})/N$, a positive quantity in any year with both an arrival and a departure, and
-therefore an identity and not evidence. First and last appearances bound instrument
+instead of adding to the network. With $\mathrm{in}_y$, $\mathrm{out}_y$ and $N_y$ the arrivals,
+departures and identifier count in year $y$, $\mathrm{Turnover}_y =
+(\mathrm{in}_y+\mathrm{out}_y)/2N_y$ and $\mathrm{Replacement}_y =
+2\min(\mathrm{in}_y,\mathrm{out}_y)/(\mathrm{in}_y+\mathrm{out}_y)$, which is $1$ when arrivals
+and departures are equal and is the fraction of churn that is a swap. Its median over the record
+is \replMedian{}, lowest in the growth years (2015, 0.20) and highest in the flat ones (2026,
+0.99, where 60 arrivals and 61 departures nearly cancel). Table~\ref{tab:churn} gives the series,
+with a gap-filled panel as the sensitivity check; filling every one-year gap removes most of the
+apparent churn in 2018 (672 against 367 as published). We do not report the growth benchmark
+$|\Delta N|/2N$ as a finding, because the excess of turnover over it is algebraically
+$\min(\mathrm{in},\mathrm{out})/N$, a positive quantity in any year with both an arrival and a
+departure, and therefore an identity and not evidence. First and last appearances bound instrument
 lifetime observationally and do not measure it; we use them only to establish that the
 population is dynamic and that its growth path changes composition.
 
