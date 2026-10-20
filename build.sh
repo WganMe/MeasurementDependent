@@ -34,13 +34,26 @@ python3 source/make_portal_fields.py
 # expected to run; the guard stays because a future edit could remove the citations again.
 # The real failure signal is the undefined-citation count reported in step 3.
 for d in peerj-main peerj-si; do
-    pdflatex -interaction=nonstopmode "$d.tex" >/dev/null
+    # THE PASSES ARE PREFIXED WITH `|| true` AND THE LOG IS THE GATE. pdflatex
+    # exits non-zero for ordinary, self-correcting conditions: on the FIRST pass
+    # there is no .bbl yet, so natbib reports "Bibliography not compatible with
+    # author-year citations" and exits 1 -- but BibTeX then writes the .bbl and
+    # the NEXT pass reads it and typesets author-year citations correctly. Under
+    # `set -e` that first exit aborted the whole build before BibTeX ever ran, so
+    # `./build.sh` reported failure while the PREVIOUS PDF sat on disk looking
+    # current. Measured: the build exited 1 with no `errors=` line at all, and the
+    # committed PDF had 60 correct author-year citations -- i.e. the script was
+    # broken, not the document.
+    #
+    # The real gate is the error count in the FINAL log, which step 3 still
+    # applies. A pass that cannot succeed at all will leave `!` lines there.
+    pdflatex -interaction=nonstopmode "$d.tex" >/dev/null || true
     if grep -q '\\citation{' "$d.aux"; then
         bibtex "$d" >/dev/null || true
     else
         echo "  $d: no citations, skipping BibTeX"
     fi
-    for _ in 1 2 3; do pdflatex -interaction=nonstopmode "$d.tex" >/dev/null; done
+    for _ in 1 2 3; do pdflatex -interaction=nonstopmode "$d.tex" >/dev/null || true; done
 done
 # NO SEPARATE COVER BUILD. The Author Cover Page is part of peerj-main.tex now -- PeerJ's
 # template says it "must be included in your main manuscript" -- so there is no third document
