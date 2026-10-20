@@ -583,8 +583,10 @@ not significantly so ($t = \cleanTLoc$). The apparent trend in the index is the 
 distance term, a count term and a window term, and the identity between them holds to
 $10^{-15}$ (Section~\ref{sec:results-trend}).
 \item A \textbf{registration-resolution curve} showing how the headline depends on the merge
-radius. The fall runs from \rDrop\% on the per-year box to \locHullDrop\% on the fixed hull to
-\num{4.3}\% at a \SI{25}{\meter} merge, monotonically and with no plateau, and it reverses sign
+radius. Fixing the window and keeping the identifier unit takes the fall from \rDrop\% to
+\rHullDrop\%; deduplicating to the location unit takes it on to \locHullDrop\% on the same fixed
+hull. From there the merge radius drives it to \num{4.3}\% at \SI{25}{\meter}, monotonically and
+with no plateau, and it reverses sign
 by \SI{50}{\meter}; the nearest-neighbour distribution has no trough to place a threshold in
 (Figure~\ref{fig:tolerance}). The consequence applies beyond this network:
 because no feature of the point pattern identifies a radius, the merge is a \emph{bounding
@@ -597,11 +599,17 @@ co-location is duplicated registration concentrated in one of two published coor
 resolutions, and rounding the other resolution to the same quantum leaves it unchanged, so the
 artefact is neither a rounding effect nor a free choice of radius
 (Section~\ref{sec:results-origin}).
-\item A \textbf{multiscale analysis on support-matched windows}. The published multiscale
-decline is largely a support mismatch: measured on each year's own footprint it falls to
+\item A \textbf{multiscale analysis on support-matched windows}. The multiscale decline measured
+on the fixed hull over the published archive --- the Besag $L$ function at the
+\SI{1}{\kilo\meter} scale, $L(\SI{1}{\kilo\meter})$ --- is largely a support mismatch: measured on
+each year's own footprint the same quantity falls to
 \num{-99} m per year and is not distinguishable from zero, while the function still exceeds an
 inhomogeneous null preserving each year's intensity at \SI{250}{\meter} to
-\SI{1.5}{\kilo\meter} in all fourteen years. What survives is a level difference, not a trend
+\SI{1.5}{\kilo\meter} in all fourteen years. **The two indices move in opposite senses and the
+sign of one is not the sign of the other:** a falling $R$ means \emph{stronger} short-range
+clustering, whereas a falling $L(\SI{1}{\kilo\meter})$ means \emph{weaker} clustering at that
+scale, because $L$ measures excess neighbours within the radius. What survives here is a level
+difference, not a trend
 (Sections~\ref{sec:results-mech}, \ref{sec:results-trend}).
 \item A \textbf{membership replacement rate}: the share of annual arrivals and departures that
 swap places instead of adding to the network is \replMedian{} at the median, and
@@ -779,7 +787,8 @@ to the effects measured; the departure from a true metric is therefore bounded a
 identifiers over the whole record (all far outside the UK). Those seven appear in
 \num{16} identifier--year records across the fourteen years, so the filter removes \num{16} of the
 \num{6570} identifier--year records and leaves \num{6554}
-coordinate-years in the analysis.
+identifier--year records in the analysis, before the within-year coordinate deduplication that
+defines the location unit.
 This matters for the reference area, and Section~\ref{sec:indices} addresses it directly: the
 bounding box of a dispersed network over a \winEW$\times$\winNS\,km window is a poor density
 denominator, so we also fix a single geographic reference frame for every year, the
@@ -829,8 +838,8 @@ fixed full-record hull, $A = \SI{4416}{\kilo\meter\squared}$, which does not cha
 the per-year bounding box and the 95th-percentile core are reported as alternatives in
 the Supplementary Material, and where either is used the text says so. Under complete spatial randomness
 $R = 1$; $R < 1$ indicates
-clustering and $R > 1$ regularity, in the sense of Equation~\eqref{eq:clarkevans}. Because $R$ is inversely proportional to the square
-root of density, it is sensitive to how $A$ is defined, and it scales as $A^{-1/2}$: a smaller
+clustering and $R > 1$ regularity, in the sense of Equation~\eqref{eq:clarkevans}. Because $R$ is proportional to the square
+root of density, $R = 2\bar{d}\sqrt{\rho}$, it is sensitive to how $A$ is defined, and it scales as $A^{-1/2}$: a smaller
 reference area raises $R$.
 
 \noindent\textbf{The reference area and the core.} The bounding box of a city network is a
