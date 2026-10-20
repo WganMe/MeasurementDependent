@@ -68,7 +68,7 @@ def main() -> int:
                          "axes.axisbelow": True, "axes.unicode_minus": False})
     fig, ax = plt.subplots(figsize=(5.6, 3.3))
     ax.plot(Y, rare_ser, color="0.7", lw=1.0, ls=":", marker="o", ms=2.6,
-            zorder=2, label="rarefied to $N=41$")
+            zorder=2, label="rarefied to $N=41$ identifiers")
     ax.plot(Y, ids_ser, color="#c44e52", lw=1.6, marker="o", ms=3.2, zorder=3,
             label="identifiers (hull)")
     ax.plot(Y, loc_ser, color="#4c72b0", lw=2.0, marker="s", ms=3.2, zorder=4,

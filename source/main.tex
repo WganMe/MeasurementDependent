@@ -609,15 +609,16 @@ swap places instead of adding to the network is \replMedian{} at the median, and
 (Section~\ref{sec:results-population}). This is the one result here whose value does not depend
 on which of the two units is used, though the frame still sets it.
 \item A \textbf{negative result and an unresolved one}, established and not merely asserted.
-Neither the clustering
-index nor the Gini of occupied cells shows a trend once every year is rarefied to a common
+The clustering index shows no trend once every year is rarefied to a common
 sample size. For the clustering index a minimum detectable effect of \rRareMDE{} per year at
 \SI{80}{\percent} power shows the design would have detected the change at the scales the
 rarefaction can see, which are above about \SI{5}{\kilo\meter}, so the null is informative rather
-than underpowered. The concentration series is not flat at every grid resolution---rarefied, it
-falls at between \num{0.004} and \num{0.011} per year depending on the cell size, with a rank
-interval that excludes zero in each case---so it is unresolved in either direction, not
-null (Sections~\ref{sec:results-trend}, \ref{sec:results-unit}).
+than underpowered. The Gini of occupied cells behaves in the opposite way and is \emph{not}
+null: uncorrected it rises at \gfGiniSlope{} per year, and rarefied it falls at between
+\num{0.004} and \num{0.011} per year depending on the cell size, with a rank interval that
+excludes zero in each case. Rarefaction therefore reverses the sign of the concentration trend
+rather than removing it, so that series is unresolved in either direction
+(Sections~\ref{sec:results-trend}, \ref{sec:results-unit}).
 \item A \textbf{provenance audit} of a distributed benchmark's frozen snapshot against the
 reconstructed population, with the theme composition of its omissions tested as a $2\times2$
 contrast against the identifiers the snapshot holds, not against a base rate that includes the
@@ -1271,7 +1272,7 @@ bookkeeping of the \locHullDrop\%.
 Unit & Support window & Slope/yr & SE & OLS $p$ & Fall \\
 \midrule
 Identifiers (published) & fixed hull & $-0.0126$ & 0.0046 & 0.018 & 56.4\% \\
-\textbf{Identifiers} & \textbf{fixed hull} & $-0.0107$ & 0.0046 & 0.037 & \locHullDrop\% \\
+\textbf{Identifiers} & \textbf{fixed hull} & $\rHullSlope$ & \num{0.0046} & \hullIdsOlsP & \rHullDrop\% \\
 Locations & fixed hull & \rHullLocSlope & \num{0.0046} & \hullLocOlsP & \locHullDrop\% \\
 Merged \SI{25}{\meter} & fixed hull & $+0.0014$ & 0.0041 & 0.742 & 4.3\% \\
 Merged \SI{25}{\meter} & own hull & $-0.0201$ & 0.0057 & 0.004 & 38.6\% \\
