@@ -55,6 +55,80 @@ def words(s: str) -> set[str]:
     return {w for w in re.findall(r"[a-z]{3,}", s.lower()) if w not in STOP}
 
 
+# --------------------------------------------------------------------------
+# Surname normalisation.
+#
+# The first version of this file compared surnames with
+#     re.sub(r"\\[a-zA-Z]+", "", s)      # strip LaTeX commands
+# which is wrong for accents: \' is a backslash followed by PUNCTUATION, so
+# "P{\'a}ez" kept its "a" and lost nothing, and the .bib surname came out as
+# "paez" only by luck of the letters left behind -- here it produced "pez"
+# against Crossref's "páez" and was reported as a defect in the bibliography.
+# It was a defect in this checker.
+#
+# Two fixes, both needed:
+#   * LaTeX accent commands are folded to their base letter (\'a, \"{u}, \c{c},
+#     \ae, \ss, ...), so a name written in LaTeX compares with the publisher's.
+#   * Unicode accents are folded too, so "páez" compares with "paez".
+# The name is then reduced to letters only, because a hyphen or apostrophe in a
+# surname (O'Brien, Al-Nahari) must not make two spellings of one name differ.
+# --------------------------------------------------------------------------
+
+_LATEX_LETTER = {
+    r"\ae": "ae", r"\AE": "AE", r"\oe": "oe", r"\OE": "OE",
+    r"\aa": "a", r"\AA": "A", r"\o": "o", r"\O": "O",
+    r"\l": "l", r"\L": "L", r"\ss": "ss", r"\i": "i", r"\j": "j",
+}
+
+
+def _strip_accents(s: str) -> str:
+    import unicodedata
+    return "".join(c for c in unicodedata.normalize("NFKD", s)
+                   if not unicodedata.combining(c))
+
+
+def _bib_surname(s: str) -> str:
+    """Normalise a surname written in LaTeX or Unicode to bare lowercase letters.
+
+    Accepts either a bare surname ("P{\\'a}ez") or a BibTeX "Family, Given" pair
+    ("James, Philip"), because both forms reach this function: Crossref and
+    DataCite supply a family name, while a .bib AUTHOR field supplies the pair.
+    An earlier revision split on the comma only at the call site, so the DataCite
+    branch reduced "James, Philip" to "jamesphilip" and reported all eight real
+    authors of the archive as missing.
+    """
+    s = s or ""
+    if "," in s:
+        s = s.split(",")[0]
+    for cmd, rep in _LATEX_LETTER.items():
+        s = s.replace(cmd, rep)
+    # \'a  \"{u}  \^{o}  \~{n}  \c{c}  \v{s}  \={a}  \.{z}  -> base letter
+    s = re.sub(r"\\[\'\"\^`~=\.]", "", s)
+    s = re.sub(r"\\[cvuHkrdbt]\s*\{?([A-Za-z])\}?", r"\1", s)
+    s = re.sub(r"\\[a-zA-Z]+", " ", s)     # any remaining command
+    s = _strip_accents(s)
+    s = s.replace("{", "").replace("}", "")
+    return re.sub(r"[^a-z]", "", s.lower())
+
+
+def _surname(name: str | None, given: str | None,
+             family: str | None) -> str:
+    """Surname from a DataCite creator.
+
+    DataCite's ``name`` is "Family, Given" for people and a bare organisation
+    name otherwise, so taking ``name.split()[-1]`` -- as the first version did --
+    returns the GIVEN name ("james, philip" -> "philip").  Prefer familyName,
+    then the part before the comma, then the last token.
+    """
+    if family:
+        return _bib_surname(family)
+    if not name:
+        return ""
+    if "," in name:
+        return _bib_surname(name.split(",")[0])
+    return _bib_surname(name.split()[-1])
+
+
 def get(url: str, timeout: int = 45):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     try:
@@ -119,8 +193,11 @@ def check(entry: dict) -> list[str]:
                     problems.append(
                         "title overlap %.2f — bib says %r, DataCite says %r"
                         % (ov, (entry["title"] or "")[:60], ct[:60]))
-            cross = {c["name"].split()[-1].lower() for c in d.get("creators") or []}
-            bibn = [p.split(",")[0].strip().lower()
+            cross = {_surname(c.get("name"), c.get("givenName"),
+                              c.get("familyName"))
+                     for c in d.get("creators") or []}
+            cross.discard("")
+            bibn = [_bib_surname(p)
                     for p in re.split(r"\s+and\s+", entry["author"] or "")
                     if p.strip()]
             missing = [n for n in bibn if n and n not in cross]
@@ -154,12 +231,13 @@ def check(entry: dict) -> list[str]:
     au = m.get("author") or []
     if au:
         def plain(s: str) -> str:
-            s = re.sub(r"\\[a-zA-Z]+", "", s or "")
-            return (s.replace("{", "").replace("}", "")
-                     .replace("'", "").lower().strip())
+            return _bib_surname(s)
 
         cross_names = [plain(a.get("family")) for a in au if a.get("family")]
-        bib_names = [plain(p.split(",")[0])
+        # plain() now handles the "Family, Given" pair itself, so the split is
+        # not repeated here; keeping it in one place is what stopped the two
+        # branches disagreeing.
+        bib_names = [plain(p)
                      for p in re.split(r"\s+and\s+", entry["author"] or "")
                      if p.strip()]
         missing = [n for n in bib_names if n and n not in cross_names]
