@@ -1,0 +1,50 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Wael Alnahari
+
+You are free to:
+
+  Share — copy and redistribute the material in any medium or format for
+  any purpose, even commercially.
+
+  Adapt — remix, transform, and build upon the material for any purpose,
+  even commercially.
+
+Under the following terms:
+
+  Attribution — You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any
+  reasonable manner, but not in any way that suggests the licensor
+  endorses you or your use.
+
+  No additional restrictions — You may not apply legal terms or
+  technological measures that legally restrict others from doing
+  anything the license permits.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+---
+
+EXCEPTION — Street network data
+
+The files map_2013.html through map_2026.html embed street-network
+geometry derived from OpenStreetMap. That geometry is copyright
+OpenStreetMap contributors and is made available under the Open Database
+Licence (ODbL) 1.0:
+
+  https://opendatacommons.org/licenses/odbl/1-0/
+  https://www.openstreetmap.org/copyright
+
+The ODbL requires that any adaptation of the database is released under
+the same licence. The street coordinates embedded in the HTML files
+constitute a Produced Work (a rendering of the database) and may be
+freely used under ODbL terms, provided attribution is given to
+OpenStreetMap contributors.
+
+---
+
+EXCEPTION — Base map tiles
+
+The interactive maps load tiles from OpenStreetMap tile servers at
+runtime. Those tiles are copyright OpenStreetMap contributors and are
+served under CC BY-SA 2.0. No tiles are stored in this repository.
