@@ -80,12 +80,12 @@ See [LICENSE](LICENSE) for details.
 If you use these maps, please cite:
 
 ```bibtex
-@misc{wael_alnahari_ammar_arbaaeen_ammar_alsaig_tawfiq_hasanin_wasem_alnahri_2026,
-  title     = {Measurement-Dependent Clustering},
-  url       = {https://www.kaggle.com/dsv/22162950},
-  DOI       = {10.34740/KAGGLE/DSV/22162950},
-  publisher = {Kaggle},
-  author    = {Wael Alnahari and Ammar Arbaaeen and Ammar Alsaig and Tawfiq Hasanin and Wasem Alnahri},
-  year      = {2026}
+@misc{Alnahari_Measurement-Dependent_Clustering_2026,
+  author = {Alnahari, Wael and Arbaaeen, Ammar and Alsaig, Ammar and Hasanin, Tawfiq and Alnahri, Wasem},
+  doi    = {10.34740/KAGGLE/DSV/22162950},
+  month  = nov,
+  title  = {{Measurement-Dependent Clustering}},
+  url    = {https://github.com/WganMe/MeasurementDependent},
+  year   = {2026}
 }
 ```
