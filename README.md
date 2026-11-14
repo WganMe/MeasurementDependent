@@ -1,6 +1,6 @@
 # Measurement-Dependent Clustering — Interactive Maps
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.placeholder.svg)](https://doi.org/10.5281/zenodo.placeholder)
+[![DOI](https://img.shields.io/badge/DOI-10.34740%2FKAGGLE%2FDSV%2F22162950-blue.svg)](https://doi.org/10.34740/KAGGLE/DSV/22162950)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 Interactive street-network maps of the Newcastle Urban Observatory
@@ -80,13 +80,12 @@ See [LICENSE](LICENSE) for details.
 If you use these maps, please cite:
 
 ```bibtex
-@misc{alnahari2026mdc_maps,
-  author    = {Alnahari, Wael},
-  title     = {Measurement-Dependent Clustering — Interactive Maps},
-  year      = {2026},
-  publisher = {GitHub},
-  url       = {https://github.com/WganMe/MeasurementDependent},
-  note      = {Interactive street-network maps of the Newcastle Urban
-               Observatory sensor network, 2013--2026}
+@misc{wael_alnahari_ammar_arbaaeen_ammar_alsaig_tawfiq_hasanin_wasem_alnahri_2026,
+  title     = {Measurement-Dependent Clustering},
+  url       = {https://www.kaggle.com/dsv/22162950},
+  DOI       = {10.34740/KAGGLE/DSV/22162950},
+  publisher = {Kaggle},
+  author    = {Wael Alnahari and Ammar Arbaaeen and Ammar Alsaig and Tawfiq Hasanin and Wasem Alnahri},
+  year      = {2026}
 }
 ```
