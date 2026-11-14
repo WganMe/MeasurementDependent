@@ -7,7 +7,7 @@ Interactive street-network maps of the Newcastle Urban Observatory
 sensor network, one per year from 2013 to 2026, for the paper:
 
 > **Measurement-Dependent Clustering in an Urban Observatory Sensor Network**
-> Wael Alnahari
+> Wael Alnahari, Ammar Arbaaeen, Ammar Alsaig, Tawfiq Hasanin and Wasem Alnahri
 > *Ecological Indicators* (submitted)
 
 ## View the maps
@@ -19,12 +19,12 @@ sensor network, one per year from 2013 to 2026, for the paper:
 | 2013 |      45 | [map_2013.html](https://wganme.github.io/MeasurementDependent/map_2013.html) |
 | 2014 |     111 | [map_2014.html](https://wganme.github.io/MeasurementDependent/map_2014.html) |
 | 2015 |     380 | [map_2015.html](https://wganme.github.io/MeasurementDependent/map_2015.html) |
-| 2016 |     696 | [map_2016.html](https://wganme.github.io/MeasurementDependent/map_2016.html) |
-| 2017 |     896 | [map_2017.html](https://wganme.github.io/MeasurementDependent/map_2017.html) |
-| 2018 |   1,100 | [map_2018.html](https://wganme.github.io/MeasurementDependent/map_2018.html) |
-| 2019 |     952 | [map_2019.html](https://wganme.github.io/MeasurementDependent/map_2019.html) |
-| 2020 |     980 | [map_2020.html](https://wganme.github.io/MeasurementDependent/map_2020.html) |
-| 2021 |     951 | [map_2021.html](https://wganme.github.io/MeasurementDependent/map_2021.html) |
+| 2016 |     694 | [map_2016.html](https://wganme.github.io/MeasurementDependent/map_2016.html) |
+| 2017 |     893 | [map_2017.html](https://wganme.github.io/MeasurementDependent/map_2017.html) |
+| 2018 |   1,095 | [map_2018.html](https://wganme.github.io/MeasurementDependent/map_2018.html) |
+| 2019 |     947 | [map_2019.html](https://wganme.github.io/MeasurementDependent/map_2019.html) |
+| 2020 |     975 | [map_2020.html](https://wganme.github.io/MeasurementDependent/map_2020.html) |
+| 2021 |     946 | [map_2021.html](https://wganme.github.io/MeasurementDependent/map_2021.html) |
 | 2022 |     794 | [map_2022.html](https://wganme.github.io/MeasurementDependent/map_2022.html) |
 | 2023 |     762 | [map_2023.html](https://wganme.github.io/MeasurementDependent/map_2023.html) |
 | 2024 |     875 | [map_2024.html](https://wganme.github.io/MeasurementDependent/map_2024.html) |
