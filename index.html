@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Measurement-Dependent Clustering — Interactive Maps</title>
+<style>
+  :root { --bg: #fff; --fg: #222; --accent: #1f5fa8; --card: #f7f8fa; --border: #ddd; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1a1a2e; --fg: #e0e0e0; --accent: #5b9bd5; --card: #16213e; --border: #333; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--fg); padding: 2rem 1rem; max-width: 900px; margin: auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+  .subtitle { color: #888; margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+          padding: 1.2rem; text-align: center; text-decoration: none; color: var(--fg);
+          transition: box-shadow 0.2s, transform 0.2s; }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.15); transform: translateY(-2px); }
+  .card .year { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .card .sensors { font-size: 0.85rem; margin-top: 0.4rem; }
+  .links { margin-top: 2rem; font-size: 0.9rem; color: #888; }
+  .links a { color: var(--accent); }
+</style>
+</head>
+<body>
+<h1>Measurement-Dependent Clustering</h1>
+<p class="subtitle">Interactive street-network maps of the Newcastle Urban Observatory sensor network, 2013–2026</p>
+<div class="grid">
+  <a class="card" href="map_2013.html"><div class="year">2013</div><div class="sensors">45 sensors</div></a>
+  <a class="card" href="map_2014.html"><div class="year">2014</div><div class="sensors">111 sensors</div></a>
+  <a class="card" href="map_2015.html"><div class="year">2015</div><div class="sensors">380 sensors</div></a>
+  <a class="card" href="map_2016.html"><div class="year">2016</div><div class="sensors">696 sensors</div></a>
+  <a class="card" href="map_2017.html"><div class="year">2017</div><div class="sensors">896 sensors</div></a>
+  <a class="card" href="map_2018.html"><div class="year">2018</div><div class="sensors">1,100 sensors</div></a>
+  <a class="card" href="map_2019.html"><div class="year">2019</div><div class="sensors">952 sensors</div></a>
+  <a class="card" href="map_2020.html"><div class="year">2020</div><div class="sensors">980 sensors</div></a>
+  <a class="card" href="map_2021.html"><div class="year">2021</div><div class="sensors">951 sensors</div></a>
+  <a class="card" href="map_2022.html"><div class="year">2022</div><div class="sensors">794 sensors</div></a>
+  <a class="card" href="map_2023.html"><div class="year">2023</div><div class="sensors">762 sensors</div></a>
+  <a class="card" href="map_2024.html"><div class="year">2024</div><div class="sensors">875 sensors</div></a>
+  <a class="card" href="map_2025.html"><div class="year">2025</div><div class="sensors">786 sensors</div></a>
+  <a class="card" href="map_2026.html"><div class="year">2026</div><div class="sensors">756 sensors</div></a>
+</div>
+<p class="links">
+  <a href="https://www.kaggle.com/datasets/wganme/measurementdependent">Dataset</a> ·
+  <a href="https://www.kaggle.com/code/wganme/measurement-dependent">Notebook</a> ·
+  Street network © OpenStreetMap contributors, ODbL 1.0
+</p>
+</body>
+</html>
